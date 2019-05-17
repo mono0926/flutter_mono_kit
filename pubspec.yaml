@@ -1,0 +1,14 @@
+name: mono_kit
+description: A collection of convenient widgets and utils.
+version: 0.0.1
+author:
+homepage:
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
