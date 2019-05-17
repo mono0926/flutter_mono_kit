@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:rxdart/rxdart.dart';
 
-/// - https://raw.githubusercontent.com/Kavantix/bloc_streambuilder/master/lib/src/value_observable_builder.dart
-/// - https://twitter.com/_mono/status/1078948544784941058
+import 'better_stream_builder.dart';
+
 class ValueObservableBuilder<T> extends StatefulWidget {
   const ValueObservableBuilder({
     Key key,
@@ -12,7 +12,7 @@ class ValueObservableBuilder<T> extends StatefulWidget {
   }) : super(key: key);
 
   final ValueObservable<T> stream;
-  final AsyncWidgetBuilder<T> builder;
+  final AsyncChildWidgetBuilder<T> builder;
   final Widget child;
 
   @override
@@ -30,6 +30,8 @@ class _ValueObservableBuilderState<T> extends State<ValueObservableBuilder<T>> {
       initialData: widget.stream.value,
       stream: widget.stream,
       builder: (context, snapshot) {
+        // ValueObservableの場合、初期値があったらwaitingでは無いとみなす方が自然。
+        // また、この加工をすることで初回の無駄な2回のリビルドが解消される。
         if (snapshot.connectionState == ConnectionState.waiting &&
             snapshot.hasData) {
           snapshot = AsyncSnapshot<T>.withData(
@@ -39,11 +41,7 @@ class _ValueObservableBuilderState<T> extends State<ValueObservableBuilder<T>> {
         }
         // 必要な時(初回・snapshotに差がある時)だけリビルド
         if (_built == null || _snapshot != snapshot) {
-          _built = widget.builder(
-            context,
-            snapshot,
-            widget.child,
-          );
+          _built = widget.builder(context, snapshot, widget.child);
         }
         _snapshot = snapshot;
         return _built;
@@ -51,9 +49,3 @@ class _ValueObservableBuilderState<T> extends State<ValueObservableBuilder<T>> {
     );
   }
 }
-
-typedef AsyncWidgetBuilder<T> = Widget Function(
-  BuildContext context,
-  AsyncSnapshot<T> snap,
-  Widget child,
-);
