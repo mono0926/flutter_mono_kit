@@ -1,4 +1,4 @@
-import 'dart:math' show sqrt;
+import 'dart:math' show pow, min;
 
 import 'package:flutter/material.dart';
 
@@ -132,8 +132,8 @@ class _PanState extends State<_Pan> {
       child: GestureDetector(
         onPanUpdate: (g) {
           var delta = g.delta.dy;
-          if (_offsetY < 0 && delta < 0) {
-            delta = -sqrt(delta.abs());
+          if (_offsetY <= 0 && delta < 0) {
+            delta = delta * min(0.3, 10 / _offsetY.abs());
           }
           setState(() {
             _offsetY += delta;
