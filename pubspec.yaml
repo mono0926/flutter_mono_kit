@@ -8,9 +8,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  url_launcher: any
-  rxdart: any
-  flutter_cache_manager: any
+  url_launcher: ^5.0.2
+  rxdart: ^0.22.0
+  flutter_cache_manager: ^0.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
