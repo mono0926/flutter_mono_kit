@@ -151,6 +151,7 @@ class __DescState extends State<_Desc> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final backgroundColor = theme.scaffoldBackgroundColor;
     return Stack(
       overflow: Overflow.visible,
       children: [
@@ -177,8 +178,8 @@ class __DescState extends State<_Desc> {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Colors.white.withOpacity(0.01),
-                    ...List.generate(2, (_) => Colors.white)
+                    backgroundColor.withOpacity(0.01),
+                    ...List.generate(2, (_) => backgroundColor)
                   ],
                 ),
               ),
