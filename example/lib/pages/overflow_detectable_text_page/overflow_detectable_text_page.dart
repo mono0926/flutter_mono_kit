@@ -13,7 +13,6 @@ class OverflowDetectableTextPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(routeName),
-        elevation: 1,
       ),
       body: ListView.separated(
         padding: EdgeInsets.only(
