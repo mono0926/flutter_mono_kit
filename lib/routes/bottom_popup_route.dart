@@ -1,4 +1,4 @@
-import 'dart:math' show pow, min;
+import 'dart:math' show min;
 
 import 'package:flutter/material.dart';
 
