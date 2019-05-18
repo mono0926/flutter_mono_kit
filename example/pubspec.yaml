@@ -7,6 +7,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
+  mono_kit:
+    path: ../../mono_kit
 dev_dependencies:
   flutter_test:
     sdk: flutter
