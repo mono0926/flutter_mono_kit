@@ -22,9 +22,7 @@ class OverflowDetectableTextPage extends StatelessWidget {
         ),
         itemCount: 10,
         separatorBuilder: (context, index) => const Divider(height: 0),
-        itemBuilder: (context, index) {
-          return Cell(Data.index(index));
-        },
+        itemBuilder: (context, index) => Cell(Data.index(index)),
       ),
     );
   }
