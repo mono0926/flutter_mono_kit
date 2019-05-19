@@ -35,52 +35,56 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14),
-      child: AnimatedBuilder(
-        animation: _animation,
-        builder: (context, child) {
-          return ConstrainedBox(
-            constraints: BoxConstraints(
-                maxHeight: _maxHeight?.value ?? _defaultMaxHeight),
-            child: child,
-          );
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    _buildIcon(context),
-                    const SizedBox(width: 8),
-                    _buildTitle(context),
-                  ],
-                ),
-                _buildOpenButton(context),
-              ],
-            ),
-            const SizedBox(height: 12),
-            Flexible(
-              child: _Desc(
-                data: widget.data,
-                additionalHeightNeeded: (additionalHeight) {
-                  if (additionalHeight == 0) {
-                    return;
-                  }
-                  _maxHeight = _animation.drive<double>(Tween<double>(
-                    begin: _defaultMaxHeight,
-                    end: _defaultMaxHeight + additionalHeight,
-                  ));
-
-                  _animation.forward();
-                },
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 14),
+        child: AnimatedBuilder(
+          animation: _animation,
+          builder: (context, child) {
+            return ConstrainedBox(
+              constraints: BoxConstraints(
+                  maxHeight: _maxHeight?.value ?? _defaultMaxHeight),
+              child: child,
+            );
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      _buildIcon(context),
+                      const SizedBox(width: 8),
+                      _buildTitle(context),
+                    ],
+                  ),
+                  _buildOpenButton(context),
+                ],
               ),
-            ),
-          ],
+              const SizedBox(height: 12),
+              Flexible(
+                child: _Desc(
+                  data: widget.data,
+                  additionalHeightNeeded: (additionalHeight) {
+                    if (additionalHeight == 0) {
+                      return;
+                    }
+                    _maxHeight = _animation.drive<double>(Tween<double>(
+                      begin: _defaultMaxHeight,
+                      end: _defaultMaxHeight + additionalHeight,
+                    ));
+
+                    _animation.forward();
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
