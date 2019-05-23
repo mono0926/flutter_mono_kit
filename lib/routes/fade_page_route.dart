@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'modal_page_route.dart';
 
-class FadePageRoute extends ModalPageRoute {
+class FadePageRoute<T> extends ModalPageRoute<T> {
   FadePageRoute({
     Key key,
     @required WidgetBuilder builder,
