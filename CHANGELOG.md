@@ -1,3 +1,7 @@
+## [0.0.5]
+
+- Add `reuseChild` argument to BetterStreamBuilder/ValueObservableBuilder.
+
 ## [0.0.4]
 
 - Add type parameter to FadePageRoute.
