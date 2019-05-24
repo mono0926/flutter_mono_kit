@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -19,6 +20,16 @@ class SubscriptionHolder {
         observable.map(f).distinct().publishValueSeeded(f(observable.value));
     _subscriptions.add(valueObservable.connect());
     return valueObservable;
+  }
+
+  ValueListenable<S> consumeAsListenable<T, S>(
+    ValueObservable<T> observable,
+    S Function(T value) f,
+  ) {
+    final notifier = ValueNotifier<S>(f(observable.value));
+    _subscriptions
+        .add(observable.distinct().listen((x) => notifier.value = f(x)));
+    return notifier;
   }
 
   void dispose() {
