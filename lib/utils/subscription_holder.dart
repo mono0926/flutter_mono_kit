@@ -14,21 +14,26 @@ class SubscriptionHolder {
 
   ValueObservable<S> publishValueConnecting<T, S>(
     ValueObservable<T> observable,
-    S Function(T value) f,
+    FutureOr<S> Function(T value) f,
   ) {
-    final valueObservable =
-        observable.map(f).distinct().publishValueSeeded(f(observable.value));
+    final v = f(observable.value);
+    final valueObservable = observable
+        .asyncMap(f)
+        .distinct()
+        .publishValueSeeded(v is Future ? null : v as S);
     _subscriptions.add(valueObservable.connect());
+
     return valueObservable;
   }
 
   ValueListenable<S> consumeAsListenable<T, S>(
     ValueObservable<T> observable,
-    S Function(T value) f,
+    FutureOr<S> Function(T value) f,
   ) {
-    final notifier = ValueNotifier<S>(f(observable.value));
-    _subscriptions
-        .add(observable.distinct().listen((x) => notifier.value = f(x)));
+    final v = f(observable.value);
+    final notifier = ValueNotifier<S>(v is Future<S> ? null : v as S);
+    _subscriptions.add(
+        observable.distinct().listen((x) async => notifier.value = await f(x)));
     return notifier;
   }
 
