@@ -6,10 +6,12 @@ class ListenerText extends StatelessWidget {
     this.data, {
     Key key,
     this.style,
+    this.nullValue = '',
   }) : super(key: key);
 
   final ValueListenable<String> data;
   final TextStyle style;
+  final String nullValue;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class ListenerText extends StatelessWidget {
       valueListenable: data,
       builder: (context, data, child) {
         return Text(
-          data,
+          data ?? nullValue,
           style: style,
         );
       },
