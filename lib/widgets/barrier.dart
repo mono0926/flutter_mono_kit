@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Barrier extends StatelessWidget {
@@ -8,7 +9,7 @@ class Barrier extends StatelessWidget {
   }) : super(key: key);
 
   final Widget child;
-  final bool showProgress;
+  final ValueListenable<bool> showProgress;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,14 @@ class Barrier extends StatelessWidget {
       children: [
         child,
         Positioned.fill(
-          child: Visibility(
-            visible: showProgress,
+          child: ValueListenableBuilder<bool>(
+            valueListenable: showProgress,
+            builder: (context, showProgress, child) {
+              return Visibility(
+                visible: showProgress,
+                child: child,
+              );
+            },
             child: Container(
               color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
               child: const Center(

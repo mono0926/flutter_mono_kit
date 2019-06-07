@@ -15,7 +15,7 @@ class ListenerText extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<String>(
       valueListenable: data,
-      builder: (_context, data, _child) {
+      builder: (context, data, child) {
         return Text(
           data,
           style: style,
