@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'listener/listener.dart';
+
 class Barrier extends StatelessWidget {
   const Barrier({
     Key key,
@@ -18,14 +20,8 @@ class Barrier extends StatelessWidget {
       children: [
         child,
         Positioned.fill(
-          child: ValueListenableBuilder<bool>(
-            valueListenable: showProgress,
-            builder: (context, showProgress, child) {
-              return Visibility(
-                visible: showProgress,
-                child: child,
-              );
-            },
+          child: ListenerVisibility(
+            visible: showProgress,
             child: Container(
               color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
               child: const Center(
