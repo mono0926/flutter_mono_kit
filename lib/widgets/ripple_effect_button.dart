@@ -13,6 +13,7 @@ class RippleEffectButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.passthrough,
       children: [
         child,
         Material(
