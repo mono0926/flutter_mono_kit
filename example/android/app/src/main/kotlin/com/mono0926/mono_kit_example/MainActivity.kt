@@ -1,4 +1,4 @@
-package com.mono0926.example
+package com.mono0926.mono_kit_example
 
 import android.os.Bundle
 
