@@ -7,6 +7,6 @@ class IosInfoPlistReader {
 
   Future<String> readString(String key) async {
     assert(Platform.isIOS);
-    return _platform.invokeMethod('readInfoPlistString', {'key': key});
+    return _platform.invokeMethod('info_plist/read_string', {'key': key});
   }
 }
