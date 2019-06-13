@@ -1,6 +1,6 @@
 import 'package:example/pages/pages.dart';
 import 'package:flutter/material.dart';
-import 'package:mono_kit/utils/utils.dart';
+import 'package:mono_kit/plugins/plugins.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -25,15 +25,15 @@ class HomePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('CFBundleDevelopmentRegion'),
-            subtitle: FutureBuilder<String>(
-              future:
-                  IosInfoPlistReader().readString('CFBundleDevelopmentRegion'),
+            title: const Text('iGhost(Dev) installed?'),
+            subtitle: FutureBuilder<bool>(
+              future: AppInstallationChecker()
+                  .isInstalled('com.aquatica.ghost.dev'),
               builder: (context, snap) {
                 if (!snap.hasData) {
-                  return null;
+                  return const SizedBox();
                 }
-                return Text(snap.data);
+                return Text(snap.data.toString());
               },
             ),
           )
