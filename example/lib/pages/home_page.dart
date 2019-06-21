@@ -52,6 +52,9 @@ class HomePage extends StatelessWidget {
                 retryMessage: 'リトライしますか？',
                 retryButtonLabel: 'リトライ',
                 onCompleted: (result) {
+                  if (!result) {
+                    return;
+                  }
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
