@@ -1,3 +1,7 @@
+## [0.1.0]
+
+- Increment version.
+
 ## [0.0.6]
 
 - Add `TextAnswerDialog`.
