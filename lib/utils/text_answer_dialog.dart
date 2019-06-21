@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 class TextAnswerDialog {
-  static void show({
+  static Future<bool> show({
     @required BuildContext context,
     @required String title,
     @required String message,
@@ -12,7 +12,6 @@ class TextAnswerDialog {
     @required String retryTitle,
     @required String retryMessage,
     @required String retryButtonLabel,
-    @required OnCompleted onCompleted,
   }) async {
     final result = await showDialog<TextAnswerDialogResult>(
       context: context,
@@ -22,13 +21,12 @@ class TextAnswerDialog {
         keyword: keyword,
         hintText: hintText,
         okButtonLabel: okButtonLabel,
-        onCompleted: onCompleted,
       ),
     );
 
     switch (result) {
       case TextAnswerDialogResult.cancelled:
-        onCompleted(false);
+        return false;
         break;
       case TextAnswerDialogResult.incorrect:
         final retry = await showDialog<bool>(
@@ -48,31 +46,27 @@ class TextAnswerDialog {
                     )
                   ],
                 ));
-        if (retry) {
-          show(
-            context: context,
-            title: title,
-            message: message,
-            keyword: keyword,
-            hintText: hintText,
-            okButtonLabel: okButtonLabel,
-            retryTitle: retryTitle,
-            retryMessage: retryMessage,
-            retryButtonLabel: retryButtonLabel,
-            onCompleted: onCompleted,
-          );
-        } else {
-          onCompleted(false);
+        if (!retry) {
+          return false;
         }
-        break;
+        return show(
+          context: context,
+          title: title,
+          message: message,
+          keyword: keyword,
+          hintText: hintText,
+          okButtonLabel: okButtonLabel,
+          retryTitle: retryTitle,
+          retryMessage: retryMessage,
+          retryButtonLabel: retryButtonLabel,
+        );
       case TextAnswerDialogResult.correct:
-        onCompleted(true);
-        break;
+        return true;
     }
+    assert(false, 'invalid result: $result');
+    return false;
   }
 }
-
-typedef OnCompleted = Function(bool result);
 
 enum TextAnswerDialogResult {
   cancelled,
@@ -87,7 +81,6 @@ class _Dialog extends StatefulWidget {
     @required this.keyword,
     @required this.hintText,
     @required this.okButtonLabel,
-    @required this.onCompleted,
   });
   @override
   _DialogState createState() => _DialogState();
@@ -97,7 +90,6 @@ class _Dialog extends StatefulWidget {
   final String keyword;
   final String hintText;
   final String okButtonLabel;
-  final OnCompleted onCompleted;
 }
 
 class _DialogState extends State<_Dialog> {

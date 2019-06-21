@@ -1,3 +1,7 @@
+## [0.1.1]
+
+- Change `TextAnswerDialog`'s return type to Future<bool> instead of accepting onCompleted callback.
+
 ## [0.1.0]
 
 - Increment version.

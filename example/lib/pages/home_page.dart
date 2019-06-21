@@ -40,8 +40,8 @@ class HomePage extends StatelessWidget {
           ),
           ListTile(
             title: const Text('TextAnswerDialog'),
-            onTap: () {
-              TextAnswerDialog.show(
+            onTap: () async {
+              final ok = await TextAnswerDialog.show(
                 context: context,
                 title: '今日は何の日？',
                 message: '今日は何の日か入力して「OK」ボタンを押してください。',
@@ -51,25 +51,24 @@ class HomePage extends StatelessWidget {
                 retryTitle: '不正解です(　´･‿･｀)',
                 retryMessage: 'リトライしますか？',
                 retryButtonLabel: 'リトライ',
-                onCompleted: (result) {
-                  if (!result) {
-                    return;
-                  }
-                  showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: const Text('正解です、帰りましょう🍻'),
-                      actions: [
-                        FlatButton(
-                          child: const Text('帰る'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ],
+              );
+              print('ok: $ok');
+              if (!ok) {
+                return;
+              }
+              await showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('正解です、帰りましょう🍻'),
+                  actions: [
+                    FlatButton(
+                      child: const Text('帰る'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                     ),
-                  );
-                },
+                  ],
+                ),
               );
             },
           )
