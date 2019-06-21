@@ -1,3 +1,7 @@
+## [0.1.1+1]
+
+- Make TextAnswerDialogResult to private
+
 ## [0.1.1]
 
 - Change `TextAnswerDialog`'s return type to Future<bool> instead of accepting onCompleted callback.

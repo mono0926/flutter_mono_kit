@@ -13,7 +13,7 @@ class TextAnswerDialog {
     @required String retryMessage,
     @required String retryButtonLabel,
   }) async {
-    final result = await showDialog<TextAnswerDialogResult>(
+    final result = await showDialog<_TextAnswerDialogResult>(
       context: context,
       builder: (context) => _Dialog(
         title: title,
@@ -25,10 +25,10 @@ class TextAnswerDialog {
     );
 
     switch (result) {
-      case TextAnswerDialogResult.cancelled:
+      case _TextAnswerDialogResult.cancelled:
         return false;
         break;
-      case TextAnswerDialogResult.incorrect:
+      case _TextAnswerDialogResult.incorrect:
         final retry = await showDialog<bool>(
             context: context,
             builder: (context) => AlertDialog(
@@ -60,7 +60,7 @@ class TextAnswerDialog {
           retryMessage: retryMessage,
           retryButtonLabel: retryButtonLabel,
         );
-      case TextAnswerDialogResult.correct:
+      case _TextAnswerDialogResult.correct:
         return true;
     }
     assert(false, 'invalid result: $result');
@@ -68,7 +68,7 @@ class TextAnswerDialog {
   }
 }
 
-enum TextAnswerDialogResult {
+enum _TextAnswerDialogResult {
   cancelled,
   correct,
   incorrect,
@@ -135,14 +135,14 @@ class _DialogState extends State<_Dialog> {
         FlatButton(
           child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
           onPressed: () =>
-              Navigator.of(context).pop(TextAnswerDialogResult.cancelled),
+              Navigator.of(context).pop(_TextAnswerDialogResult.cancelled),
         ),
         FlatButton(
           child: Text(widget.okButtonLabel),
           onPressed: () {
             Navigator.of(context).pop(_textController.text == widget.keyword
-                ? TextAnswerDialogResult.correct
-                : TextAnswerDialogResult.incorrect);
+                ? _TextAnswerDialogResult.correct
+                : _TextAnswerDialogResult.incorrect);
           },
         )
       ],
