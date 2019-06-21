@@ -1,3 +1,7 @@
+## [0.0.6]
+
+- Add `TextAnswerDialog`.
+
 ## [0.0.5]
 
 - Add `reuseChild` argument to BetterStreamBuilder/ValueObservableBuilder.
