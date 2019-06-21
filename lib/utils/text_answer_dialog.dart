@@ -27,7 +27,8 @@ class TextAnswerDialog {
     switch (result) {
       case _TextAnswerDialogResult.cancelled:
         return false;
-        break;
+      case _TextAnswerDialogResult.correct:
+        return true;
       case _TextAnswerDialogResult.incorrect:
         final retry = await showDialog<bool>(
             context: context,
@@ -60,8 +61,6 @@ class TextAnswerDialog {
           retryMessage: retryMessage,
           retryButtonLabel: retryButtonLabel,
         );
-      case _TextAnswerDialogResult.correct:
-        return true;
     }
     assert(false, 'invalid result: $result');
     return false;
