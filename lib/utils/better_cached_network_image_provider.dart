@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
-typedef void Function() StatusListener(
+typedef StatusListener = void Function(
     BetterCachedNetworkImageProviderStatus status);
 
 enum BetterCachedNetworkImageProviderStatus { none, fetching, error, fetched }
@@ -41,7 +41,7 @@ class BetterCachedNetworkImageProvider
     return MultiFrameImageStreamCompleter(
       codec: _loadAsync(key),
       scale: key.scale,
-// TODO enable information collector on next stable release of flutter
+// TODO(xxx): enable information collector on next stable release of flutter
 //      informationCollector: () sync* {
 //        yield DiagnosticsProperty<ImageProvider>(
 //          'Image provider: $this \n Image key: $key',
@@ -64,7 +64,7 @@ class BetterCachedNetworkImageProvider
       statusNotifier?.value = BetterCachedNetworkImageProviderStatus.error;
       return Future<ui.Codec>.error('Couldn\'t download or retrieve file.');
     }
-    return await _loadAsyncFromFile(key, file);
+    return _loadAsyncFromFile(key, file);
   }
 
   Future<ui.Codec> _loadAsyncFromFile(

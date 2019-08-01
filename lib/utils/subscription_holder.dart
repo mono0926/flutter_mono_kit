@@ -47,7 +47,7 @@ class SubscriptionHolder {
 
 mixin SubscriptionHolderMixin {
   @protected
-  final subscriptionHolder = SubscriptionHolder();
+  final SubscriptionHolder subscriptionHolder = SubscriptionHolder();
 
   @mustCallSuper
   void dispose() {

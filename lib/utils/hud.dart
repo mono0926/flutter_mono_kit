@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HUD {
   BuildContext hudContext;
   void show(BuildContext context) {
-    showGeneralDialog(
+    showGeneralDialog<void>(
       context: context,
       pageBuilder: (hudContext, _a, _sa) {
         this.hudContext = hudContext;
@@ -14,12 +14,12 @@ class HUD {
       barrierColor: Colors.black26,
       transitionDuration: const Duration(milliseconds: 150),
       transitionBuilder: (_c, animation, _sa, child) => FadeTransition(
-            opacity: CurvedAnimation(
-              parent: animation,
-              curve: Curves.easeOut,
-            ),
-            child: child,
-          ),
+        opacity: CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeOut,
+        ),
+        child: child,
+      ),
     );
   }
 

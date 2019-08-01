@@ -17,10 +17,10 @@ class App extends StatelessWidget {
       theme: _buildTheme(),
       home: const HomePage(title: title),
       onGenerateRoute: _router.handle,
-      onUnknownRoute: (settings) => MaterialPageRoute(
-            settings: settings,
-            builder: (context) => const NotFoundPage(),
-          ),
+      onUnknownRoute: (settings) => MaterialPageRoute<void>(
+        settings: settings,
+        builder: (context) => const NotFoundPage(),
+      ),
     );
   }
 

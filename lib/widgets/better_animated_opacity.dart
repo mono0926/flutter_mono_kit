@@ -29,7 +29,7 @@ class _AnimatedOpacityState
     _opacity = visitor(
       _opacity,
       widget.opacity,
-      (value) => Tween<double>(begin: value as double),
+      (dynamic value) => Tween<double>(begin: value as double),
     ) as Tween<double>;
   }
 

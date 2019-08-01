@@ -5,8 +5,6 @@ class Data {
     @required this.desc,
   });
 
-  final String desc;
-
   Data.small()
       : this._(
           desc: 'Flutter最高！',
@@ -37,4 +35,6 @@ class Data {
     assert(false);
     return null;
   }
+
+  final String desc;
 }

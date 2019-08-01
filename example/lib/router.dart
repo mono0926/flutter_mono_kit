@@ -14,7 +14,7 @@ class Router {
     final path = '/${segments.first}';
     final pushPage = pushRoutes[path];
     if (pushPage != null) {
-      return MaterialPageRoute(
+      return MaterialPageRoute<void>(
         settings: settings,
         builder: pushPage,
       );

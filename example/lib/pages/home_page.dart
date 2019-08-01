@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
               if (!ok) {
                 return;
               }
-              await showDialog(
+              await showDialog<void>(
                 context: context,
                 builder: (context) => AlertDialog(
                   title: const Text('正解です、帰りましょう🍻'),
