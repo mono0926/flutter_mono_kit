@@ -1,3 +1,8 @@
+## [0.3.0]
+
+- Delete RouteObserverProvider/RouteObserveMixin.
+    - Move to [route_observer_mixin](https://pub.dev/packages/route_observer_mixin) instead.
+
 ## [0.2.0]
 
 - Refactor RouteObserverProvider with provider and add its example.
