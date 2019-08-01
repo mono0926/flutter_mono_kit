@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
-
-import 'route_observer_provider.dart';
+import 'package:provider/provider.dart';
 
 mixin RouteObserverMixin<T extends StatefulWidget> on State<T>, RouteAware {
   RouteObserver<ModalRoute> _routeObserver;
@@ -13,7 +12,7 @@ mixin RouteObserverMixin<T extends StatefulWidget> on State<T>, RouteAware {
       return;
     }
     // dispose時にはcontextにアクセスできないのでこのタイミングで保持しておく
-    _routeObserver = RouteObserverProvider.of(context)
+    _routeObserver = Provider.of(context, listen: false)
       ..subscribe(
         this,
         ModalRoute.of(context),

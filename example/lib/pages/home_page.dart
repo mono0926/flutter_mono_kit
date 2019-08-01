@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/plugins/plugins.dart';
 import 'package:mono_kit/utils/utils.dart';
 
+import 'route_observer_page.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({
     Key key,
@@ -17,6 +19,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView(
         children: [
+          ListTile(
+            title: const Text('RouteObserver'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(RouteObserverPage.routeName);
+            },
+          ),
           ListTile(
             title: const Text('OverflowDetectableText'),
             trailing: const Icon(Icons.chevron_right),

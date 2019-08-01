@@ -1,3 +1,7 @@
+## [0.2.0]
+
+- Refactor RouteObserverProvider with provider and add its example.
+
 ## [0.1.1+1]
 
 - Make TextAnswerDialogResult to private

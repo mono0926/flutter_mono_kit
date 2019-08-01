@@ -1,6 +1,6 @@
 name: example
 description: A example of mono_kit.
-version: 1.0.0
+version: 1.0.0+1
 environment:
   sdk: ">=2.2.2 <3.0.0"
 dependencies:
@@ -9,6 +9,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   mono_kit:
     path: ../../mono_kit
+  simple_logger: ^1.5.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,22 +1,20 @@
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
-class RouteObserverProvider extends InheritedWidget {
-  const RouteObserverProvider({
+class RouteObserverProvider extends Provider<RouteObserver<ModalRoute>> {
+  RouteObserverProvider({
     Key key,
-    @required this.observer,
     @required Widget child,
-  }) : super(
+  }) : super.value(
+          value: RouteObserver<ModalRoute>(),
           key: key,
           child: child,
+          updateShouldNotify: (_, __) => false,
         );
 
-  final RouteObserver<ModalRoute> observer;
-
-  @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => false;
-
-  static RouteObserver<ModalRoute> of(BuildContext context) => (context
-          .ancestorInheritedElementForWidgetOfExactType(RouteObserverProvider)
-          ?.widget as RouteObserverProvider)
-      ?.observer;
+  static RouteObserver<ModalRoute> of(BuildContext context) =>
+      Provider.of<RouteObserver<ModalRoute>>(
+        context,
+        listen: false,
+      );
 }
