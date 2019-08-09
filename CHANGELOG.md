@@ -1,3 +1,13 @@
+## [0.5.0]
+
+- Delete ValueObservableBuilder's reuseChild and always call builder
+    - https://gist.github.com/mono0926/52c8441960cdd5b62aaf31d9eb336072#gistcomment-2994116
+
+## [0.4.0]
+
+- Delete BetterStreamBuilder's reuseChild and always call builder
+    - https://gist.github.com/mono0926/52c8441960cdd5b62aaf31d9eb336072#gistcomment-2994116
+
 ## [0.3.0]
 
 - Delete RouteObserverProvider/RouteObserveMixin.
