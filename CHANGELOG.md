@@ -1,3 +1,7 @@
+## [0.6.0]
+
+- Add Barrier Barrier.value named constructor which accepts bool.
+
 ## [0.5.0]
 
 - Delete ValueObservableBuilder's reuseChild and always call builder

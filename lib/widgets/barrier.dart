@@ -10,6 +10,15 @@ class Barrier extends StatelessWidget {
     @required this.showProgress,
   }) : super(key: key);
 
+  Barrier.value({
+    Key key,
+    Widget child,
+    @required bool showProgress,
+  }) : this(
+            key: key,
+            child: child,
+            showProgress: ValueNotifier<bool>(showProgress));
+
   final Widget child;
   final ValueListenable<bool> showProgress;
 
