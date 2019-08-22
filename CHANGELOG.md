@@ -1,3 +1,7 @@
+## [0.7.0]
+
+- Add ProgressMixin
+
 ## [0.6.0]
 
 - Add Barrier Barrier.value named constructor which accepts bool.

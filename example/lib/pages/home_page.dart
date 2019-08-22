@@ -1,4 +1,5 @@
 import 'package:example/pages/pages.dart';
+import 'package:example/pages/progress_mixin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/plugins/plugins.dart';
 import 'package:mono_kit/utils/utils.dart';
@@ -17,6 +18,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView(
         children: [
+          ListTile(
+            title: const Text('ProgressMixin'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(ProgressMixinPage.routeName);
+            },
+          ),
           ListTile(
             title: const Text('OverflowDetectableText'),
             trailing: const Icon(Icons.chevron_right),

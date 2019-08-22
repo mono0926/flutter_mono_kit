@@ -1,6 +1,6 @@
 name: mono_kit
 description: A collection of convenient widgets and utils made by mono. Under construction now.
-version: 0.6.0
+version: 0.7.0
 author: Masayuki Ono <mono0926@gmail.com>
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
@@ -12,6 +12,7 @@ dependencies:
   provider: ^3.0.0
   rxdart: ^0.22.0
   url_launcher: ^5.0.3
+  disposable_provider: ^1.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
