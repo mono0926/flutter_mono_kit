@@ -1,3 +1,7 @@
+## [0.8.0]
+
+- Add UnfocusOnTap
+
 ## [0.7.2]
 
 - Update dependencies

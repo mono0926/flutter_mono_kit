@@ -1,4 +1,5 @@
 import 'package:example/pages/pages.dart';
+import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/progress_mixin_page.dart';
@@ -8,6 +9,7 @@ class Router {
     OverflowDetectableTextPage.routeName: (context) =>
         const OverflowDetectableTextPage(),
     ProgressMixinPage.routeName: (context) => ProgressMixinPage.withModel(),
+    UnfocusOnTapPage.routeName: (context) => const UnfocusOnTapPage(),
   };
 
   Route handle(RouteSettings settings) {
