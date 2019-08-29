@@ -1,3 +1,4 @@
+export 'adaptive_icon.dart';
 export 'barrier.dart';
 export 'better_animated_opacity.dart';
 export 'better_fade_transtion.dart';
