@@ -1,3 +1,4 @@
+import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/pages.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ class Router {
         const OverflowDetectableTextPage(),
     ProgressMixinPage.routeName: (context) => ProgressMixinPage.withModel(),
     UnfocusOnTapPage.routeName: (context) => const UnfocusOnTapPage(),
+    LifeCycleObserverPage.routeName: (context) =>
+        LifeCycleObserverPage.wrapped(),
   };
 
   Route handle(RouteSettings settings) {
