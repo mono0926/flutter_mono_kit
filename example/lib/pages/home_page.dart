@@ -1,3 +1,4 @@
+import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/pages.dart';
 import 'package:example/pages/progress_mixin_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
@@ -19,6 +20,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView(
         children: [
+          ListTile(
+            title: const Text(LifeCycleObserverPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(LifeCycleObserverPage.routeName);
+            },
+          ),
           ListTile(
             title: const Text('ProgressMixin'),
             trailing: const Icon(Icons.chevron_right),
