@@ -17,8 +17,8 @@ class UnfocusOnTapPage extends StatelessWidget {
         child: Column(
           children: range(0, 3)
               .map(
-                (_) => Padding(
-                  padding: const EdgeInsets.symmetric(
+                (_) => const Padding(
+                  padding: EdgeInsets.symmetric(
                     vertical: 8,
                     horizontal: 16,
                   ),

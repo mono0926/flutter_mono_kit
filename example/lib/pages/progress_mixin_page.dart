@@ -51,8 +51,8 @@ class _Model extends ChangeNotifier with ProgressMixin {
   int get count => _count;
 
   void increment() {
-    executeWithProgress<void>(() async {
-      await Future<void>.delayed(Duration(seconds: 1));
+    executeWithProgress(() async {
+      await Future<void>.delayed(const Duration(seconds: 1));
       _count++;
       notifyListeners();
     });

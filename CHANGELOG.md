@@ -1,3 +1,7 @@
+## [0.9.2]
+
+- Add pedantic_mono dependency
+
 ## [0.9.1]
 
 - Add buildMode

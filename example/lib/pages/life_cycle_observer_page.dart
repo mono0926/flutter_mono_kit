@@ -44,7 +44,7 @@ class _LifeCycleObserverPageState extends State<LifeCycleObserverPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text(LifeCycleObserverPage.routeName)),
-      body: Center(
+      body: const Center(
         child: Text(
           'Close and Open',
           style: TextStyle(fontSize: 28),

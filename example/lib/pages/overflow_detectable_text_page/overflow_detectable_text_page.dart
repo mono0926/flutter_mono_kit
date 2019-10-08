@@ -67,8 +67,8 @@ class OverflowDetectableTextPage extends StatelessWidget {
           secondary: accentColor,
           primary: accentColor,
         ),
-        shape: RoundedRectangleBorder(
-          borderRadius: const BorderRadius.all(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
             Radius.circular(100),
           ),
         ),
