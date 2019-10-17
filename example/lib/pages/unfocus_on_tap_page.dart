@@ -13,23 +13,26 @@ class UnfocusOnTapPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(routeName),
       ),
-      body: UnfocusOnTap(
-        child: Column(
-          children: range(0, 3)
-              .map(
-                (_) => const Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 16,
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+      body: CenteredMaxWidth(
+        width: 560,
+        child: UnfocusOnTap(
+          child: Column(
+            children: range(0, 3)
+                .map(
+                  (_) => const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 16,
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
                     ),
                   ),
-                ),
-              )
-              .toList(),
+                )
+                .toList(),
+          ),
         ),
       ),
     );

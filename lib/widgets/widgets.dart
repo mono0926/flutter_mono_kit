@@ -3,6 +3,7 @@ export 'barrier.dart';
 export 'better_animated_opacity.dart';
 export 'better_fade_transtion.dart';
 export 'better_stream_builder.dart';
+export 'centered_max_width.dart';
 export 'itemized_text.dart';
 export 'listener/listener.dart';
 export 'overflow_detectable_text.dart';

@@ -1,3 +1,7 @@
+## [0.9.3]
+
+- Add CenteredMaxWidth
+
 ## [0.9.2]
 
 - Add pedantic_mono dependency
