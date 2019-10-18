@@ -33,67 +33,74 @@ class __BodyState extends State<_Body> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      children: [
+        _buildControlPanel(),
+        _buildScrollView(),
+      ],
+    );
+  }
+
+  Expanded _buildScrollView() {
+    return Expanded(
+      child: PagingScroll(
+        controller: _pagingScrollController,
+        scrollView: ListView.builder(
+          controller: _pagingScrollController.scrollController,
+          itemBuilder: (context, index) {
+            return Container(
+              key: ValueKey(index),
+              height: 88,
+              color: _generateColor(),
+              child: Center(
+                child: Text(
+                  index.toString(),
+                ),
+              ),
+            );
+          },
+          itemCount: 100,
+        ),
+      ),
+    );
+  }
+
+  Column _buildControlPanel() {
+    return Column(
       children: <Widget>[
-        Column(
+        ButtonBar(
+          alignment: MainAxisAlignment.center,
           children: <Widget>[
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  child: const Text('TOP'),
-                  onPressed: _pagingScrollController.scrollToTop,
-                ),
-                RaisedButton(
-                  child: const Text('UP️'),
-                  onPressed: _pagingScrollController.scrollUp,
-                ),
-                RaisedButton(
-                  child: const Text('↑'),
-                  onPressed: () =>
-                      _pagingScrollController.scrollUpOffset(_offset),
-                ),
-              ],
+            RaisedButton(
+              child: const Text('TOP'),
+              onPressed: _pagingScrollController.scrollToTop,
             ),
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  child: const Text('BOTTOM️'),
-                  onPressed: _pagingScrollController.scrollToBottom,
-                ),
-                RaisedButton(
-                  child: const Text('DOWN'),
-                  onPressed: _pagingScrollController.scrollDown,
-                ),
-                RaisedButton(
-                  child: const Text('↓'),
-                  onPressed: () =>
-                      _pagingScrollController.scrollDownOffset(_offset),
-                ),
-              ],
+            RaisedButton(
+              child: const Text('UP️'),
+              onPressed: _pagingScrollController.scrollUp,
+            ),
+            RaisedButton(
+              child: const Text('↑'),
+              onPressed: () => _pagingScrollController.scrollUpOffset(_offset),
             ),
           ],
         ),
-        Expanded(
-          child: PagingScroll(
-            controller: _pagingScrollController,
-            scrollView: ListView.builder(
-              controller: _pagingScrollController.scrollController,
-              itemBuilder: (context, index) {
-                return Container(
-                  key: ValueKey(index),
-                  height: 88,
-                  color: _generateColor(),
-                  child: Center(
-                    child: Text(
-                      index.toString(),
-                    ),
-                  ),
-                );
-              },
-              itemCount: 100,
+        ButtonBar(
+          alignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              child: const Text('BOTTOM️'),
+              onPressed: _pagingScrollController.scrollToBottom,
             ),
-          ),
+            RaisedButton(
+              child: const Text('DOWN'),
+              onPressed: _pagingScrollController.scrollDown,
+            ),
+            RaisedButton(
+              child: const Text('↓'),
+              onPressed: () =>
+                  _pagingScrollController.scrollDownOffset(_offset),
+            ),
+          ],
         ),
       ],
     );
