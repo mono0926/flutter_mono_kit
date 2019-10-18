@@ -28,9 +28,7 @@ class _Body extends StatefulWidget {
 }
 
 class __BodyState extends State<_Body> {
-  final _pagingScrollController = PagingScrollController(
-    scrollController: ScrollController(),
-  );
+  final _scrollController = PagingScrollController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,24 +41,21 @@ class __BodyState extends State<_Body> {
 
   Widget _buildScrollView() {
     return Expanded(
-      child: PagingScroll(
-        controller: _pagingScrollController,
-        scrollView: ListView.builder(
-          controller: _pagingScrollController.scrollController,
-          itemBuilder: (context, index) {
-            return Container(
-              key: ValueKey(index),
-              height: 88,
-              color: _generateColor(),
-              child: Center(
-                child: Text(
-                  index.toString(),
-                ),
+      child: ListView.builder(
+        controller: _scrollController,
+        itemBuilder: (context, index) {
+          return Container(
+            key: ValueKey(index),
+            height: 88,
+            color: _generateColor(),
+            child: Center(
+              child: Text(
+                index.toString(),
               ),
-            );
-          },
-          itemCount: 100,
-        ),
+            ),
+          );
+        },
+        itemCount: 100,
       ),
     );
   }
@@ -75,16 +70,15 @@ class __BodyState extends State<_Body> {
             children: <Widget>[
               RaisedButton(
                 child: const Text('TOP'),
-                onPressed: _pagingScrollController.scrollToTop,
+                onPressed: _scrollController.scrollToTop,
               ),
               RaisedButton(
                 child: const Text('UP️'),
-                onPressed: _pagingScrollController.scrollUp,
+                onPressed: _scrollController.scrollUp,
               ),
               RaisedButton(
                 child: const Text('↑'),
-                onPressed: () =>
-                    _pagingScrollController.scrollUpOffset(_offset),
+                onPressed: () => _scrollController.scrollUpOffset(_offset),
               ),
             ],
           ),
@@ -93,16 +87,15 @@ class __BodyState extends State<_Body> {
             children: <Widget>[
               RaisedButton(
                 child: const Text('BOTTOM️'),
-                onPressed: _pagingScrollController.scrollToBottom,
+                onPressed: _scrollController.scrollToBottom,
               ),
               RaisedButton(
                 child: const Text('DOWN'),
-                onPressed: _pagingScrollController.scrollDown,
+                onPressed: _scrollController.scrollDown,
               ),
               RaisedButton(
                 child: const Text('↓'),
-                onPressed: () =>
-                    _pagingScrollController.scrollDownOffset(_offset),
+                onPressed: () => _scrollController.scrollDownOffset(_offset),
               ),
             ],
           ),

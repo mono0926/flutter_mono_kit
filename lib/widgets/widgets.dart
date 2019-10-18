@@ -7,7 +7,6 @@ export 'centered_max_width.dart';
 export 'itemized_text.dart';
 export 'listener/listener.dart';
 export 'overflow_detectable_text.dart';
-export 'paging_scroll.dart';
 export 'ripple_effect_button.dart';
 export 'text_scale_factor.dart';
 export 'unfocus_on_tap.dart';

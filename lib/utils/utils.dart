@@ -5,5 +5,6 @@ export 'better_cached_network_image_provider.dart';
 export 'build_mode.dart';
 export 'hud.dart';
 export 'life_cycle_observer.dart';
+export 'paging_scroll_controller.dart';
 export 'progress_mixin.dart';
 export 'text_answer_dialog.dart';

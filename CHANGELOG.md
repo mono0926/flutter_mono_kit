@@ -1,3 +1,7 @@
+## [0.9.5]
+
+- Change to PagingScrollController from PagingScroll Widget
+
 ## [0.9.4]
 
 - Add PagingScroll
