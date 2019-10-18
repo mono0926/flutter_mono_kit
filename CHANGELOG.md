@@ -1,3 +1,7 @@
+## [0.9.4]
+
+- Add PagingScroll
+
 ## [0.9.3]
 
 - Add CenteredMaxWidth
