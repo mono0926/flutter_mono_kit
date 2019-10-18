@@ -15,7 +15,6 @@ class PagingScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    controller.context = context;
     return scrollView;
   }
 }
@@ -26,7 +25,8 @@ class PagingScrollController {
   });
 
   final ScrollController scrollController;
-  BuildContext context;
+  BuildContext get context =>
+      scrollController.position.context.notificationContext;
 
   static const _duration = Duration(milliseconds: 200);
   static const _curve = Curves.easeInOut;
