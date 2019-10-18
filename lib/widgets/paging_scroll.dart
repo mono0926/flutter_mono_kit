@@ -55,24 +55,32 @@ class PagingScrollController {
   }
 
   void scrollUp() {
+    scrollUpOffset(_height);
+  }
+
+  void scrollUpOffset(double offset) {
     if (_reachedToTop) {
       logger.fine('Reached to top');
       return;
     }
     scrollController.animateTo(
-      max(_minScrollExtent, scrollController.offset - _height),
+      max(_minScrollExtent, scrollController.offset - offset),
       duration: _duration,
       curve: _curve,
     );
   }
 
   void scrollDown() {
+    scrollDownOffset(_height);
+  }
+
+  void scrollDownOffset(double offset) {
     if (_reachedToBottom) {
       logger.fine('Reached to bottom');
       return;
     }
     scrollController.animateTo(
-      min(_maxScrollExtent, scrollController.offset + _height),
+      min(_maxScrollExtent, scrollController.offset + offset),
       duration: _duration,
       curve: _curve,
     );

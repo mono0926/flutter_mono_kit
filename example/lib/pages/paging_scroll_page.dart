@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 Color _generateColor() => Color(Random().nextInt(0xFFFFFFFF));
+const _offset = 44.0;
 
 class PagingScrollPage extends StatelessWidget {
   const PagingScrollPage({Key key}) : super(key: key);
@@ -33,24 +34,43 @@ class __BodyState extends State<_Body> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        ButtonBar(
-          alignment: MainAxisAlignment.spaceAround,
+        Column(
           children: <Widget>[
-            RaisedButton(
-              child: const Text('⏫️'),
-              onPressed: _pagingScrollController.scrollToTop,
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: const Text('TOP'),
+                  onPressed: _pagingScrollController.scrollToTop,
+                ),
+                RaisedButton(
+                  child: const Text('UP️'),
+                  onPressed: _pagingScrollController.scrollUp,
+                ),
+                RaisedButton(
+                  child: const Text('↑'),
+                  onPressed: () =>
+                      _pagingScrollController.scrollUpOffset(_offset),
+                ),
+              ],
             ),
-            RaisedButton(
-              child: const Text('⬆️'),
-              onPressed: _pagingScrollController.scrollUp,
-            ),
-            RaisedButton(
-              child: const Text('⬇️'),
-              onPressed: _pagingScrollController.scrollDown,
-            ),
-            RaisedButton(
-              child: const Text('⏬️'),
-              onPressed: _pagingScrollController.scrollToBottom,
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: const Text('BOTTOM️'),
+                  onPressed: _pagingScrollController.scrollToBottom,
+                ),
+                RaisedButton(
+                  child: const Text('DOWN'),
+                  onPressed: _pagingScrollController.scrollDown,
+                ),
+                RaisedButton(
+                  child: const Text('↓'),
+                  onPressed: () =>
+                      _pagingScrollController.scrollDownOffset(_offset),
+                ),
+              ],
             ),
           ],
         ),
