@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-Color _generateColor() => Color(Random().nextInt(0xFFFFFFFF));
+Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
 const _offset = 44.0;
 
 class PagingScrollPage extends StatelessWidget {
@@ -14,6 +14,7 @@ class PagingScrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(title: const Text(PagingScrollPage.routeName)),
       body: const _Body(),
     );
