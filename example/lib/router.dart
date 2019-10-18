@@ -1,5 +1,6 @@
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/pages.dart';
+import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class Router {
     UnfocusOnTapPage.routeName: (context) => const UnfocusOnTapPage(),
     LifeCycleObserverPage.routeName: (context) =>
         LifeCycleObserverPage.wrapped(),
+    PagingScrollPage.routeName: (context) => const PagingScrollPage(),
   };
 
   Route handle(RouteSettings settings) {

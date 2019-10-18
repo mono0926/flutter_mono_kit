@@ -1,5 +1,6 @@
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/pages.dart';
+import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/progress_mixin_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
@@ -95,7 +96,14 @@ class HomePage extends StatelessWidget {
                 ),
               );
             },
-          )
+          ),
+          ListTile(
+            title: const Text(PagingScrollPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(PagingScrollPage.routeName);
+            },
+          ),
         ],
       ),
     );

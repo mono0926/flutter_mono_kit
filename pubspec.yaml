@@ -13,6 +13,7 @@ dependencies:
   url_launcher: ^5.1.2
   disposable_provider: ^1.1.0
   subscription_holder: ^1.0.0
+  simple_logger: ^1.5.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
