@@ -40,7 +40,7 @@ class __BodyState extends State<_Body> {
     );
   }
 
-  Expanded _buildScrollView() {
+  Widget _buildScrollView() {
     return Expanded(
       child: PagingScroll(
         controller: _pagingScrollController,
@@ -64,45 +64,49 @@ class __BodyState extends State<_Body> {
     );
   }
 
-  Column _buildControlPanel() {
-    return Column(
-      children: <Widget>[
-        ButtonBar(
-          alignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: const Text('TOP'),
-              onPressed: _pagingScrollController.scrollToTop,
-            ),
-            RaisedButton(
-              child: const Text('UP️'),
-              onPressed: _pagingScrollController.scrollUp,
-            ),
-            RaisedButton(
-              child: const Text('↑'),
-              onPressed: () => _pagingScrollController.scrollUpOffset(_offset),
-            ),
-          ],
-        ),
-        ButtonBar(
-          alignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: const Text('BOTTOM️'),
-              onPressed: _pagingScrollController.scrollToBottom,
-            ),
-            RaisedButton(
-              child: const Text('DOWN'),
-              onPressed: _pagingScrollController.scrollDown,
-            ),
-            RaisedButton(
-              child: const Text('↓'),
-              onPressed: () =>
-                  _pagingScrollController.scrollDownOffset(_offset),
-            ),
-          ],
-        ),
-      ],
+  Widget _buildControlPanel() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                child: const Text('TOP'),
+                onPressed: _pagingScrollController.scrollToTop,
+              ),
+              RaisedButton(
+                child: const Text('UP️'),
+                onPressed: _pagingScrollController.scrollUp,
+              ),
+              RaisedButton(
+                child: const Text('↑'),
+                onPressed: () =>
+                    _pagingScrollController.scrollUpOffset(_offset),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RaisedButton(
+                child: const Text('BOTTOM️'),
+                onPressed: _pagingScrollController.scrollToBottom,
+              ),
+              RaisedButton(
+                child: const Text('DOWN'),
+                onPressed: _pagingScrollController.scrollDown,
+              ),
+              RaisedButton(
+                child: const Text('↓'),
+                onPressed: () =>
+                    _pagingScrollController.scrollDownOffset(_offset),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
