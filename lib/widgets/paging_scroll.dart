@@ -6,8 +6,8 @@ import 'package:mono_kit/utils/logger.dart';
 class PagingScroll extends StatelessWidget {
   const PagingScroll({
     Key key,
-    this.scrollView,
-    this.controller,
+    @required this.scrollView,
+    @required this.controller,
   }) : super(key: key);
 
   final ScrollView scrollView;
