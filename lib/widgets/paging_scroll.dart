@@ -25,14 +25,14 @@ class PagingScrollController {
   });
 
   final ScrollController scrollController;
-  BuildContext get context =>
+  BuildContext get _context =>
       scrollController.position.context.notificationContext;
 
   static const _duration = Duration(milliseconds: 200);
   static const _curve = Curves.easeInOut;
 
   RenderBox get _renderBox {
-    final box = context?.findRenderObject() as RenderBox;
+    final box = _context?.findRenderObject() as RenderBox;
     return box is RenderBox ? box : null;
   }
 
