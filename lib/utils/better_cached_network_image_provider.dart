@@ -37,7 +37,7 @@ class BetterCachedNetworkImageProvider
       SynchronousFuture<BetterCachedNetworkImageProvider>(this);
 
   @override
-  ImageStreamCompleter load(BetterCachedNetworkImageProvider key) {
+  ImageStreamCompleter load(BetterCachedNetworkImageProvider key, decode) {
     return MultiFrameImageStreamCompleter(
       codec: _loadAsync(key),
       scale: key.scale,
