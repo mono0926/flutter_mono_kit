@@ -29,12 +29,18 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    FocusScope.of(context).requestFocus(_focusNode);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Shortcuts(
       shortcuts: _disabledNavigationKeys,
       child: RawKeyboardListener(
         focusNode: _focusNode,
-        autofocus: true,
         onKey: (event) {
           if (event.runtimeType == RawKeyDownEvent) {
             final logicalKey = event.logicalKey;
