@@ -32,11 +32,11 @@ class PagingScrollController extends ScrollController {
     );
   }
 
-  void scrollUp() {
-    scrollUpOffset(_height);
+  void scrollToPreviousPage() {
+    scrollUp(offset: _height);
   }
 
-  void scrollUpOffset(double offset) {
+  void scrollUp({double offset = 44}) {
     if (_reachedToTop) {
       logger.fine('Reached to top');
       return;
@@ -48,11 +48,11 @@ class PagingScrollController extends ScrollController {
     );
   }
 
-  void scrollDown() {
-    scrollDownOffset(_height);
+  void scrollToNextPage() {
+    scrollDown(offset: _height);
   }
 
-  void scrollDownOffset(double offset) {
+  void scrollDown({double offset = 44}) {
     if (_reachedToBottom) {
       logger.fine('Reached to bottom');
       return;
