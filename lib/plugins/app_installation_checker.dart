@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -9,6 +10,9 @@ class AppInstallationChecker {
   static const _platform = MethodChannel(kMethodChannelName);
 
   Future<bool> isInstalled(String packageName) async {
+    if (kIsWeb) {
+      return null;
+    }
     if (Platform.isIOS) {
       return canLaunch('$packageName://');
     }
