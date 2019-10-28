@@ -1,11 +1,11 @@
 import 'package:example/pages/life_cycle_observer_page.dart';
-import 'package:example/pages/pages.dart';
+import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/progress_mixin_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
-import 'package:mono_kit/utils/utils.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
