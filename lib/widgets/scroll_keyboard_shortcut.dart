@@ -32,7 +32,9 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    FocusScope.of(context).requestFocus(_focusNode);
+    if (ModalRoute.of(context).isCurrent) {
+      FocusScope.of(context).requestFocus(_focusNode);
+    }
   }
 
   @override
