@@ -70,12 +70,12 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
       ),
     );
   }
-}
 
-final Map<LogicalKeySet, Intent> _disabledNavigationKeys =
-    <LogicalKeySet, Intent>{
-  LogicalKeySet(LogicalKeyboardKey.arrowUp): Intent.doNothing,
-  LogicalKeySet(LogicalKeyboardKey.arrowDown): Intent.doNothing,
-  LogicalKeySet(LogicalKeyboardKey.arrowLeft): Intent.doNothing,
-  LogicalKeySet(LogicalKeyboardKey.arrowRight): Intent.doNothing,
-};
+  final Map<LogicalKeySet, Intent> _disabledNavigationKeys =
+      <LogicalKeySet, Intent>{
+    LogicalKeySet(LogicalKeyboardKey.arrowUp): Intent.doNothing,
+    LogicalKeySet(LogicalKeyboardKey.arrowDown): Intent.doNothing,
+    LogicalKeySet(LogicalKeyboardKey.arrowLeft): Intent.doNothing,
+    LogicalKeySet(LogicalKeyboardKey.arrowRight): Intent.doNothing,
+  };
+}
