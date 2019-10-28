@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -31,11 +32,14 @@ class __BodyState extends State<_Body> {
   final _scrollController = PagingScrollController();
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _buildControlPanel(),
-        _buildScrollView(),
-      ],
+    return ScrollKeyboardShortcut(
+      scrollController: _scrollController,
+      child: Column(
+        children: [
+          _buildControlPanel(),
+          _buildScrollView(),
+        ],
+      ),
     );
   }
 
@@ -74,11 +78,11 @@ class __BodyState extends State<_Body> {
               ),
               RaisedButton(
                 child: const Text('UP️'),
-                onPressed: _scrollController.scrollUp,
+                onPressed: _scrollController.scrollToPreviousPage,
               ),
               RaisedButton(
                 child: const Text('↑'),
-                onPressed: () => _scrollController.scrollUpOffset(_offset),
+                onPressed: () => _scrollController.scrollUp(offset: _offset),
               ),
             ],
           ),
@@ -91,11 +95,11 @@ class __BodyState extends State<_Body> {
               ),
               RaisedButton(
                 child: const Text('DOWN'),
-                onPressed: _scrollController.scrollDown,
+                onPressed: _scrollController.scrollToNextPage,
               ),
               RaisedButton(
                 child: const Text('↓'),
-                onPressed: () => _scrollController.scrollDownOffset(_offset),
+                onPressed: () => _scrollController.scrollDown(offset: _offset),
               ),
             ],
           ),
