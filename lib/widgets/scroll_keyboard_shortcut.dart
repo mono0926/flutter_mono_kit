@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/utils/logger.dart';
+import 'package:rxdart/rxdart.dart';
 
 class ScrollKeyboardShortcut extends StatefulWidget {
   const ScrollKeyboardShortcut({
@@ -21,12 +22,25 @@ class ScrollKeyboardShortcut extends StatefulWidget {
 
 class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   final _focusNode = FocusNode();
+  final _onKeySubject = PublishSubject<RawKeyEvent>();
+  final _subscriptionHolder = SubscriptionHolder();
   PagingScrollController get _scrollController => widget.scrollController;
   double get _stepOffset => widget.stepOffset;
 
   @override
+  void initState() {
+    super.initState();
+
+    _subscriptionHolder.add(
+      _onKeySubject.throttleTime(kPagingScrollDuration).listen(_onKey),
+    );
+  }
+
+  @override
   void dispose() {
     _focusNode.dispose();
+    _onKeySubject.close();
+
     super.dispose();
   }
 
@@ -45,7 +59,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
       shortcuts: _disabledNavigationKeys,
       child: RawKeyboardListener(
         focusNode: _focusNode,
-        onKey: _onKey,
+        onKey: (event) => _onKeySubject.add(event),
         child: widget.child,
       ),
     );

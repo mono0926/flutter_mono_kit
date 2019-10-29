@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/utils/logger.dart';
 
-const _duration = Duration(milliseconds: 200);
+const kPagingScrollDuration = Duration(milliseconds: 200);
 const _curve = Curves.easeInOut;
 const kPagingScrollOffset = 44.0;
 
@@ -28,7 +28,7 @@ class PagingScrollController extends ScrollController {
     }
     animateTo(
       _minScrollExtent,
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
@@ -44,7 +44,7 @@ class PagingScrollController extends ScrollController {
     }
     animateTo(
       max(_minScrollExtent, this.offset - offset),
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
@@ -60,7 +60,7 @@ class PagingScrollController extends ScrollController {
     }
     animateTo(
       min(_maxScrollExtent, this.offset + offset),
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
@@ -72,7 +72,7 @@ class PagingScrollController extends ScrollController {
     }
     animateTo(
       _maxScrollExtent,
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
