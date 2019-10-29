@@ -135,7 +135,7 @@ packages:
     description:
       path: "."
       ref: develop
-      resolved-ref: "6c3fdc4f2b01b19a8ef73f146c1f8d0e62ced458"
+      resolved-ref: ce47322983f6a6d9d484af5ff8e23f7aeef82fea
       url: "https://github.com/mono0926/flutter_mono_kit.git"
     source: git
     version: "0.9.5"

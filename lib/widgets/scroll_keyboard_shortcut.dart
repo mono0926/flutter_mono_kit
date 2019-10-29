@@ -66,7 +66,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   }
 
   void _onKey(RawKeyEvent event) {
-    if (event.runtimeType != RawKeyDownEvent) {
+    if (event is! RawKeyDownEvent) {
       return;
     }
     final logicalKey = event.logicalKey;
