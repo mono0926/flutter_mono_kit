@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
-const _offset = 44.0;
 
 class PagingScrollPage extends StatelessWidget {
   const PagingScrollPage({Key key}) : super(key: key);
@@ -82,7 +81,7 @@ class __BodyState extends State<_Body> {
               ),
               RaisedButton(
                 child: const Text('↑'),
-                onPressed: () => _scrollController.scrollUp(offset: _offset),
+                onPressed: _scrollController.scrollUp,
               ),
             ],
           ),
@@ -99,7 +98,7 @@ class __BodyState extends State<_Body> {
               ),
               RaisedButton(
                 child: const Text('↓'),
-                onPressed: () => _scrollController.scrollDown(offset: _offset),
+                onPressed: _scrollController.scrollDown,
               ),
             ],
           ),

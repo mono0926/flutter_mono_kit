@@ -8,7 +8,7 @@ class ScrollKeyboardShortcut extends StatefulWidget {
     Key key,
     @required this.scrollController,
     @required this.child,
-    this.stepOffset = 44,
+    this.stepOffset = kPagingScrollOffset,
   }) : super(key: key);
 
   final Widget child;
@@ -21,6 +21,8 @@ class ScrollKeyboardShortcut extends StatefulWidget {
 
 class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   final _focusNode = FocusNode();
+  PagingScrollController get _scrollController => widget.scrollController;
+  double get _stepOffset => widget.stepOffset;
 
   @override
   void dispose() {
@@ -43,32 +45,35 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
       shortcuts: _disabledNavigationKeys,
       child: RawKeyboardListener(
         focusNode: _focusNode,
-        onKey: (event) {
-          if (event.runtimeType == RawKeyDownEvent) {
-            final logicalKey = event.logicalKey;
-            logger.fine('keyId: $logicalKey');
-            if (logicalKey == LogicalKeyboardKey.arrowUp) {
-              widget.scrollController.scrollUp(offset: widget.stepOffset);
-            } else if (logicalKey == LogicalKeyboardKey.arrowDown) {
-              widget.scrollController.scrollDown(offset: widget.stepOffset);
-            } else if (logicalKey == LogicalKeyboardKey.pageUp) {
-              widget.scrollController.scrollToPreviousPage();
-            } else if (logicalKey == LogicalKeyboardKey.pageDown) {
-              widget.scrollController.scrollToNextPage();
-            } else if (logicalKey == LogicalKeyboardKey.home) {
-              widget.scrollController.scrollToTop();
-            } else if (logicalKey == LogicalKeyboardKey.end) {
-              widget.scrollController.scrollToBottom();
-            } else if (logicalKey == LogicalKeyboardKey.space) {
-              event.isShiftPressed
-                  ? widget.scrollController.scrollToPreviousPage()
-                  : widget.scrollController.scrollToNextPage();
-            }
-          }
-        },
+        onKey: _onKey,
         child: widget.child,
       ),
     );
+  }
+
+  void _onKey(RawKeyEvent event) {
+    if (event.runtimeType != RawKeyDownEvent) {
+      return;
+    }
+    final logicalKey = event.logicalKey;
+    logger.fine('keyId: $logicalKey');
+    if (logicalKey == LogicalKeyboardKey.arrowUp) {
+      _scrollController.scrollUp(offset: _stepOffset);
+    } else if (logicalKey == LogicalKeyboardKey.arrowDown) {
+      _scrollController.scrollDown(offset: _stepOffset);
+    } else if (logicalKey == LogicalKeyboardKey.pageUp) {
+      _scrollController.scrollToPreviousPage();
+    } else if (logicalKey == LogicalKeyboardKey.pageDown) {
+      _scrollController.scrollToNextPage();
+    } else if (logicalKey == LogicalKeyboardKey.home) {
+      _scrollController.scrollToTop();
+    } else if (logicalKey == LogicalKeyboardKey.end) {
+      _scrollController.scrollToBottom();
+    } else if (logicalKey == LogicalKeyboardKey.space) {
+      event.isShiftPressed
+          ? _scrollController.scrollToPreviousPage()
+          : _scrollController.scrollToNextPage();
+    }
   }
 
   final Map<LogicalKeySet, Intent> _disabledNavigationKeys =

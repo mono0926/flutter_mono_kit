@@ -5,6 +5,7 @@ import 'package:mono_kit/utils/logger.dart';
 
 const _duration = Duration(milliseconds: 200);
 const _curve = Curves.easeInOut;
+const kPagingScrollOffset = 44.0;
 
 // TODO(mono): Refactor by using extension
 class PagingScrollController extends ScrollController {
@@ -36,7 +37,7 @@ class PagingScrollController extends ScrollController {
     scrollUp(offset: _height);
   }
 
-  void scrollUp({double offset = 44}) {
+  void scrollUp({double offset = kPagingScrollOffset}) {
     if (_reachedToTop) {
       logger.fine('Reached to top');
       return;
@@ -52,7 +53,7 @@ class PagingScrollController extends ScrollController {
     scrollDown(offset: _height);
   }
 
-  void scrollDown({double offset = 44}) {
+  void scrollDown({double offset = kPagingScrollOffset}) {
     if (_reachedToBottom) {
       logger.fine('Reached to bottom');
       return;
