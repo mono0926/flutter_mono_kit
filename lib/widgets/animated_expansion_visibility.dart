@@ -6,9 +6,11 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
     @required this.child,
     @required this.isVisible,
     Duration duration,
+    Curve curve,
   }) : super(
           key: key,
           duration: duration ?? const Duration(milliseconds: 200),
+          curve: curve,
         );
 
   final Widget child;
