@@ -20,23 +20,24 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
         title: const Text(BannerVisibilityPage.routeName),
       ),
       body: Column(
-        children: <Widget>[
+        children: [
           ValueListenableBuilder<bool>(
             valueListenable: _isVisible,
             builder: (context, isVisible, child) {
               return AnimatedExpansionVisibility(
                 isVisible: isVisible,
-                child: MaterialBanner(
-                  content: const Text('This is a banner. Dismiss me'),
-                  actions: <Widget>[
-                    FlatButton(
-                      onPressed: () async => _isVisible.value = false,
-                      child: const Text('DISMISS'),
-                    ),
-                  ],
-                ),
+                child: child,
               );
             },
+            child: MaterialBanner(
+              content: const Text('This is a banner. Dismiss me'),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () async => _isVisible.value = false,
+                  child: const Text('DISMISS'),
+                ),
+              ],
+            ),
           ),
           Container(
             height: 200,
