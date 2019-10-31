@@ -1,4 +1,5 @@
 export 'adaptive_icon.dart';
+export 'animated_expansion_visibility.dart';
 export 'barrier.dart';
 export 'better_animated_opacity.dart';
 export 'better_fade_transtion.dart';
