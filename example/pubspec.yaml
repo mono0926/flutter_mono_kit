@@ -8,9 +8,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   mono_kit:
-    git:
-      url: https://github.com/mono0926/flutter_mono_kit.git
-      ref: develop
+    path: ../../flutter_mono_kit
   simple_logger: ^1.5.1
 dev_dependencies:
   flutter_test:

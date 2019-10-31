@@ -133,11 +133,9 @@ packages:
   mono_kit:
     dependency: "direct main"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: b5e002e5c8ee3de3fbbf18bf4918e11173a4af53
-      url: "https://github.com/mono0926/flutter_mono_kit.git"
-    source: git
+      path: ".."
+      relative: true
+    source: path
     version: "0.9.5"
   path:
     dependency: transitive
