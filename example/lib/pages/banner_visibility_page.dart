@@ -26,6 +26,7 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
             builder: (context, isVisible, child) {
               return AnimatedExpansionVisibility(
                 isVisible: isVisible,
+                curve: Curves.ease,
                 child: child,
               );
             },
