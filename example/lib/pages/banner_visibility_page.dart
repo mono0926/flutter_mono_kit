@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 
 class BannerVisibilityPage extends StatelessWidget {
   const BannerVisibilityPage({Key key}) : super(key: key);
@@ -52,6 +53,10 @@ class __BodyState extends State<_Body> {
           color: Colors.blue,
           child: const Text('A Container'),
         ),
+        RaisedButton(
+          child: Text('TOGGLE'),
+          onPressed: () => _isVisible.value = !_isVisible.value,
+        )
       ],
     );
   }
