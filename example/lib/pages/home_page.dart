@@ -1,4 +1,5 @@
 import 'package:example/pages/banner_visibility_page.dart';
+import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
@@ -110,6 +111,13 @@ class HomePage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).pushNamed(BannerVisibilityPage.routeName);
+            },
+          ),
+          ListTile(
+            title: const Text(ColorExPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(ColorExPage.routeName);
             },
           ),
         ],

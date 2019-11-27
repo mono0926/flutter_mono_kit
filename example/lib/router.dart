@@ -1,4 +1,5 @@
 import 'package:example/pages/banner_visibility_page.dart';
+import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
@@ -17,6 +18,7 @@ class Router {
         LifeCycleObserverPage.wrapped(),
     PagingScrollPage.routeName: (context) => const PagingScrollPage(),
     BannerVisibilityPage.routeName: (context) => const BannerVisibilityPage(),
+    ColorExPage.routeName: (context) => const ColorExPage(),
   };
 
   Route handle(RouteSettings settings) {
