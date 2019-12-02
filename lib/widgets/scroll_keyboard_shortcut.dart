@@ -59,7 +59,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
       shortcuts: _disabledNavigationKeys,
       child: RawKeyboardListener(
         focusNode: _focusNode,
-        onKey: (event) => _onKeySubject.add(event),
+        onKey: _onKeySubject.add,
         child: widget.child,
       ),
     );
