@@ -1,11 +1,13 @@
+import 'package:example/pages/banner_visibility_page.dart';
+import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
-import 'package:example/pages/pages.dart';
+import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/progress_mixin_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
-import 'package:mono_kit/utils/utils.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -102,6 +104,20 @@ class HomePage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).pushNamed(PagingScrollPage.routeName);
+            },
+          ),
+          ListTile(
+            title: const Text(BannerVisibilityPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(BannerVisibilityPage.routeName);
+            },
+          ),
+          ListTile(
+            title: const Text(ColorExPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(ColorExPage.routeName);
             },
           ),
         ],

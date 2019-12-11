@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
-const _offset = 44.0;
 
 class PagingScrollPage extends StatelessWidget {
   const PagingScrollPage({Key key}) : super(key: key);
@@ -31,11 +30,14 @@ class __BodyState extends State<_Body> {
   final _scrollController = PagingScrollController();
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _buildControlPanel(),
-        _buildScrollView(),
-      ],
+    return ScrollKeyboardShortcut(
+      scrollController: _scrollController,
+      child: Column(
+        children: [
+          _buildControlPanel(),
+          _buildScrollView(),
+        ],
+      ),
     );
   }
 
@@ -74,11 +76,11 @@ class __BodyState extends State<_Body> {
               ),
               RaisedButton(
                 child: const Text('UP️'),
-                onPressed: _scrollController.scrollUp,
+                onPressed: _scrollController.scrollToPreviousPage,
               ),
               RaisedButton(
                 child: const Text('↑'),
-                onPressed: () => _scrollController.scrollUpOffset(_offset),
+                onPressed: _scrollController.scrollUp,
               ),
             ],
           ),
@@ -91,11 +93,11 @@ class __BodyState extends State<_Body> {
               ),
               RaisedButton(
                 child: const Text('DOWN'),
-                onPressed: _scrollController.scrollDown,
+                onPressed: _scrollController.scrollToNextPage,
               ),
               RaisedButton(
                 child: const Text('↓'),
-                onPressed: () => _scrollController.scrollDownOffset(_offset),
+                onPressed: _scrollController.scrollDown,
               ),
             ],
           ),

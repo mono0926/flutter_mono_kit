@@ -1,4 +1,4 @@
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 
 class Data {
   Data._({
@@ -17,11 +17,9 @@ class Data {
   // Copied from https://ja.wikipedia.org/wiki/Flutter
   Data.large()
       : this._(
-          desc: 'Flutter（フラッター）は、Googleによって開発されたフリーかつ'
-              'オープンソースのモバイルアプリケーションフレームワークである。'
-              'FlutterはAndroidやiOS向けのアプリケーションの開発に利用されている。'
-              'Fuchsiaではアプリケーションの開発は主にFlutterを利用して行われている[4]。',
-        );
+            desc: 'Flutter（フラッター）は、Googleによって開発されたフリーかつ'
+                    'オープンソースのモバイルアプリケーションフレームワークである。' *
+                2);
 
   factory Data.index(int index) {
     switch (index % 3) {

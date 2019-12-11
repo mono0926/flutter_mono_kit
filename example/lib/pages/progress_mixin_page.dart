@@ -7,7 +7,7 @@ class ProgressMixinPage extends StatelessWidget {
 
   static Widget withModel() {
     return ChangeNotifierProvider(
-      builder: (context) => _Model(),
+      create: (context) => _Model(),
       child: const ProgressMixinPage._(),
     );
   }

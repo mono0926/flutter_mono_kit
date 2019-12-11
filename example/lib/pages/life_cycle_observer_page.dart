@@ -13,7 +13,7 @@ class LifeCycleObserverPage extends StatefulWidget {
   static Widget wrapped() {
     // 実際にはMaterialAppの上に置くイメージ
     return DisposableProvider(
-      builder: (context) => LifeCycleObserver(),
+      create: (context) => LifeCycleObserver(),
       child: const LifeCycleObserverPage._(),
     );
   }

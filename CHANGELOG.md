@@ -1,3 +1,8 @@
+## [0.10.0]
+
+- Support Flutter 1.12.13 or higher
+- Add several utilities
+
 ## [0.9.5]
 
 - Change to PagingScrollController from PagingScroll Widget

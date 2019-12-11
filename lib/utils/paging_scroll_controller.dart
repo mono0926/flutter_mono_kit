@@ -3,11 +3,14 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/utils/logger.dart';
 
-const _duration = Duration(milliseconds: 200);
+const kPagingScrollDuration = Duration(milliseconds: 200);
 const _curve = Curves.easeInOut;
+const kPagingScrollOffset = 44.0;
 
-// TODO(mono): Refactor by using extension
-class PagingScrollController extends ScrollController {
+class PagingScrollController extends ScrollController
+    with PagingScrollControllerMixin {}
+
+mixin PagingScrollControllerMixin on ScrollController {
   BuildContext get _context => position.context.notificationContext;
   RenderBox get _renderBox {
     final box = _context?.findRenderObject() as RenderBox;
@@ -27,39 +30,39 @@ class PagingScrollController extends ScrollController {
     }
     animateTo(
       _minScrollExtent,
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
 
-  void scrollUp() {
-    scrollUpOffset(_height);
+  void scrollToPreviousPage() {
+    scrollUp(offset: _height);
   }
 
-  void scrollUpOffset(double offset) {
+  void scrollUp({double offset = kPagingScrollOffset}) {
     if (_reachedToTop) {
       logger.fine('Reached to top');
       return;
     }
     animateTo(
       max(_minScrollExtent, this.offset - offset),
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
 
-  void scrollDown() {
-    scrollDownOffset(_height);
+  void scrollToNextPage() {
+    scrollDown(offset: _height);
   }
 
-  void scrollDownOffset(double offset) {
+  void scrollDown({double offset = kPagingScrollOffset}) {
     if (_reachedToBottom) {
       logger.fine('Reached to bottom');
       return;
     }
     animateTo(
       min(_maxScrollExtent, this.offset + offset),
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
@@ -71,7 +74,7 @@ class PagingScrollController extends ScrollController {
     }
     animateTo(
       _maxScrollExtent,
-      duration: _duration,
+      duration: kPagingScrollDuration,
       curve: _curve,
     );
   }
