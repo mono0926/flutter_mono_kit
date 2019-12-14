@@ -12,8 +12,8 @@ class SubscriptionHolder {
     _subscriptions.add(subscription);
   }
 
-  ValueObservable<S> publishValueConnecting<T, S>(
-    ValueObservable<T> observable,
+  ValueStream<S> publishValueConnecting<T, S>(
+    ValueStream<T> observable,
     FutureOr<S> Function(T value) f,
   ) {
     final v = f(observable.value);
@@ -27,7 +27,7 @@ class SubscriptionHolder {
   }
 
   ValueListenable<S> consumeAsListenable<T, S>(
-    ValueObservable<T> observable,
+    ValueStream<T> observable,
     FutureOr<S> Function(T value) f,
   ) {
     final v = f(observable.value);

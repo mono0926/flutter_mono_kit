@@ -1,3 +1,7 @@
-## [1.0.0]
+## 1.1.0
 
-* Initial release.
+- Upgrade dependencies
+
+## 1.0.0
+
+- Initial release.

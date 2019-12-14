@@ -11,7 +11,7 @@ class ValueObservableBuilder<T> extends StatefulWidget {
     this.child,
   }) : super(key: key);
 
-  final ValueObservable<T> stream;
+  final ValueStream<T> stream;
   final AsyncChildWidgetBuilder<T> builder;
   final Widget child;
 

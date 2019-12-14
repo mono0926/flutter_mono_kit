@@ -1,3 +1,7 @@
+## [0.11.0]
+
+- Upgrade dependencies
+
 ## [0.10.0]
 
 - Support Flutter 1.12.13 or higher

@@ -21,7 +21,7 @@ class LifeCycleObserver with WidgetsBindingObserver implements Disposable {
   final _binding = WidgetsBinding.instance;
   BehaviorSubject<AppLifecycleState> _state;
 
-  ValueObservable<AppLifecycleState> get stateValue => _state;
+  ValueStream<AppLifecycleState> get stateValue => _state;
   Stream<AppLifecycleState> get stateStream => stateValue.skip(1);
 
   @override

@@ -141,7 +141,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.5"
+    version: "1.5.1"
   pedantic:
     dependency: transitive
     description:
@@ -177,6 +177,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.1"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   provider:
     dependency: transitive
     description:
@@ -197,7 +204,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.22.6"
+    version: "0.23.1"
   simple_logger:
     dependency: "direct main"
     description:
@@ -223,7 +230,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.7+3"
+    version: "1.1.8"
   stack_trace:
     dependency: transitive
     description:
@@ -251,14 +258,14 @@ packages:
       name: subscription_holder
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.0"
   synchronized:
     dependency: transitive
     description:
       name: synchronized
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0+2"
+    version: "2.1.1"
   term_glyph:
     dependency: transitive
     description:
@@ -293,28 +300,28 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.0"
+    version: "5.4.1"
   url_launcher_macos:
     dependency: transitive
     description:
       name: url_launcher_macos
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.1+2"
   url_launcher_platform_interface:
     dependency: transitive
     description:
       name: url_launcher_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.4"
   url_launcher_web:
     dependency: transitive
     description:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0+1"
+    version: "0.1.0+2"
   uuid:
     dependency: transitive
     description:
