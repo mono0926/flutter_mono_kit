@@ -1,3 +1,7 @@
+## [0.12.0]
+
+- Update provider to 4.0.0
+
 ## [0.11.1]
 
 - Add valueColor to Barrier
