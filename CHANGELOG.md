@@ -1,3 +1,7 @@
+## [0.11.1]
+
+- Add valueColor to Barrier
+
 ## [0.11.0]
 
 - Upgrade dependencies

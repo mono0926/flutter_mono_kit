@@ -8,6 +8,7 @@ class Barrier extends StatelessWidget {
     Key key,
     @required this.child,
     @required this.showProgress,
+    this.valueColor,
   }) : super(key: key);
 
   Barrier.value({
@@ -21,6 +22,7 @@ class Barrier extends StatelessWidget {
 
   final Widget child;
   final ValueListenable<bool> showProgress;
+  final Color valueColor;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,10 @@ class Barrier extends StatelessWidget {
             visible: showProgress,
             child: Container(
               color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
-              child: const Center(
-                child: CircularProgressIndicator(),
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation(valueColor),
+                ),
               ),
             ),
           ),
