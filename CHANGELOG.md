@@ -1,3 +1,7 @@
+## [0.12.1]
+
+- Add TextInputDialog
+
 ## [0.12.0]
 
 - Update provider to 4.0.0

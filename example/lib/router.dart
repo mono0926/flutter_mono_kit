@@ -3,6 +3,7 @@ import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
+import 'package:example/pages/text_input_dialog_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class Router {
     PagingScrollPage.routeName: (context) => const PagingScrollPage(),
     BannerVisibilityPage.routeName: (context) => const BannerVisibilityPage(),
     ColorExPage.routeName: (context) => const ColorExPage(),
+    TextInputDialogPage.routeName: (context) => const TextInputDialogPage(),
   };
 
   Route handle(RouteSettings settings) {

@@ -4,6 +4,7 @@ import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/progress_mixin_page.dart';
+import 'package:example/pages/text_input_dialog_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
@@ -118,6 +119,13 @@ class HomePage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).pushNamed(ColorExPage.routeName);
+            },
+          ),
+          ListTile(
+            title: const Text(TextInputDialogPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(TextInputDialogPage.routeName);
             },
           ),
         ],
