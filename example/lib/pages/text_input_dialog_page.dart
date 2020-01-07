@@ -15,7 +15,7 @@ class TextInputDialogPage extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          child: Text('Open Dialog'),
+          child: const Text('Open Dialog'),
           onPressed: () {
             showDialog(
               context: context,
