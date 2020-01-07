@@ -7,6 +7,7 @@ export 'better_stream_builder.dart';
 export 'centered_max_width.dart';
 export 'itemized_text.dart';
 export 'listener/listener.dart';
+export 'max_width_padding_builder.dart';
 export 'overflow_detectable_text.dart';
 export 'ripple_effect_button.dart';
 export 'scroll_keyboard_shortcut.dart';

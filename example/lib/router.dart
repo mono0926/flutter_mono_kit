@@ -1,6 +1,7 @@
 import 'package:example/pages/banner_visibility_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
+import 'package:example/pages/max_width_padding_builder_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/text_input_dialog_page.dart';
@@ -21,6 +22,8 @@ class Router {
     BannerVisibilityPage.routeName: (context) => const BannerVisibilityPage(),
     ColorExPage.routeName: (context) => const ColorExPage(),
     TextInputDialogPage.routeName: (context) => const TextInputDialogPage(),
+    MaxWidthPaddingBuilderPage.routeName: (context) =>
+        const MaxWidthPaddingBuilderPage(),
   };
 
   Route handle(RouteSettings settings) {

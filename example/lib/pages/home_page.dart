@@ -1,6 +1,7 @@
 import 'package:example/pages/banner_visibility_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
+import 'package:example/pages/max_width_padding_builder_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/progress_mixin_page.dart';
@@ -126,6 +127,14 @@ class HomePage extends StatelessWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.of(context).pushNamed(TextInputDialogPage.routeName);
+            },
+          ),
+          ListTile(
+            title: const Text(MaxWidthPaddingBuilderPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context)
+                  .pushNamed(MaxWidthPaddingBuilderPage.routeName);
             },
           ),
         ],

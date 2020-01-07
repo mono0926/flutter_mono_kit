@@ -1,3 +1,7 @@
+## [0.12.2]
+
+- Add MaxWidthPaddingBuilder
+
 ## [0.12.1]
 
 - Add TextInputDialog
