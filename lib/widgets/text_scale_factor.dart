@@ -1,21 +1,24 @@
 import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
+import 'package:nested/nested.dart';
 
-class TextScaleFactor extends StatelessWidget {
+class TextScaleFactor extends SingleChildStatelessWidget {
   const TextScaleFactor({
     Key key,
-    @required this.child,
+    @required Widget child,
     this.min = 1,
     this.max,
-  }) : super(key: key);
+  }) : super(
+          key: key,
+          child: child,
+        );
 
-  final Widget child;
   final double min;
   final double max;
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildWithChild(BuildContext context, Widget child) {
     final mediaQuery = MediaQuery.of(context);
     if (mediaQuery == null) {
       assert(false, 'TextScaleFactor should be placed inside of MediaQuery');

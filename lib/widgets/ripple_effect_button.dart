@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:nested/nested.dart';
 
-class RippleEffectButton extends StatelessWidget {
+class RippleEffectButton extends SingleChildStatelessWidget {
   const RippleEffectButton({
     Key key,
-    @required this.child,
+    @required Widget child,
     @required this.onTap,
-  }) : super(key: key);
+  }) : super(
+          key: key,
+          child: child,
+        );
 
-  final Widget child;
   final VoidCallback onTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildWithChild(BuildContext context, Widget child) {
     return Stack(
       fit: StackFit.passthrough,
       children: [

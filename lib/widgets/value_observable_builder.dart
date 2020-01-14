@@ -1,28 +1,32 @@
 import 'package:flutter/widgets.dart';
+import 'package:nested/nested.dart';
 import 'package:rxdart/rxdart.dart';
 
 import 'better_stream_builder.dart';
 
-class ValueObservableBuilder<T> extends StatefulWidget {
+class ValueObservableBuilder<T> extends SingleChildStatefulWidget {
   const ValueObservableBuilder({
     Key key,
     @required this.builder,
     @required this.stream,
-    this.child,
-  }) : super(key: key);
+    Widget child,
+  }) : super(
+          key: key,
+          child: child,
+        );
 
   final ValueStream<T> stream;
   final AsyncChildWidgetBuilder<T> builder;
-  final Widget child;
 
   @override
   _ValueObservableBuilderState createState() =>
       _ValueObservableBuilderState<T>();
 }
 
-class _ValueObservableBuilderState<T> extends State<ValueObservableBuilder<T>> {
+class _ValueObservableBuilderState<T>
+    extends SingleChildState<ValueObservableBuilder<T>> {
   @override
-  Widget build(BuildContext context) {
+  Widget buildWithChild(BuildContext context, Widget child) {
     return StreamBuilder<T>(
       initialData: widget.stream.value,
       stream: widget.stream,
@@ -36,7 +40,7 @@ class _ValueObservableBuilderState<T> extends State<ValueObservableBuilder<T>> {
             snapshot.data,
           );
         }
-        return widget.builder(context, snapshot, widget.child);
+        return widget.builder(context, snapshot, child);
       },
     );
   }

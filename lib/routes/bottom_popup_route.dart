@@ -1,6 +1,7 @@
 import 'dart:math' show min;
 
 import 'package:flutter/material.dart';
+import 'package:nested/nested.dart';
 
 class BottomPopupRoute<T> extends PopupRoute<T> {
   BottomPopupRoute({
@@ -102,24 +103,22 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
   }
 }
 
-class _Pan extends StatefulWidget {
+class _Pan extends SingleChildStatefulWidget {
   const _Pan({
     Key key,
-    @required this.child,
-  }) : super(key: key);
-
-  final Widget child;
+    @required Widget child,
+  }) : super(key: key, child: child);
 
   @override
   _PanState createState() => _PanState();
 }
 
-class _PanState extends State<_Pan> {
+class _PanState extends SingleChildState<_Pan> {
   double _offsetY = 0;
   double _lastOffsetY = 0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildWithChild(BuildContext context, Widget child) {
     final height = MediaQuery.of(context).size.height;
     final panThreshold = height * 0.2;
     return AnimatedPositioned(
@@ -147,7 +146,7 @@ class _PanState extends State<_Pan> {
           }
         },
         onPanCancel: _cancel,
-        child: widget.child,
+        child: child,
       ),
     );
   }

@@ -12,6 +12,7 @@ dependencies:
   rxdart: ^0.23.1
   url_launcher: ^5.4.0
   disposable_provider: ^2.1.0
+  nested: ^0.0.4
   subscription_holder: ^1.0.0
   simple_logger: ^1.5.1
   tinycolor: ^1.0.2
