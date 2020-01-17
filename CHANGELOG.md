@@ -1,3 +1,7 @@
+## [0.12.3]
+
+- Call `updateProgress(inProgress: false)` even if error occurred.
+
 ## [0.12.2]
 
 - Add MaxWidthPaddingBuilder

@@ -14,10 +14,13 @@ mixin ProgressMixin implements Disposable {
 
   @protected
   Future<T> executeWithProgress<T>(Future<T> Function() f) async {
-    updateProgress(inProgress: true);
-    final result = await f();
-    updateProgress(inProgress: false);
-    return result;
+    try {
+      updateProgress(inProgress: true);
+      final result = await f();
+      return result;
+    } finally {
+      updateProgress(inProgress: false);
+    }
   }
 
   @override
