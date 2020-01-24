@@ -1,4 +1,5 @@
 import 'package:example/pages/banner_visibility_page.dart';
+import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
@@ -135,6 +136,13 @@ class HomePage extends StatelessWidget {
             onTap: () {
               Navigator.of(context)
                   .pushNamed(MaxWidthPaddingBuilderPage.routeName);
+            },
+          ),
+          ListTile(
+            title: const Text(BetterPlaceholderPage.routeName),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).pushNamed(BetterPlaceholderPage.routeName);
             },
           ),
         ],

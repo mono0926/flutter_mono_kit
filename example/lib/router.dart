@@ -1,4 +1,5 @@
 import 'package:example/pages/banner_visibility_page.dart';
+import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
@@ -24,6 +25,7 @@ class Router {
     TextInputDialogPage.routeName: (context) => const TextInputDialogPage(),
     MaxWidthPaddingBuilderPage.routeName: (context) =>
         const MaxWidthPaddingBuilderPage(),
+    BetterPlaceholderPage.routeName: (context) => const BetterPlaceholderPage(),
   };
 
   Route handle(RouteSettings settings) {
