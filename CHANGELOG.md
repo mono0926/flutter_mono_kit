@@ -1,3 +1,9 @@
+## [0.12.4]
+
+- Add LoadingSwitcher
+- Add TimeoutSwitcher
+- Add BetterPlaceholder
+
 ## [0.12.3]
 
 - Call `updateProgress(inProgress: false)` even if error occurred.

@@ -10,6 +10,7 @@ import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/progress_mixin_page.dart';
+import 'pages/timeout_switch_page.dart';
 
 class Router {
   final Map<String, WidgetBuilder> pushRoutes = {
@@ -26,6 +27,7 @@ class Router {
     MaxWidthPaddingBuilderPage.routeName: (context) =>
         const MaxWidthPaddingBuilderPage(),
     BetterPlaceholderPage.routeName: (context) => const BetterPlaceholderPage(),
+    TimeoutSwitchPage.routeName: (context) => TimeoutSwitchPage.wrapped(),
   };
 
   Route handle(RouteSettings settings) {

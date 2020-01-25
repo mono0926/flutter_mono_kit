@@ -99,7 +99,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.0+2"
+    version: "0.12.0+4"
   http_parser:
     dependency: transitive
     description:
@@ -120,7 +120,7 @@ packages:
       name: logging
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.3+2"
+    version: "0.11.4"
   matcher:
     dependency: transitive
     description:
@@ -176,7 +176,7 @@ packages:
       name: pedantic_mono
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.1"
+    version: "1.7.0"
   petitparser:
     dependency: transitive
     description:
@@ -206,12 +206,14 @@ packages:
     source: hosted
     version: "1.0.1"
   provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      name: provider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.0"
+      path: "."
+      ref: extensions
+      resolved-ref: "94dcfb1f409eea76db364c5b5054b2a155b4297c"
+      url: "https://github.com/rrousselGit/provider.git"
+    source: git
+    version: "4.1.0"
   quiver:
     dependency: transitive
     description:
@@ -232,7 +234,7 @@ packages:
       name: simple_logger
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.1+1"
+    version: "1.6.0+1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -286,7 +288,7 @@ packages:
       name: synchronized
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.2.0"
   term_glyph:
     dependency: transitive
     description:
