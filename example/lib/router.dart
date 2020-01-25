@@ -2,6 +2,7 @@ import 'package:example/pages/banner_visibility_page.dart';
 import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
+import 'package:example/pages/loading_switcher_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
@@ -10,7 +11,6 @@ import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/progress_mixin_page.dart';
-import 'pages/timeout_switch_page.dart';
 
 class Router {
   final Map<String, WidgetBuilder> pushRoutes = {

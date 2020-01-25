@@ -141,7 +141,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.12.3"
+    version: "0.12.4"
   nested:
     dependency: transitive
     description:
@@ -176,7 +176,7 @@ packages:
       name: pedantic_mono
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "1.8.0"
   petitparser:
     dependency: transitive
     description:

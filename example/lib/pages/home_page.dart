@@ -7,11 +7,12 @@ import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/progress_mixin_page.dart';
 import 'package:example/pages/text_input_dialog_page.dart';
-import 'package:example/pages/timeout_switch_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
+
+import 'loading_switcher_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
