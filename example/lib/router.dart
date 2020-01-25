@@ -27,7 +27,7 @@ class Router {
     MaxWidthPaddingBuilderPage.routeName: (context) =>
         const MaxWidthPaddingBuilderPage(),
     BetterPlaceholderPage.routeName: (context) => const BetterPlaceholderPage(),
-    TimeoutSwitchPage.routeName: (context) => TimeoutSwitchPage.wrapped(),
+    LoadingSwitcherPage.routeName: (context) => LoadingSwitcherPage.wrapped(),
   };
 
   Route handle(RouteSettings settings) {

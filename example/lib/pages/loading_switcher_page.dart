@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:provider/provider.dart';
 
-class TimeoutSwitchPage extends StatelessWidget {
-  const TimeoutSwitchPage._({Key key}) : super(key: key);
+class LoadingSwitcherPage extends StatelessWidget {
+  const LoadingSwitcherPage._({Key key}) : super(key: key);
 
-  static const routeName = '/timeout_switch';
+  static const routeName = '/loading_switcher';
 
   static Widget wrapped() {
     return ChangeNotifierProvider(
       create: (context) => _Model(),
-      child: const TimeoutSwitchPage._(),
+      child: const LoadingSwitcherPage._(),
     );
   }
 
@@ -19,7 +19,7 @@ class TimeoutSwitchPage extends StatelessWidget {
     final image = context.select((_Model model) => model.image);
     return Scaffold(
       appBar: AppBar(
-        title: const Text(TimeoutSwitchPage.routeName),
+        title: const Text(LoadingSwitcherPage.routeName),
       ),
       body: ListView(
         children: <Widget>[
@@ -28,7 +28,7 @@ class TimeoutSwitchPage extends StatelessWidget {
             child: LoadingSwitcher(
               timedOutChild: const CircularProgressIndicator(),
               timeout: context.select(
-                    (_Model model) =>
+                (_Model model) =>
                     model.getDuration(sliderType: SliderType.timeout),
               ),
               child: image,

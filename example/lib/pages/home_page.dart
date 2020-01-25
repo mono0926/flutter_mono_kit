@@ -147,10 +147,10 @@ class HomePage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text(TimeoutSwitchPage.routeName),
+            title: const Text(LoadingSwitcherPage.routeName),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              Navigator.of(context).pushNamed(TimeoutSwitchPage.routeName);
+              Navigator.of(context).pushNamed(LoadingSwitcherPage.routeName);
             },
           ),
         ],
