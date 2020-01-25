@@ -25,10 +25,10 @@ class LoadingSwitcherPage extends StatelessWidget {
           AspectRatio(
             aspectRatio: 1,
             child: LoadingSwitcher(
-              timedOutChild: const CircularProgressIndicator(),
               timeout: context.select(
-                (_Model model) =>
-                    model.getDuration(sliderType: SliderType.timeout),
+                (_Model model) => model.getDuration(
+                  sliderType: SliderType.timeout,
+                ),
               ),
               child: context.select((_Model model) => model.image),
             ),
