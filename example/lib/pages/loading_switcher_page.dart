@@ -16,7 +16,6 @@ class LoadingSwitcherPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final image = context.select((_Model model) => model.image);
     return Scaffold(
       appBar: AppBar(
         title: const Text(LoadingSwitcherPage.routeName),
@@ -31,7 +30,7 @@ class LoadingSwitcherPage extends StatelessWidget {
                 (_Model model) =>
                     model.getDuration(sliderType: SliderType.timeout),
               ),
-              child: image,
+              child: context.select((_Model model) => model.image),
             ),
           ),
           const SizedBox(height: 48),
