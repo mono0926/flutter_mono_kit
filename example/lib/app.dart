@@ -20,6 +20,9 @@ class App extends StatelessWidget {
         settings: settings,
         builder: (context) => const NotFoundPage(),
       ),
+      theme: ThemeData(
+        typography:
+      ),
     );
   }
 }
