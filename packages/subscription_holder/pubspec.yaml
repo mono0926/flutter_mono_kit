@@ -1,6 +1,6 @@
 name: subscription_holder
 description: Subscription Holder holds StreamSubscriptions and dispose all conveniently.
-version: 1.2.0
+version: 1.2.0+1
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
   sdk: ">=2.1.0 <3.0.0"
