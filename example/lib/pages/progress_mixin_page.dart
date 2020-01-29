@@ -38,7 +38,7 @@ class _Counter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       Provider.of<_Model>(context).count.toString(),
-      style: Theme.of(context).textTheme.display1,
+      style: Theme.of(context).textTheme.headline4,
     );
   }
 }

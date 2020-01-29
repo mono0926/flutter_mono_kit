@@ -70,7 +70,7 @@ packages:
       name: disposable_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -210,7 +210,7 @@ packages:
     description:
       path: "."
       ref: extensions
-      resolved-ref: "94dcfb1f409eea76db364c5b5054b2a155b4297c"
+      resolved-ref: "9120e5cb3763689882284fdcb8a439b23e3da9f8"
       url: "https://github.com/rrousselGit/provider.git"
     source: git
     version: "4.1.0"
@@ -281,7 +281,7 @@ packages:
       name: subscription_holder
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0+1"
   synchronized:
     dependency: transitive
     description:
@@ -368,4 +368,4 @@ packages:
     version: "3.5.0"
 sdks:
   dart: ">=2.6.0 <3.0.0"
-  flutter: ">=1.12.8 <2.0.0"
+  flutter: ">=1.14.6 <2.0.0"

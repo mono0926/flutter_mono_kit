@@ -114,7 +114,7 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
       children: [
         Text(
           'Flutter',
-          style: theme.textTheme.subhead,
+          style: theme.textTheme.subtitle1,
         ),
         const SizedBox(height: 4),
         Text(
@@ -161,7 +161,7 @@ class __DescState extends State<_Desc> {
       children: [
         OverflowDetectableText(
           widget.data.desc,
-          style: theme.textTheme.body1,
+          style: theme.textTheme.bodyText2,
           detector: (overflow) => _overflowNotifier.value = overflow,
 //                maxLines: 2,
         ),
@@ -195,8 +195,8 @@ class __DescState extends State<_Desc> {
                     widget.additionalHeightNeeded(_overflowNotifier.value),
                 child: Text(
                   'more',
-                  style:
-                      theme.textTheme.body1.copyWith(color: theme.accentColor),
+                  style: theme.textTheme.bodyText2
+                      .copyWith(color: theme.accentColor),
                 ),
               ),
             ),
