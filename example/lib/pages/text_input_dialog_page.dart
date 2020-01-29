@@ -16,16 +16,16 @@ class TextInputDialogPage extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           child: const Text('Open Dialog'),
-          onPressed: () {
-            showDialog<void>(
+          onPressed: () async {
+            final text = await showDialog<String>(
               context: context,
-              builder: (context) => TextInputDialog(
+              builder: (context) => const TextInputDialog(
                 titleLabel: 'Hello',
-                okLabel: 'OK',
-                onOkPressed: logger.info,
+                okButtonLabel: 'OK',
                 initialText: 'World',
               ),
             );
+            logger.info(text);
           },
         ),
       ),

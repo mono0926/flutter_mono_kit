@@ -2,36 +2,35 @@ import 'package:flutter/material.dart';
 
 class TextInputDialog extends StatefulWidget {
   const TextInputDialog({
-    Key key,
     @required this.titleLabel,
-    @required this.okLabel,
-    @required this.onOkPressed,
+    @required this.okButtonLabel,
+    this.messageLabel,
+    this.hintText,
     this.initialText,
-  }) : super(key: key);
-
-  final String titleLabel;
-  final String okLabel;
-  final void Function(String text) onOkPressed;
-  final String initialText;
-
+  });
   @override
   _TextInputDialogState createState() => _TextInputDialogState();
+
+  final String titleLabel;
+  final String okButtonLabel;
+  final String messageLabel;
+  final String hintText;
+  final String initialText;
 }
 
 class _TextInputDialogState extends State<TextInputDialog> {
-  final TextEditingController _textEditingController = TextEditingController();
+  final _textController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
 
-    _textEditingController.text = widget.initialText;
+    _textController.text = widget.initialText;
   }
 
   @override
   void dispose() {
-    _textEditingController.dispose();
-
+    _textController.dispose();
     super.dispose();
   }
 
@@ -39,21 +38,37 @@ class _TextInputDialogState extends State<TextInputDialog> {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(widget.titleLabel),
-      content: TextField(
-        autofocus: true,
-        controller: _textEditingController,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (widget.messageLabel != null)
+            Flexible(
+              child: Container(
+                color: Theme.of(context).inputDecorationTheme.fillColor,
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Scrollbar(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(8),
+                    child: Text(widget.messageLabel),
+                  ),
+                ),
+              ),
+            ),
+          TextField(
+            controller: _textController,
+            autofocus: true,
+            decoration: InputDecoration(hintText: widget.hintText),
+          ),
+        ],
       ),
-      actions: <Widget>[
+      actions: [
         FlatButton(
           child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Navigator.of(context).pop(null),
         ),
         FlatButton(
-          child: Text(widget.okLabel),
-          onPressed: () {
-            widget.onOkPressed(_textEditingController.text);
-            Navigator.of(context).pop();
-          },
+          child: Text(widget.okButtonLabel),
+          onPressed: () => Navigator.of(context).pop(_textController.text),
         )
       ],
     );

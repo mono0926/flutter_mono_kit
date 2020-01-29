@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 
 @immutable
 class TextAnswerDialog {
@@ -13,16 +14,20 @@ class TextAnswerDialog {
     @required String retryMessage,
     @required String retryButtonLabel,
   }) async {
-    final result = await showDialog<_TextAnswerDialogResult>(
+    final text = await showDialog<String>(
       context: context,
-      builder: (context) => _Dialog(
-        title: title,
-        message: message,
-        keyword: keyword,
+      builder: (context) => TextInputDialog(
+        titleLabel: title,
+        messageLabel: message,
         hintText: hintText,
         okButtonLabel: okButtonLabel,
       ),
     );
+    final result = text == null
+        ? _TextAnswerDialogResult.cancelled
+        : text == keyword
+            ? _TextAnswerDialogResult.correct
+            : _TextAnswerDialogResult.incorrect;
 
     switch (result) {
       case _TextAnswerDialogResult.cancelled:
@@ -71,80 +76,4 @@ enum _TextAnswerDialogResult {
   cancelled,
   correct,
   incorrect,
-}
-
-class _Dialog extends StatefulWidget {
-  const _Dialog({
-    @required this.title,
-    @required this.message,
-    @required this.keyword,
-    @required this.hintText,
-    @required this.okButtonLabel,
-  });
-  @override
-  _DialogState createState() => _DialogState();
-
-  final String title;
-  final String message;
-  final String keyword;
-  final String hintText;
-  final String okButtonLabel;
-}
-
-class _DialogState extends State<_Dialog> {
-  final _textController = TextEditingController();
-
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text(widget.title),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Flexible(
-            child: Container(
-              color: Theme.of(context).inputDecorationTheme.fillColor,
-              child: Scrollbar(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(8),
-                  child: Text(widget.message),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Theme(
-            data: Theme.of(context)
-                .copyWith(primaryColor: Theme.of(context).accentColor),
-            child: TextField(
-              controller: _textController,
-              autofocus: true,
-              decoration: InputDecoration(hintText: widget.hintText),
-            ),
-          ),
-        ],
-      ),
-      actions: [
-        FlatButton(
-          child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
-          onPressed: () =>
-              Navigator.of(context).pop(_TextAnswerDialogResult.cancelled),
-        ),
-        FlatButton(
-          child: Text(widget.okButtonLabel),
-          onPressed: () {
-            Navigator.of(context).pop(_textController.text == widget.keyword
-                ? _TextAnswerDialogResult.correct
-                : _TextAnswerDialogResult.incorrect);
-          },
-        )
-      ],
-    );
-  }
 }
