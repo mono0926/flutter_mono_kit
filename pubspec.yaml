@@ -26,3 +26,7 @@ flutter:
       android:
         package: com.mono0926.mono_kit
         pluginClass: MonoKitPlugin
+      ios:
+        pluginClass: MonoKitPlugin
+      macos:
+        pluginClass: MonoKitPlugin
