@@ -18,9 +18,9 @@ class ItemizedText extends StatelessWidget {
       children: texts
           .map(
             (text) => _ItemizedTextRow(
-                  text,
-                  bullet: bullet,
-                ),
+              text,
+              bullet: bullet,
+            ),
           )
           .toList(),
     );
