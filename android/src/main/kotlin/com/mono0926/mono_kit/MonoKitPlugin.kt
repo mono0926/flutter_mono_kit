@@ -7,15 +7,27 @@ import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 import android.content.pm.PackageManager
 import android.app.Activity
+import androidx.annotation.NonNull
+import io.flutter.embedding.engine.plugins.FlutterPlugin
+import io.flutter.embedding.engine.plugins.activity.ActivityAware
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
-class MonoKitPlugin(activity: Activity): MethodCallHandler {
-  private val activity: Activity = activity
+public class MonoKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
+
+  private lateinit var activity: Activity
+
+  override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+    val channel = MethodChannel(flutterPluginBinding.binaryMessenger, "mono_kit")
+    channel.setMethodCallHandler(MonoKitPlugin());
+  }
 
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
       val channel = MethodChannel(registrar.messenger(), "mono_kit")
-      channel.setMethodCallHandler(MonoKitPlugin(activity = registrar.activity()))
+      val plugin = MonoKitPlugin()
+      plugin.activity = registrar.activity()
+      channel.setMethodCallHandler(plugin)
     }
   }
 
@@ -37,6 +49,15 @@ class MonoKitPlugin(activity: Activity): MethodCallHandler {
       else -> result.notImplemented()
     }
   }
+
+  override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {}
+
+  override fun onDetachedFromActivity() {}
+  override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {}
+  override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+    activity = binding.activity
+  }
+  override fun onDetachedFromActivityForConfigChanges() {}
 }
 
 private fun isInstalled(packageName: String, packageManager: PackageManager): Boolean {
