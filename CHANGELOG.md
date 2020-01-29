@@ -1,3 +1,8 @@
+## [0.13.0]
+
+- Refactor TextInputDialog
+- Migrate to AndroidX
+
 ## [0.12.4]
 
 - Add LoadingSwitcher
