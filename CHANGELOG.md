@@ -1,3 +1,7 @@
+## [0.13.1]
+
+- Add ThemeDataEx and which contains appliedCommon()
+
 ## [0.13.0]
 
 - Refactor TextInputDialog
