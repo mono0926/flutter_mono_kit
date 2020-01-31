@@ -1,3 +1,7 @@
+## [0.13.2]
+
+- Rename to followLatestSpec from appliedCommon
+
 ## [0.13.1]
 
 - Add ThemeDataEx and which contains appliedCommon()
