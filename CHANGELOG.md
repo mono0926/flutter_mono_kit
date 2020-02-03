@@ -1,3 +1,7 @@
+## [0.13.3]
+
+- Add AppAssetImage
+
 ## [0.13.2]
 
 - Rename to followLatestSpec from appliedCommon
