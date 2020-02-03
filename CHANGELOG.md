@@ -1,3 +1,15 @@
+## [0.14.0-dev]
+
+- Reland `Swap englishLike bodyText1 and bodyText2`.
+
+## [0.13.6]
+
+- Revert `Swap englishLike bodyText1 and bodyText2`
+
+## [0.13.5]
+
+- Update Flutter version
+
 ## [0.13.4]
 
 - Swap englishLike bodyText1 and bodyText2.
