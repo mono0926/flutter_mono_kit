@@ -1,3 +1,7 @@
+## [0.13.4]
+
+- Swap englishLike bodyText1 and bodyText2.
+
 ## [0.13.3]
 
 - Add AppAssetImage
