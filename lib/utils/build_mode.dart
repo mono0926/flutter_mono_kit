@@ -1,13 +1,17 @@
+import 'package:flutter/foundation.dart';
+
 enum BuildMode { profile, debug, release }
 
 BuildMode buildMode = () {
-  if (const bool.fromEnvironment('dart.vm.product')) {
+  if (kReleaseMode) {
     return BuildMode.release;
   }
-  var result = BuildMode.profile;
-  assert(() {
-    result = BuildMode.debug;
-    return true;
-  }());
-  return result;
+  if (kProfileMode) {
+    return BuildMode.profile;
+  }
+  if (kDebugMode) {
+    return BuildMode.debug;
+  }
+  assert(false, 'Cannot determined Build Mode');
+  return null;
 }();
