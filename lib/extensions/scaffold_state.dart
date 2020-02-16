@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 extension ScaffoldStateEx on ScaffoldState {
-  void show(String text) {
+  void showSimpleSnackBar(String text) {
     this
       ..removeCurrentSnackBar()
       ..showSnackBar(
@@ -9,7 +9,7 @@ extension ScaffoldStateEx on ScaffoldState {
       );
   }
 
-  void showUndo({
+  void showUndoSnackBar({
     @required String text,
     @required VoidCallback onUndo,
     SnackBarL10n l10n = const SnackBarL10n(),
@@ -28,11 +28,11 @@ extension ScaffoldStateEx on ScaffoldState {
       );
   }
 
-  void notImplemented({SnackBarL10n l10n = const SnackBarL10n()}) {
-    showError(l10n.notImplemented);
+  void showNotImplementedSnackBar({SnackBarL10n l10n = const SnackBarL10n()}) {
+    showErrorSnackBar(l10n.notImplemented);
   }
 
-  void showError(
+  void showErrorSnackBar(
     dynamic error, {
     SnackBarL10n l10n = const SnackBarL10n(),
   }) {
