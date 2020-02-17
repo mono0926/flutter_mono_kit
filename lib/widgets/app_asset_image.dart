@@ -58,6 +58,7 @@ class _PngImage extends AppAssetImage {
         'assets/images/$name.png',
         scale: scale,
         fit: fit,
+        color: color,
       );
 
   ImageProvider get _image => _widget.image;
@@ -86,6 +87,7 @@ class _SvgImage extends AppAssetImage {
     return SvgPicture.asset(
       'assets/images/$name.svg',
       fit: fit,
+      color: color,
     );
   }
 }
