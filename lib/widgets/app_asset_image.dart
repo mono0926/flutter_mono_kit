@@ -7,8 +7,15 @@ enum AppAssetImageType {
 }
 
 abstract class AppAssetImage extends StatelessWidget {
-  const factory AppAssetImage.png() = _PngImage;
-  const factory AppAssetImage.svg() = _SvgImage;
+  const factory AppAssetImage.png({
+    @required String name,
+    BoxFit fit,
+    double scale,
+  }) = _PngImage;
+  const factory AppAssetImage.svg({
+    @required String name,
+    BoxFit fit,
+  }) = _SvgImage;
 
   const AppAssetImage._({
     Key key,
