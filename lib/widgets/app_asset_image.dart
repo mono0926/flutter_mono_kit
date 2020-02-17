@@ -6,14 +6,16 @@ class AppAssetImage extends StatelessWidget {
     @required this.name,
     this.fit,
     this.scale = 3,
+    this.extension = 'png',
   }) : super(key: key);
 
   final String name;
   final BoxFit fit;
   final double scale;
+  final String extension;
 
   Image get _widget => Image.asset(
-        'assets/images/$name.png',
+        'assets/images/$name.$extension',
         scale: scale,
         fit: fit,
       );
