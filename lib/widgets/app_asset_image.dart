@@ -6,13 +6,16 @@ enum AppAssetImageType {
   svg,
 }
 
-class AppAssetImage extends StatelessWidget {
-  const AppAssetImage({
+abstract class AppAssetImage extends StatelessWidget {
+  const factory AppAssetImage.png() = _PngImage;
+  const factory AppAssetImage.svg() = _SvgImage;
+
+  const AppAssetImage._({
     Key key,
     @required this.name,
-    this.fit,
-    this.scale = 3,
-    this.type = AppAssetImageType.png,
+    @required this.fit,
+    @required this.scale,
+    @required this.type,
   }) : super(key: key);
 
   final String name;
@@ -20,41 +23,54 @@ class AppAssetImage extends StatelessWidget {
   final double scale;
   final AppAssetImageType type;
 
-  Widget get _widget {
-    switch (type) {
-      case AppAssetImageType.png:
-        return assetImage;
-      case AppAssetImageType.svg:
-        return svgPicture;
-    }
-    assert(false, 'Unexpected type: $type');
-    return null;
-  }
+  ImageProvider get image =>
+      this is _PngImage ? (this as _PngImage)._image : null;
+}
 
-  Image get assetImage => Image.asset(
+class _PngImage extends AppAssetImage {
+  const _PngImage({
+    Key key,
+    @required String name,
+    BoxFit fit,
+    double scale = 3,
+  }) : super._(
+          key: key,
+          name: name,
+          fit: fit,
+          scale: scale,
+          type: AppAssetImageType.png,
+        );
+
+  Image get _widget => Image.asset(
         'assets/images/$name.png',
         scale: scale,
         fit: fit,
       );
 
-  SvgPicture get svgPicture => SvgPicture.asset(
-        'assets/images/$name.svg',
-        fit: fit,
-      );
+  ImageProvider get _image => _widget.image;
 
-  ImageProvider get image {
-    switch (type) {
-      case AppAssetImageType.png:
-        return assetImage.image;
-      case AppAssetImageType.svg:
-        return null;
-    }
-    assert(false, 'Unexpected type: $type');
-    return null;
-  }
+  @override
+  Widget build(BuildContext context) => _widget;
+}
+
+class _SvgImage extends AppAssetImage {
+  const _SvgImage({
+    Key key,
+    @required String name,
+    BoxFit fit,
+  }) : super._(
+          key: key,
+          name: name,
+          fit: fit,
+          scale: null,
+          type: AppAssetImageType.svg,
+        );
 
   @override
   Widget build(BuildContext context) {
-    return _widget;
+    return SvgPicture.asset(
+      'assets/images/$name.svg',
+      fit: fit,
+    );
   }
 }
