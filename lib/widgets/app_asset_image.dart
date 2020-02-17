@@ -11,10 +11,12 @@ abstract class AppAssetImage extends StatelessWidget {
     @required String name,
     BoxFit fit,
     double scale,
+    Color color,
   }) = _PngImage;
   const factory AppAssetImage.svg({
     @required String name,
     BoxFit fit,
+    Color color,
   }) = _SvgImage;
 
   const AppAssetImage._({
@@ -23,12 +25,14 @@ abstract class AppAssetImage extends StatelessWidget {
     @required this.fit,
     @required this.scale,
     @required this.type,
+    @required this.color,
   }) : super(key: key);
 
   final String name;
   final BoxFit fit;
   final double scale;
   final AppAssetImageType type;
+  final Color color;
 
   ImageProvider get image =>
       this is _PngImage ? (this as _PngImage)._image : null;
@@ -40,12 +44,14 @@ class _PngImage extends AppAssetImage {
     @required String name,
     BoxFit fit,
     double scale = 3,
+    Color color,
   }) : super._(
           key: key,
           name: name,
           fit: fit,
           scale: scale,
           type: AppAssetImageType.png,
+          color: color,
         );
 
   Image get _widget => Image.asset(
@@ -65,12 +71,14 @@ class _SvgImage extends AppAssetImage {
     Key key,
     @required String name,
     BoxFit fit = BoxFit.contain,
+    Color color,
   }) : super._(
           key: key,
           name: name,
           fit: fit,
           scale: null,
           type: AppAssetImageType.svg,
+          color: color,
         );
 
   @override
