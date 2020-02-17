@@ -64,7 +64,7 @@ class _SvgImage extends AppAssetImage {
   const _SvgImage({
     Key key,
     @required String name,
-    BoxFit fit,
+    BoxFit fit = BoxFit.contain,
   }) : super._(
           key: key,
           name: name,
