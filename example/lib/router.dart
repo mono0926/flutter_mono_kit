@@ -15,7 +15,7 @@ class Router {
   final Map<String, WidgetBuilder> pushRoutes = {
     OverflowDetectableTextPage.routeName: (context) =>
         const OverflowDetectableTextPage(),
-    BarrierPage.routeName: (context) => BarrierPage(),
+    BarrierPage.routeName: (context) => const BarrierPage(),
     UnfocusOnTapPage.routeName: (context) => const UnfocusOnTapPage(),
     LifeCycleObserverPage.routeName: (context) =>
         LifeCycleObserverPage.wrapped(),

@@ -24,7 +24,7 @@ class _BarrierPageState extends State<BarrierPage> {
         title: const Text(BarrierPage.routeName),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           // このブロックで囲まれている処理が終わるまでプログレス表示
           context.read<BarrierController>().executeWithProgress(() async {
