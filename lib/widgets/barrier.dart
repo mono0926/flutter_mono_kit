@@ -1,3 +1,4 @@
+import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
@@ -31,8 +32,12 @@ class Barrier extends SingleChildStatelessWidget {
       children: [
         child,
         Positioned.fill(
-          child: Visibility(
-            visible: context.watch<BarrierState>() == BarrierState.inProgress,
+          child: ValueListenableBuilder<bool>(
+            valueListenable: context.read<BarrierController>()._inProgress,
+            builder: (context, visible, child) => Visibility(
+              visible: visible,
+              child: child,
+            ),
             child: TimeoutSwitcher(
               timeout: timeout,
               switchDuration: switchDuration,
@@ -56,23 +61,14 @@ class Barrier extends SingleChildStatelessWidget {
   }
 }
 
-class BarrierController extends ValueNotifier<BarrierState> {
-  BarrierController() : super(BarrierState.none);
+class BarrierController with Disposable {
+  final _inProgress = ValueNotifier(false);
 
-  void startProgress() => value = BarrierState.inProgress;
+  void startProgress() => _inProgress.value = true;
 
-  void stopProgress() => value = BarrierState.none;
+  void stopProgress() => _inProgress.value = false;
 
-  void toggleProgress() {
-    switch (value) {
-      case BarrierState.none:
-        startProgress();
-        break;
-      case BarrierState.inProgress:
-        stopProgress();
-        break;
-    }
-  }
+  void toggleProgress() => _inProgress.value = !_inProgress.value;
 
   /// Execute f() with showing progress.
   Future<T> executeWithProgress<T>(Future<T> Function() f) async {
@@ -83,11 +79,11 @@ class BarrierController extends ValueNotifier<BarrierState> {
       stopProgress();
     }
   }
-}
 
-enum BarrierState {
-  none,
-  inProgress,
+  @override
+  void dispose() {
+    _inProgress.dispose();
+  }
 }
 
 class BarrierControllerProvider extends SingleChildStatelessWidget {
@@ -101,7 +97,7 @@ class BarrierControllerProvider extends SingleChildStatelessWidget {
 
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
-    return ValueNotifierProvider<BarrierController, BarrierState>(
+    return DisposableProvider(
       create: (context) => BarrierController(),
       child: child,
     );
