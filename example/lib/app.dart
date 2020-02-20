@@ -20,6 +20,8 @@ class App extends StatelessWidget {
       builder: (context, child) => MultiProvider(
         providers: const [
           TextScaleFactor(),
+          // MaterialApp配下の任意のWidgetで `context.read<BarrierController>()`
+          // 経由で全画面プログレス表示のコントロールをできるようにするためにここで包む
           // 以下2つを合わせた `BarrierKit()` もある
           BarrierControllerProvider(),
           Barrier(),
