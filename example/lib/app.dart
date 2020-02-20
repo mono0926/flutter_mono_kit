@@ -17,18 +17,19 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: const HomePage(title: title),
-      onGenerateRoute: _router.handle,
-      onUnknownRoute: (settings) => MaterialPageRoute<void>(
-        settings: settings,
-        builder: (context) => const NotFoundPage(),
-      ),
       builder: (context, child) => MultiProvider(
         providers: const [
           TextScaleFactor(),
+          // 以下2つを合わせた `BarrierKit()` もある
           BarrierControllerProvider(),
           Barrier(),
         ],
         child: child,
+      ),
+      onGenerateRoute: _router.handle,
+      onUnknownRoute: (settings) => MaterialPageRoute<void>(
+        settings: settings,
+        builder: (context) => const NotFoundPage(),
       ),
     );
   }
