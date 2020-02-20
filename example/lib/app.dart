@@ -26,7 +26,7 @@ class App extends StatelessWidget {
         ],
         child: child,
       ),
-      onGenerateRoute: _router.handle,
+      onGenerateRoute: _router.onGenerateRoute,
       onUnknownRoute: (settings) => MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const NotFoundPage(),

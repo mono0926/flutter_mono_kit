@@ -29,7 +29,7 @@ class Router {
     LoadingSwitcherPage.routeName: (context) => LoadingSwitcherPage.wrapped(),
   };
 
-  Route handle(RouteSettings settings) {
+  Route onGenerateRoute(RouteSettings settings) {
     final name = settings.name;
     final uri = Uri(path: name);
     final segments = uri.pathSegments;
