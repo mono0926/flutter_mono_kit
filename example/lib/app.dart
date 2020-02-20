@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/pages.dart';
 import 'router.dart';
@@ -19,6 +21,14 @@ class App extends StatelessWidget {
       onUnknownRoute: (settings) => MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const NotFoundPage(),
+      ),
+      builder: (context, child) => MultiProvider(
+        providers: const [
+          TextScaleFactor(),
+          BarrierControllerProvider(),
+          Barrier(),
+        ],
+        child: child,
       ),
     );
   }

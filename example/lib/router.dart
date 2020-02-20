@@ -1,4 +1,5 @@
 import 'package:example/pages/banner_visibility_page.dart';
+import 'package:example/pages/barrier_page.dart';
 import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
@@ -10,13 +11,11 @@ import 'package:example/pages/text_input_dialog_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/progress_mixin_page.dart';
-
 class Router {
   final Map<String, WidgetBuilder> pushRoutes = {
     OverflowDetectableTextPage.routeName: (context) =>
         const OverflowDetectableTextPage(),
-    ProgressMixinPage.routeName: (context) => ProgressMixinPage.withModel(),
+    BarrierPage.routeName: (context) => BarrierPage(),
     UnfocusOnTapPage.routeName: (context) => const UnfocusOnTapPage(),
     LifeCycleObserverPage.routeName: (context) =>
         LifeCycleObserverPage.wrapped(),
