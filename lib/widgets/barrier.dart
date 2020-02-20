@@ -63,11 +63,10 @@ class BarrierController extends ValueNotifier<BarrierState> {
   }
 
   /// Execute f() with showing progress.
-  Future<T> executeWithProgress<T>(Future<T> Function() f) async {
+  Future<T> executeWithProgress<T>(Future<T> Function() f) {
     try {
       startProgress();
-      final result = await f();
-      return result;
+      return f();
     } finally {
       stopProgress();
     }
