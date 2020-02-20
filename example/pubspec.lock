@@ -148,7 +148,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.14.0-dev+16"
+    version: "0.14.0-dev+17"
   nested:
     dependency: transitive
     description:
@@ -183,7 +183,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.1"
+    version: "1.6.0"
   pedantic:
     dependency: transitive
     description:
@@ -231,10 +231,10 @@ packages:
     description:
       path: "."
       ref: extensions
-      resolved-ref: "9120e5cb3763689882284fdcb8a439b23e3da9f8"
+      resolved-ref: "28831c0c8e6a555195bf64abdedca49e476d2089"
       url: "https://github.com/rrousselGit/provider.git"
     source: git
-    version: "4.1.0"
+    version: "4.1.0-dev"
   quiver:
     dependency: transitive
     description:
@@ -274,7 +274,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.2.1"
   stack_trace:
     dependency: transitive
     description:
@@ -365,7 +365,7 @@ packages:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0+2"
+    version: "0.1.1"
   uuid:
     dependency: transitive
     description:

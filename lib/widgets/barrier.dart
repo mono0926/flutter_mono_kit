@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/widgets/value_notifier_provider.dart';
 import 'package:nested/nested.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,8 @@ class Barrier extends SingleChildStatelessWidget {
     Widget child,
     this.valueColor,
     this.backgroundColor,
+    this.timeout = const Duration(milliseconds: 200),
+    this.switchDuration = const Duration(milliseconds: 100),
   }) : super(
           key: key,
           child: child,
@@ -17,6 +20,8 @@ class Barrier extends SingleChildStatelessWidget {
 
   final Color valueColor;
   final Color backgroundColor;
+  final Duration timeout;
+  final Duration switchDuration;
 
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
@@ -28,12 +33,19 @@ class Barrier extends SingleChildStatelessWidget {
         Positioned.fill(
           child: Visibility(
             visible: context.watch<BarrierState>() == BarrierState.inProgress,
-            child: Container(
-              color: backgroundColor ??
-                  theme.scaffoldBackgroundColor.withOpacity(0.6),
-              child: Center(
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation(valueColor),
+            child: TimeoutSwitcher(
+              timeout: timeout,
+              switchDuration: switchDuration,
+              initialChild: const SizedBox.expand(
+                child: AbsorbPointer(),
+              ),
+              timedOutChild: Container(
+                color: backgroundColor ??
+                    theme.scaffoldBackgroundColor.withOpacity(0.6),
+                child: Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation(valueColor),
+                  ),
                 ),
               ),
             ),
