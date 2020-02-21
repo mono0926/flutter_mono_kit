@@ -6,12 +6,14 @@ class RippleEffectButton extends SingleChildStatelessWidget {
     Key key,
     @required Widget child,
     @required this.onTap,
+    @required this.borderRadius,
   }) : super(
           key: key,
           child: child,
         );
 
   final VoidCallback onTap;
+  final BorderRadius borderRadius;
 
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
@@ -19,10 +21,13 @@ class RippleEffectButton extends SingleChildStatelessWidget {
       fit: StackFit.passthrough,
       children: [
         child,
-        Material(
-          type: MaterialType.transparency,
-          child: InkWell(
-            onTap: onTap,
+        Positioned.fill(
+          child: Material(
+            type: MaterialType.transparency,
+            child: InkWell(
+              borderRadius: borderRadius,
+              onTap: onTap,
+            ),
           ),
         ),
       ],
