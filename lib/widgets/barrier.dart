@@ -20,7 +20,7 @@ class Barrier extends SingleChildStatelessWidget {
           child: child,
         );
 
-  final Animation<bool> showProgress;
+  final ValueListenable<bool> showProgress;
   final Color valueColor;
   final Color backgroundColor;
   final Duration timeout;
