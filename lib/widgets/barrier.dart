@@ -10,6 +10,7 @@ class Barrier extends SingleChildStatelessWidget {
   const Barrier({
     Key key,
     Widget child,
+    this.showProgress,
     this.valueColor,
     this.backgroundColor,
     this.timeout = const Duration(milliseconds: 200),
@@ -19,6 +20,7 @@ class Barrier extends SingleChildStatelessWidget {
           child: child,
         );
 
+  final Animation<bool> showProgress;
   final Color valueColor;
   final Color backgroundColor;
   final Duration timeout;
@@ -33,7 +35,8 @@ class Barrier extends SingleChildStatelessWidget {
         child,
         Positioned.fill(
           child: ValueListenableBuilder<bool>(
-            valueListenable: context.read<BarrierController>()._inProgress,
+            valueListenable:
+                showProgress ?? context.read<BarrierController>()._inProgress,
             builder: (context, visible, child) => Visibility(
               visible: visible,
               child: child,
@@ -105,7 +108,13 @@ class BarrierControllerProvider extends SingleChildStatelessWidget {
 }
 
 class BarrierKit extends SingleChildStatelessWidget {
-  const BarrierKit({Key key}) : super(key: key);
+  const BarrierKit({
+    Key key,
+    Widget child,
+  }) : super(
+          key: key,
+          child: child,
+        );
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
     return BarrierControllerProvider(
