@@ -75,12 +75,7 @@ class BarrierController with Disposable {
 
   /// Execute f() with showing progress.
   Future<T> executeWithProgress<T>(Future<T> Function() f) async {
-    try {
-      startProgress();
-      return await f();
-    } finally {
-      stopProgress();
-    }
+    return InProgressEx(_inProgress).executeWithProgress<T>(f);
   }
 
   @override
@@ -122,5 +117,16 @@ class BarrierKit extends SingleChildStatelessWidget {
         child: child,
       ),
     );
+  }
+}
+
+extension InProgressEx on ValueNotifier<bool> {
+  Future<T> executeWithProgress<T>(Future<T> Function() f) async {
+    try {
+      value = true;
+      return await f();
+    } finally {
+      value = false;
+    }
   }
 }
