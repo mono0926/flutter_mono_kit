@@ -12,24 +12,48 @@ class ValueNotifierProvider<Controller extends ValueNotifier<Value>, Value>
   const ValueNotifierProvider({
     @required this.create,
     Widget child,
-  }) : super(child: child);
+  })  : value = null,
+        super(child: child);
+
+  const ValueNotifierProvider.value({
+    @required this.value,
+    Widget child,
+  })  : create = null,
+        super(child: child);
 
   final Create<Controller> create;
+  final Controller value;
 
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
-    return InheritedProvider(
-      create: create,
-      child: DeferredInheritedProvider<Controller, Value>(
-        create: (context) => context.read<Controller>(),
-        startListening: (context, setState, controller, _) {
-          setState(controller.value);
-          void listener() => setState(controller.value);
-          controller.addListener(listener);
-          return () => controller.removeListener(listener);
-        },
-        child: child,
-      ),
-    );
+    if (value == null) {
+      return InheritedProvider(
+        create: create,
+        child: DeferredInheritedProvider<Controller, Value>(
+          create: (context) => context.read<Controller>(),
+          startListening: (context, setState, controller, _) {
+            setState(controller.value);
+            void listener() => setState(controller.value);
+            controller.addListener(listener);
+            return () => controller.removeListener(listener);
+          },
+          child: child,
+        ),
+      );
+    } else {
+      return InheritedProvider.value(
+        value: value,
+        child: DeferredInheritedProvider<Controller, Value>.value(
+          value: value,
+          startListening: (context, setState, controller, _) {
+            setState(controller.value);
+            void listener() => setState(controller.value);
+            controller.addListener(listener);
+            return () => controller.removeListener(listener);
+          },
+          child: child,
+        ),
+      );
+    }
   }
 }
