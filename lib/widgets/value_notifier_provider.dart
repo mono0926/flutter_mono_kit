@@ -29,6 +29,7 @@ class ValueNotifierProvider<Controller extends ValueNotifier<Value>, Value>
     if (value == null) {
       return InheritedProvider(
         create: create,
+        dispose: (context, Controller controller) => controller.dispose(),
         child: DeferredInheritedProvider<Controller, Value>(
           create: (context) => context.read<Controller>(),
           startListening: (context, setState, controller, _) {
