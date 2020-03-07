@@ -148,7 +148,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.14.0-dev+27"
+    version: "0.14.0-dev+29"
   nested:
     dependency: transitive
     description:
@@ -204,7 +204,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0+1"
+    version: "1.9.0"
   pedantic_mono:
     dependency: "direct dev"
     description:
@@ -245,10 +245,10 @@ packages:
     description:
       path: "."
       ref: extensions
-      resolved-ref: "28831c0c8e6a555195bf64abdedca49e476d2089"
+      resolved-ref: "739b7e50a7ea1276c24f5823ae00e68bd155b136"
       url: "https://github.com/rrousselGit/provider.git"
     source: git
-    version: "4.1.0-dev"
+    version: "4.1.0-dev+1"
   quiver:
     dependency: transitive
     description:
@@ -288,7 +288,7 @@ packages:
       name: sqflite
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.1"
+    version: "1.2.2"
   stack_trace:
     dependency: transitive
     description:
@@ -337,7 +337,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.11"
+    version: "0.2.15"
   tinycolor:
     dependency: transitive
     description:
