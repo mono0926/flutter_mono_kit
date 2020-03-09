@@ -35,7 +35,7 @@ class Barrier extends SingleChildStatelessWidget {
         Positioned.fill(
           child: ValueListenableBuilder<bool>(
             valueListenable:
-                showProgress ?? context.read<BarrierController>().inProgress,
+                showProgress ?? context.watch<BarrierController>().inProgress,
             builder: (context, visible, child) => Visibility(
               visible: visible,
               child: child,
