@@ -4,6 +4,7 @@ class VerticalCenterScrollView extends StatefulWidget {
   const VerticalCenterScrollView({
     Key key,
     @required this.child,
+    this.padding,
     this.autoPop = false,
     this.hasCloseButton = false,
   }) : super(key: key);
@@ -11,6 +12,7 @@ class VerticalCenterScrollView extends StatefulWidget {
   final Widget child;
   final bool autoPop;
   final bool hasCloseButton;
+  final EdgeInsets padding;
 
   @override
   _VerticalCenterScrollViewState createState() =>
@@ -44,6 +46,7 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
         LayoutBuilder(
           builder: (context, constraints) {
             return SingleChildScrollView(
+              padding: widget.padding,
               controller: _controller,
               // 中身の高さによらず常にバウンスさせる
               physics: const AlwaysScrollableScrollPhysics(),

@@ -17,7 +17,7 @@ class ColorExPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () {},
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
