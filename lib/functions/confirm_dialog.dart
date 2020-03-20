@@ -1,28 +1,49 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 
+// TODO(mono): Destructive対応
 Future<T> showConfirmDialog<T>({
   @required BuildContext context,
   @required String title,
   @required String message,
   @required List<DialogAction<T>> actions,
 }) {
-  return showDialog<T>(
-    context: context,
-    builder: (context) => AlertDialog(
-      title: Text(title),
-      content: Text(message),
-      actions: actions
-          .map(
-            (a) => FlatButton(
-              child: Text(a.label),
-              onPressed: () {
-                Navigator.of(context).pop<T>(a.key);
-              },
-            ),
-          )
-          .toList(),
-    ),
-  );
+  void pop(T key) => Navigator.of(context).pop(key);
+  if (isCupertinoStyle) {
+    return showCupertinoDialog(
+      context: context,
+      builder: (context) => CupertinoAlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: actions
+            .map(
+              (a) => CupertinoButton(
+                child: Text(a.label),
+                onPressed: () => pop(a.key),
+              ),
+            )
+            .toList(),
+      ),
+    );
+  } else {
+    return showDialog<T>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: actions
+            .map(
+              (a) => FlatButton(
+                child: Text(a.label),
+                onPressed: () => pop(a.key),
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
 }
 
 Future<void> showOkDialog({
