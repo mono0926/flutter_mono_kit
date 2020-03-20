@@ -27,7 +27,7 @@ class App extends StatelessWidget {
         child: child,
       ),
       theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
       onGenerateRoute: context.watch<Router>().onGenerateRoute,
       onUnknownRoute: (settings) => MaterialPageRoute<void>(
         settings: settings,
