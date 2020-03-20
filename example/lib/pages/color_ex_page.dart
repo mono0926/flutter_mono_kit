@@ -13,6 +13,7 @@ class ColorExPage extends StatelessWidget {
     return Theme(
       data: ThemeData(
         primarySwatch: _swatch,
+        brightness: Theme.of(context).brightness,
       ),
       child: Scaffold(
         appBar: AppBar(),
@@ -22,7 +23,6 @@ class ColorExPage extends StatelessWidget {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black,
           items: List.generate(
             2,
             (_) => BottomNavigationBarItem(
