@@ -46,11 +46,7 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
           _Pan(
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 8,
-                  right: 8,
-                  bottom: 8,
-                ),
+                padding: const EdgeInsets.all(8).copyWith(top: 0),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
