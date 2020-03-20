@@ -1,3 +1,4 @@
+import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
@@ -16,7 +17,9 @@ class ColorExPage extends StatelessWidget {
         brightness: Theme.of(context).brightness,
       ),
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(pascalCaseFromRouteName(routeName)),
+        ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {},
