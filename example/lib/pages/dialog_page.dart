@@ -1,3 +1,4 @@
+import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
@@ -15,7 +16,7 @@ class _DialogPageState extends State<DialogPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(DialogPage.routeName),
+        title: Text(pascalCaseFromRouteName(DialogPage.routeName)),
       ),
       body: ListView(
         children: <Widget>[
