@@ -17,7 +17,7 @@ dependencies:
   subscription_holder: ^1.2.0+1
   simple_logger: ^1.6.0+1
   tinycolor: ^1.0.2
-  flutter_svg: ^0.17.2
+  flutter_svg: ^0.17.3+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
