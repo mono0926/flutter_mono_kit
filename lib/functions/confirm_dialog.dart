@@ -11,39 +11,37 @@ Future<T> showConfirmDialog<T>({
   @required List<DialogAction<T>> actions,
 }) {
   void pop(T key) => Navigator.of(context).pop(key);
-  if (isCupertinoStyle) {
-    return showCupertinoDialog(
-      context: context,
-      builder: (context) => CupertinoAlertDialog(
-        title: Text(title),
-        content: Text(message),
-        actions: actions
-            .map(
-              (a) => CupertinoButton(
-                child: Text(a.label),
-                onPressed: () => pop(a.key),
-              ),
-            )
-            .toList(),
-      ),
-    );
-  } else {
-    return showDialog<T>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(title),
-        content: Text(message),
-        actions: actions
-            .map(
-              (a) => FlatButton(
-                child: Text(a.label),
-                onPressed: () => pop(a.key),
-              ),
-            )
-            .toList(),
-      ),
-    );
-  }
+  return isCupertinoStyle
+      ? showCupertinoDialog(
+          context: context,
+          builder: (context) => CupertinoAlertDialog(
+            title: Text(title),
+            content: Text(message),
+            actions: actions
+                .map(
+                  (a) => CupertinoButton(
+                    child: Text(a.label),
+                    onPressed: () => pop(a.key),
+                  ),
+                )
+                .toList(),
+          ),
+        )
+      : showDialog<T>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(title),
+            content: Text(message),
+            actions: actions
+                .map(
+                  (a) => FlatButton(
+                    child: Text(a.label),
+                    onPressed: () => pop(a.key),
+                  ),
+                )
+                .toList(),
+          ),
+        );
 }
 
 Future<void> showOkDialog({
