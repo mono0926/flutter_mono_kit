@@ -12,3 +12,10 @@ extension ThemeDataEx on ThemeData {
     );
   }
 }
+
+ThemeData lightTheme() => ThemeData.from(
+      colorScheme: const ColorScheme.light(),
+    ).followLatestSpec();
+ThemeData darkTheme() => ThemeData.from(
+      colorScheme: const ColorScheme.dark(),
+    ).followLatestSpec();
