@@ -7,9 +7,7 @@ import 'pages/pages.dart';
 import 'router.dart';
 
 class App extends StatelessWidget {
-  App();
-
-  final _router = Router();
+  const App({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,9 @@ class App extends StatelessWidget {
         ],
         child: child,
       ),
-      onGenerateRoute: _router.onGenerateRoute,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      onGenerateRoute: context.watch<Router>().onGenerateRoute,
       onUnknownRoute: (settings) => MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const NotFoundPage(),

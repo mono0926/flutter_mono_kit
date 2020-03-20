@@ -8,6 +8,7 @@ import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/text_input_dialog_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
+import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
@@ -28,35 +29,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView(
         children: [
-          ListTile(
-            title: const Text(LifeCycleObserverPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(LifeCycleObserverPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(BarrierPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(BarrierPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text('UnfocusOnTap'),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(UnfocusOnTapPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text('OverflowDetectableText'),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamed(OverflowDetectableTextPage.routeName);
-            },
-          ),
+          ...PageInfo.all.map((info) {
+            final routeName = info.routeName;
+            return ListTile(
+              title: Text(pascalCaseFromRouteName(routeName)),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.of(context).pushNamed(routeName),
+            );
+          }),
           ListTile(
             title: const Text('iGhost(Dev) installed?'),
             subtitle: FutureBuilder<bool>(
@@ -102,56 +82,6 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               );
-            },
-          ),
-          ListTile(
-            title: const Text(PagingScrollPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(PagingScrollPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(BannerVisibilityPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(BannerVisibilityPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(ColorExPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(ColorExPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(TextInputDialogPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(TextInputDialogPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(MaxWidthPaddingBuilderPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamed(MaxWidthPaddingBuilderPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(BetterPlaceholderPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(BetterPlaceholderPage.routeName);
-            },
-          ),
-          ListTile(
-            title: const Text(LoadingSwitcherPage.routeName),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.of(context).pushNamed(LoadingSwitcherPage.routeName);
             },
           ),
         ],

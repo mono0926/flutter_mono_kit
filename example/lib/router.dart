@@ -10,6 +10,7 @@ import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/text_input_dialog_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
+import 'package:recase/recase.dart';
 
 class Router {
   final Map<String, WidgetBuilder> pushRoutes = {
@@ -43,4 +44,29 @@ class Router {
     }
     return null;
   }
+}
+
+String pascalCaseFromRouteName(String name) => name.substring(1).pascalCase;
+
+@immutable
+class PageInfo {
+  const PageInfo({
+    @required this.routeName,
+  });
+
+  final String routeName;
+
+  static List<PageInfo> get all => [
+        LifeCycleObserverPage.routeName,
+        BarrierPage.routeName,
+        UnfocusOnTapPage.routeName,
+        OverflowDetectableTextPage.routeName,
+        PagingScrollPage.routeName,
+        BannerVisibilityPage.routeName,
+        ColorExPage.routeName,
+        TextInputDialogPage.routeName,
+        MaxWidthPaddingBuilderPage.routeName,
+        BetterPlaceholderPage.routeName,
+        LoadingSwitcherPage.routeName,
+      ].map((rn) => PageInfo(routeName: rn)).toList();
 }
