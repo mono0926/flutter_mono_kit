@@ -22,13 +22,20 @@ class _DialogPageState extends State<DialogPage> {
         children: <Widget>[
           ListTile(
             title: const Text('OK Dialog'),
-            onTap: () {
-              showOkDialog(
-                context: context,
-                title: 'Title',
-                message: 'This is message.',
-              );
-            },
+            onTap: () => showOkDialog(
+              context: context,
+              title: 'Title',
+              message: 'This is message.',
+            ),
+          ),
+          ListTile(
+            title: const Text('OK Dialog (Custom okLabel'),
+            onTap: () => showOkDialog(
+              context: context,
+              title: 'Title',
+              message: 'This is message.',
+              okLabel: 'YES!',
+            ),
           ),
         ],
       ),
