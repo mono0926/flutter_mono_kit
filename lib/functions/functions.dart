@@ -6,4 +6,4 @@ export 'confirm_dialog.dart';
 export 'modal_bottom_sheet.dart';
 export 'show_error_dialog.dart';
 
-const bool isCupertinoStyle = !kIsWeb && Platform.isIOS;
+final bool isCupertinoStyle = !kIsWeb && Platform.isIOS;
