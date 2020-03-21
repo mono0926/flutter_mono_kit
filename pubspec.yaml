@@ -14,7 +14,6 @@ dependencies:
   disposable_provider: ^2.1.1
   nested: ^0.0.4
   provider: ^4.1.0-dev
-  recase: ^3.0.0
   subscription_holder: ^1.2.0+1
   simple_logger: ^1.6.0+1
   tinycolor: ^1.0.2

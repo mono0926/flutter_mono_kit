@@ -243,11 +243,9 @@ packages:
   provider:
     dependency: "direct main"
     description:
-      path: "."
-      ref: extensions
-      resolved-ref: a090037f59aeebfbb991d3310384a6fc88c24e51
-      url: "https://github.com/rrousselGit/provider.git"
-    source: git
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "4.1.0-dev+2"
   quiver:
     dependency: transitive
@@ -257,7 +255,7 @@ packages:
     source: hosted
     version: "2.0.5"
   recase:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: recase
       url: "https://pub.dartlang.org"
