@@ -14,7 +14,6 @@ export 'max_width_padding_builder.dart';
 export 'overflow_detectable_text.dart';
 export 'ripple_effect_button.dart';
 export 'scroll_keyboard_shortcut.dart';
-export 'text_input_dialog.dart';
 export 'text_scale_factor.dart';
 export 'timeout_switcher.dart';
 export 'unfocus_on_tap.dart';

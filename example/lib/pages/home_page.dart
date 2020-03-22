@@ -1,6 +1,5 @@
 import 'package:example/router.dart';
 import 'package:flutter/material.dart';
-import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
 
 class HomePage extends StatelessWidget {
@@ -37,40 +36,6 @@ class HomePage extends StatelessWidget {
                 return Text(snap.data.toString());
               },
             ),
-          ),
-          ListTile(
-            title: const Text('TextAnswerDialog'),
-            onTap: () async {
-              final ok = await TextAnswerDialog.show(
-                context: context,
-                title: '今日は何の日？',
-                message: '今日は何の日か入力して「OK」ボタンを押してください。',
-                keyword: '華金',
-                hintText: '何の日？',
-                okButtonLabel: 'OK',
-                retryTitle: '不正解です(　´･‿･｀)',
-                retryMessage: 'リトライしますか？',
-                retryButtonLabel: 'リトライ',
-              );
-              print('ok: $ok');
-              if (!ok) {
-                return;
-              }
-              await showDialog<void>(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('正解です、帰りましょう🍻'),
-                  actions: [
-                    FlatButton(
-                      child: const Text('帰る'),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ],
-                ),
-              );
-            },
           ),
         ],
       ),

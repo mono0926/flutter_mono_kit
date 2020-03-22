@@ -7,7 +7,6 @@ import 'package:example/pages/loading_switcher_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
-import 'package:example/pages/text_input_dialog_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
 import 'package:recase/recase.dart';
@@ -23,7 +22,6 @@ class Router {
     PagingScrollPage.routeName: (context) => const PagingScrollPage(),
     BannerVisibilityPage.routeName: (context) => const BannerVisibilityPage(),
     ColorExPage.routeName: (context) => const ColorExPage(),
-    TextInputDialogPage.routeName: (context) => const TextInputDialogPage(),
     MaxWidthPaddingBuilderPage.routeName: (context) =>
         const MaxWidthPaddingBuilderPage(),
     BetterPlaceholderPage.routeName: (context) => const BetterPlaceholderPage(),
@@ -64,7 +62,6 @@ class PageInfo {
         PagingScrollPage.routeName,
         BannerVisibilityPage.routeName,
         ColorExPage.routeName,
-        TextInputDialogPage.routeName,
         MaxWidthPaddingBuilderPage.routeName,
         BetterPlaceholderPage.routeName,
         LoadingSwitcherPage.routeName,
