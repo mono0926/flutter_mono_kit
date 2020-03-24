@@ -7,6 +7,7 @@ export 'better_fade_transtion.dart';
 export 'better_placeholder.dart';
 export 'better_stream_builder.dart';
 export 'centered_max_width.dart';
+export 'device_frame.dart';
 export 'itemized_text.dart';
 export 'listener/listener.dart';
 export 'loading_switcher.dart';
