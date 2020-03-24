@@ -1,6 +1,6 @@
 name: mono_kit
 description: A collection of convenient widgets and utils made by mono. Under construction now.
-version: 0.14.0-dev+37
+version: 0.14.0-dev+38
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -12,8 +12,10 @@ dependencies:
   rxdart: ^0.23.1
   url_launcher: ^5.4.2
   disposable_provider: ^2.1.1
+  freezed_annotation: ^0.7.1
   nested: ^0.0.4
   provider: ^4.1.0-dev
+  stream_transform: ^1.2.0
   subscription_holder: ^1.2.0+1
   simple_logger: ^1.6.0+1
   tinycolor: ^1.0.2
@@ -21,7 +23,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic_mono: any
+  build_runner:
+  freezed:
+  pedantic_mono:
 flutter:
   plugin:
     platforms:

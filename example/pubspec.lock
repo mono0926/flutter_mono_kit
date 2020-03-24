@@ -100,6 +100,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  freezed_annotation:
+    dependency: transitive
+    description:
+      name: freezed_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.7.1"
   http:
     dependency: transitive
     description:
@@ -121,6 +128,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.4"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   logging:
     dependency: transitive
     description:
@@ -148,7 +162,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.14.0-dev+37"
+    version: "0.14.0-dev+38"
   nested:
     dependency: transitive
     description:
@@ -315,6 +329,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  stream_transform:
+    dependency: transitive
+    description:
+      name: stream_transform
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   string_scanner:
     dependency: transitive
     description:
