@@ -3,6 +3,7 @@ import 'package:example/pages/barrier_page.dart';
 import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
+import 'package:example/pages/list_tile_selected_background_colored_box_page.dart';
 import 'package:example/pages/loading_switcher_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
@@ -26,6 +27,8 @@ class Router {
         const MaxWidthPaddingBuilderPage(),
     BetterPlaceholderPage.routeName: (context) => const BetterPlaceholderPage(),
     LoadingSwitcherPage.routeName: (context) => LoadingSwitcherPage.wrapped(),
+    ListTileSelectedBackgroundColoredBoxPage.routeName: (context) =>
+        const ListTileSelectedBackgroundColoredBoxPage(),
   };
 
   Route onGenerateRoute(RouteSettings settings) {
@@ -65,5 +68,6 @@ class PageInfo {
         MaxWidthPaddingBuilderPage.routeName,
         BetterPlaceholderPage.routeName,
         LoadingSwitcherPage.routeName,
+        ListTileSelectedBackgroundColoredBoxPage.routeName,
       ].map((rn) => PageInfo(routeName: rn)).toList();
 }
