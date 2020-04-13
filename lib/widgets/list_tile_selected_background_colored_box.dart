@@ -27,6 +27,7 @@ class ListTileSelectedBackgroundColoredBox extends StatelessWidget {
             ),
         // Needed for ripple effect clipping
         child: Material(
+          type: MaterialType.transparency,
           child: ColoredBox(
             color: listTile.selected
                 ? color ?? colorScheme.primary.withOpacity(0.1)
