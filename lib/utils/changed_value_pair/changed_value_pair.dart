@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mono_kit/utils/logger.dart';
 import 'package:rxdart/rxdart.dart' hide ScanExtension;
 import 'package:stream_transform/stream_transform.dart';
 
