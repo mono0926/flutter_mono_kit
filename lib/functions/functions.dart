@@ -15,13 +15,19 @@ String convertToHalfWidth(String text) {
 ///
 /// Modified from this:
 /// https://github.com/flutter/flutter/blob/62621507966463f9fe678b3e249a64f1be11c9a1/packages/flutter/lib/src/widgets/framework.dart#L4376
-void configureErrorWidgetBuilder({@required bool isProduction}) {
+void configureErrorWidgetBuilder({
+  @required bool isProduction,
+  ErrorWidgetBuilder productionBuilder,
+}) {
   ErrorWidget.builder = (details) {
     final message = kReleaseMode && isProduction
         ? ''
         : '${_stringifyException(details.exception)}\n'
             'See also: https://flutter.dev/docs/testing/errors';
     final dynamic exception = details.exception;
+    if (isProduction && productionBuilder != null) {
+      return productionBuilder(details);
+    }
     return ErrorWidget.withDetails(
       message: message,
       error: exception is FlutterError ? exception : null,
