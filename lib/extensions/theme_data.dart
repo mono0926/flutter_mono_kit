@@ -28,8 +28,8 @@ ThemeData lightTheme() => ThemeData.from(
 ThemeData darkTheme() => ThemeData.from(
       colorScheme: const ColorScheme.dark(),
     ).followLatestSpec().copyWith(
-  cupertinoOverrideTheme: const CupertinoThemeData(
-    // Needed for correct CupertinoTextField color (bug?)
-    textTheme: CupertinoTextThemeData(),
-  ),
-);
+          cupertinoOverrideTheme: const CupertinoThemeData(
+            // Needed for correct CupertinoTextField color (bug?)
+            textTheme: CupertinoTextThemeData(),
+          ),
+        );
