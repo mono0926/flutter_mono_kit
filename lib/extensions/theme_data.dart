@@ -10,6 +10,13 @@ extension ThemeDataEx on ThemeData {
         behavior: SnackBarBehavior.floating,
       ),
       splashFactory: InkRipple.splashFactory,
+      sliderTheme: const SliderThemeData(
+        trackHeight: 4,
+        trackShape: RoundedRectSliderTrackShape(useV2Slider: true),
+        tickMarkShape: RoundSliderTickMarkShape(useV2Slider: true),
+        thumbShape: RoundSliderThumbShape(useV2Slider: true),
+        valueIndicatorShape: RectangularSliderValueIndicatorShape(),
+      ),
     );
   }
 }
