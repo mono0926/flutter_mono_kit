@@ -1,4 +1,4 @@
-## [0.14.0-dev]
+## [0.14.0]
 
 - Reland `Swap englishLike bodyText1 and bodyText2`.
 
