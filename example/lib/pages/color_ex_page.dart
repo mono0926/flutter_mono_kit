@@ -28,9 +28,9 @@ class ColorExPage extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           items: List.generate(
             2,
-            (_) => BottomNavigationBarItem(
+            (_) => const BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: const Text(''),
+              title: Text(''),
             ),
           ),
         ),

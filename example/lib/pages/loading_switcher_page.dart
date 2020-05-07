@@ -42,7 +42,7 @@ class LoadingSwitcherPage extends StatelessWidget {
         onPressed: () {
           context.read<_Model>().reload();
         },
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }

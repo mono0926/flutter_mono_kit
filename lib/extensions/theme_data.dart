@@ -10,14 +10,6 @@ extension ThemeDataEx on ThemeData {
         behavior: SnackBarBehavior.floating,
       ),
       splashFactory: InkRipple.splashFactory,
-      // Follow V2 Spec: https://github.com/flutter/flutter/blob/b00b4e83424a118af66407d5e5c3e3a1fda83386/packages/flutter/lib/src/material/slider.dart#L628-L633
-      sliderTheme: const SliderThemeData(
-        trackHeight: 4,
-        trackShape: RoundedRectSliderTrackShape(useV2Slider: true),
-        tickMarkShape: RoundSliderTickMarkShape(useV2Slider: true),
-        thumbShape: RoundSliderThumbShape(useV2Slider: true),
-        valueIndicatorShape: RectangularSliderValueIndicatorShape(),
-      ),
     );
   }
 }
