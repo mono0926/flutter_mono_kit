@@ -7,6 +7,7 @@ mixin SubscriptionHolderMixin implements Disposable {
   @protected
   final SubscriptionHolder subscriptionHolder = SubscriptionHolder();
 
+  @override
   @mustCallSuper
   void dispose() {
     subscriptionHolder.dispose();

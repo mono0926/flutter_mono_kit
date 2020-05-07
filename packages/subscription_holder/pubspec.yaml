@@ -1,14 +1,14 @@
 name: subscription_holder
 description: Subscription Holder holds StreamSubscriptions and dispose all conveniently.
-version: 1.2.0+1
+version: 1.2.0+2
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
   sdk: ">=2.1.0 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
-  rxdart: ^0.23.1
-  disposable_provider: ^2.1.0
+  rxdart: ^0.24.0
+  disposable_provider: ^2.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
