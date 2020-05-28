@@ -5,7 +5,7 @@ import 'modal_page_route.dart';
 class FadePageRoute<T> extends ModalPageRoute<T> {
   FadePageRoute({
     @required WidgetBuilder builder,
-    @required RouteSettings settings,
+    RouteSettings settings,
   }) : super(
           builder: builder,
           settings: settings,

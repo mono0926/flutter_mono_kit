@@ -1,6 +1,10 @@
+## [0.14.1]
+
+- Remove @required of `settings` for `FadePageRoute`
+
 ## [0.14.0]
 
-- Reland `Swap englishLike bodyText1 and bodyText2`.
+- Re-land `Swap englishLike bodyText1 and bodyText2`.
 
 ## [0.13.6]
 
