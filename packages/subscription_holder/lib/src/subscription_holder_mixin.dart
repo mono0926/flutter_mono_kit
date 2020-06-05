@@ -1,9 +1,9 @@
-import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/foundation.dart';
+import 'package:state_notifier/state_notifier.dart';
 
 import 'subscription_holder.dart';
 
-mixin SubscriptionHolderMixin implements Disposable {
+mixin SubscriptionHolderMixin on StateNotifier {
   @protected
   final SubscriptionHolder subscriptionHolder = SubscriptionHolder();
 
@@ -11,5 +11,7 @@ mixin SubscriptionHolderMixin implements Disposable {
   @mustCallSuper
   void dispose() {
     subscriptionHolder.dispose();
+
+    super.dispose();
   }
 }
