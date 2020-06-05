@@ -3,7 +3,7 @@ import 'package:state_notifier/state_notifier.dart';
 
 import 'subscription_holder.dart';
 
-mixin SubscriptionHolderMixin on StateNotifier {
+mixin SubscriptionHolderMixin<T> on StateNotifier<T> {
   @protected
   final SubscriptionHolder subscriptionHolder = SubscriptionHolder();
 
