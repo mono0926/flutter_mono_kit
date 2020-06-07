@@ -71,7 +71,7 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
               color: Colors.transparent,
               child: SafeArea(
                 bottom: false,
-                child: Container(
+                child: SizedBox(
                   width: Material.defaultSplashRadius * 2,
                   height: Material.defaultSplashRadius * 2,
                   child: IconTheme(
