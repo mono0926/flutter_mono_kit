@@ -1,3 +1,8 @@
+## [0.15.0]
+
+- Change `showPhotoSelectionSheet`'s return type to `Future<PickedFile>` from `Future<File>`
+  - Follow this migration guide: https://pub.dev/packages/image_picker#how-to-migrate-from-to-067
+
 ## [0.14.1]
 
 - Remove @required of `settings` for `FadePageRoute`

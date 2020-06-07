@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
-Future<File> showPhotoSelectionSheet({
+Future<PickedFile> showPhotoSelectionSheet({
   @required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
   VoidCallback onSettingAppOpenRequested,
@@ -33,8 +31,9 @@ Future<File> showPhotoSelectionSheet({
     return null;
   }
 
+  final picker = ImagePicker();
   try {
-    return await ImagePicker.pickImage(source: source);
+    return await picker.getImage(source: source);
   } on PlatformException catch (e) {
     logger.warning(e);
     if (![
