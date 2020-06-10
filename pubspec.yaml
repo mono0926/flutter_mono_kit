@@ -1,6 +1,6 @@
 name: mono_kit
 description: A collection of convenient widgets and utils made by mono. Under construction now.
-version: 0.15.0
+version: 0.15.1
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -23,7 +23,7 @@ dependencies:
   subscription_holder: ^2.0.0+1
   simple_logger: ^1.7.0
   tinycolor: ^1.0.2
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.18.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

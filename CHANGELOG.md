@@ -1,3 +1,7 @@
+## [0.15.1]
+
+- Change `showSimpleSnackBar` return type to `ScaffoldFeatureController<SnackBar, SnackBarClosedReason>` from `void`
+
 ## [0.15.0]
 
 - Change `showPhotoSelectionSheet`'s return type to `Future<PickedFile>` from `Future<File>`

@@ -1,51 +1,53 @@
 import 'package:flutter/material.dart';
 
 extension ScaffoldStateEx on ScaffoldState {
-  void showSimpleSnackBar(String text) {
-    this
-      ..removeCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(content: Text(text)),
-      );
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSimpleSnackBar(
+    String text,
+  ) {
+    removeCurrentSnackBar();
+    return showSnackBar(
+      SnackBar(content: Text(text)),
+    );
   }
 
-  void showUndoSnackBar({
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showUndoSnackBar({
     @required String text,
     @required VoidCallback onUndo,
     SnackBarL10n l10n = const SnackBarL10n(),
   }) {
-    this
-      ..removeCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          content: Text(text),
-          action: SnackBarAction(
-            textColor: Theme.of(context).textSelectionColor,
-            label: l10n.undo,
-            onPressed: onUndo,
-          ),
+    removeCurrentSnackBar();
+    return showSnackBar(
+      SnackBar(
+        content: Text(text),
+        action: SnackBarAction(
+          textColor: Theme.of(context).textSelectionColor,
+          label: l10n.undo,
+          onPressed: onUndo,
         ),
-      );
+      ),
+    );
   }
 
-  void showNotImplementedSnackBar({SnackBarL10n l10n = const SnackBarL10n()}) {
-    showErrorSnackBar(l10n.notImplemented);
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
+      showNotImplementedSnackBar({
+    SnackBarL10n l10n = const SnackBarL10n(),
+  }) {
+    return showErrorSnackBar(l10n.notImplemented);
   }
 
-  void showErrorSnackBar(
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showErrorSnackBar(
     dynamic error, {
     SnackBarL10n l10n = const SnackBarL10n(),
   }) {
-    this
-      ..removeCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          backgroundColor: Theme.of(context).errorColor,
-          content: Text(
-            l10n.localizeError(error),
-          ),
+    removeCurrentSnackBar();
+    return showSnackBar(
+      SnackBar(
+        backgroundColor: Theme.of(context).errorColor,
+        content: Text(
+          l10n.localizeError(error),
         ),
-      );
+      ),
+    );
   }
 }
 
