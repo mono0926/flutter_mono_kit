@@ -9,7 +9,6 @@ dependencies:
   flutter:
     sdk: flutter
   adaptive_dialog: ">=0.7.0 <2.0.0"
-  device_simulator: ^0.9.6
   flutter_cache_manager: ^1.4.0
   image_picker: ^0.6.7+1
   rxdart: ^0.24.1

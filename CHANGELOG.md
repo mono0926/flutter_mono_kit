@@ -1,3 +1,7 @@
+## [0.15.2]
+
+- Remove `device_simulator` dependency
+
 ## [0.15.1]
 
 - Change `showSimpleSnackBar` return type to `ScaffoldFeatureController<SnackBar, SnackBarClosedReason>` from `void`

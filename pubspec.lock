@@ -162,13 +162,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.1"
-  custom_navigator:
-    dependency: transitive
-    description:
-      name: custom_navigator
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0"
   dart_style:
     dependency: transitive
     description:
@@ -176,13 +169,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.6"
-  device_simulator:
-    dependency: "direct main"
-    description:
-      name: device_simulator
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.6"
   disposable_provider:
     dependency: "direct main"
     description:
