@@ -1,3 +1,7 @@
+## [0.15.3]
+
+- Add TilePadding
+
 ## [0.15.2]
 
 - Remove `device_simulator` dependency
