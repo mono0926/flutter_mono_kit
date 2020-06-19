@@ -1,3 +1,7 @@
+## [0.15.4]
+
+- Add some extensions
+
 ## [0.15.3]
 
 - Add TilePadding
