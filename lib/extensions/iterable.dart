@@ -3,4 +3,6 @@ extension IterableEx<T> on Iterable<T> {
 
   T firstWhereOrNull(bool Function(T) test) =>
       firstWhere(test, orElse: () => null);
+
+  T get firstOrNull => isEmpty ? null : first;
 }
