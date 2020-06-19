@@ -1,9 +1,9 @@
-extension ListWithIndex<T> on List<T> {
-  List<E> mapWithIndex<E>(E Function(T item, int index) function) {
-    final list = <E>[];
-    asMap().forEach((index, element) {
-      list.add(function(element, index));
-    });
-    return list;
-  }
+extension ListEx<T> on List<T> {
+  List<E> mapWithIndex<E>(E Function(T item, int index) f) => asMap()
+      .entries
+      .map((entry) => f(
+            entry.value,
+            entry.key,
+          ))
+      .toList();
 }
