@@ -5,4 +5,6 @@ extension IterableEx<T> on Iterable<T> {
       firstWhere(test, orElse: () => null);
 
   T get firstOrNull => isEmpty ? null : first;
+
+  T get lastOrNull => isEmpty ? null : last;
 }
