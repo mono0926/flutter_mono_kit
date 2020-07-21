@@ -1,3 +1,8 @@
+## [0.16.1-dev]
+
+- Delete ScaffoldStateEx
+  - Use [snack_bar_presenter](https://pub.dev/packages/snack_bar_presenter) instead
+
 ## [0.16.0-dev]
 
 - Update flutter_svg to 0.18.0
