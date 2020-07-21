@@ -1,3 +1,7 @@
+## [0.15.5]
+
+- Set pageTransitionsTheme to ZoomPageTransitionsBuilder except for Cupertino
+
 ## [0.15.4]
 
 - Add some extensions
