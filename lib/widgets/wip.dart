@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
 
-const double _kHeight = 12.0; // height of banner
+const double _kHeight = 12;
 const Color _kColor = Color(0xA0B71C1C);
 const TextStyle _kTextStyle = TextStyle(
   color: Color(0xFFFFFFFF),
