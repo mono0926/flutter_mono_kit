@@ -17,12 +17,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView(
         children: [
-          WIP(
-            child: const ListTile(
+          const WIP(
+            child: ListTile(
               title: Text('Experimental Feature'),
             ),
             visible: true,
-            color: Colors.yellow[900],
           ),
           ...PageInfo.all.map((info) {
             final routeName = info.routeName;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
 
 const double _kHeight = 12;
-const Color _kColor = Color(0xA0B71C1C);
+const Color _kColor = Color(0xFFF57F17);
 const TextStyle _kTextStyle = TextStyle(
   color: Color(0xFFFFFFFF),
   fontSize: _kHeight * 0.85,
@@ -33,14 +33,16 @@ class WIP extends SingleChildStatelessWidget {
       return const SizedBox.shrink();
     }
     final color = this.color ?? _kColor;
-    return Banner(
-      message: 'WIP',
-      location: location,
-      color: color,
-      textStyle: textStyle ?? _kTextStyle,
-      child: ColoredBox(
-        color: backgroundColor ?? color.withOpacity(0.1),
-        child: child,
+    return ClipRRect(
+      child: Banner(
+        message: 'WIP',
+        location: location,
+        color: color,
+        textStyle: textStyle ?? _kTextStyle,
+        child: ColoredBox(
+          color: backgroundColor ?? color.withOpacity(0.1),
+          child: child,
+        ),
       ),
     );
   }

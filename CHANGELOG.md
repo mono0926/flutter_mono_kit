@@ -1,3 +1,8 @@
+## 0.15.7
+
+- Change default color of WIP
+- Clip WIP
+
 ## 0.15.6
 
 - Add WIP
