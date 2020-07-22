@@ -1,5 +1,6 @@
 import 'package:example/router.dart';
 import 'package:flutter/material.dart';
+import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,6 +17,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: ListView(
         children: [
+          WIP(
+            child: const ListTile(
+              title: Text('Experimental Feature'),
+            ),
+            visible: true,
+            color: Colors.yellow[900],
+          ),
           ...PageInfo.all.map((info) {
             final routeName = info.routeName;
             return ListTile(
