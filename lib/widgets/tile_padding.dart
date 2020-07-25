@@ -13,6 +13,8 @@ class TilePadding extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
     return SafeArea(
+      top: false,
+      bottom: false,
       minimum: const EdgeInsets.symmetric(horizontal: 16),
       child: child,
     );

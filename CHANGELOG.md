@@ -1,3 +1,7 @@
+## 0.15.7+1
+
+- Fix TilePadding top/bottom SafeArea
+
 ## 0.15.7
 
 - Change default color of WIP
