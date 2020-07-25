@@ -1,3 +1,7 @@
+## [0.16.0-dev]
+
+- Update flutter_svg to 0.18.0
+
 ## 0.15.7+1
 
 - Fix TilePadding top/bottom SafeArea
