@@ -211,11 +211,7 @@ packages:
       path: ".."
       relative: true
     source: path
-<<<<<<< HEAD
-    version: "0.15.7+1"
-=======
-    version: "0.16.2-dev+3"
->>>>>>> 067f722... Update pubspec
+    version: "0.16.2-dev+4"
   nested:
     dependency: transitive
     description:
