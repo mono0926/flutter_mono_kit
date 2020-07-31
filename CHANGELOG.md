@@ -2,6 +2,7 @@
 
 - Delete ScaffoldStateEx
   - Use [snack_bar_presenter](https://pub.dev/packages/snack_bar_presenter) instead
+- Delete descendantContext of NavigatorStateEx in favor of https://github.com/flutter/flutter/pull/58259
 
 ## [0.16.0-dev]
 
