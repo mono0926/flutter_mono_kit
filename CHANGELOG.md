@@ -1,3 +1,16 @@
+## [0.16.2]
+
+- Delete descendantContext of NavigatorStateEx in favor of https://github.com/flutter/flutter/pull/58259
+
+## [0.16.1]
+
+- Delete ScaffoldStateEx
+  - Use [snack_bar_presenter](https://pub.dev/packages/snack_bar_presenter) instead
+
+## [0.16.0]
+
+- Update flutter_svg to 0.18.0
+
 ## 0.15.7+1
 
 - Fix TilePadding top/bottom SafeArea
