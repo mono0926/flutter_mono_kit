@@ -7,14 +7,14 @@ packages:
       name: adaptive_dialog
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.5"
+    version: "0.7.5+3"
   animations:
     dependency: transitive
     description:
       name: animations
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.2"
   async:
     dependency: transitive
     description:
@@ -141,7 +141,7 @@ packages:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0"
+    version: "0.11.0+1"
   http:
     dependency: transitive
     description:
@@ -211,7 +211,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.16.2-dev+4"
+    version: "0.16.2"
   nested:
     dependency: transitive
     description:
@@ -281,7 +281,7 @@ packages:
       name: pedantic_mono
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.1"
+    version: "1.10.0+2"
   petitparser:
     dependency: transitive
     description:
@@ -405,7 +405,7 @@ packages:
       name: state_notifier
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.0"
+    version: "0.6.0"
   stream_channel:
     dependency: transitive
     description:
@@ -433,7 +433,7 @@ packages:
       name: subscription_holder
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0+1"
+    version: "2.0.0+3"
   synchronized:
     dependency: transitive
     description:
