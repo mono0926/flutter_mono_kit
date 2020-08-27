@@ -5,16 +5,18 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
     Key key,
     @required this.child,
     @required this.isVisible,
+    this.alignment,
     Duration duration,
     Curve curve,
   }) : super(
           key: key,
           duration: duration ?? const Duration(milliseconds: 200),
-          curve: curve,
+          curve: curve ?? Curves.linear,
         );
 
   final Widget child;
   final bool isVisible;
+  final Alignment alignment;
 
   @override
   _AnimatedExpansionVisibilityState createState() =>
@@ -32,7 +34,7 @@ class _AnimatedExpansionVisibilityState
       visible: heightFactor != 0,
       child: ClipRect(
         child: Align(
-          alignment: Alignment.bottomCenter,
+          alignment: widget.alignment ?? Alignment.bottomCenter,
           heightFactor: heightFactor,
           child: widget.child,
         ),
