@@ -1,7 +1,9 @@
+import 'package:example/pages/app_bottom_area_page.dart';
 import 'package:example/pages/banner_visibility_page.dart';
 import 'package:example/pages/barrier_page.dart';
 import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
+import 'package:example/pages/debug_padding_page.dart';
 import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/list_tile_selected_background_colored_box_page.dart';
 import 'package:example/pages/loading_switcher_page.dart';
@@ -14,6 +16,8 @@ import 'package:recase/recase.dart';
 
 class Router {
   final Map<String, WidgetBuilder> pushRoutes = {
+    AppBottomAreaPage.routeName: (context) => const AppBottomAreaPage(),
+    DebugPaddingPage.routeName: (context) => const DebugPaddingPage(),
     OverflowDetectableTextPage.routeName: (context) =>
         const OverflowDetectableTextPage(),
     BarrierPage.routeName: (context) => const BarrierPage(),
@@ -58,6 +62,8 @@ class PageInfo {
   final String routeName;
 
   static List<PageInfo> get all => [
+        AppBottomAreaPage.routeName,
+        DebugPaddingPage.routeName,
         LifeCycleObserverPage.routeName,
         BarrierPage.routeName,
         UnfocusOnTapPage.routeName,

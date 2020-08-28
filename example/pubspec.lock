@@ -211,7 +211,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.16.2+1"
+    version: "0.16.3"
   nested:
     dependency: transitive
     description:
@@ -461,7 +461,7 @@ packages:
       name: tinycolor
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   typed_data:
     dependency: transitive
     description:
@@ -510,7 +510,7 @@ packages:
       name: uuid
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.2"
   vector_math:
     dependency: transitive
     description:

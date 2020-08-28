@@ -1,13 +1,17 @@
-## [0.16.2]
+## 0.16.3
+
+- Add AppBottomArea
+
+## 0.16.2
 
 - Delete descendantContext of NavigatorStateEx in favor of https://github.com/flutter/flutter/pull/58259
 
-## [0.16.1]
+## 0.16.1
 
 - Delete ScaffoldStateEx
-  - Use [snack_bar_presenter](https://pub.dev/packages/snack_bar_presenter) instead
+  - Use snack_bar_presenter](https://pub.dev/packages/snack_bar_presenter) instead
 
-## [0.16.0]
+## 0.16.0
 
 - Update flutter_svg to 0.18.0
 

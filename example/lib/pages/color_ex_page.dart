@@ -30,7 +30,7 @@ class ColorExPage extends StatelessWidget {
             2,
             (_) => const BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text(''),
+              label: '',
             ),
           ),
         ),
