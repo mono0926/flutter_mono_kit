@@ -19,7 +19,7 @@ class AppBottomAreaPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
             child: Text(
-              'AppSubArea-bottom',
+              'AppBottomArea',
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyText2.copyWith(
                 color: colorScheme.surface,
