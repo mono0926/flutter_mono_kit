@@ -13,7 +13,7 @@ class AppBottomAreaPage extends StatelessWidget {
     return AppBottomArea(
       bottom: Container(
         width: double.infinity,
-        color: colorScheme.onSurface,
+        color: Colors.blueGrey,
         child: SafeArea(
           top: false,
           child: Padding(
@@ -22,7 +22,7 @@ class AppBottomAreaPage extends StatelessWidget {
               'AppBottomArea',
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyText2.copyWith(
-                color: colorScheme.surface,
+                color: Colors.white,
               ),
             ),
           ),
