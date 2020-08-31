@@ -1,24 +1,25 @@
 import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
-import 'package:provider/provider.dart';
 
-class Barrier extends SingleChildStatelessWidget {
+final barrierProvider = Provider((ref) => BarrierController());
+
+class Barrier extends HookWidget {
   const Barrier({
     Key key,
-    Widget child,
+    @required this.child,
     this.showProgress,
     this.valueColor,
     this.backgroundColor,
     this.timeout = const Duration(milliseconds: 200),
     this.switchDuration = const Duration(milliseconds: 100),
-  }) : super(
-          key: key,
-          child: child,
-        );
+  }) : super(key: key);
 
+  final Widget child;
   final ValueListenable<bool> showProgress;
   final Color valueColor;
   final Color backgroundColor;
@@ -26,7 +27,7 @@ class Barrier extends SingleChildStatelessWidget {
   final Duration switchDuration;
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Stack(
       fit: StackFit.passthrough,
@@ -35,7 +36,7 @@ class Barrier extends SingleChildStatelessWidget {
         Positioned.fill(
           child: ValueListenableBuilder<bool>(
             valueListenable:
-                showProgress ?? context.watch<BarrierController>().inProgress,
+                showProgress ?? useProvider(barrierProvider).inProgress,
             builder: (context, visible, child) => Visibility(
               visible: visible,
               child: child,
@@ -104,24 +105,6 @@ class BarrierControllerProvider extends SingleChildStatelessWidget {
     return DisposableProvider(
       create: (context) => BarrierController(),
       child: child,
-    );
-  }
-}
-
-class BarrierKit extends SingleChildStatelessWidget {
-  const BarrierKit({
-    Key key,
-    Widget child,
-  }) : super(
-          key: key,
-          child: child,
-        );
-  @override
-  Widget buildWithChild(BuildContext context, Widget child) {
-    return BarrierControllerProvider(
-      child: Barrier(
-        child: child,
-      ),
     );
   }
 }

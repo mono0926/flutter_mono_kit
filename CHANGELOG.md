@@ -1,3 +1,7 @@
+## 0.17.0
+
+- Depends on hooks_riverpod instead of provider
+
 ## 0.16.3
 
 - Add AppBottomArea
