@@ -112,7 +112,7 @@ packages:
     source: hosted
     version: "1.4.1"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       url: "https://pub.dartlang.org"
@@ -157,7 +157,7 @@ packages:
     source: hosted
     version: "0.11.0+1"
   hooks_riverpod:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: hooks_riverpod
       url: "https://pub.dartlang.org"
@@ -234,7 +234,7 @@ packages:
     source: path
     version: "0.17.0"
   nested:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: nested
       url: "https://pub.dartlang.org"
@@ -346,7 +346,7 @@ packages:
     source: hosted
     version: "3.0.13"
   provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: provider
       url: "https://pub.dartlang.org"

@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
-import 'package:provider/provider.dart';
 
-class LoadingSwitcherPage extends StatelessWidget {
-  const LoadingSwitcherPage._({Key key}) : super(key: key);
+final _controller = ChangeNotifierProvider((ref) => _Controller());
+
+class LoadingSwitcherPage extends HookWidget {
+  const LoadingSwitcherPage({Key key}) : super(key: key);
 
   static const routeName = '/loading_switcher';
-
-  static Widget wrapped() {
-    return ChangeNotifierProvider(
-      create: (context) => _Model(),
-      child: const LoadingSwitcherPage._(),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +21,16 @@ class LoadingSwitcherPage extends StatelessWidget {
           AspectRatio(
             aspectRatio: 1,
             child: LoadingSwitcher(
-              timeout: context.select(
-                (_Model model) => model.getDuration(
-                  sliderType: SliderType.timeout,
+              timeout: useProvider(
+                _controller.select(
+                  (_Controller model) => model.getDuration(
+                    sliderType: SliderType.timeout,
+                  ),
                 ),
               ),
-              child: context.select((_Model model) => model.image),
+              child: useProvider(
+                _controller.select((_Controller model) => model.image),
+              ),
             ),
           ),
           const SizedBox(height: 48),
@@ -40,7 +40,7 @@ class LoadingSwitcherPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<_Model>().reload();
+          context.read(_controller).reload();
         },
         child: const Icon(Icons.refresh),
       ),
@@ -48,7 +48,7 @@ class LoadingSwitcherPage extends StatelessWidget {
   }
 }
 
-class _Slider extends StatelessWidget {
+class _Slider extends HookWidget {
   const _Slider({
     Key key,
     @required this.type,
@@ -57,9 +57,9 @@ class _Slider extends StatelessWidget {
   final SliderType type;
   @override
   Widget build(BuildContext context) {
-    final value = context.select(
-      (_Model model) =>
-          model.getDuration(sliderType: type).inMilliseconds.toDouble(),
+    final value = useProvider(
+      _controller.select((_Controller model) =>
+          model.getDuration(sliderType: type).inMilliseconds.toDouble()),
     );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -74,7 +74,7 @@ class _Slider extends StatelessWidget {
               label: '$value',
               divisions: 100,
               onChanged: (value) {
-                context.read<_Model>().updateDuration(
+                context.read(_controller).updateDuration(
                       sliderType: type,
                       duration: Duration(
                         milliseconds: value.toInt(),
@@ -89,8 +89,8 @@ class _Slider extends StatelessWidget {
   }
 }
 
-class _Model with ChangeNotifier {
-  _Model() {
+class _Controller with ChangeNotifier {
+  _Controller() {
     reload();
   }
 

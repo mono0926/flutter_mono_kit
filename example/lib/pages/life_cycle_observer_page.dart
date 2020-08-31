@@ -1,22 +1,13 @@
 import 'dart:async';
 
-import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
-import 'package:provider/provider.dart';
 
 class LifeCycleObserverPage extends StatefulWidget {
-  const LifeCycleObserverPage._({Key key}) : super(key: key);
+  const LifeCycleObserverPage({Key key}) : super(key: key);
 
   static const routeName = '/life_cycle_observer';
-
-  static Widget wrapped() {
-    // 実際にはMaterialAppの上に置くイメージ
-    return DisposableProvider(
-      create: (context) => LifeCycleObserver(),
-      child: const LifeCycleObserverPage._(),
-    );
-  }
 
   @override
   _LifeCycleObserverPageState createState() => _LifeCycleObserverPageState();
@@ -29,9 +20,7 @@ class _LifeCycleObserverPageState extends State<LifeCycleObserverPage> {
   void initState() {
     super.initState();
 
-    subscription = Provider.of<LifeCycleObserver>(context, listen: false)
-        .stateStream
-        .listen(print);
+    subscription = context.read(lifecycleObserver).stateStream.listen(print);
   }
 
   @override

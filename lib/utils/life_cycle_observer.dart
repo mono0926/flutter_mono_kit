@@ -1,8 +1,10 @@
 import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rxdart/rxdart.dart';
 
-// ignore: prefer_mixin
+final lifecycleObserver = Provider((ref) => LifeCycleObserver());
+
 class LifeCycleObserver with WidgetsBindingObserver implements Disposable {
   LifeCycleObserver({
     AppLifecycleState initialState = AppLifecycleState.resumed,

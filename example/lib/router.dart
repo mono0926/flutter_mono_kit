@@ -12,7 +12,10 @@ import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:recase/recase.dart';
+
+final router = Provider((ref) => Router());
 
 class Router {
   final Map<String, WidgetBuilder> pushRoutes = {
@@ -22,15 +25,14 @@ class Router {
         const OverflowDetectableTextPage(),
     BarrierPage.routeName: (context) => const BarrierPage(),
     UnfocusOnTapPage.routeName: (context) => const UnfocusOnTapPage(),
-    LifeCycleObserverPage.routeName: (context) =>
-        LifeCycleObserverPage.wrapped(),
+    LifeCycleObserverPage.routeName: (context) => const LifeCycleObserverPage(),
     PagingScrollPage.routeName: (context) => const PagingScrollPage(),
     BannerVisibilityPage.routeName: (context) => const BannerVisibilityPage(),
     ColorExPage.routeName: (context) => const ColorExPage(),
     MaxWidthPaddingBuilderPage.routeName: (context) =>
         const MaxWidthPaddingBuilderPage(),
     BetterPlaceholderPage.routeName: (context) => const BetterPlaceholderPage(),
-    LoadingSwitcherPage.routeName: (context) => LoadingSwitcherPage.wrapped(),
+    LoadingSwitcherPage.routeName: (context) => const LoadingSwitcherPage(),
     ListTileSelectedBackgroundColoredBoxPage.routeName: (context) =>
         const ListTileSelectedBackgroundColoredBoxPage(),
   };

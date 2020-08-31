@@ -11,8 +11,10 @@ dependencies:
   mono_kit:
     path: ..
   simple_logger:
-  provider:
   recase:
+  hooks_riverpod:
+  flutter_hooks:
+  nested:
 dev_dependencies:
   flutter_test:
     sdk: flutter
