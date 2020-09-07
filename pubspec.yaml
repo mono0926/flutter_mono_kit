@@ -1,6 +1,6 @@
 name: mono_kit
 description: A collection of convenient widgets and utils made by mono. Under construction now.
-version: 0.17.1+3
+version: 0.17.1+4
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -8,23 +8,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  adaptive_dialog: ">=0.7.0 <2.0.0"
-  flutter_cache_manager: ^1.4.1
-  image_picker: ^0.6.7+7
-  rxdart: ^0.24.1
-  url_launcher: ^5.4.10
-  disposable_provider: ^2.2.0
-  freezed_annotation: ^0.11.0+1
-  nested: ^0.0.4
-  hooks_riverpod: ^0.9.1
-  quiver: ^2.1.3
-  stream_transform: ^1.2.0
-  subscription_holder: ^2.0.0+3
-  simple_logger: ^1.7.0
-  tinycolor: ^1.0.3
-  flutter_svg: ^0.18.1
-  state_notifier: ^0.6.0
-  flutter_hooks: ^0.13.2
+  adaptive_dialog: ">=0.7.0 <1.0.0"
+  flutter_cache_manager: ">=1.4.0 <2.0.0"
+  image_picker: ">=0.6.0 <1.0.0"
+  rxdart: ">=0.24.0 <1.0.0"
+  url_launcher: ">=5.4.0 <6.0.0"
+  disposable_provider: ">=2.0.0 <3.0.0"
+  freezed_annotation: ">=0.11.0 <1.0.0"
+  nested: ">=0.0.4 <1.0.0"
+  hooks_riverpod: ">=0.9.0 <1.0.0"
+  quiver: ">=2.0.0 <3.0.0"
+  stream_transform: ">=1.0.0 <2.0.0"
+  subscription_holder: ">=2.0.0 <3.0.0"
+  simple_logger: ">=1.6.0 <2.0.0"
+  tinycolor: ">=1.0.0 <2.0.0"
+  flutter_svg: ">=0.18.0 <1.0.0"
+  state_notifier: ">=0.6.0 <1.0.0"
+  flutter_hooks: ">=0.13.0 <1.0.0"
 dev_dependencies:
   flutter_test:
     sdk: flutter
