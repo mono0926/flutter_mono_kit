@@ -11,6 +11,7 @@ import 'package:example/pages/max_width_padding_builder_page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
+import 'package:example/pages/vertical_center_scroll_view_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:recase/recase.dart';
@@ -35,6 +36,8 @@ class Router {
     LoadingSwitcherPage.routeName: (context) => const LoadingSwitcherPage(),
     ListTileSelectedBackgroundColoredBoxPage.routeName: (context) =>
         const ListTileSelectedBackgroundColoredBoxPage(),
+    VerticalCenterScrollViewPage.routeName: (context) =>
+        const VerticalCenterScrollViewPage(),
   };
 
   Route onGenerateRoute(RouteSettings settings) {
@@ -64,6 +67,7 @@ class PageInfo {
   final String routeName;
 
   static List<PageInfo> get all => [
+        VerticalCenterScrollViewPage.routeName,
         AppBottomAreaPage.routeName,
         DebugPaddingPage.routeName,
         LifeCycleObserverPage.routeName,

@@ -45,6 +45,8 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
       children: [
         LayoutBuilder(
           builder: (context, constraints) {
+            final verticalPadding =
+                (widget.padding?.top ?? 0) + (widget.padding?.bottom ?? 0);
             return SingleChildScrollView(
               padding: widget.padding,
               controller: _controller,
@@ -53,7 +55,7 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
               child: ConstrainedBox(
                 // 最小高さを親の高さと一緒にする
                 constraints: BoxConstraints(
-                  minHeight: constraints.maxHeight,
+                  minHeight: constraints.maxHeight - verticalPadding,
                 ),
                 child: Center(
                   child: widget.child,
