@@ -157,7 +157,7 @@ class __DescState extends State<_Desc> {
     final theme = Theme.of(context);
     final backgroundColor = theme.scaffoldBackgroundColor;
     return Stack(
-      overflow: Overflow.visible,
+      clipBehavior: Clip.none,
       children: [
         OverflowDetectableText(
           widget.data.desc,
