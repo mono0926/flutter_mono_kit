@@ -1,4 +1,5 @@
 import 'package:example/router.dart';
+import 'package:example/util/util.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
@@ -43,6 +44,18 @@ class HomePage extends StatelessWidget {
                 return Text(snap.data.toString());
               },
             ),
+          ),
+          ListTile(
+            title: const Text('showPhotoSelectionSheet()'),
+            trailing: Icon(Icons.photo_library),
+            onTap: () {
+              showPhotoSelectionSheet(
+                context: context,
+                onSettingAppOpenRequested: () {
+                  logger.info('onSettingAppOpenRequested');
+                },
+              );
+            },
           ),
         ],
       ),
