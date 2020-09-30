@@ -1,3 +1,7 @@
+## 0.17.2
+
+- Add UnexpectedError
+
 ## 0.17.1
 
 - Add extensions
