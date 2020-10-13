@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
           ),
           ListTile(
             title: const Text('showPhotoSelectionSheet()'),
-            trailing: Icon(Icons.photo_library),
+            trailing: const Icon(Icons.photo_library),
             onTap: () {
               showPhotoSelectionSheet(
                 context: context,

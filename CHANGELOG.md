@@ -1,3 +1,7 @@
+## 0.18.0-dev
+
+- Add SnackBarPresenterEx
+
 ## 0.17.2
 
 - Add UnexpectedError
