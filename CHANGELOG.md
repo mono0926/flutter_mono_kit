@@ -1,3 +1,7 @@
+## 0.18.1-dev
+
+- Add horizontal to TilePadding
+
 ## 0.18.0-dev
 
 - Add SnackBarPresenterEx
