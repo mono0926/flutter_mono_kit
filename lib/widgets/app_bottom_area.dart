@@ -26,7 +26,12 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final renderBox =
           _bottomKey.currentContext?.findRenderObject() as RenderBox;
-      _updateBottomHeight(renderBox?.size?.height ?? 0);
+      final bottomHeight = renderBox?.size?.height ?? 0;
+      if (_bottomHeight != bottomHeight) {
+        setState(() {
+          _bottomHeight = bottomHeight;
+        });
+      }
     });
     return Column(
       children: [
@@ -66,13 +71,5 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
           ),
       ],
     );
-  }
-
-  void _updateBottomHeight(double height) {
-    if (_bottomHeight != height) {
-      setState(() {
-        _bottomHeight = height;
-      });
-    }
   }
 }
