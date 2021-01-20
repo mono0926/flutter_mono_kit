@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'better_fade_transtion.dart';
+import 'widgets.dart';
 
 class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
   const BetterAnimatedOpacity({

@@ -4,7 +4,7 @@ export 'app_asset_image.dart';
 export 'app_bottom_area.dart';
 export 'barrier.dart';
 export 'better_animated_opacity.dart';
-export 'better_fade_transtion.dart';
+export 'better_fade_transition.dart';
 export 'better_placeholder.dart';
 export 'better_stream_builder.dart';
 export 'centered_max_width.dart';
