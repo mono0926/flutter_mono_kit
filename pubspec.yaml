@@ -6,9 +6,9 @@ environment:
   sdk: ">=2.6.0 <3.0.0"
   flutter: ">=1.14.6 <2.0.0"
 dependencies:
+  adaptive_dialog: ">=0.7.0 <1.0.0"
   flutter:
     sdk: flutter
-  adaptive_dialog: ">=0.7.0 <1.0.0"
   flutter_cache_manager: ">=1.4.0 <2.0.0"
   image_picker: ">=0.6.0 <1.0.0"
   rxdart: ">=0.24.0 <1.0.0"
@@ -26,9 +26,9 @@ dependencies:
   state_notifier: ">=0.6.0 <1.0.0"
   flutter_hooks: ">=0.13.0 <1.0.0"
 dev_dependencies:
+  build_runner:
   flutter_test:
     sdk: flutter
-  build_runner:
   freezed:
   pedantic_mono:
 flutter:

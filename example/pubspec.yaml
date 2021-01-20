@@ -5,14 +5,14 @@ environment:
   sdk: ">=2.6.0 <3.0.0"
   flutter: ">=1.14.6 <2.0.0"
 dependencies:
+  cupertino_icons:
   flutter:
     sdk: flutter
-  cupertino_icons:
+  hooks_riverpod:
   mono_kit:
     path: ..
-  simple_logger:
   recase:
-  hooks_riverpod:
+  simple_logger:
   flutter_hooks:
   nested:
 dev_dependencies:
