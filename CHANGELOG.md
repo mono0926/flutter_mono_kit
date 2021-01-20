@@ -1,3 +1,8 @@
+## 0.18.2-dev
+
+- Add SizeListener
+- Fix bottom padding of AppBottomArea
+
 ## 0.18.1-dev
 
 - Add horizontal to TilePadding
