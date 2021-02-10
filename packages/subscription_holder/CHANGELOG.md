@@ -1,3 +1,7 @@
+## 2.1.0
+
+- Migrate to null safety
+
 ## 2.0.0
 
 - Change `SubscriptionHolderMixin` to `on StateNotifier` from `with Disposabe`
