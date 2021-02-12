@@ -96,7 +96,7 @@ packages:
       name: flutter_plugin_android_lifecycle
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.11"
+    version: "2.0.0-nullsafety.2"
   flutter_riverpod:
     dependency: transitive
     description:
@@ -136,28 +136,28 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2"
+    version: "0.13.0"
   http_parser:
     dependency: transitive
     description:
       name: http_parser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.4"
+    version: "4.0.0"
   image_picker:
     dependency: transitive
     description:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.7+22"
+    version: "0.7.0-nullsafety"
   image_picker_platform_interface:
     dependency: transitive
     description:
       name: image_picker_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.6"
+    version: "2.0.0-nullsafety"
   json_annotation:
     dependency: transitive
     description:
@@ -192,7 +192,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.18.3"
+    version: "0.19.0"
   nested:
     dependency: "direct main"
     description:
@@ -242,20 +242,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0-nullsafety.1"
-  pigment:
-    dependency: transitive
-    description:
-      name: pigment
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
   plugin_platform_interface:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0-nullsafety.1"
+    version: "1.1.0-nullsafety.2"
   provider:
     dependency: transitive
     description:
@@ -366,13 +359,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.19"
-  tinycolor:
-    dependency: transitive
-    description:
-      name: tinycolor
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
   typed_data:
     dependency: transitive
     description:

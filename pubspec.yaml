@@ -10,12 +10,12 @@ dependencies:
   disposable_provider: ">=2.0.0 <3.0.0"
   flutter:
     sdk: flutter
-#  flutter_cache_manager: ">=2.0.0 <3.0.0"
+#  flutter_cache_manager: ">=2.0.0 <3.0.0" # TODO(mono): uncomment
   flutter_hooks: ">=0.13.0 <1.0.0"
   flutter_svg: ">=0.20.0-0 <1.0.0"
   freezed_annotation: ">=0.11.0 <1.0.0"
   hooks_riverpod: ">=0.13.0-0 <1.0.0"
-  image_picker: ">=0.6.0 <1.0.0"
+  image_picker: ">=0.7.0-0 <1.0.0"
   nested: ">=0.0.5-0 <1.0.0"
   quiver: ">=3.0.0-0 <4.0.0"
   rxdart: ">=0.26.0-0 <1.0.0"
@@ -23,14 +23,16 @@ dependencies:
   state_notifier: ">=0.6.0 <1.0.0"
   stream_transform: ">=2.0.0 <3.0.0"
   subscription_holder: ">=2.1.0 <3.0.0"
-  tinycolor: ">=1.0.0 <2.0.0"
-  url_launcher: ">=6.0.0-0 <7.0.0" # TODO(mono): upgrade
+#  tinycolor: ">=1.0.0 <2.0.0" # TODO(mono): uncomment
+  url_launcher: ">=6.0.0-0 <7.0.0"
 dev_dependencies:
   build_runner:
   flutter_test:
     sdk: flutter
   freezed: ">=0.13.0-0 <0.14.0"
   pedantic_mono:
+dependency_overrides:
+  plugin_platform_interface: ^1.1.0-nullsafety.2
 flutter:
   plugin:
     platforms:

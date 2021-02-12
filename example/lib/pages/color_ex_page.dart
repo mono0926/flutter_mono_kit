@@ -2,7 +2,7 @@ import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-final _swatch = const Color(0xFFF44336).materialColor;
+// final _swatch = const Color(0xFFF44336).materialColor;
 
 class ColorExPage extends StatelessWidget {
   const ColorExPage({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class ColorExPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: ThemeData(
-        primarySwatch: _swatch,
+        // primarySwatch: _swatch,
         brightness: Theme.of(context).brightness,
       ),
       child: Scaffold(
@@ -41,8 +41,8 @@ class ColorExPage extends StatelessWidget {
                 .map(
                   (k) => Expanded(
                     child: Container(
-                      color: _swatch[k],
-                    ),
+                        // color: _swatch[k],
+                        ),
                   ),
                 )
                 .toList(),
