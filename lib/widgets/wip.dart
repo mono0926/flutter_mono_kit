@@ -19,6 +19,7 @@ class WIP extends SingleChildStatelessWidget {
     this.textStyle,
     this.backgroundColor,
     this.visible = false,
+    this.message,
   }) : super(key: key, child: child);
 
   final bool visible;
@@ -26,6 +27,7 @@ class WIP extends SingleChildStatelessWidget {
   final Color color;
   final Color backgroundColor;
   final TextStyle textStyle;
+  final String message;
 
   @override
   Widget buildWithChild(BuildContext context, Widget child) {
@@ -35,7 +37,7 @@ class WIP extends SingleChildStatelessWidget {
     final color = this.color ?? _kColor;
     return ClipRRect(
       child: Banner(
-        message: 'WIP',
+        message: message ?? 'WIP',
         location: location,
         color: color,
         textStyle: textStyle ?? _kTextStyle,
