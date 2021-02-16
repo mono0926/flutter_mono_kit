@@ -127,12 +127,6 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
 
   Widget _buildOpenButton(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        elevation: 0,
-        // TODO(mono):
-        // highlightElevation: 0,
-        // textTheme: ButtonTextTheme.accent,
-      ),
       child: const Text('OPEN'),
       onPressed: () {},
     );
@@ -193,9 +187,9 @@ class __DescState extends State<_Desc> {
               padding: const EdgeInsets.only(left: 32),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  // TODO(mono):
-                  // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   padding: const EdgeInsets.all(4),
+                  primary: Colors.transparent,
                 ),
                 onPressed: () =>
                     widget.additionalHeightNeeded(_overflowNotifier.value),
