@@ -6,9 +6,9 @@ import 'package:rxdart/rxdart.dart';
 
 class ScrollKeyboardShortcut extends StatefulWidget {
   const ScrollKeyboardShortcut({
-    Key key,
-    @required this.scrollController,
-    @required this.child,
+    Key? key,
+    required this.scrollController,
+    required this.child,
     this.stepOffset = kPagingScrollOffset,
   }) : super(key: key);
 
@@ -48,7 +48,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    if (ModalRoute.of(context).isCurrent) {
+    if (ModalRoute.of(context)!.isCurrent) {
       FocusScope.of(context).requestFocus(_focusNode);
     }
   }

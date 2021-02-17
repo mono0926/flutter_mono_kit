@@ -10,8 +10,8 @@ final barrierProvider = Provider((ref) => BarrierController());
 
 class Barrier extends HookWidget {
   const Barrier({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.showProgress,
     this.valueColor,
     this.backgroundColor,
@@ -20,9 +20,9 @@ class Barrier extends HookWidget {
   }) : super(key: key);
 
   final Widget child;
-  final ValueListenable<bool> showProgress;
-  final Color valueColor;
-  final Color backgroundColor;
+  final ValueListenable<bool>? showProgress;
+  final Color? valueColor;
+  final Color? backgroundColor;
   final Duration timeout;
   final Duration switchDuration;
 
@@ -39,7 +39,7 @@ class Barrier extends HookWidget {
                 showProgress ?? useProvider(barrierProvider).inProgress,
             builder: (context, visible, child) => Visibility(
               visible: visible,
-              child: child,
+              child: child!,
             ),
             child: TimeoutSwitcher(
               timeout: timeout,
@@ -93,15 +93,15 @@ class BarrierController with Disposable {
 
 class BarrierControllerProvider extends SingleChildStatelessWidget {
   const BarrierControllerProvider({
-    Key key,
-    Widget child,
+    Key? key,
+    Widget? child,
   }) : super(
           key: key,
           child: child,
         );
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     return DisposableProvider(
       create: (context) => BarrierController(),
       child: child,

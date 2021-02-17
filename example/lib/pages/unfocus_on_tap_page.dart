@@ -3,7 +3,7 @@ import 'package:mono_kit/mono_kit.dart';
 import 'package:quiver/iterables.dart';
 
 class UnfocusOnTapPage extends StatelessWidget {
-  const UnfocusOnTapPage({Key key}) : super(key: key);
+  const UnfocusOnTapPage({Key? key}) : super(key: key);
 
   static const routeName = '/unfocus_on_tap';
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class BetterPlaceholder extends StatelessWidget {
   const BetterPlaceholder({
-    Key key,
+    Key? key,
     this.color = const Color(0xFF455A64), // Blue Grey 700
     this.strokeWidth = 2.0,
     this.fallbackWidth = 400.0,
@@ -26,8 +26,10 @@ class BetterPlaceholder extends StatelessWidget {
     )}';
   }
 
-  double _fallbackIfInfinity(
-          {@required double value, @required double fallback}) =>
+  double _fallbackIfInfinity({
+    required double value,
+    required double fallback,
+  }) =>
       value == double.infinity ? fallback : value;
 
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void showErrorDialog({
-  @required BuildContext context,
+  required BuildContext context,
   @required dynamic error,
   ErrorDialogL10n l10n = const ErrorDialogL10n(),
 }) {
@@ -18,7 +18,7 @@ void showErrorDialog({
         l10n.localizeError(error),
       ),
       actions: [
-        FlatButton(
+        ElevatedButton(
           child: Text(MaterialLocalizations.of(context).okButtonLabel),
           onPressed: () {
             Navigator.of(context).pop();

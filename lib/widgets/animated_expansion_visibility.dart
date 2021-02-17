@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 
 class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
   const AnimatedExpansionVisibility({
-    Key key,
-    @required this.child,
-    @required this.isVisible,
+    Key? key,
+    this.child,
+    required this.isVisible,
     this.alignment,
-    Duration duration,
-    Curve curve,
+    Duration? duration,
+    Curve? curve,
   }) : super(
           key: key,
           duration: duration ?? const Duration(milliseconds: 200),
           curve: curve ?? Curves.linear,
         );
 
-  final Widget child;
+  final Widget? child;
   final bool isVisible;
-  final Alignment alignment;
+  final Alignment? alignment;
 
   @override
   _AnimatedExpansionVisibilityState createState() =>
@@ -25,11 +25,11 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
 
 class _AnimatedExpansionVisibilityState
     extends AnimatedWidgetBaseState<AnimatedExpansionVisibility> {
-  Tween<double> _heightFactorTween;
+  Tween<double>? _heightFactorTween;
 
   @override
   Widget build(BuildContext context) {
-    final heightFactor = _heightFactorTween.evaluate(animation);
+    final heightFactor = _heightFactorTween!.evaluate(animation);
     return Visibility(
       visible: heightFactor != 0,
       child: ClipRect(
@@ -48,6 +48,6 @@ class _AnimatedExpansionVisibilityState
       _heightFactorTween,
       widget.isVisible ? 1.0 : 0.0,
       (dynamic heightFactor) => Tween<double>(begin: heightFactor as double),
-    ) as Tween<double>;
+    )! as Tween<double>;
   }
 }

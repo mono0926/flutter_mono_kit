@@ -8,43 +8,44 @@ enum AppAssetImageType {
 
 abstract class AppAssetImage extends StatelessWidget {
   const factory AppAssetImage.png({
-    @required String name,
-    BoxFit fit,
+    Key? key,
+    required String name,
+    BoxFit? fit,
     double scale,
-    Color color,
+    Color? color,
   }) = _PngImage;
   const factory AppAssetImage.svg({
-    @required String name,
+    required String name,
     BoxFit fit,
-    Color color,
+    Color? color,
   }) = _SvgImage;
 
   const AppAssetImage._({
-    Key key,
-    @required this.name,
+    Key? key,
+    required this.name,
     @required this.fit,
-    @required this.scale,
-    @required this.type,
-    @required this.color,
+    required this.scale,
+    required this.type,
+    required this.color,
   }) : super(key: key);
 
   final String name;
-  final BoxFit fit;
-  final double scale;
-  final AppAssetImageType type;
-  final Color color;
+  final BoxFit? fit;
+  final double? scale;
+  final AppAssetImageType? type;
+  final Color? color;
 
-  ImageProvider get image =>
+  ImageProvider? get image =>
       this is _PngImage ? (this as _PngImage)._image : null;
 }
 
 class _PngImage extends AppAssetImage {
   const _PngImage({
-    Key key,
-    @required String name,
-    BoxFit fit,
+    Key? key,
+    required String name,
+    BoxFit? fit,
     double scale = 3,
-    Color color,
+    Color? color,
   }) : super._(
           key: key,
           name: name,
@@ -69,10 +70,10 @@ class _PngImage extends AppAssetImage {
 
 class _SvgImage extends AppAssetImage {
   const _SvgImage({
-    Key key,
-    @required String name,
+    Key? key,
+    required String name,
     BoxFit fit = BoxFit.contain,
-    Color color,
+    Color? color,
   }) : super._(
           key: key,
           name: name,
@@ -86,7 +87,7 @@ class _SvgImage extends AppAssetImage {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       'assets/images/$name.svg',
-      fit: fit,
+      fit: fit ?? BoxFit.contain,
       color: color,
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class BannerVisibilityPage extends StatefulWidget {
-  const BannerVisibilityPage({Key key}) : super(key: key);
+  const BannerVisibilityPage({Key? key}) : super(key: key);
 
   static const routeName = '/banner_visibility';
 
@@ -33,7 +33,7 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
             child: MaterialBanner(
               content: const Text('This is a banner. Dismiss me'),
               actions: <Widget>[
-                FlatButton(
+                TextButton(
                   onPressed: () async => _isVisible.value = false,
                   child: const Text('DISMISS'),
                 ),

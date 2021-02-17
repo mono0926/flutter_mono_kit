@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class DebugPaddingPage extends StatelessWidget {
-  const DebugPaddingPage({Key key}) : super(key: key);
+  const DebugPaddingPage({Key? key}) : super(key: key);
 
   static const routeName = '/debug_padding';
 

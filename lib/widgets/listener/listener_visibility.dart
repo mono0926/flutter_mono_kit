@@ -3,9 +3,9 @@ import 'package:flutter/widgets.dart';
 
 class ListenerVisibility extends StatelessWidget {
   const ListenerVisibility({
-    Key key,
-    @required this.visible,
-    @required this.child,
+    Key? key,
+    required this.visible,
+    required this.child,
   }) : super(key: key);
 
   final ValueListenable<bool> visible;
@@ -18,7 +18,7 @@ class ListenerVisibility extends StatelessWidget {
       builder: (context, visible, child) {
         return Visibility(
           visible: visible,
-          child: child,
+          child: child!,
         );
       },
       child: child,

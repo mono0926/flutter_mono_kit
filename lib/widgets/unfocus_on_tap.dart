@@ -3,12 +3,12 @@ import 'package:nested/nested.dart';
 
 class UnfocusOnTap extends SingleChildStatelessWidget {
   const UnfocusOnTap({
-    Key key,
-    @required Widget child,
+    Key? key,
+    required Widget child,
   }) : super(key: key, child: child);
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => FocusScope.of(context).unfocus(),

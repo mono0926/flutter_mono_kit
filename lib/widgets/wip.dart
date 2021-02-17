@@ -12,8 +12,8 @@ const TextStyle _kTextStyle = TextStyle(
 
 class WIP extends SingleChildStatelessWidget {
   const WIP({
-    Key key,
-    @required Widget child,
+    Key? key,
+    required Widget child,
     this.location = BannerLocation.topEnd,
     this.color,
     this.textStyle,
@@ -24,13 +24,13 @@ class WIP extends SingleChildStatelessWidget {
 
   final bool visible;
   final BannerLocation location;
-  final Color color;
-  final Color backgroundColor;
-  final TextStyle textStyle;
-  final String message;
+  final Color? color;
+  final Color? backgroundColor;
+  final TextStyle? textStyle;
+  final String? message;
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     if (!visible) {
       return const SizedBox.shrink();
     }

@@ -2,23 +2,25 @@ name: example
 description: A example of mono_kit.
 version: 1.0.0+1
 environment:
-  sdk: ">=2.6.0 <3.0.0"
-  flutter: ">=1.14.6 <2.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"
+  flutter: ">=1.26.0-12.0.pre <2.0.0"
 dependencies:
   cupertino_icons:
   flutter:
     sdk: flutter
+  flutter_hooks:
   hooks_riverpod:
   mono_kit:
     path: ..
-  recase:
-  simple_logger:
-  flutter_hooks:
   nested:
+  recase: '>=4.0.0-nullsafety.0 <5.0.0'
+  simple_logger:
 dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic_mono: any
+dependency_overrides:
+  plugin_platform_interface: ^1.1.0-nullsafety.2
 flutter:
   uses-material-design: true
   assets:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HUD {
-  BuildContext hudContext;
+  BuildContext? hudContext;
   void show(BuildContext context) {
     showGeneralDialog<void>(
       context: context,
@@ -28,6 +28,6 @@ class HUD {
       assert(false, 'hudContext should not be null.');
       return;
     }
-    Navigator.of(hudContext)?.pop();
+    Navigator.of(hudContext!).pop();
   }
 }

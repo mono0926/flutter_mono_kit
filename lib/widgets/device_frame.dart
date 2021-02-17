@@ -3,9 +3,9 @@ import 'package:nested/nested.dart';
 
 class DeviceFrame extends SingleChildStatelessWidget {
   const DeviceFrame({
-    Key key,
-    @required this.builder,
-    Widget child,
+    Key? key,
+    required this.builder,
+    Widget? child,
     this.enabled = false,
   }) : super(key: key, child: child);
 
@@ -13,12 +13,9 @@ class DeviceFrame extends SingleChildStatelessWidget {
   final bool enabled;
 
   @override
-  Widget buildWithChild(
-    BuildContext context,
-    Widget child,
-  ) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     if (!enabled) {
-      return child;
+      return child!;
     }
     return builder(
       context,
@@ -31,7 +28,7 @@ class DeviceFrame extends SingleChildStatelessWidget {
                 constraints.maxHeight,
               ),
             ),
-            child: child,
+            child: child!,
           );
         },
       ),

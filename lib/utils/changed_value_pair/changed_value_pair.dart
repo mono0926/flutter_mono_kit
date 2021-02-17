@@ -7,18 +7,18 @@ part 'changed_value_pair.freezed.dart';
 @freezed
 abstract class ChangedValuePair<T> with _$ChangedValuePair<T> {
   const factory ChangedValuePair({
-    T current,
-    T previous,
+    T? current,
+    T? previous,
   }) = _ChangedValuePair<T>;
 }
 
 extension ChangedValuePairStream<T> on Stream<T> {
-  Stream<ChangedValuePair<T>> changedValuePair([T initialValue]) {
+  Stream<ChangedValuePair<T>> changedValuePair([T? initialValue]) {
     return distinct((a, b) => a == b).scan(
       ChangedValuePair<T>(current: initialValue),
       (ChangedValuePair<T> pair, current) => pair.copyWith(
         current: current,
-        previous: pair?.current,
+        previous: pair.current,
       ),
     );
   }

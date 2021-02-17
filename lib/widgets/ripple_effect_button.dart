@@ -3,10 +3,10 @@ import 'package:nested/nested.dart';
 
 class RippleEffectButton extends SingleChildStatelessWidget {
   const RippleEffectButton({
-    Key key,
-    @required Widget child,
-    @required this.onTap,
-    @required this.borderRadius,
+    Key? key,
+    Widget? child,
+    required this.onTap,
+    required this.borderRadius,
   }) : super(
           key: key,
           child: child,
@@ -16,11 +16,11 @@ class RippleEffectButton extends SingleChildStatelessWidget {
   final BorderRadius borderRadius;
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     return Stack(
       fit: StackFit.passthrough,
       children: [
-        child,
+        child!,
         Positioned.fill(
           child: Material(
             type: MaterialType.transparency,

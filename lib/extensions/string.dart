@@ -1,4 +1,8 @@
-extension StringEx on String {
-  bool get isNullOrEmpty => this == null || isEmpty;
-  String get nullIfEmpty => isNullOrEmpty ? null : this;
+extension StringEx on String? {
+  bool get isNullOrEmpty {
+    final string = this;
+    return string == null || string.isEmpty;
+  }
+
+  String? get nullIfEmpty => isNullOrEmpty ? null : this;
 }

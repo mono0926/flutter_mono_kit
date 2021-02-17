@@ -55,28 +55,31 @@ class OverflowDetectableTextPage extends StatelessWidget {
       ),
       dividerColor: Colors.black26,
       textTheme: base.textTheme.copyWith(
-        bodyText2: base.textTheme.bodyText2.copyWith(fontSize: 13),
-        button: base.textTheme.button.copyWith(
+        bodyText2: base.textTheme.bodyText2!.copyWith(fontSize: 13),
+        button: base.textTheme.button!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
-      buttonTheme: base.buttonTheme.copyWith(
-        buttonColor: buttonColor,
-        highlightColor: highlightColor,
-        colorScheme: base.buttonTheme.colorScheme.copyWith(
-          secondary: accentColor,
-          primary: accentColor,
-        ),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(100),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: const StadiumBorder(),
+          onPrimary: accentColor,
+          primary: buttonColor,
+          // shadowColor: highlightColor,
+          minimumSize: Size.zero,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 18,
+            vertical: 7,
           ),
-        ),
-        minWidth: 44,
-        height: 0,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 18,
-          vertical: 7,
+        ).copyWith(
+          elevation: MaterialStateProperty.all(0),
+          overlayColor: MaterialStateProperty.all(
+            Color.lerp(
+              buttonColor,
+              Colors.black,
+              0.3,
+            ),
+          ),
         ),
       ),
       primaryIconTheme: base.primaryIconTheme.copyWith(

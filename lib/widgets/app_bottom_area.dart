@@ -6,12 +6,12 @@ import 'package:nested/nested.dart';
 
 class AppBottomArea extends SingleChildStatefulWidget {
   const AppBottomArea({
-    Key key,
-    Widget child,
+    Key? key,
+    required Widget child,
     this.bottom,
   }) : super(key: key, child: child);
 
-  final Widget bottom;
+  final Widget? bottom;
 
   @override
   _AppBottomAreaState createState() => _AppBottomAreaState();
@@ -21,8 +21,9 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
   var _bottomHeight = 0.0;
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     final mediaQuery = MediaQuery.of(context);
+    final bottom = widget.bottom;
     return Column(
       children: [
         Expanded(
@@ -49,14 +50,14 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
                     ),
                   ),
                 ),
-                child: child,
+                child: child!,
               );
             },
           ),
         ),
-        if (widget.bottom != null)
+        if (bottom != null)
           SizeListener(
-            child: widget.bottom,
+            child: bottom,
             onSizeChanged: (size) {
               final bottomHeight = size.height;
               if (bottomHeight != _bottomHeight) {

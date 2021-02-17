@@ -6,10 +6,10 @@ import 'better_stream_builder.dart';
 
 class ValueObservableBuilder<T> extends SingleChildStatefulWidget {
   const ValueObservableBuilder({
-    Key key,
-    @required this.builder,
-    @required this.stream,
-    Widget child,
+    Key? key,
+    required this.builder,
+    required this.stream,
+    Widget? child,
   }) : super(
           key: key,
           child: child,
@@ -26,7 +26,7 @@ class ValueObservableBuilder<T> extends SingleChildStatefulWidget {
 class _ValueObservableBuilderState<T>
     extends SingleChildState<ValueObservableBuilder<T>> {
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     return StreamBuilder<T>(
       initialData: widget.stream.value,
       stream: widget.stream,
@@ -37,7 +37,7 @@ class _ValueObservableBuilderState<T>
             snapshot.hasData) {
           snapshot = AsyncSnapshot<T>.withData(
             ConnectionState.active,
-            snapshot.data,
+            snapshot.data as T,
           );
         }
         return widget.builder(context, snapshot, child);

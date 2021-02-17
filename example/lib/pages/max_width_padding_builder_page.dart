@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class MaxWidthPaddingBuilderPage extends StatelessWidget {
-  const MaxWidthPaddingBuilderPage({Key key}) : super(key: key);
+  const MaxWidthPaddingBuilderPage({Key? key}) : super(key: key);
 
   static const routeName = '/max_width_padding_builder';
 

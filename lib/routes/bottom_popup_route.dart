@@ -5,8 +5,8 @@ import 'package:nested/nested.dart';
 
 class BottomPopupRoute<T> extends PopupRoute<T> {
   BottomPopupRoute({
-    @required this.builder,
-    RouteSettings settings,
+    required this.builder,
+    RouteSettings? settings,
     this.barrierLabel = 'Dismiss',
     this.barrierColor = const Color(0x80000000),
     this.padding,
@@ -26,7 +26,7 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
   @override
   final Duration transitionDuration = const Duration(milliseconds: 400);
 
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget buildPage(
@@ -101,8 +101,8 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
 
 class _Pan extends SingleChildStatefulWidget {
   const _Pan({
-    Key key,
-    @required Widget child,
+    Key? key,
+    required Widget child,
   }) : super(key: key, child: child);
 
   @override
@@ -114,7 +114,7 @@ class _PanState extends SingleChildState<_Pan> {
   double _lastOffsetY = 0;
 
   @override
-  Widget buildWithChild(BuildContext context, Widget child) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     final height = MediaQuery.of(context).size.height;
     final panThreshold = height * 0.2;
     return AnimatedPositioned(

@@ -6,7 +6,7 @@ import 'package:mono_kit/mono_kit.dart';
 Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
 
 class PagingScrollPage extends StatelessWidget {
-  const PagingScrollPage({Key key}) : super(key: key);
+  const PagingScrollPage({Key? key}) : super(key: key);
 
   static const routeName = '/paging_scroll';
 
@@ -21,7 +21,7 @@ class PagingScrollPage extends StatelessWidget {
 }
 
 class _Body extends StatefulWidget {
-  const _Body({Key key}) : super(key: key);
+  const _Body({Key? key}) : super(key: key);
   @override
   __BodyState createState() => __BodyState();
 }
@@ -70,15 +70,15 @@ class __BodyState extends State<_Body> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 child: const Text('TOP'),
                 onPressed: _scrollController.scrollToTop,
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: const Text('UP️'),
                 onPressed: _scrollController.scrollToPreviousPage,
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: const Text('↑'),
                 onPressed: _scrollController.scrollUp,
               ),
@@ -87,15 +87,15 @@ class __BodyState extends State<_Body> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 child: const Text('BOTTOM️'),
                 onPressed: _scrollController.scrollToBottom,
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: const Text('DOWN'),
                 onPressed: _scrollController.scrollToNextPage,
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: const Text('↓'),
                 onPressed: _scrollController.scrollDown,
               ),
