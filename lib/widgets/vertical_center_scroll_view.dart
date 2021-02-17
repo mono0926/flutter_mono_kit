@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class VerticalCenterScrollView extends StatefulWidget {
   const VerticalCenterScrollView({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.padding,
     this.autoPop = false,
     this.hasCloseButton = false,
@@ -12,7 +12,7 @@ class VerticalCenterScrollView extends StatefulWidget {
   final Widget child;
   final bool autoPop;
   final bool hasCloseButton;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
 
   @override
   _VerticalCenterScrollViewState createState() =>
@@ -20,7 +20,7 @@ class VerticalCenterScrollView extends StatefulWidget {
 }
 
 class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
-  ScrollController _controller;
+  late final ScrollController _controller;
   bool _isPopping = false;
 
   @override

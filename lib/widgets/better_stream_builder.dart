@@ -2,17 +2,17 @@ import 'package:flutter/widgets.dart';
 
 class BetterStreamBuilder<T> extends StatefulWidget {
   const BetterStreamBuilder({
-    Key key,
+    Key? key,
     this.initialData,
-    @required this.stream,
-    @required this.builder,
+    required this.stream,
+    required this.builder,
     this.child,
   }) : super(key: key);
 
   final Stream<T> stream;
   final AsyncChildWidgetBuilder<T> builder;
-  final T initialData;
-  final Widget child;
+  final T? initialData;
+  final Widget? child;
 
   @override
   _BetterStreamBuilderState<T> createState() => _BetterStreamBuilderState<T>();
@@ -34,5 +34,5 @@ class _BetterStreamBuilderState<T> extends State<BetterStreamBuilder<T>> {
 typedef AsyncChildWidgetBuilder<T> = Widget Function(
   BuildContext context,
   AsyncSnapshot<T> snap,
-  Widget child,
+  Widget? child,
 );

@@ -4,15 +4,12 @@ import 'package:flutter/material.dart';
 
 class TimeoutSwitcher extends StatefulWidget {
   const TimeoutSwitcher({
-    Key key,
-    @required this.timedOutChild,
+    Key? key,
+    required this.timedOutChild,
     this.initialChild = const SizedBox(),
     this.timeout = const Duration(milliseconds: 200),
     this.switchDuration = const Duration(milliseconds: 100),
-  })  : assert(timedOutChild != null),
-        assert(initialChild != null),
-        assert(timeout != null),
-        super(key: key);
+  }) : super(key: key);
 
   final Widget timedOutChild;
   final Widget initialChild;
@@ -25,7 +22,7 @@ class TimeoutSwitcher extends StatefulWidget {
 
 class _TimeoutSwitcherState extends State<TimeoutSwitcher> {
   var _timedOut = false;
-  Timer _timer;
+  late final Timer _timer;
 
   @override
   void initState() {

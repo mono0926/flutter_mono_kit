@@ -7,9 +7,9 @@ typedef PaddingWidgetBuilder = Widget Function(
 
 class MaxWidthPaddingBuilder extends StatelessWidget {
   const MaxWidthPaddingBuilder({
-    Key key,
+    Key? key,
     this.width = 768,
-    @required this.builder,
+    required this.builder,
   }) : super(key: key);
 
   final double width;

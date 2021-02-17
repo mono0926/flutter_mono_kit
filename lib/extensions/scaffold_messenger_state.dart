@@ -13,8 +13,8 @@ extension SnackBarPresenterEx on ScaffoldMessengerState {
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showUndo(
     String text, {
-    @required VoidCallback onUndo,
-    Color undoButtonColor,
+    required VoidCallback onUndo,
+    Color? undoButtonColor,
     SnackBarL10n l10n = const SnackBarL10n(),
   }) {
     return showMessageWithAction(
@@ -28,9 +28,9 @@ extension SnackBarPresenterEx on ScaffoldMessengerState {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
       showMessageWithAction(
     String text, {
-    @required VoidCallback onAction,
-    @required String actionLabel,
-    Color actionColor,
+    required VoidCallback onAction,
+    required String actionLabel,
+    Color? actionColor,
   }) {
     return _show(
       SnackBar(
@@ -48,8 +48,8 @@ extension SnackBarPresenterEx on ScaffoldMessengerState {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showError(
     dynamic error, {
     SnackBarL10n l10n = const SnackBarL10n(),
-    Color backgroundColor,
-    Color textColor,
+    Color? backgroundColor,
+    Color? textColor,
   }) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;

@@ -6,7 +6,7 @@ import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/widgets/widgets.dart';
 
 class BarrierPage extends StatefulWidget {
-  const BarrierPage({Key key}) : super(key: key);
+  const BarrierPage({Key? key}) : super(key: key);
 
   static const routeName = '/barrier';
 

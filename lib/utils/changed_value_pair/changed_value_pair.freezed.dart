@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'changed_value_pair.dart';
 
@@ -9,10 +9,11 @@ part of 'changed_value_pair.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ChangedValuePairTearOff {
   const _$ChangedValuePairTearOff();
 
-  _ChangedValuePair<T> call<T>({T current, T previous}) {
+  _ChangedValuePair<T> call<T>({T? current, T? previous}) {
     return _ChangedValuePair<T>(
       current: current,
       previous: previous,
@@ -20,23 +21,27 @@ class _$ChangedValuePairTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $ChangedValuePair = _$ChangedValuePairTearOff();
 
+/// @nodoc
 mixin _$ChangedValuePair<T> {
-  T get current;
-  T get previous;
+  T? get current;
+  T? get previous;
 
+  @JsonKey(ignore: true)
   $ChangedValuePairCopyWith<T, ChangedValuePair<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $ChangedValuePairCopyWith<T, $Res> {
   factory $ChangedValuePairCopyWith(
           ChangedValuePair<T> value, $Res Function(ChangedValuePair<T>) then) =
       _$ChangedValuePairCopyWithImpl<T, $Res>;
-  $Res call({T current, T previous});
+  $Res call({T? current, T? previous});
 }
 
+/// @nodoc
 class _$ChangedValuePairCopyWithImpl<T, $Res>
     implements $ChangedValuePairCopyWith<T, $Res> {
   _$ChangedValuePairCopyWithImpl(this._value, this._then);
@@ -47,25 +52,27 @@ class _$ChangedValuePairCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object current = freezed,
-    Object previous = freezed,
+    Object? current = freezed,
+    Object? previous = freezed,
   }) {
     return _then(_value.copyWith(
-      current: current == freezed ? _value.current : current as T,
-      previous: previous == freezed ? _value.previous : previous as T,
+      current: current == freezed ? _value.current : current as T?,
+      previous: previous == freezed ? _value.previous : previous as T?,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$ChangedValuePairCopyWith<T, $Res>
     implements $ChangedValuePairCopyWith<T, $Res> {
   factory _$ChangedValuePairCopyWith(_ChangedValuePair<T> value,
           $Res Function(_ChangedValuePair<T>) then) =
       __$ChangedValuePairCopyWithImpl<T, $Res>;
   @override
-  $Res call({T current, T previous});
+  $Res call({T? current, T? previous});
 }
 
+/// @nodoc
 class __$ChangedValuePairCopyWithImpl<T, $Res>
     extends _$ChangedValuePairCopyWithImpl<T, $Res>
     implements _$ChangedValuePairCopyWith<T, $Res> {
@@ -78,23 +85,24 @@ class __$ChangedValuePairCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object current = freezed,
-    Object previous = freezed,
+    Object? current = freezed,
+    Object? previous = freezed,
   }) {
     return _then(_ChangedValuePair<T>(
-      current: current == freezed ? _value.current : current as T,
-      previous: previous == freezed ? _value.previous : previous as T,
+      current: current == freezed ? _value.current : current as T?,
+      previous: previous == freezed ? _value.previous : previous as T?,
     ));
   }
 }
 
+/// @nodoc
 class _$_ChangedValuePair<T> implements _ChangedValuePair<T> {
   const _$_ChangedValuePair({this.current, this.previous});
 
   @override
-  final T current;
+  final T? current;
   @override
-  final T previous;
+  final T? previous;
 
   @override
   String toString() {
@@ -119,6 +127,7 @@ class _$_ChangedValuePair<T> implements _ChangedValuePair<T> {
       const DeepCollectionEquality().hash(current) ^
       const DeepCollectionEquality().hash(previous);
 
+  @JsonKey(ignore: true)
   @override
   _$ChangedValuePairCopyWith<T, _ChangedValuePair<T>> get copyWith =>
       __$ChangedValuePairCopyWithImpl<T, _ChangedValuePair<T>>(
@@ -126,13 +135,14 @@ class _$_ChangedValuePair<T> implements _ChangedValuePair<T> {
 }
 
 abstract class _ChangedValuePair<T> implements ChangedValuePair<T> {
-  const factory _ChangedValuePair({T current, T previous}) =
+  const factory _ChangedValuePair({T? current, T? previous}) =
       _$_ChangedValuePair<T>;
 
   @override
-  T get current;
+  T? get current;
   @override
-  T get previous;
+  T? get previous;
   @override
+  @JsonKey(ignore: true)
   _$ChangedValuePairCopyWith<T, _ChangedValuePair<T>> get copyWith;
 }

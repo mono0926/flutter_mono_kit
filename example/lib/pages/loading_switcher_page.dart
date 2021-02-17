@@ -6,7 +6,7 @@ import 'package:mono_kit/mono_kit.dart';
 final _controller = ChangeNotifierProvider((ref) => _Controller());
 
 class LoadingSwitcherPage extends HookWidget {
-  const LoadingSwitcherPage({Key key}) : super(key: key);
+  const LoadingSwitcherPage({Key? key}) : super(key: key);
 
   static const routeName = '/loading_switcher';
 
@@ -50,8 +50,8 @@ class LoadingSwitcherPage extends HookWidget {
 
 class _Slider extends HookWidget {
   const _Slider({
-    Key key,
-    @required this.type,
+    Key? key,
+    required this.type,
   }) : super(key: key);
 
   final SliderType type;
@@ -93,14 +93,13 @@ class _Controller with ChangeNotifier {
   _Controller() {
     reload();
   }
+  Image? _image;
+  Image? get image => _image;
 
   final _durations = {
     SliderType.loading: const Duration(milliseconds: 500),
     SliderType.timeout: const Duration(milliseconds: 500),
   };
-
-  Image _image;
-  Image get image => _image;
 
   Future<void> reload() async {
     _image = null;
@@ -111,15 +110,15 @@ class _Controller with ChangeNotifier {
   }
 
   void updateDuration({
-    @required SliderType sliderType,
-    @required Duration duration,
+    required SliderType sliderType,
+    required Duration duration,
   }) {
     _durations[sliderType] = duration;
     notifyListeners();
   }
 
-  Duration getDuration({@required SliderType sliderType}) =>
-      _durations[sliderType];
+  Duration getDuration({required SliderType sliderType}) =>
+      _durations[sliderType]!;
 }
 
 enum SliderType {
@@ -135,7 +134,5 @@ extension SliderTypeEx on SliderType {
       case SliderType.timeout:
         return 'Timeout(ms)';
     }
-    assert(false);
-    return null;
   }
 }

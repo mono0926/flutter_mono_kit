@@ -5,7 +5,7 @@ export 'link_text_span.dart';
 class ItemizedText extends StatelessWidget {
   const ItemizedText(
     this.texts, {
-    Key key,
+    Key? key,
     this.bullet = '・',
   }) : super(key: key);
 
@@ -30,8 +30,8 @@ class ItemizedText extends StatelessWidget {
 class _ItemizedTextRow extends StatelessWidget {
   const _ItemizedTextRow(
     this.text, {
-    Key key,
-    @required this.bullet,
+    Key? key,
+    required this.bullet,
   }) : super(key: key);
 
   final Text text;

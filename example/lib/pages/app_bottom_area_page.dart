@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class AppBottomAreaPage extends StatelessWidget {
-  const AppBottomAreaPage({Key key}) : super(key: key);
+  const AppBottomAreaPage({Key? key}) : super(key: key);
 
   static const routeName = '/app_bottom_area';
 
@@ -21,7 +21,7 @@ class AppBottomAreaPage extends StatelessWidget {
             child: Text(
               'AppBottomArea',
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyText2!.copyWith(
                 color: Colors.white,
               ),
             ),

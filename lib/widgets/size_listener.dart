@@ -5,9 +5,9 @@ typedef _SizeChangedCallback = void Function(Size size);
 
 class SizeListener extends SingleChildRenderObjectWidget {
   const SizeListener({
-    Key key,
-    Widget child,
-    @required this.onSizeChanged,
+    Key? key,
+    Widget? child,
+    required this.onSizeChanged,
   }) : super(
           key: key,
           child: child,
@@ -21,12 +21,12 @@ class SizeListener extends SingleChildRenderObjectWidget {
 
 class _SizeListenerRenderObject extends RenderProxyBox {
   _SizeListenerRenderObject({
-    RenderBox child,
-    @required this.onSizeChanged,
+    RenderBox? child,
+    required this.onSizeChanged,
   }) : super(child);
   final _SizeChangedCallback onSizeChanged;
 
-  Size _size;
+  Size? _size;
 
   @override
   void performLayout() {
@@ -35,7 +35,7 @@ class _SizeListenerRenderObject extends RenderProxyBox {
     final size = this.size;
     if (size != _size) {
       _size = size;
-      WidgetsBinding.instance.addPostFrameCallback((_) => onSizeChanged(size));
+      WidgetsBinding.instance!.addPostFrameCallback((_) => onSizeChanged(size));
     }
   }
 }

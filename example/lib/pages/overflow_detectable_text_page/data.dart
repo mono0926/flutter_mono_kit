@@ -1,8 +1,6 @@
-import 'package:flutter/foundation.dart';
-
 class Data {
   Data._({
-    @required this.desc,
+    required this.desc,
   });
 
   Data.small()
@@ -31,7 +29,7 @@ class Data {
         return Data.large();
     }
     assert(false);
-    return null;
+    return Data._(desc: '');
   }
 
   final String desc;

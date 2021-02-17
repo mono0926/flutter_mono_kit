@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class VerticalCenterScrollViewPage extends StatelessWidget {
-  const VerticalCenterScrollViewPage({Key key}) : super(key: key);
+  const VerticalCenterScrollViewPage({Key? key}) : super(key: key);
 
   static const routeName = '/VerticalCenterScrollView';
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class ListTileSelectedBackgroundColoredBoxPage extends StatefulWidget {
-  const ListTileSelectedBackgroundColoredBoxPage({Key key}) : super(key: key);
+  const ListTileSelectedBackgroundColoredBoxPage({Key? key}) : super(key: key);
 
   static const routeName = '/list_tile_selected_background_colored_box';
 
@@ -35,7 +35,7 @@ class _ListTileSelectedBackgroundColoredBoxPageState
         ),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: const Text('BACK'),
           onPressed: () => Navigator.of(context).pop(),
         ),

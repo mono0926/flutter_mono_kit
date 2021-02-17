@@ -6,8 +6,8 @@ import 'package:mono_kit/plugins/plugins.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
-    Key key,
-    this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   final String title;
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
           }),
           ListTile(
             title: const Text('iGhost(Dev) installed?'),
-            subtitle: FutureBuilder<bool>(
+            subtitle: FutureBuilder(
               future: AppInstallationChecker()
                   .isInstalled('com.aquatica.ghost.dev'),
               builder: (context, snap) {

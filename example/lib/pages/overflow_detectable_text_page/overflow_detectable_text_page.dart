@@ -55,15 +55,15 @@ class OverflowDetectableTextPage extends StatelessWidget {
       ),
       dividerColor: Colors.black26,
       textTheme: base.textTheme.copyWith(
-        bodyText2: base.textTheme.bodyText2.copyWith(fontSize: 13),
-        button: base.textTheme.button.copyWith(
+        bodyText2: base.textTheme.bodyText2!.copyWith(fontSize: 13),
+        button: base.textTheme.button!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
       buttonTheme: base.buttonTheme.copyWith(
         buttonColor: buttonColor,
         highlightColor: highlightColor,
-        colorScheme: base.buttonTheme.colorScheme.copyWith(
+        colorScheme: base.buttonTheme.colorScheme!.copyWith(
           secondary: accentColor,
           primary: accentColor,
         ),

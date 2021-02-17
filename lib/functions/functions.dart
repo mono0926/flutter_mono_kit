@@ -7,7 +7,7 @@ export 'show_photo_selection_sheet.dart';
 String convertToHalfWidth(String text) {
   return text.replaceAllMapped(
     RegExp(r'[０-９ａ-ｚＡ-Ｚ]'),
-    (m) => String.fromCharCode(m[0].codeUnitAt(0) - 65248),
+    (m) => String.fromCharCode(m[0]!.codeUnitAt(0) - 65248),
   );
 }
 
@@ -16,8 +16,8 @@ String convertToHalfWidth(String text) {
 /// Modified from this:
 /// https://github.com/flutter/flutter/blob/62621507966463f9fe678b3e249a64f1be11c9a1/packages/flutter/lib/src/widgets/framework.dart#L4376
 void configureErrorWidgetBuilder({
-  @required bool isProduction,
-  ErrorWidgetBuilder productionBuilder,
+  required bool isProduction,
+  ErrorWidgetBuilder? productionBuilder,
 }) {
   ErrorWidget.builder = (details) {
     final message = kReleaseMode && isProduction

@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class LifeCycleObserverPage extends StatefulWidget {
-  const LifeCycleObserverPage({Key key}) : super(key: key);
+  const LifeCycleObserverPage({Key? key}) : super(key: key);
 
   static const routeName = '/life_cycle_observer';
 
@@ -14,7 +14,7 @@ class LifeCycleObserverPage extends StatefulWidget {
 }
 
 class _LifeCycleObserverPageState extends State<LifeCycleObserverPage> {
-  StreamSubscription subscription;
+  late final StreamSubscription subscription;
 
   @override
   void initState() {

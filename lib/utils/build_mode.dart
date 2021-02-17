@@ -13,5 +13,6 @@ BuildMode buildMode = () {
     return BuildMode.debug;
   }
   assert(false, 'Cannot determined Build Mode');
-  return null;
+  // ignore: null_check_always_fails
+  return null!;
 }();

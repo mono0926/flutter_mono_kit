@@ -4,12 +4,12 @@ import 'widgets.dart';
 
 class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
   const BetterAnimatedOpacity({
-    Key key,
-    this.child,
-    @required this.opacity,
+    Key? key,
+    required this.child,
+    required this.opacity,
     Curve curve = Curves.linear,
-    @required Duration duration,
-  })  : assert(opacity != null && opacity >= 0.0 && opacity <= 1.0),
+    required Duration duration,
+  })   : assert(opacity >= 0.0 && opacity <= 1.0),
         super(key: key, curve: curve, duration: duration);
 
   final Widget child;
@@ -21,16 +21,16 @@ class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
 
 class _AnimatedOpacityState
     extends ImplicitlyAnimatedWidgetState<BetterAnimatedOpacity> {
-  Tween<double> _opacity;
-  Animation<double> _opacityAnimation;
+  late final Tween<double> _opacity;
+  late Animation<double> _opacityAnimation;
 
   @override
-  void forEachTween(TweenVisitor visitor) {
+  void forEachTween(TweenVisitor<dynamic> visitor) {
     _opacity = visitor(
       _opacity,
       widget.opacity,
       (dynamic value) => Tween<double>(begin: value as double),
-    ) as Tween<double>;
+    )! as Tween<double>;
   }
 
   @override

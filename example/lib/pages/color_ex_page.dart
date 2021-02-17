@@ -5,7 +5,7 @@ import 'package:mono_kit/mono_kit.dart';
 final _swatch = const Color(0xFFF44336).materialColor;
 
 class ColorExPage extends StatelessWidget {
-  const ColorExPage({Key key}) : super(key: key);
+  const ColorExPage({Key? key}) : super(key: key);
 
   static const routeName = '/color_ex';
 

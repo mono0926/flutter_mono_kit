@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 
 class BetterFadeTransition extends AnimatedWidget {
   const BetterFadeTransition({
-    Key key,
-    @required this.child,
-    @required Animation<double> opacity,
+    Key? key,
+    required this.child,
+    required Animation<double> opacity,
     this.alwaysIncludeSemantics = false,
   }) : super(
           key: key,

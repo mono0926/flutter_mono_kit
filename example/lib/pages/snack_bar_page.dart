@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class SnackBarPage extends StatelessWidget {
-  const SnackBarPage({Key key}) : super(key: key);
+  const SnackBarPage({Key? key}) : super(key: key);
 
   static const routeName = '/snack_bar';
 

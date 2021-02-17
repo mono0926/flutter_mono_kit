@@ -8,7 +8,7 @@ import 'pages/pages.dart';
 import 'router.dart';
 
 class App extends HookWidget {
-  const App({Key key}) : super(key: key);
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class App extends HookWidget {
           TextScaleFactor(),
         ],
         child: Barrier(
-          child: child,
+          child: child!,
         ),
       ),
       theme: lightTheme(),

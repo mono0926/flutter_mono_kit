@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class ListTileSelectedBackgroundColoredBox extends StatelessWidget {
   const ListTileSelectedBackgroundColoredBox({
-    Key key,
-    @required this.listTile,
+    Key? key,
+    required this.listTile,
     this.color,
     this.padding,
     this.borderRadius,
   }) : super(key: key);
 
   final ListTile listTile;
-  final Color color;
-  final EdgeInsetsGeometry padding;
-  final BorderRadius borderRadius;
+  final Color? color;
+  final EdgeInsetsGeometry? padding;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {

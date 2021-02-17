@@ -5,10 +5,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
-Future<PickedFile> showPhotoSelectionSheet({
-  @required BuildContext context,
+Future<PickedFile?> showPhotoSelectionSheet({
+  required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
-  VoidCallback onSettingAppOpenRequested,
+  VoidCallback? onSettingAppOpenRequested,
 }) async {
   final source = await showModalActionSheet<ImageSource>(
     context: context,

@@ -15,8 +15,8 @@ class Cell extends StatefulWidget {
 }
 
 class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
-  AnimationController _animation;
-  Animation<double> _maxHeight;
+  late final AnimationController _animation;
+  Animation<double>? _maxHeight;
 
   @override
   void initState() {
@@ -126,21 +126,24 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
   }
 
   Widget _buildOpenButton(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        // TODO(mono):
+        // highlightElevation: 0,
+        // textTheme: ButtonTextTheme.accent,
+      ),
       child: const Text('OPEN'),
       onPressed: () {},
-      elevation: 0,
-      highlightElevation: 0,
-      textTheme: ButtonTextTheme.accent,
     );
   }
 }
 
 class _Desc extends StatefulWidget {
   const _Desc({
-    Key key,
-    @required this.data,
-    @required this.additionalHeightNeeded,
+    Key? key,
+    required this.data,
+    required this.additionalHeightNeeded,
   }) : super(key: key);
 
   final Data data;
@@ -161,7 +164,7 @@ class __DescState extends State<_Desc> {
       children: [
         OverflowDetectableText(
           widget.data.desc,
-          style: theme.textTheme.bodyText2,
+          style: theme.textTheme.bodyText2!,
           detector: (overflow) => _overflowNotifier.value = overflow,
 //                maxLines: 2,
         ),
@@ -173,7 +176,7 @@ class __DescState extends State<_Desc> {
             builder: (context, overflow, child) {
               return Visibility(
                 visible: overflow > 0,
-                child: child,
+                child: child!,
               );
             },
             child: Container(
@@ -188,14 +191,17 @@ class __DescState extends State<_Desc> {
                 ),
               ),
               padding: const EdgeInsets.only(left: 32),
-              child: FlatButton(
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                padding: const EdgeInsets.all(4),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  // TODO(mono):
+                  // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  padding: const EdgeInsets.all(4),
+                ),
                 onPressed: () =>
                     widget.additionalHeightNeeded(_overflowNotifier.value),
                 child: Text(
                   'more',
-                  style: theme.textTheme.bodyText2
+                  style: theme.textTheme.bodyText2!
                       .copyWith(color: theme.accentColor),
                 ),
               ),

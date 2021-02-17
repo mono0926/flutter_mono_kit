@@ -9,7 +9,7 @@ import 'plugins.dart';
 class AppInstallationChecker {
   static const _platform = MethodChannel(kMethodChannelName);
 
-  Future<bool> isInstalled(String packageName) async {
+  Future<bool?> isInstalled(String packageName) async {
     if (kIsWeb) {
       return null;
     }

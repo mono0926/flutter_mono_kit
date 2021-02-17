@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AdaptiveIcon extends StatelessWidget {
   const AdaptiveIcon(
     this.icon, {
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   final IconData icon;
