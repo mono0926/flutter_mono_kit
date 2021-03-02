@@ -19,8 +19,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic_mono: any
-dependency_overrides:
-  plugin_platform_interface: ^1.1.0-nullsafety.2
 flutter:
   uses-material-design: true
   assets:
