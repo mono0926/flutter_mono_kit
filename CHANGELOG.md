@@ -1,3 +1,8 @@
+## 0.19.2
+
+- Delete firstOrNull and lastOrNull
+  - Use https://pub.dev/documentation/collection/latest/collection/IterableExtension/firstOrNull.html instead
+
 ## 0.19.1
 
 - Delete firstWhereOrNull
