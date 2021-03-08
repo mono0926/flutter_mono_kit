@@ -1,17 +1,26 @@
-## 0.18.3-dev
+## 0.19.1
+
+- Delete firstWhereOrNull
+  - Use https://pub.dev/documentation/collection/latest/collection/IterableExtension/firstWhereOrNull.html instead
+
+## 0.19.0
+
+- Migrate to null safety
+
+## 0.18.3
 
 - Add message to WIP
 
-## 0.18.2-dev
+## 0.18.2
 
 - Add SizeListener
 - Fix bottom padding of AppBottomArea
 
-## 0.18.1-dev
+## 0.18.1
 
 - Add horizontal to TilePadding
 
-## 0.18.0-dev
+## 0.18.0
 
 - Add SnackBarPresenterEx
 
