@@ -1,3 +1,7 @@
+## 0.19.3
+
+- Fix BetterAnimatedOpacity
+
 ## 0.19.2
 
 - Delete firstOrNull and lastOrNull

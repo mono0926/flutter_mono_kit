@@ -21,7 +21,7 @@ class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
 
 class _AnimatedOpacityState
     extends ImplicitlyAnimatedWidgetState<BetterAnimatedOpacity> {
-  late final Tween<double> _opacity;
+  Tween<double>? _opacity;
   late Animation<double> _opacityAnimation;
 
   @override
@@ -35,7 +35,7 @@ class _AnimatedOpacityState
 
   @override
   void didUpdateTweens() {
-    _opacityAnimation = animation.drive(_opacity);
+    _opacityAnimation = animation.drive(_opacity!);
   }
 
   @override
