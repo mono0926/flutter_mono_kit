@@ -20,22 +20,22 @@ void main() {
       isFalse,
     );
   });
-  test('firstWhereOrNull', () {
+  test('mapWithIndex', () {
     expect(
-      <int>[].firstWhereOrNull((x) => true),
-      isNull,
+      <String>[].mapWithIndex((s, i) => '$s-$i').toList(),
+      <String>[],
     );
     expect(
-      <int>[1, 2].firstWhereOrNull((x) => true),
-      1,
+      <String>['a'].mapWithIndex((s, i) => '$s-$i').toList(),
+      <String>['a-0'],
     );
     expect(
-      <int>[1, 2].firstWhereOrNull((x) => false),
-      isNull,
+      <String>['a', 'b', 'c'].mapWithIndex((s, i) => '$s-$i').toList(),
+      <String>['a-0', 'b-1', 'c-2'],
     );
     expect(
-      <int>[1, 2].firstWhereOrNull((x) => x.isEven),
-      2,
+      <String>['a', 'b', 'c'].mapWithIndex((s, i) => '$s-$i').take(1).toList(),
+      <String>['a-0'],
     );
   });
 }

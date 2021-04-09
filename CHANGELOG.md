@@ -1,3 +1,7 @@
+## 0.19.4
+
+- Enhance mapWithIndex
+
 ## 0.19.3
 
 - Fix BetterAnimatedOpacity
