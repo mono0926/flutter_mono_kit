@@ -28,7 +28,7 @@ class _ValueObservableBuilderState<T>
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     return StreamBuilder<T>(
-      initialData: widget.stream.value,
+      initialData: widget.stream.valueOrNull,
       stream: widget.stream,
       builder: (context, snapshot) {
         // ValueObservableの場合、初期値があったらwaitingでは無いとみなす方が自然。

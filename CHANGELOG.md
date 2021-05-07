@@ -1,3 +1,7 @@
+## 0.19.5
+
+- Update to rxdart 0.27.0
+
 ## 0.19.4
 
 - Enhance mapWithIndex

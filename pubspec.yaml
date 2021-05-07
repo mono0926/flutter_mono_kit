@@ -17,7 +17,7 @@ dependencies:
   image_picker: '>=0.7.0 <1.0.0'
   nested: '>=1.0.0 <2.0.0'
   quiver: '>=2.0.0 <4.0.0'
-  rxdart: '>=0.26.0 <1.0.0'
+  rxdart: '>=0.27.0 <1.0.0'
   simple_logger: '>=1.6.0 <2.0.0'
   state_notifier: '>=0.6.0 <1.0.0'
   stream_transform: '>=2.0.0 <3.0.0'

@@ -26,6 +26,6 @@ extension ChangedValuePairStream<T> on Stream<T> {
 
 extension ChangedValuePairValueStream<T> on ValueStream<T> {
   Stream<ChangedValuePair<T>> changedValuePair() {
-    return ChangedValuePairStream<T>(this).changedValuePair(value);
+    return ChangedValuePairStream<T>(this).changedValuePair(valueOrNull);
   }
 }
