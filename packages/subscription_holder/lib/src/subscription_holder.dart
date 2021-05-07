@@ -16,7 +16,7 @@ class SubscriptionHolder {
     ValueStream<T> observable,
     FutureOr<S?> Function(T? value) f,
   ) {
-    final v = f(observable.value);
+    final v = f(observable.valueOrNull);
     final valueObservable = observable
         .asyncMap(f)
         .distinct()
@@ -30,7 +30,7 @@ class SubscriptionHolder {
     ValueStream<T> observable,
     FutureOr<S?> Function(T? value) f,
   ) {
-    final v = f(observable.value);
+    final v = f(observable.valueOrNull);
     final notifier = ValueNotifier<S?>(v is Future<S> ? null : v as S);
     _subscriptions.add(
         observable.distinct().listen((x) async => notifier.value = await f(x)));

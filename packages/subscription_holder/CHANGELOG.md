@@ -1,3 +1,7 @@
+## 2.1.1
+
+- Update to rxdart 0.27.0
+
 ## 2.1.0
 
 - Migrate to null safety
