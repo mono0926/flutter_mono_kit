@@ -20,22 +20,4 @@ void main() {
       isFalse,
     );
   });
-  test('mapWithIndex', () {
-    expect(
-      <String>[].mapWithIndex((s, i) => '$s-$i').toList(),
-      <String>[],
-    );
-    expect(
-      <String>['a'].mapWithIndex((s, i) => '$s-$i').toList(),
-      <String>['a-0'],
-    );
-    expect(
-      <String>['a', 'b', 'c'].mapWithIndex((s, i) => '$s-$i').toList(),
-      <String>['a-0', 'b-1', 'c-2'],
-    );
-    expect(
-      <String>['a', 'b', 'c'].mapWithIndex((s, i) => '$s-$i').take(1).toList(),
-      <String>['a-0'],
-    );
-  });
 }

@@ -1,3 +1,8 @@
+## 0.20.0
+
+- Remove mapWithIndex
+  - Use [mapIndexed method - IterableExtension extension - collection library - Dart API](https://pub.dev/documentation/collection/latest/collection/IterableExtension/mapIndexed.html) instead
+
 ## 0.19.5
 
 - Update to rxdart 0.27.0
