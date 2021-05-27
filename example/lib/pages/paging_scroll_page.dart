@@ -71,16 +71,16 @@ class __BodyState extends State<_Body> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               ElevatedButton(
-                child: const Text('TOP'),
                 onPressed: _scrollController.scrollToTop,
+                child: const Text('TOP'),
               ),
               ElevatedButton(
-                child: const Text('UP️'),
                 onPressed: _scrollController.scrollToPreviousPage,
+                child: const Text('UP️'),
               ),
               ElevatedButton(
-                child: const Text('↑'),
                 onPressed: _scrollController.scrollUp,
+                child: const Text('↑'),
               ),
             ],
           ),
@@ -88,16 +88,16 @@ class __BodyState extends State<_Body> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               ElevatedButton(
-                child: const Text('BOTTOM️'),
                 onPressed: _scrollController.scrollToBottom,
+                child: const Text('BOTTOM️'),
               ),
               ElevatedButton(
-                child: const Text('DOWN'),
                 onPressed: _scrollController.scrollToNextPage,
+                child: const Text('DOWN'),
               ),
               ElevatedButton(
-                child: const Text('↓'),
                 onPressed: _scrollController.scrollDown,
+                child: const Text('↓'),
               ),
             ],
           ),

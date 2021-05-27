@@ -19,10 +19,10 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           const WIP(
+            visible: true,
             child: ListTile(
               title: Text('Experimental Feature'),
             ),
-            visible: true,
           ),
           ...PageInfo.all.map((info) {
             final routeName = info.routeName;

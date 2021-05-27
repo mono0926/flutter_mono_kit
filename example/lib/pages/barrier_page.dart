@@ -24,7 +24,6 @@ class _BarrierPageState extends State<BarrierPage> {
         title: const Text(BarrierPage.routeName),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
         onPressed: () {
           // このブロックで囲まれている処理が終わるまでプログレス表示
           context.read(barrierProvider).executeWithProgress(() async {
@@ -33,6 +32,7 @@ class _BarrierPageState extends State<BarrierPage> {
             setState(() => _count++);
           });
         },
+        child: const Icon(Icons.add),
       ),
       body: Center(
         child: Text(

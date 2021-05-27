@@ -21,8 +21,8 @@ class ColorExPage extends StatelessWidget {
           title: Text(pascalCaseFromRouteName(routeName)),
         ),
         floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
           onPressed: () {},
+          child: const Icon(Icons.add),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
         bottomNavigationBar: BottomNavigationBar(

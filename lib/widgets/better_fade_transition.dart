@@ -21,8 +21,8 @@ class BetterFadeTransition extends AnimatedWidget {
       visible: animation.value != 0,
       child: FadeTransition(
         opacity: animation,
-        child: child,
         alwaysIncludeSemantics: alwaysIncludeSemantics,
+        child: child,
       ),
     );
   }

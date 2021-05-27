@@ -40,6 +40,8 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
     final paddingV = padding.top + padding.bottom;
     final maxHeight = height - paddingV - 24;
     return Semantics(
+      scopesRoute: true,
+      explicitChildNodes: true,
       child: Stack(
         fit: StackFit.passthrough,
         children: [
@@ -68,8 +70,6 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
           ),
         ],
       ),
-      scopesRoute: true,
-      explicitChildNodes: true,
     );
   }
 

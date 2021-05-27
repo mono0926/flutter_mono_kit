@@ -19,10 +19,10 @@ void showErrorDialog({
       ),
       actions: [
         ElevatedButton(
-          child: Text(MaterialLocalizations.of(context).okButtonLabel),
           onPressed: () {
             Navigator.of(context).pop();
           },
+          child: Text(MaterialLocalizations.of(context).okButtonLabel),
         )
       ],
     ),

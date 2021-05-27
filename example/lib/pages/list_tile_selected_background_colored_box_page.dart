@@ -36,20 +36,20 @@ class _ListTileSelectedBackgroundColoredBoxPageState
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text('BACK'),
           onPressed: () => Navigator.of(context).pop(),
+          child: const Text('BACK'),
         ),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
+              decoration: BoxDecoration(
+                color: colorScheme.primary,
+              ),
               child: Text(
                 'Header',
                 style: theme.primaryTextTheme.headline4,
-              ),
-              decoration: BoxDecoration(
-                color: colorScheme.primary,
               ),
             ),
             ..._listTileTexts.map(

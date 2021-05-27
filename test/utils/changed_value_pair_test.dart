@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:mono_kit/mono_kit.dart';
 
 void main() {
   group(

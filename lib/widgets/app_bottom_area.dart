@@ -57,7 +57,6 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
         ),
         if (bottom != null)
           SizeListener(
-            child: bottom,
             onSizeChanged: (size) {
               final bottomHeight = size.height;
               if (bottomHeight != _bottomHeight) {
@@ -66,6 +65,7 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
                 });
               }
             },
+            child: bottom,
           ),
       ],
     );

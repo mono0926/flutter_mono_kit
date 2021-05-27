@@ -77,8 +77,8 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
                   width: Material.defaultSplashRadius * 2,
                   height: Material.defaultSplashRadius * 2,
                   child: IconTheme(
-                    child: const CloseButton(),
                     data: Theme.of(context).primaryIconTheme,
+                    child: const CloseButton(),
                   ),
                 ),
               ),

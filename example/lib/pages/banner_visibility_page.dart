@@ -49,8 +49,8 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.refresh),
         onPressed: () => _isVisible.value = !_isVisible.value,
+        child: const Icon(Icons.refresh),
       ),
     );
   }

@@ -127,8 +127,8 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
 
   Widget _buildOpenButton(BuildContext context) {
     return ElevatedButton(
-      child: const Text('OPEN'),
       onPressed: () {},
+      child: const Text('OPEN'),
     );
   }
 }
@@ -152,6 +152,7 @@ class __DescState extends State<_Desc> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     final backgroundColor = theme.scaffoldBackgroundColor;
     return Stack(
       clipBehavior: Clip.none,
@@ -195,8 +196,9 @@ class __DescState extends State<_Desc> {
                     widget.additionalHeightNeeded(_overflowNotifier.value),
                 child: Text(
                   'more',
-                  style: theme.textTheme.bodyText2!
-                      .copyWith(color: theme.accentColor),
+                  style: theme.textTheme.bodyText2!.copyWith(
+                    color: colorScheme.secondary,
+                  ),
                 ),
               ),
             ),
