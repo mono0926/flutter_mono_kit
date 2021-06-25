@@ -1,3 +1,7 @@
+## 0.21.0-dev
+
+- Update hooks_riverpod to v1
+
 ## 0.20.0
 
 - Remove mapWithIndex

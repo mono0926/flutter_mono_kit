@@ -1,14 +1,13 @@
 import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
 
 final barrierProvider = Provider((ref) => BarrierController());
 
-class Barrier extends HookWidget {
+class Barrier extends ConsumerWidget {
   const Barrier({
     Key? key,
     required this.child,
@@ -27,7 +26,7 @@ class Barrier extends HookWidget {
   final Duration switchDuration;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return Stack(
       fit: StackFit.passthrough,
@@ -36,7 +35,7 @@ class Barrier extends HookWidget {
         Positioned.fill(
           child: ValueListenableBuilder<bool>(
             valueListenable:
-                showProgress ?? useProvider(barrierProvider).inProgress,
+                showProgress ?? ref.watch(barrierProvider).inProgress,
             builder: (context, visible, child) => Visibility(
               visible: visible,
               child: child!,
