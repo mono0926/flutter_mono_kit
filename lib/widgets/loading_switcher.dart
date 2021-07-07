@@ -5,7 +5,9 @@ class LoadingSwitcher extends StatelessWidget {
   const LoadingSwitcher({
     Key? key,
     this.child,
-    this.timedOutChild = const CircularProgressIndicator(),
+    this.timedOutChild = const Center(
+      child: CircularProgressIndicator(),
+    ),
     this.initialChild = const SizedBox(),
     this.timeout = const Duration(milliseconds: 200),
     this.switchDuration = const Duration(milliseconds: 100),

@@ -1,3 +1,7 @@
+## 0.21.2-dev
+
+- Wrap timedOutChild default value of LoadingSwitcher with Center
+
 ## 0.21.1-dev
 
 - Set backwardsCompatibility of appBarTheme to false
