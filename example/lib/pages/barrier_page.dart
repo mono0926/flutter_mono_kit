@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/widgets/widgets.dart';
 
-class BarrierPage extends StatefulWidget {
+class BarrierPage extends ConsumerStatefulWidget {
   const BarrierPage({Key? key}) : super(key: key);
 
   static const routeName = '/barrier';
@@ -14,7 +14,7 @@ class BarrierPage extends StatefulWidget {
   _BarrierPageState createState() => _BarrierPageState();
 }
 
-class _BarrierPageState extends State<BarrierPage> {
+class _BarrierPageState extends ConsumerState<BarrierPage> {
   var _count = 0;
 
   @override
@@ -26,7 +26,7 @@ class _BarrierPageState extends State<BarrierPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // このブロックで囲まれている処理が終わるまでプログレス表示
-          context.read(barrierProvider).executeWithProgress(() async {
+          ref.read(barrierProvider).executeWithProgress(() async {
             // ダミー処理時間として1秒待つ
             await Future<void>.delayed(const Duration(seconds: 1));
             setState(() => _count++);

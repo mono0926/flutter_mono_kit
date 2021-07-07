@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 final _controller = ChangeNotifierProvider((ref) => _Controller());
 
-class LoadingSwitcherPage extends HookWidget {
+class LoadingSwitcherPage extends ConsumerWidget {
   const LoadingSwitcherPage({Key? key}) : super(key: key);
 
   static const routeName = '/loading_switcher';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(LoadingSwitcherPage.routeName),
@@ -21,14 +20,14 @@ class LoadingSwitcherPage extends HookWidget {
           AspectRatio(
             aspectRatio: 1,
             child: LoadingSwitcher(
-              timeout: useProvider(
+              timeout: ref.watch(
                 _controller.select(
                   (_Controller model) => model.getDuration(
                     sliderType: SliderType.timeout,
                   ),
                 ),
               ),
-              child: useProvider(
+              child: ref.watch(
                 _controller.select((_Controller model) => model.image),
               ),
             ),
@@ -40,7 +39,7 @@ class LoadingSwitcherPage extends HookWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read(_controller).reload();
+          ref.watch(_controller).reload();
         },
         child: const Icon(Icons.refresh),
       ),
@@ -48,7 +47,7 @@ class LoadingSwitcherPage extends HookWidget {
   }
 }
 
-class _Slider extends HookWidget {
+class _Slider extends ConsumerWidget {
   const _Slider({
     Key? key,
     required this.type,
@@ -56,8 +55,8 @@ class _Slider extends HookWidget {
 
   final SliderType type;
   @override
-  Widget build(BuildContext context) {
-    final value = useProvider(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final value = ref.watch(
       _controller.select((_Controller model) =>
           model.getDuration(sliderType: type).inMilliseconds.toDouble()),
     );
@@ -74,7 +73,7 @@ class _Slider extends HookWidget {
               label: '$value',
               divisions: 100,
               onChanged: (value) {
-                context.read(_controller).updateDuration(
+                ref.read(_controller).updateDuration(
                       sliderType: type,
                       duration: Duration(
                         milliseconds: value.toInt(),

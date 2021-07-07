@@ -50,7 +50,7 @@ class BetterPlaceholder extends StatelessWidget {
                 child: FittedBox(
                   child: Padding(
                     padding: const EdgeInsets.all(4),
-                    child: Text('${_sizeDesc(constraints)}'),
+                    child: Text(_sizeDesc(constraints)),
                   ),
                 ),
               ),

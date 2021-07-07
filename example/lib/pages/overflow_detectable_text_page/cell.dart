@@ -6,7 +6,7 @@ import 'data.dart';
 const double _defaultMaxHeight = 110;
 
 class Cell extends StatefulWidget {
-  const Cell(this.data);
+  const Cell(this.data, {Key? key}) : super(key: key);
 
   final Data data;
 

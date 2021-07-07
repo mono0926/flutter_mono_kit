@@ -5,7 +5,7 @@ import 'cell.dart';
 import 'data.dart';
 
 class OverflowDetectableTextPage extends StatelessWidget {
-  const OverflowDetectableTextPage();
+  const OverflowDetectableTextPage({Key? key}) : super(key: key);
 
   static const routeName = '/OverflowDetectableText';
 

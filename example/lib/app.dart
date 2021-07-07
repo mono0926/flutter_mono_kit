@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart' hide Router;
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
@@ -7,11 +6,11 @@ import 'package:nested/nested.dart';
 import 'pages/pages.dart';
 import 'router.dart';
 
-class App extends HookWidget {
+class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     const title = 'mono_kit Demo';
     return MaterialApp(
       title: title,
@@ -26,7 +25,7 @@ class App extends HookWidget {
       ),
       theme: lightTheme(),
       darkTheme: darkTheme(),
-      onGenerateRoute: useProvider(router).onGenerateRoute,
+      onGenerateRoute: ref.watch(router).onGenerateRoute,
       onUnknownRoute: (settings) => MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const NotFoundPage(),

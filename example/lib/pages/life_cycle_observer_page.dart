@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:example/util/util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class LifeCycleObserverPage extends StatefulWidget {
+class LifeCycleObserverPage extends ConsumerStatefulWidget {
   const LifeCycleObserverPage({Key? key}) : super(key: key);
 
   static const routeName = '/life_cycle_observer';
@@ -13,14 +14,14 @@ class LifeCycleObserverPage extends StatefulWidget {
   _LifeCycleObserverPageState createState() => _LifeCycleObserverPageState();
 }
 
-class _LifeCycleObserverPageState extends State<LifeCycleObserverPage> {
+class _LifeCycleObserverPageState extends ConsumerState<LifeCycleObserverPage> {
   late final StreamSubscription subscription;
 
   @override
   void initState() {
     super.initState();
 
-    subscription = context.read(lifecycleObserver).stateStream.listen(print);
+    subscription = ref.read(lifecycleObserver).stateStream.listen(logger.info);
   }
 
   @override
