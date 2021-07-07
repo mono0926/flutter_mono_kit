@@ -1,3 +1,7 @@
+## 0.21.1-dev
+
+- Set backwardsCompatibility of appBarTheme to false
+
 ## 0.21.0-dev
 
 - Update hooks_riverpod to v1
