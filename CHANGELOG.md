@@ -1,3 +1,7 @@
+## 0.21.3-dev
+
+- Add Enum extensions
+
 ## 0.21.2-dev
 
 - Wrap timedOutChild default value of LoadingSwitcher with Center
