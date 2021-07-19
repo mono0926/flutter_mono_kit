@@ -1,4 +1,5 @@
 export 'color.dart';
+export 'enum.dart';
 export 'iterable.dart';
 export 'navigator_state.dart';
 export 'scaffold_messenger_state.dart';
