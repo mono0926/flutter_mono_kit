@@ -41,7 +41,6 @@ class OverflowDetectableTextPage extends StatelessWidget {
         primaryColor: accentColor,
       ),
       primaryColor: Colors.white,
-      accentColor: accentColor,
       scaffoldBackgroundColor: Colors.white,
       highlightColor: highlightColor,
 //      splashColor: splashColor,

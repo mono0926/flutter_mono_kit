@@ -12,10 +12,7 @@ class PagingScrollController extends ScrollController
 
 mixin PagingScrollControllerMixin on ScrollController {
   BuildContext get _context => position.context.notificationContext!;
-  RenderBox? get _renderBox {
-    final box = _context.findRenderObject()! as RenderBox;
-    return box is RenderBox ? box : null;
-  }
+  RenderBox? get _renderBox => _context.findRenderObject()! as RenderBox;
 
   double get _height => _renderBox?.size.height ?? 0;
   double get _minScrollExtent => position.minScrollExtent;

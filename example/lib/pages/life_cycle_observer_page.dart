@@ -15,7 +15,7 @@ class LifeCycleObserverPage extends ConsumerStatefulWidget {
 }
 
 class _LifeCycleObserverPageState extends ConsumerState<LifeCycleObserverPage> {
-  late final StreamSubscription subscription;
+  late final StreamSubscription<void> subscription;
 
   @override
   void initState() {

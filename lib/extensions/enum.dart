@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 
 // https://github.com/dart-lang/sdk/blob/23cf71efba3b1bab1afd8b0d515189c9d644584c/sdk/lib/core/enum.dart#L85

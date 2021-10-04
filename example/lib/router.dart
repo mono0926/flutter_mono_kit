@@ -42,7 +42,7 @@ class Router {
         const VerticalCenterScrollViewPage(),
   };
 
-  Route? onGenerateRoute(RouteSettings settings) {
+  Route<void>? onGenerateRoute(RouteSettings settings) {
     final name = settings.name;
     final uri = Uri(path: name);
     final segments = uri.pathSegments;

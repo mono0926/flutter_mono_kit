@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
-Future<PickedFile?> showPhotoSelectionSheet({
+Future<XFile?> showPhotoSelectionSheet({
   required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
   VoidCallback? onSettingAppOpenRequested,
@@ -33,7 +33,7 @@ Future<PickedFile?> showPhotoSelectionSheet({
 
   final picker = ImagePicker();
   try {
-    return await picker.getImage(source: source);
+    return await picker.pickImage(source: source);
   } on PlatformException catch (e) {
     logger.warning(e);
     if (![

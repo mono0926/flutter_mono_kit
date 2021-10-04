@@ -141,7 +141,7 @@ class _Desc extends StatefulWidget {
   }) : super(key: key);
 
   final Data data;
-  final Function(double height) additionalHeightNeeded;
+  final void Function(double height) additionalHeightNeeded;
 
   @override
   __DescState createState() => __DescState();

@@ -19,7 +19,7 @@ class ValueObservableBuilder<T> extends SingleChildStatefulWidget {
   final AsyncChildWidgetBuilder<T> builder;
 
   @override
-  _ValueObservableBuilderState createState() =>
+  _ValueObservableBuilderState<T> createState() =>
       _ValueObservableBuilderState<T>();
 }
 
