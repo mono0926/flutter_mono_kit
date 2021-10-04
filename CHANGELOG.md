@@ -1,3 +1,8 @@
+## 0.21.4-dev
+
+- Rename Enum extensions
+  - https://github.com/dart-lang/sdk/blob/23cf71efba3b1bab1afd8b0d515189c9d644584c/sdk/lib/core/enum.dart#L85
+
 ## 0.21.3-dev
 
 - Add Enum extensions
