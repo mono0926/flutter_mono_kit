@@ -1,20 +1,20 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 
-extension EnumX on Enum {
+extension EnumName on Enum {
   String get described => describeEnum(this);
 }
 
-extension EnumsX<E extends Enum> on List<E> {
-  E from(String value) {
+extension EnumByName<T extends Enum> on Iterable<T> {
+  T from(String value) {
     final e = fromOrNull(value);
-    if (e is E) {
+    if (e is T) {
       return e;
     }
-    throw AssertionError('Enum "$E.$value" does not exist.');
+    throw AssertionError('Enum "$T.$value" does not exist.');
   }
 
-  E? fromOrNull(String? value) => firstWhereOrNull(
+  T? fromOrNull(String? value) => firstWhereOrNull(
         (e) => '$e'.split('.').last == value,
       );
 }
