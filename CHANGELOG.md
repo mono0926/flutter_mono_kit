@@ -1,3 +1,8 @@
+## 0.21.5
+
+- Upgrade dependencies
+- Re-land `materialColor` extension getter for Color
+
 ## 0.21.4-dev
 
 - Rename Enum extensions
