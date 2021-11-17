@@ -1,3 +1,7 @@
+## 0.21.6
+
+- Upgrade freezed version
+
 ## 0.21.5
 
 - Upgrade dependencies
