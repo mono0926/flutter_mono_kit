@@ -1,4 +1,3 @@
-export 'adaptive_icon.dart';
 export 'animated_expansion_visibility.dart';
 export 'app_asset_image.dart';
 export 'app_bottom_area.dart';

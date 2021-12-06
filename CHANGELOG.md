@@ -1,3 +1,8 @@
+## 0.21.7
+
+- Delete AdaptiveIcon in favor of [PlatformAdaptiveIcons](https://api.flutter.dev/flutter/material/PlatformAdaptiveIcons-class.html)
+  - https://twitter.com/_mono/status/1464119096253947906
+
 ## 0.21.6
 
 - Upgrade freezed version
