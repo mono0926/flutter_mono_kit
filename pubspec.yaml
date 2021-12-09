@@ -1,17 +1,17 @@
 name: mono_kit
 description: A collection of convenient widgets and utils made by mono. Under construction now.
-version: 0.22.0
+version: 0.22.0+1
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
-  sdk: '>=2.15.0-0 <3.0.0'
-  flutter: '>=2.0.0'
+  sdk: '>=2.15.0 <3.0.0'
+  flutter: '>=2.8.0'
 dependencies:
   adaptive_dialog: '>=1.0.0 <2.0.0'
   collection: '>=1.15.0 <2.0.0'
   disposable_provider: '>=2.0.0 <3.0.0'
   flutter:
     sdk: flutter
-  flutter_svg: '>=0.20.0 <1.0.0'
+  flutter_svg: '>=1.0.0 <2.0.0'
   freezed_annotation: '>=1.0.0 <2.0.0'
   hooks_riverpod: '>=1.0.0 <2.0.0'
   image_picker: '>=0.7.0 <1.0.0'
