@@ -1,3 +1,8 @@
+## 0.22.0
+
+- Change minimu Dart version to '2.15.0-0'
+- Delete enum extension methods which introduced in Dart 2.15
+
 ## 0.21.7
 
 - Delete AdaptiveIcon in favor of [PlatformAdaptiveIcons](https://api.flutter.dev/flutter/material/PlatformAdaptiveIcons-class.html)
