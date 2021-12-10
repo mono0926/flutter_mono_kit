@@ -26,7 +26,7 @@ class _BarrierPageState extends ConsumerState<BarrierPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // このブロックで囲まれている処理が終わるまでプログレス表示
-          ref.read(barrierProvider).executeWithProgress(() async {
+          ref.read(barrierProvider.notifier).executeWithProgress(() async {
             // ダミー処理時間として1秒待つ
             await Future<void>.delayed(const Duration(seconds: 1));
             setState(() => _count++);

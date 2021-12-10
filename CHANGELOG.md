@@ -1,3 +1,8 @@
+## 0.23.0
+
+- Change barrierProvider to StateNotifierProvider from RouteObserverProvider
+- Delete BarrierControllerProvider, and only support Riverpod, not Provider
+
 ## 0.22.0
 
 - Change minimu Dart version to '2.15.0'

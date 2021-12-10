@@ -1,17 +1,15 @@
-import 'package:disposable_provider/disposable_provider.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
-import 'package:nested/nested.dart';
 
-final barrierProvider = Provider((ref) => BarrierController());
+final barrierProvider = StateNotifierProvider<BarrierController, bool>(
+  (ref) => BarrierController(),
+);
 
 class Barrier extends ConsumerWidget {
   const Barrier({
     Key? key,
     required this.child,
-    this.showProgress,
     this.valueColor,
     this.backgroundColor,
     this.timeout = const Duration(milliseconds: 200),
@@ -19,7 +17,6 @@ class Barrier extends ConsumerWidget {
   }) : super(key: key);
 
   final Widget child;
-  final ValueListenable<bool>? showProgress;
   final Color? valueColor;
   final Color? backgroundColor;
   final Duration timeout;
@@ -28,18 +25,14 @@ class Barrier extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
+    final visible = ref.watch(barrierProvider);
     return Stack(
       fit: StackFit.passthrough,
       children: [
         child,
         Positioned.fill(
-          child: ValueListenableBuilder<bool>(
-            valueListenable:
-                showProgress ?? ref.watch(barrierProvider).inProgress,
-            builder: (context, visible, child) => Visibility(
-              visible: visible,
-              child: child!,
-            ),
+          child: Visibility(
+            visible: visible,
             child: TimeoutSwitcher(
               timeout: timeout,
               switchDuration: switchDuration,
@@ -63,16 +56,14 @@ class Barrier extends ConsumerWidget {
   }
 }
 
-class BarrierController with Disposable {
-  final _inProgress = ValueNotifier(false);
+class BarrierController extends StateNotifier<bool> {
+  BarrierController() : super(false);
 
-  ValueListenable<bool> get inProgress => _inProgress;
+  void startProgress() => state = true;
 
-  void startProgress() => _inProgress.value = true;
+  void stopProgress() => state = false;
 
-  void stopProgress() => _inProgress.value = false;
-
-  void toggleProgress() => _inProgress.value = !_inProgress.value;
+  void toggleProgress() => state = !state;
 
   /// Execute f() with showing progress.
   Future<T> executeWithProgress<T>(Future<T> Function() f) async {
@@ -83,27 +74,22 @@ class BarrierController with Disposable {
       stopProgress();
     }
   }
-
-  @override
-  void dispose() {
-    _inProgress.dispose();
-  }
 }
 
-class BarrierControllerProvider extends SingleChildStatelessWidget {
-  const BarrierControllerProvider({
-    Key? key,
-    Widget? child,
-  }) : super(
-          key: key,
-          child: child,
-        );
-
-  @override
-  Widget buildWithChild(BuildContext context, Widget? child) {
-    return DisposableProvider(
-      create: (context) => BarrierController(),
-      child: child,
-    );
-  }
-}
+// class _HOge extends StatefulWidget {
+//   const _HOge({Key? key}) : super(key: key);
+//   @override
+//   __HOgeState createState() => __HOgeState();
+// }
+//
+// class __HOgeState extends State<_HOge> with WidgetsBindingObserver {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+//
+//   @override
+//   Future<bool> didPopRoute() {
+//     return super.didPopRoute();
+//   }
+// }
