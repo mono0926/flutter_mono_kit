@@ -87,7 +87,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.0"
+    version: "0.27.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -113,7 +113,7 @@ packages:
       name: state_notifier
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.0"
+    version: "0.7.1"
   stream_channel:
     dependency: transitive
     description:
