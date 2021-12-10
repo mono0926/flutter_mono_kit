@@ -5,7 +5,7 @@
 
 ## 0.22.0
 
-- Change minimu Dart version to '2.15.0'
+- Change minimum Dart version to '2.15.0'
 - Delete enum extension methods which introduced in Dart 2.15
 
 ## 0.21.7
