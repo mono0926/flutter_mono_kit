@@ -75,21 +75,3 @@ class BarrierController extends StateNotifier<bool> {
     }
   }
 }
-
-// class _HOge extends StatefulWidget {
-//   const _HOge({Key? key}) : super(key: key);
-//   @override
-//   __HOgeState createState() => __HOgeState();
-// }
-//
-// class __HOgeState extends State<_HOge> with WidgetsBindingObserver {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-//
-//   @override
-//   Future<bool> didPopRoute() {
-//     return super.didPopRoute();
-//   }
-// }
