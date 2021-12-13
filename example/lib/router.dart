@@ -15,6 +15,7 @@ import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:example/pages/vertical_center_scroll_view_page.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mono_kit/mono_kit.dart';
 import 'package:recase/recase.dart';
 
 final router = Provider((ref) => Router());
@@ -51,7 +52,9 @@ class Router {
     if (pushPage != null) {
       return MaterialPageRoute<void>(
         settings: settings,
-        builder: pushPage,
+        builder: (context) => PopBarrier(
+          child: pushPage(context),
+        ),
       );
     }
     return null;

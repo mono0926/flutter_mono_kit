@@ -1,3 +1,7 @@
+## 0.24.0
+
+- Add `PopBarrier`, which prevents page from popping
+
 ## 0.23.0
 
 - Change barrierProvider to StateNotifierProvider from RouteObserverProvider

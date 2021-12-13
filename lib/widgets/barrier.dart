@@ -75,3 +75,20 @@ class BarrierController extends StateNotifier<bool> {
     }
   }
 }
+
+class PopBarrier extends ConsumerWidget {
+  const PopBarrier({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return WillPopScope(
+      child: child,
+      onWillPop: () => Future.value(!ref.read(barrierProvider)),
+    );
+  }
+}
