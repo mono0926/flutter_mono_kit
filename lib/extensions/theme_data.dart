@@ -22,11 +22,14 @@ extension ThemeDataEx on ThemeData {
   }
 }
 
-ThemeData lightTheme() => ThemeData.from(
-      colorScheme: const ColorScheme.light(),
+ThemeData lightTheme() => ThemeData(
+      colorSchemeSeed: Colors.green,
+      useMaterial3: true,
     ).followLatestSpec();
-ThemeData darkTheme() => ThemeData.from(
-      colorScheme: const ColorScheme.dark(),
+ThemeData darkTheme() => ThemeData(
+      colorSchemeSeed: Colors.green,
+      useMaterial3: true,
+      brightness: Brightness.dark,
     ).followLatestSpec().copyWith(
           cupertinoOverrideTheme: const CupertinoThemeData(
             // Needed for correct CupertinoTextField color (bug?)

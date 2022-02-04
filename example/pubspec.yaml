@@ -3,7 +3,7 @@ description: A example of mono_kit.
 version: 1.0.0+1
 publish_to: none
 environment:
-  sdk: '>=2.15.0 <3.0.0'
+  sdk: '>=2.16.0 <3.0.0'
 dependencies:
   cupertino_icons:
   flutter:
