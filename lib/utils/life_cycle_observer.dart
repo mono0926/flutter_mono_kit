@@ -1,38 +1,22 @@
-import 'package:disposable_provider/disposable_provider.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rxdart/rxdart.dart';
 
-final lifecycleObserver = Provider((ref) => LifeCycleObserver());
+final lifecycleObserver = Provider<AsyncValue<AppLifecycleState>>((ref) {
+  final observer = AppLifecycleStateObserver(
+    (state) => ref.state = AsyncData(state),
+  );
+  final binding = WidgetsBinding.instance!..addObserver(observer);
+  ref.onDispose(() => binding.removeObserver(observer));
+  return const AsyncLoading();
+});
 
-class LifeCycleObserver with WidgetsBindingObserver implements Disposable {
-  LifeCycleObserver({
-    AppLifecycleState initialState = AppLifecycleState.resumed,
-  }) {
-    _state = BehaviorSubject<AppLifecycleState>.seeded(
-      initialState,
-      onListen: () {
-        _binding.addObserver(this);
-      },
-      onCancel: () {
-        _binding.removeObserver(this);
-      },
-    );
-  }
+class AppLifecycleStateObserver extends WidgetsBindingObserver {
+  AppLifecycleStateObserver(this._didChange);
 
-  final _binding = WidgetsBinding.instance!;
-  late final BehaviorSubject<AppLifecycleState> _state;
-
-  ValueStream<AppLifecycleState> get stateValue => _state;
-  Stream<AppLifecycleState> get stateStream => stateValue.skip(1);
+  final ValueChanged<AppLifecycleState> _didChange;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    _state.add(state);
-  }
-
-  @override
-  void dispose() {
-    _state.close();
+    _didChange(state);
   }
 }

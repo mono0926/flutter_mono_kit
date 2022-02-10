@@ -1,3 +1,7 @@
+## 0.25.0
+
+- Refactor lifecycleObserver to Provider<AsyncValue<AppLifecycleState>>
+
 ## 0.24.0
 
 - Add `PopBarrier`, which prevents page from popping

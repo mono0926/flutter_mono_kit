@@ -21,7 +21,7 @@ class _LifeCycleObserverPageState extends ConsumerState<LifeCycleObserverPage> {
   void initState() {
     super.initState();
 
-    subscription = ref.read(lifecycleObserver).stateStream.listen(logger.info);
+    subscription = ref.read(lifecycleObserver.stream).listen(logger.info);
   }
 
   @override
