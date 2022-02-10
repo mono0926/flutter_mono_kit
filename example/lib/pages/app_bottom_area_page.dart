@@ -56,7 +56,7 @@ class AppBottomAreaPage extends StatelessWidget {
             onPressed: () {},
           ),
           bottomNavigationBar: BottomAppBar(
-            color: colorScheme.secondaryVariant,
+            color: colorScheme.secondaryContainer,
             child: Text(
               'bottomNavigationBar',
               textAlign: TextAlign.center,

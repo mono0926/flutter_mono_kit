@@ -69,7 +69,6 @@ Future<XFile?> showPhotoSelectionSheet({
   return null;
 }
 
-// TODO(mono): localize
 @immutable
 class PhotoSelectionL10n {
   const PhotoSelectionL10n();

@@ -1,14 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
 import 'package:rxdart/rxdart.dart';
 
 @immutable
 class SubscriptionHolder {
-  final _subscriptions = <StreamSubscription>[];
+  final _subscriptions = <StreamSubscription<dynamic>>[];
 
-  void add(StreamSubscription subscription) {
+  void add(StreamSubscription<dynamic> subscription) {
     _subscriptions.add(subscription);
   }
 
