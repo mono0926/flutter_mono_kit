@@ -1,3 +1,7 @@
+## 0.25.1
+
+- Add GoRouterLocationButton
+
 ## 0.25.0
 
 - Refactor lifecycleObserver to Provider<AsyncValue<AppLifecycleState>>
