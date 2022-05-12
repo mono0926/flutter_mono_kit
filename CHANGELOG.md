@@ -1,3 +1,7 @@
+## 0.27.0-dev.0
+
+- Use Riverpod v2-dev
+
 ## 0.26.1
 
 - Change splashFactory to InkSparkle.splashFactory
