@@ -1,3 +1,8 @@
+## 0.26.1
+
+- Change splashFactory to InkSparkle.splashFactory
+- Omit `typography: Typography.material2018()` in favor of `useMaterial3: true`
+
 ## 0.26.0
 
 - Upgrade to Flutter 3

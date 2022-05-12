@@ -6,18 +6,14 @@ extension ThemeDataEx on ThemeData {
   ThemeData followLatestSpec() {
     return copyWith(
       useMaterial3: true,
-      typography: Typography.material2018(),
       snackBarTheme: snackBarTheme.copyWith(
         behavior: SnackBarBehavior.floating,
       ),
-      splashFactory: InkRipple.splashFactory,
+      splashFactory: InkSparkle.splashFactory,
       pageTransitionsTheme: const PageTransitionsTheme(
         builders: {
-          TargetPlatform.android: ZoomPageTransitionsBuilder(),
           TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-          TargetPlatform.linux: ZoomPageTransitionsBuilder(),
           TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
-          TargetPlatform.windows: ZoomPageTransitionsBuilder(),
         },
       ),
     );
