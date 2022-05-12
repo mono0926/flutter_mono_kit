@@ -1,3 +1,7 @@
+## 0.26.0
+
+- Upgrade to Flutter 3
+
 ## 0.25.1
 
 - Add GoRouterLocationButton

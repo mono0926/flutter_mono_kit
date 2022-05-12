@@ -5,7 +5,7 @@ final lifecycleObserver = Provider<AsyncValue<AppLifecycleState>>((ref) {
   final observer = AppLifecycleStateObserver(
     (state) => ref.state = AsyncData(state),
   );
-  final binding = WidgetsBinding.instance!..addObserver(observer);
+  final binding = WidgetsBinding.instance..addObserver(observer);
   ref.onDispose(() => binding.removeObserver(observer));
   return const AsyncLoading();
 });

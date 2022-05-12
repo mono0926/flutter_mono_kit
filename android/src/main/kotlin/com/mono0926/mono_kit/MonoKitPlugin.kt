@@ -4,45 +4,35 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
 import android.content.pm.PackageManager
 import android.app.Activity
-import android.content.Context
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
-public class MonoKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
+class MonoKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
+  private lateinit var channel : MethodChannel
   private lateinit var activity: Activity
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    val channel = MethodChannel(flutterPluginBinding.binaryMessenger, "mono_kit")
-    channel.setMethodCallHandler(this);
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "mono_kit")
+    channel.setMethodCallHandler(this)
   }
 
-  companion object {
-    @JvmStatic
-    fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "mono_kit")
-      val plugin = MonoKitPlugin()
-      plugin.activity = registrar.activity()
-      channel.setMethodCallHandler(plugin)
-    }
-  }
-
-  override fun onMethodCall(call: MethodCall, result: Result) {
+  override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     val method = call.method
-    val info = method.split('/');
+    val info = method.split('/')
     val group = info[0]
     val path = info[1]
+    @Suppress("UNCHECKED_CAST")
     val arguments = call.arguments as Map<String, String>
     when (group) {
       "installation_checker" -> when (path) {
         "is_installed" -> {
           val packageName = arguments.getValue("package_name")
-          val isInstalled = isInstalled(packageName, activity.packageManager);
+          val isInstalled = isInstalled(packageName, activity.packageManager)
           result.success(isInstalled)
         }
         else -> result.notImplemented()

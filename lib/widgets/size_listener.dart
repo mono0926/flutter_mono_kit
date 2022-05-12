@@ -35,7 +35,7 @@ class _SizeListenerRenderObject extends RenderProxyBox {
     final size = this.size;
     if (size != _size) {
       _size = size;
-      WidgetsBinding.instance!.addPostFrameCallback((_) => onSizeChanged(size));
+      WidgetsBinding.instance.addPostFrameCallback((_) => onSizeChanged(size));
     }
   }
 }
