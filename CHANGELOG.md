@@ -1,3 +1,7 @@
+## 0.27.0-dev.4
+
+- Add unifyToMobileApp extension method to ThemeData
+
 ## 0.27.0-dev.0
 
 - Use Riverpod v2-dev

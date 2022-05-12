@@ -2,6 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 extension ThemeDataEx on ThemeData {
+  ThemeData unifyToMobileApp() {
+    return copyWith(
+      visualDensity: VisualDensity.standard,
+      materialTapTargetSize: MaterialTapTargetSize.padded,
+    );
+  }
+
   /// Create ThemeData which follows latest Material Design Spec.
   ThemeData followLatestSpec() {
     return copyWith(
