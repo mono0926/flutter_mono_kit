@@ -8,6 +8,7 @@ export 'better_placeholder.dart';
 export 'better_stream_builder.dart';
 export 'centered_max_width.dart';
 export 'debug_padding.dart';
+export 'go_router_location_button.dart';
 export 'itemized_text.dart';
 export 'list_tile_selected_background_colored_box.dart';
 export 'listener/listener.dart';
