@@ -31,12 +31,14 @@ ThemeData lightTheme() => ThemeData.from(
       colorScheme: ColorScheme.fromSeed(
         seedColor: Colors.green,
       ),
+      useMaterial3: true,
     ).followLatestSpec();
 ThemeData darkTheme() => ThemeData.from(
       colorScheme: ColorScheme.fromSeed(
         seedColor: Colors.green,
         brightness: Brightness.dark,
       ),
+      useMaterial3: true,
     ).followLatestSpec().copyWith(
           cupertinoOverrideTheme: const CupertinoThemeData(
             // Needed for correct CupertinoTextField color (bug?)
