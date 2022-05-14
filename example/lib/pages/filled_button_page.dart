@@ -27,8 +27,17 @@ class FilledButtonPage extends ConsumerWidget {
             children: [
               Center(
                 child: FilledButton(
-                  child: const Text('Filled Button'),
                   onPressed: () {},
+                  child: const Text('Filled Button'),
+                ),
+              ),
+              Center(
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    primary: Colors.deepOrange,
+                  ),
+                  onPressed: () {},
+                  child: const Text('Filled Button (styled)'),
                 ),
               ),
             ],

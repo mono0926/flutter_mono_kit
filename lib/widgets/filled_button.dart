@@ -156,19 +156,19 @@ class _FilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final defaultStyle = ElevatedButton.styleFrom(
+      primary: _primary(colorScheme),
+      onPrimary: _onPrimary(colorScheme),
+    ).copyWith(
+      elevation: MaterialStateProperty.all(0),
+    );
+    final style = this.style;
     return ElevatedButton(
       onPressed: onPressed,
       onLongPress: onLongPress,
       onHover: onHover,
       onFocusChange: onFocusChange,
-      style: ElevatedButton.styleFrom(
-        primary: _primary(colorScheme),
-        onPrimary: _onPrimary(colorScheme),
-      )
-          .copyWith(
-            elevation: MaterialStateProperty.all(0),
-          )
-          .merge(style),
+      style: style == null ? defaultStyle : style.merge(defaultStyle),
       clipBehavior: clipBehavior,
       focusNode: focusNode,
       autofocus: autofocus,
