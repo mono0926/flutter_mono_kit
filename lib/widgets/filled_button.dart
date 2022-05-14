@@ -83,7 +83,8 @@ class FilledButton extends _FilledButton {
   _ButtonType get type => _ButtonType.filled;
 }
 
-class _FilledButtonWithIcon extends FilledButton {
+class _FilledButtonWithIcon extends FilledButton
+    with _IconButtonDefaultStyleMixin {
   _FilledButtonWithIcon({
     super.key,
     required super.onPressed,
@@ -107,19 +108,6 @@ class _FilledButtonWithIcon extends FilledButton {
 
   @override
   _ButtonType get type => _ButtonType.filled;
-
-  @override
-  ButtonStyle defaultStyleOf(BuildContext context) {
-    final scaledPadding = ButtonStyleButton.scaledPadding(
-      const EdgeInsetsDirectional.fromSTEB(12, 0, 16, 0),
-      const EdgeInsets.symmetric(horizontal: 8),
-      const EdgeInsetsDirectional.fromSTEB(8, 0, 4, 0),
-      MediaQuery.maybeOf(context)?.textScaleFactor ?? 1,
-    );
-    return super.defaultStyleOf(context).copyWith(
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(scaledPadding),
-        );
-  }
 }
 
 class FilledTonalButton extends _FilledButton {
@@ -202,7 +190,8 @@ class FilledTonalButton extends _FilledButton {
   _ButtonType get type => _ButtonType.filledTonal;
 }
 
-class _FilledTonalButtonWithIcon extends FilledTonalButton {
+class _FilledTonalButtonWithIcon extends FilledTonalButton
+    with _IconButtonDefaultStyleMixin {
   _FilledTonalButtonWithIcon({
     super.key,
     required super.onPressed,
@@ -226,19 +215,6 @@ class _FilledTonalButtonWithIcon extends FilledTonalButton {
 
   @override
   _ButtonType get type => _ButtonType.filledTonal;
-
-  @override
-  ButtonStyle defaultStyleOf(BuildContext context) {
-    final scaledPadding = ButtonStyleButton.scaledPadding(
-      const EdgeInsetsDirectional.fromSTEB(12, 0, 16, 0),
-      const EdgeInsets.symmetric(horizontal: 8),
-      const EdgeInsetsDirectional.fromSTEB(8, 0, 4, 0),
-      MediaQuery.maybeOf(context)?.textScaleFactor ?? 1,
-    );
-    return super.defaultStyleOf(context).copyWith(
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(scaledPadding),
-        );
-  }
 }
 
 abstract class _FilledButton extends ElevatedButton {
@@ -316,6 +292,21 @@ class _FilledButtonWithIconChild extends StatelessWidget {
         Flexible(child: label),
       ],
     );
+  }
+}
+
+mixin _IconButtonDefaultStyleMixin on _FilledButton {
+  @override
+  ButtonStyle defaultStyleOf(BuildContext context) {
+    final scaledPadding = ButtonStyleButton.scaledPadding(
+      const EdgeInsetsDirectional.fromSTEB(12, 0, 16, 0),
+      const EdgeInsets.symmetric(horizontal: 8),
+      const EdgeInsetsDirectional.fromSTEB(8, 0, 4, 0),
+      MediaQuery.maybeOf(context)?.textScaleFactor ?? 1,
+    );
+    return super.defaultStyleOf(context).copyWith(
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(scaledPadding),
+        );
   }
 }
 
