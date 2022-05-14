@@ -126,54 +126,37 @@ class FilledTonalButton extends _FilledButton {
   }
 }
 
-class _FilledButton extends StatelessWidget {
+class _FilledButton extends ElevatedButton {
   const _FilledButton({
     super.key,
-    required this.onPressed,
-    this.onLongPress,
-    this.onHover,
-    this.onFocusChange,
-    this.style,
-    this.focusNode,
-    this.autofocus = false,
-    this.clipBehavior = Clip.none,
+    required super.onPressed,
+    super.onLongPress,
+    super.onHover,
+    super.onFocusChange,
+    super.style,
+    super.focusNode,
+    super.autofocus,
+    super.clipBehavior,
     required this.type,
-    required this.child,
+    required super.child,
   });
 
-  final VoidCallback? onPressed;
-  final VoidCallback? onLongPress;
-  final ValueChanged<bool>? onHover;
-  final ValueChanged<bool>? onFocusChange;
-  final ButtonStyle? style;
-  final Clip clipBehavior;
-  final FocusNode? focusNode;
-  final bool autofocus;
   final _ButtonType type;
-  final Widget? child;
 
   @override
-  Widget build(BuildContext context) {
+  ButtonStyle defaultStyleOf(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    final defaultStyle = ElevatedButton.styleFrom(
-      primary: _primary(colorScheme),
+    final style = ElevatedButton.styleFrom(
       onPrimary: _onPrimary(colorScheme),
-    ).copyWith(
-      elevation: MaterialStateProperty.all(0),
+      primary: _primary(colorScheme),
     );
-    final style = this.style;
-    return ElevatedButton(
-      onPressed: onPressed,
-      onLongPress: onLongPress,
-      onHover: onHover,
-      onFocusChange: onFocusChange,
-      style: style == null ? defaultStyle : style.merge(defaultStyle),
-      clipBehavior: clipBehavior,
-      focusNode: focusNode,
-      autofocus: autofocus,
-      child: child,
-    );
+    return super.defaultStyleOf(context).copyWith(
+          foregroundColor: style.foregroundColor,
+          backgroundColor: style.backgroundColor,
+          overlayColor: style.overlayColor,
+          elevation: MaterialStateProperty.all(0),
+        );
   }
 
   // https://github.com/darrenaustin/flutter/blob/d8435ca1e908b937c45ed54ba08bf97dc3312a1d/examples/api/lib/material/button_style/button_style.0.dart#L64-L86
