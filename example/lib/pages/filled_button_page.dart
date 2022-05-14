@@ -63,7 +63,7 @@ class FilledButtonPage extends ConsumerWidget {
                 child: FilledTonalButton.icon(
                   onPressed: () {},
                   icon: const Icon(Icons.info),
-                  label: const Text('Filled Button'),
+                  label: const Text('Filled Tonal Button'),
                 ),
               ),
             ],
