@@ -1,3 +1,6 @@
+import 'dart:math' as math;
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class FilledButton extends _FilledButton {
@@ -12,7 +15,21 @@ class FilledButton extends _FilledButton {
     super.autofocus = false,
     super.clipBehavior = Clip.none,
     required super.child,
-  }) : super(type: _ButtonType.filled);
+  });
+
+  factory FilledButton.icon({
+    Key? key,
+    required VoidCallback? onPressed,
+    VoidCallback? onLongPress,
+    ValueChanged<bool>? onHover,
+    ValueChanged<bool>? onFocusChange,
+    ButtonStyle? style,
+    FocusNode? focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    required Widget icon,
+    required Widget label,
+  }) = _FilledButtonWithIcon;
 
   static ButtonStyle styleFrom({
     Color? primary,
@@ -60,6 +77,48 @@ class FilledButton extends _FilledButton {
       alignment: alignment,
       splashFactory: splashFactory,
     );
+  }
+
+  @override
+  _ButtonType get type => _ButtonType.filled;
+}
+
+class _FilledButtonWithIcon extends FilledButton {
+  _FilledButtonWithIcon({
+    super.key,
+    required super.onPressed,
+    super.onLongPress,
+    super.onHover,
+    super.onFocusChange,
+    super.style,
+    super.focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    required Widget icon,
+    required Widget label,
+  }) : super(
+          autofocus: autofocus ?? false,
+          clipBehavior: clipBehavior ?? Clip.none,
+          child: _FilledButtonWithIconChild(
+            icon: icon,
+            label: label,
+          ),
+        );
+
+  @override
+  _ButtonType get type => _ButtonType.filled;
+
+  @override
+  ButtonStyle defaultStyleOf(BuildContext context) {
+    final scaledPadding = ButtonStyleButton.scaledPadding(
+      const EdgeInsetsDirectional.fromSTEB(12, 0, 16, 0),
+      const EdgeInsets.symmetric(horizontal: 8),
+      const EdgeInsetsDirectional.fromSTEB(8, 0, 4, 0),
+      MediaQuery.maybeOf(context)?.textScaleFactor ?? 1,
+    );
+    return super.defaultStyleOf(context).copyWith(
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(scaledPadding),
+        );
   }
 }
 
@@ -75,7 +134,21 @@ class FilledTonalButton extends _FilledButton {
     super.autofocus = false,
     super.clipBehavior = Clip.none,
     required super.child,
-  }) : super(type: _ButtonType.filledTonal);
+  });
+
+  factory FilledTonalButton.icon({
+    Key? key,
+    required VoidCallback? onPressed,
+    VoidCallback? onLongPress,
+    ValueChanged<bool>? onHover,
+    ValueChanged<bool>? onFocusChange,
+    ButtonStyle? style,
+    FocusNode? focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    required Widget icon,
+    required Widget label,
+  }) = _FilledTonalButtonWithIcon;
 
   static ButtonStyle styleFrom({
     Color? primary,
@@ -124,9 +197,51 @@ class FilledTonalButton extends _FilledButton {
       splashFactory: splashFactory,
     );
   }
+
+  @override
+  _ButtonType get type => _ButtonType.filledTonal;
 }
 
-class _FilledButton extends ElevatedButton {
+class _FilledTonalButtonWithIcon extends FilledTonalButton {
+  _FilledTonalButtonWithIcon({
+    super.key,
+    required super.onPressed,
+    super.onLongPress,
+    super.onHover,
+    super.onFocusChange,
+    super.style,
+    super.focusNode,
+    bool? autofocus,
+    Clip? clipBehavior,
+    required Widget icon,
+    required Widget label,
+  }) : super(
+          autofocus: autofocus ?? false,
+          clipBehavior: clipBehavior ?? Clip.none,
+          child: _FilledButtonWithIconChild(
+            icon: icon,
+            label: label,
+          ),
+        );
+
+  @override
+  _ButtonType get type => _ButtonType.filledTonal;
+
+  @override
+  ButtonStyle defaultStyleOf(BuildContext context) {
+    final scaledPadding = ButtonStyleButton.scaledPadding(
+      const EdgeInsetsDirectional.fromSTEB(12, 0, 16, 0),
+      const EdgeInsets.symmetric(horizontal: 8),
+      const EdgeInsetsDirectional.fromSTEB(8, 0, 4, 0),
+      MediaQuery.maybeOf(context)?.textScaleFactor ?? 1,
+    );
+    return super.defaultStyleOf(context).copyWith(
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(scaledPadding),
+        );
+  }
+}
+
+abstract class _FilledButton extends ElevatedButton {
   const _FilledButton({
     super.key,
     required super.onPressed,
@@ -137,11 +252,10 @@ class _FilledButton extends ElevatedButton {
     super.focusNode,
     super.autofocus,
     super.clipBehavior,
-    required this.type,
     required super.child,
   });
 
-  final _ButtonType type;
+  _ButtonType get type;
 
   @override
   ButtonStyle defaultStyleOf(BuildContext context) {
@@ -176,6 +290,32 @@ class _FilledButton extends ElevatedButton {
       case _ButtonType.filledTonal:
         return colorScheme.onSecondaryContainer;
     }
+  }
+}
+
+class _FilledButtonWithIconChild extends StatelessWidget {
+  const _FilledButtonWithIconChild({
+    required this.label,
+    required this.icon,
+  });
+
+  final Widget label;
+  final Widget icon;
+
+  @override
+  Widget build(BuildContext context) {
+    final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
+    // ignore: omit_local_variable_types
+    final double gap =
+        scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        icon,
+        SizedBox(width: gap),
+        Flexible(child: label),
+      ],
+    );
   }
 }
 

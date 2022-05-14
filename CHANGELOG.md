@@ -1,3 +1,7 @@
+## 0.27.1
+
+- Add `.icon` constructor to Filled/Filled Tonal Buttons
+
 ## 0.27.0
 
 - Add Filled/Filled Tonal Buttons

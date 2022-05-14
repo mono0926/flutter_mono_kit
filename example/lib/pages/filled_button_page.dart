@@ -40,6 +40,13 @@ class FilledButtonPage extends ConsumerWidget {
                   child: const Text('Filled Button (styled)'),
                 ),
               ),
+              Center(
+                child: FilledButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.info),
+                  label: const Text('Filled Button'),
+                ),
+              ),
             ],
           ),
           ListSection(
@@ -50,6 +57,13 @@ class FilledButtonPage extends ConsumerWidget {
                 child: FilledTonalButton(
                   child: const Text('Filled Tonal Button'),
                   onPressed: () {},
+                ),
+              ),
+              Center(
+                child: FilledTonalButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.info),
+                  label: const Text('Filled Button'),
                 ),
               ),
             ],
