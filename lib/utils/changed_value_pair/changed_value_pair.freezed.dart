@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'changed_value_pair.dart';
 
@@ -8,6 +10,9 @@ part of 'changed_value_pair.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 class _$ChangedValuePairTearOff {
@@ -26,11 +31,12 @@ const $ChangedValuePair = _$ChangedValuePairTearOff();
 
 /// @nodoc
 mixin _$ChangedValuePair<T> {
-  T? get current;
-  T? get previous;
+  T? get current => throw _privateConstructorUsedError;
+  T? get previous => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ChangedValuePairCopyWith<T, ChangedValuePair<T>> get copyWith;
+  $ChangedValuePairCopyWith<T, ChangedValuePair<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -56,8 +62,14 @@ class _$ChangedValuePairCopyWithImpl<T, $Res>
     Object? previous = freezed,
   }) {
     return _then(_value.copyWith(
-      current: current == freezed ? _value.current : current as T?,
-      previous: previous == freezed ? _value.previous : previous as T?,
+      current: current == freezed
+          ? _value.current
+          : current // ignore: cast_nullable_to_non_nullable
+              as T?,
+      previous: previous == freezed
+          ? _value.previous
+          : previous // ignore: cast_nullable_to_non_nullable
+              as T?,
     ));
   }
 }
@@ -89,13 +101,20 @@ class __$ChangedValuePairCopyWithImpl<T, $Res>
     Object? previous = freezed,
   }) {
     return _then(_ChangedValuePair<T>(
-      current: current == freezed ? _value.current : current as T?,
-      previous: previous == freezed ? _value.previous : previous as T?,
+      current: current == freezed
+          ? _value.current
+          : current // ignore: cast_nullable_to_non_nullable
+              as T?,
+      previous: previous == freezed
+          ? _value.previous
+          : previous // ignore: cast_nullable_to_non_nullable
+              as T?,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_ChangedValuePair<T> implements _ChangedValuePair<T> {
   const _$_ChangedValuePair({this.current, this.previous});
 
@@ -112,20 +131,17 @@ class _$_ChangedValuePair<T> implements _ChangedValuePair<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangedValuePair<T> &&
-            (identical(other.current, current) ||
-                const DeepCollectionEquality()
-                    .equals(other.current, current)) &&
-            (identical(other.previous, previous) ||
-                const DeepCollectionEquality()
-                    .equals(other.previous, previous)));
+        (other.runtimeType == runtimeType &&
+            other is _ChangedValuePair<T> &&
+            const DeepCollectionEquality().equals(other.current, current) &&
+            const DeepCollectionEquality().equals(other.previous, previous));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(current) ^
-      const DeepCollectionEquality().hash(previous);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(current),
+      const DeepCollectionEquality().hash(previous));
 
   @JsonKey(ignore: true)
   @override
@@ -144,5 +160,6 @@ abstract class _ChangedValuePair<T> implements ChangedValuePair<T> {
   T? get previous;
   @override
   @JsonKey(ignore: true)
-  _$ChangedValuePairCopyWith<T, _ChangedValuePair<T>> get copyWith;
+  _$ChangedValuePairCopyWith<T, _ChangedValuePair<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
