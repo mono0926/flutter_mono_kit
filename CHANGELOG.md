@@ -1,10 +1,7 @@
-## 0.27.0-dev.5
+## 0.27.0
 
+- Add Filled/Filled Tonal Buttons
 - Add unifyToMobileApp extension method to ThemeData
-
-## 0.27.0-dev.0
-
-- Use Riverpod v2-dev
 
 ## 0.26.1
 
