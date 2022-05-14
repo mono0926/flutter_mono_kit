@@ -1,16 +1,22 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class MaxWidthPaddingBuilderRoute extends GoRouteData {
+  const MaxWidthPaddingBuilderRoute();
+  @override
+  Widget build(BuildContext context) => const MaxWidthPaddingBuilderPage();
+}
 
 class MaxWidthPaddingBuilderPage extends StatelessWidget {
   const MaxWidthPaddingBuilderPage({Key? key}) : super(key: key);
-
-  static const routeName = '/max_width_padding_builder';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(routeName),
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: MaxWidthPaddingBuilder(
         width: 300,

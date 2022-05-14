@@ -1,20 +1,28 @@
 import 'dart:math';
 
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
 
+class PagingScrollRoute extends GoRouteData {
+  const PagingScrollRoute();
+  @override
+  Widget build(BuildContext context) => const PagingScrollPage();
+}
+
 class PagingScrollPage extends StatelessWidget {
   const PagingScrollPage({Key? key}) : super(key: key);
-
-  static const routeName = '/paging_scroll';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(title: const Text(PagingScrollPage.routeName)),
+      appBar: AppBar(
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
+      ),
       body: const _Body(),
     );
   }

@@ -1,10 +1,16 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class BannerVisibilityRoute extends GoRouteData {
+  const BannerVisibilityRoute();
+  @override
+  Widget build(BuildContext context) => const BannerVisibilityPage();
+}
 
 class BannerVisibilityPage extends StatefulWidget {
   const BannerVisibilityPage({Key? key}) : super(key: key);
-
-  static const routeName = '/banner_visibility';
 
   @override
   _BannerVisibilityPageState createState() => _BannerVisibilityPageState();
@@ -17,7 +23,7 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(BannerVisibilityPage.routeName),
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: Column(
         children: [

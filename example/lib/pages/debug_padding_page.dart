@@ -1,10 +1,16 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class DebugPaddingRoute extends GoRouteData {
+  const DebugPaddingRoute();
+  @override
+  Widget build(BuildContext context) => const DebugPaddingPage();
+}
 
 class DebugPaddingPage extends StatelessWidget {
   const DebugPaddingPage({Key? key}) : super(key: key);
-
-  static const routeName = '/debug_padding';
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class DebugPaddingPage extends StatelessWidget {
 //      showSize: false,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(routeName),
+          title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
         ),
         body: UnfocusOnTap(
           child: ListView(

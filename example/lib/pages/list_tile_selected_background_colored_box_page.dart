@@ -1,11 +1,17 @@
-import 'package:example/router.dart';
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class ListTileSelectedBackgroundColoredBoxRoute extends GoRouteData {
+  const ListTileSelectedBackgroundColoredBoxRoute();
+  @override
+  Widget build(BuildContext context) =>
+      const ListTileSelectedBackgroundColoredBoxPage();
+}
 
 class ListTileSelectedBackgroundColoredBoxPage extends StatefulWidget {
   const ListTileSelectedBackgroundColoredBoxPage({Key? key}) : super(key: key);
-
-  static const routeName = '/list_tile_selected_background_colored_box';
 
   @override
   _ListTileSelectedBackgroundColoredBoxPageState createState() =>
@@ -29,10 +35,7 @@ class _ListTileSelectedBackgroundColoredBoxPageState
     final colorScheme = theme.colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          pascalCaseFromRouteName(
-              ListTileSelectedBackgroundColoredBoxPage.routeName),
-        ),
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: Center(
         child: ElevatedButton(

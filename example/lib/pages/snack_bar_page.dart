@@ -1,11 +1,17 @@
+import 'package:example/router/router.dart';
 import 'package:example/util/util.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class SnackBarRoute extends GoRouteData {
+  const SnackBarRoute();
+  @override
+  Widget build(BuildContext context) => const SnackBarPage();
+}
 
 class SnackBarPage extends StatelessWidget {
   const SnackBarPage({Key? key}) : super(key: key);
-
-  static const routeName = '/snack_bar';
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class SnackBarPage extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(SnackBarPage.routeName),
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: ListView(
         children: [

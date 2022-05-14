@@ -1,13 +1,19 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'cell.dart';
 import 'data.dart';
 
+class OverflowDetectableTextRoute extends GoRouteData {
+  const OverflowDetectableTextRoute();
+  @override
+  Widget build(BuildContext context) => const OverflowDetectableTextPage();
+}
+
 class OverflowDetectableTextPage extends StatelessWidget {
   const OverflowDetectableTextPage({Key? key}) : super(key: key);
-
-  static const routeName = '/OverflowDetectableText';
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +21,7 @@ class OverflowDetectableTextPage extends StatelessWidget {
       data: _buildTheme(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(routeName),
+          title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
         ),
         body: ListView.separated(
           padding: EdgeInsets.only(

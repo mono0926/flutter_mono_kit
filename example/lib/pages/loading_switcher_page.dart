@@ -1,19 +1,25 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class LoadingSwitcherRoute extends GoRouteData {
+  const LoadingSwitcherRoute();
+  @override
+  Widget build(BuildContext context) => const LoadingSwitcherPage();
+}
 
 final _controller = ChangeNotifierProvider((ref) => _Controller());
 
 class LoadingSwitcherPage extends ConsumerWidget {
   const LoadingSwitcherPage({Key? key}) : super(key: key);
 
-  static const routeName = '/loading_switcher';
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(LoadingSwitcherPage.routeName),
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: ListView(
         children: <Widget>[

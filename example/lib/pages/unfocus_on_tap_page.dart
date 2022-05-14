@@ -1,17 +1,23 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:quiver/iterables.dart';
 
+class UnfocusOnTapRoute extends GoRouteData {
+  const UnfocusOnTapRoute();
+  @override
+  Widget build(BuildContext context) => const UnfocusOnTapPage();
+}
+
 class UnfocusOnTapPage extends StatelessWidget {
   const UnfocusOnTapPage({Key? key}) : super(key: key);
-
-  static const routeName = '/unfocus_on_tap';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(routeName),
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: CenteredMaxWidth(
         width: 560,

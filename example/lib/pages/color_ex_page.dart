@@ -1,13 +1,18 @@
-import 'package:example/router.dart';
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 final _swatch = const Color(0xFFF44336).materialColor;
 
+class ColorExRoute extends GoRouteData {
+  const ColorExRoute();
+  @override
+  Widget build(BuildContext context) => const ColorExPage();
+}
+
 class ColorExPage extends StatelessWidget {
   const ColorExPage({Key? key}) : super(key: key);
-
-  static const routeName = '/color_ex';
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class ColorExPage extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(pascalCaseFromRouteName(routeName)),
+          title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},

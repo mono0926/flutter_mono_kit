@@ -1,10 +1,16 @@
+import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
+
+class AppBottomAreaRoute extends GoRouteData {
+  const AppBottomAreaRoute();
+  @override
+  Widget build(BuildContext context) => const AppBottomAreaPage();
+}
 
 class AppBottomAreaPage extends StatelessWidget {
   const AppBottomAreaPage({Key? key}) : super(key: key);
-
-  static const routeName = '/app_bottom_area';
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,7 @@ class AppBottomAreaPage extends StatelessWidget {
 //      showViewInsets: false,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text(routeName),
+            title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
           ),
           body: UnfocusOnTap(
             child: ListView(

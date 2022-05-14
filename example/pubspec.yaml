@@ -9,14 +9,17 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod:
+  go_router:
   mono_kit:
     path: ..
   nested:
   recase:
   simple_logger:
 dev_dependencies:
+  build_runner:
   flutter_test:
     sdk: flutter
+  go_router_builder:
   pedantic_mono:
 flutter:
   uses-material-design: true

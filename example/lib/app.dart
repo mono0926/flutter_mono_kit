@@ -3,18 +3,18 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
 
-import 'pages/pages.dart';
-import 'router.dart';
+import 'router/router.dart';
 
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
 
+  static const title = 'mono_kit Demo';
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const title = 'mono_kit Demo';
-    return MaterialApp(
+    final router = ref.watch(routerProvider);
+    return MaterialApp.router(
       title: title,
-      home: const HomePage(title: title),
       builder: (context, child) => Nested(
         children: const [
           TextScaleFactor(),
@@ -25,11 +25,8 @@ class App extends ConsumerWidget {
       ),
       theme: lightTheme(),
       darkTheme: darkTheme(),
-      onGenerateRoute: ref.watch(router).onGenerateRoute,
-      onUnknownRoute: (settings) => MaterialPageRoute<void>(
-        settings: settings,
-        builder: (context) => const NotFoundPage(),
-      ),
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
     );
   }
 }

@@ -1,14 +1,20 @@
 import 'dart:async';
 
+import 'package:example/router/router.dart';
 import 'package:example/util/util.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
+class LifeCycleObserverRoute extends GoRouteData {
+  const LifeCycleObserverRoute();
+  @override
+  Widget build(BuildContext context) => const LifeCycleObserverPage();
+}
+
 class LifeCycleObserverPage extends ConsumerStatefulWidget {
   const LifeCycleObserverPage({Key? key}) : super(key: key);
-
-  static const routeName = '/life_cycle_observer';
 
   @override
   _LifeCycleObserverPageState createState() => _LifeCycleObserverPageState();
@@ -33,7 +39,9 @@ class _LifeCycleObserverPageState extends ConsumerState<LifeCycleObserverPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(LifeCycleObserverPage.routeName)),
+      appBar: AppBar(
+        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
+      ),
       body: const Center(
         child: Text(
           'Close and Open',
