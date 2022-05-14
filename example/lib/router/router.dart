@@ -29,7 +29,7 @@ final routerProvider = Provider(
   (ref) => GoRouter(
     routes: $appRoutes,
     debugLogDiagnostics: kDebugMode,
-    errorBuilder: (_, __) => const NotFoundPage(),
+    // errorBuilder: (_, __) => const NotFoundPage(),
     navigatorBuilder: (_, __, child) => GoRouterLocationButton(
       // ignore: avoid_redundant_argument_values
       visible: kDebugMode,
