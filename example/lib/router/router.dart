@@ -10,7 +10,6 @@ import 'package:example/pages/life_cycle_observer_page.dart';
 import 'package:example/pages/list_tile_selected_background_colored_box_page.dart';
 import 'package:example/pages/loading_switcher_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
-import 'package:example/pages/not_found.page.dart';
 import 'package:example/pages/overflow_detectable_text_page/overflow_detectable_text_page.dart';
 import 'package:example/pages/paging_scroll_page.dart';
 import 'package:example/pages/snack_bar_page.dart';
@@ -46,7 +45,7 @@ final routerProvider = Provider(
     TypedGoRoute<DebugPaddingRoute>(path: 'debug-padding'),
     TypedGoRoute<OverflowDetectableTextRoute>(path: 'overflow-detectable-text'),
     TypedGoRoute<BarrierRoute>(path: 'barrier'),
-    TypedGoRoute<UnfocusOnTapRoute>(path: 'barrier'),
+    TypedGoRoute<UnfocusOnTapRoute>(path: 'unfocus-on-tap'),
     TypedGoRoute<LifeCycleObserverRoute>(path: 'life-cycle-observer'),
     TypedGoRoute<PagingScrollRoute>(path: 'paging-scroll'),
     TypedGoRoute<BannerVisibilityRoute>(path: 'banner-visibility'),

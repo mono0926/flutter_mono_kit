@@ -35,7 +35,7 @@ GoRoute get $homeRoute => GoRouteData.$route(
           factory: $BarrierRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'barrier',
+          path: 'unfocus-on-tap',
           factory: $UnfocusOnTapRouteExtension._fromState,
         ),
         GoRouteData.$route(
@@ -150,7 +150,7 @@ extension $UnfocusOnTapRouteExtension on UnfocusOnTapRoute {
       const UnfocusOnTapRoute();
 
   String get location => GoRouteData.$location(
-        '/barrier',
+        '/unfocus-on-tap',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
