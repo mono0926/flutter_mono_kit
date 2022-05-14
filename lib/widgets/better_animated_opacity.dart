@@ -9,7 +9,7 @@ class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
     required this.opacity,
     super.curve,
     required super.duration,
-  })   : assert(opacity >= 0.0 && opacity <= 1.0);
+  }) : assert(opacity >= 0.0 && opacity <= 1.0);
 
   final Widget child;
   final double opacity;
