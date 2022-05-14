@@ -100,7 +100,9 @@ void main() {
             ..add('a');
           await expectLater(
             await target.first,
-            equals(const ChangedValuePair(previous: 'a', current: 'a')),
+            equals(
+              const ChangedValuePair<String?>(previous: 'a', current: 'a'),
+            ),
           );
         },
       );
