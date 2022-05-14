@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 typedef PaddingWidgetBuilder = Widget Function(
-    BuildContext context, EdgeInsets padding);
+  BuildContext context,
+  EdgeInsets padding,
+);
 
 class MaxWidthPaddingBuilder extends StatelessWidget {
   const MaxWidthPaddingBuilder({

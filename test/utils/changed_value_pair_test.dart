@@ -7,24 +7,24 @@ void main() {
   group(
     'changedValuePair(Stream)',
     () {
-      late PublishSubject<String?> _subject;
-      late Stream<ChangedValuePair<String?>> _target;
+      late PublishSubject<String?> subject;
+      late Stream<ChangedValuePair<String?>> target;
       setUp(() {
-        _subject = PublishSubject();
-        _target = _subject.changedValuePair();
+        subject = PublishSubject();
+        target = subject.changedValuePair();
       });
       tearDown(() {
-        _subject.close();
+        subject.close();
       });
 
       test(
         '',
         () async {
-          _target.listen((pair) {
+          target.listen((pair) {
             logger.info(pair);
             expect(pair.current, isNot(equals(pair.previous)));
           });
-          _subject
+          subject
             ..add('a')
             ..add('a')
             ..add('b')
@@ -40,24 +40,24 @@ void main() {
   group(
     'changedValuePair(ValueStream(initialValue: null))',
     () {
-      late BehaviorSubject<String?> _subject;
-      late Stream<ChangedValuePair<String?>> _target;
+      late BehaviorSubject<String?> subject;
+      late Stream<ChangedValuePair<String?>> target;
       setUp(() {
-        _subject = BehaviorSubject();
-        _target = _subject.changedValuePair();
+        subject = BehaviorSubject();
+        target = subject.changedValuePair();
       });
       tearDown(() {
-        _subject.close();
+        subject.close();
       });
 
       test(
         '',
         () async {
-          _target.listen((pair) {
+          target.listen((pair) {
             logger.info(pair);
             expect(pair.current, isNot(equals(pair.previous)));
           });
-          _subject
+          subject
             ..add('a')
             ..add('a')
             ..add('b')
@@ -73,24 +73,24 @@ void main() {
   group(
     'changedValuePair(ValueStream(initialValue: a))',
     () {
-      late BehaviorSubject<String?> _subject;
-      late Stream<ChangedValuePair<String?>> _target;
+      late BehaviorSubject<String?> subject;
+      late Stream<ChangedValuePair<String?>> target;
       setUp(() {
-        _subject = BehaviorSubject.seeded('a');
-        _target = _subject.changedValuePair();
+        subject = BehaviorSubject.seeded('a');
+        target = subject.changedValuePair();
       });
       tearDown(() {
-        _subject.close();
+        subject.close();
       });
 
       test(
         '',
         () async {
-          _target.skip(1).listen((pair) {
+          target.skip(1).listen((pair) {
             logger.info(pair);
             expect(pair.current, isNot(equals(pair.previous)));
           });
-          _subject
+          subject
             ..add('a')
             ..add('a')
             ..add('b')
@@ -99,7 +99,7 @@ void main() {
             ..add(null)
             ..add('a');
           await expectLater(
-            await _target.first,
+            await target.first,
             equals(const ChangedValuePair(previous: 'a', current: 'a')),
           );
         },

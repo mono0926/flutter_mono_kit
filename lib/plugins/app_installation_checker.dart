@@ -14,7 +14,7 @@ class AppInstallationChecker {
       return null;
     }
     if (Platform.isIOS) {
-      return canLaunch('$packageName://');
+      return canLaunchUrl(Uri.parse('$packageName://'));
     }
     if (Platform.isAndroid) {
       return _platform.invokeMethod(

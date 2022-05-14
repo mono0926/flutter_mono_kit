@@ -5,7 +5,7 @@ class HUD {
   void show(BuildContext context) {
     showGeneralDialog<void>(
       context: context,
-      pageBuilder: (hudContext, _a, _sa) {
+      pageBuilder: (hudContext, a1, a2) {
         this.hudContext = hudContext;
         return const Center(child: CircularProgressIndicator());
       },
@@ -13,7 +13,7 @@ class HUD {
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
       barrierColor: Colors.black26,
       transitionDuration: const Duration(milliseconds: 150),
-      transitionBuilder: (_c, animation, _sa, child) => FadeTransition(
+      transitionBuilder: (c, animation, sa, child) => FadeTransition(
         opacity: CurvedAnimation(
           parent: animation,
           curve: Curves.easeOut,

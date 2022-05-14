@@ -5,11 +5,11 @@ import 'package:url_launcher/url_launcher.dart';
 class LinkTextSpan extends TextSpan {
   LinkTextSpan({
     required TextStyle style,
-    required String url,
+    required Uri url,
     String? text,
   }) : super(
           style: style,
-          text: text ?? url,
-          recognizer: TapGestureRecognizer()..onTap = () => launch(url),
+          text: '${text ?? url}',
+          recognizer: TapGestureRecognizer()..onTap = () => launchUrl(url),
         );
 }
