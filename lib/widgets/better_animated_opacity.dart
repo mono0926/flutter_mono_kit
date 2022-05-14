@@ -4,13 +4,12 @@ import 'widgets.dart';
 
 class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
   const BetterAnimatedOpacity({
-    Key? key,
+    super.key,
     required this.child,
     required this.opacity,
-    Curve curve = Curves.linear,
-    required Duration duration,
-  })   : assert(opacity >= 0.0 && opacity <= 1.0),
-        super(key: key, curve: curve, duration: duration);
+    super.curve,
+    required super.duration,
+  })   : assert(opacity >= 0.0 && opacity <= 1.0);
 
   final Widget child;
   final double opacity;

@@ -2,12 +2,12 @@ import 'package:flutter/widgets.dart';
 
 class BetterStreamBuilder<T> extends StatefulWidget {
   const BetterStreamBuilder({
-    Key? key,
+    super.key,
     this.initialData,
     required this.stream,
     required this.builder,
     this.child,
-  }) : super(key: key);
+  });
 
   final Stream<T> stream;
   final AsyncChildWidgetBuilder<T> builder;

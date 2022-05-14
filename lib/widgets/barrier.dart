@@ -8,13 +8,13 @@ final barrierProvider = StateNotifierProvider<BarrierController, bool>(
 
 class Barrier extends ConsumerWidget {
   const Barrier({
-    Key? key,
+    super.key,
     required this.child,
     this.valueColor,
     this.backgroundColor,
     this.timeout = const Duration(milliseconds: 200),
     this.switchDuration = const Duration(milliseconds: 100),
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Color? valueColor;
@@ -39,7 +39,7 @@ class Barrier extends ConsumerWidget {
               initialChild: const SizedBox.expand(
                 child: AbsorbPointer(),
               ),
-              timedOutChild: Container(
+              timedOutChild: ColoredBox(
                 color: backgroundColor ??
                     theme.scaffoldBackgroundColor.withOpacity(0.6),
                 child: Center(
@@ -78,9 +78,9 @@ class BarrierController extends StateNotifier<bool> {
 
 class PopBarrier extends ConsumerWidget {
   const PopBarrier({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Widget child;
 

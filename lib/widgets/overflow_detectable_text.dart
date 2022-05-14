@@ -8,11 +8,11 @@ typedef OverflowDetector = void Function(double overflowHeight);
 class OverflowDetectableText extends StatelessWidget {
   const OverflowDetectableText(
     this.data, {
-    Key? key,
+    super.key,
     required this.style,
     required this.detector,
     this.overflow = TextOverflow.clip,
-  }) : super(key: key);
+  });
 
   final String data;
   final TextStyle style;

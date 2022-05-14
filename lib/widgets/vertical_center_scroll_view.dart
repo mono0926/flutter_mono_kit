@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class VerticalCenterScrollView extends StatefulWidget {
   const VerticalCenterScrollView({
-    Key? key,
+    super.key,
     required this.child,
     this.padding,
     this.autoPop = false,
     this.hasCloseButton = false,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final bool autoPop;

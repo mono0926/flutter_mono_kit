@@ -6,11 +6,11 @@ import 'package:rxdart/rxdart.dart';
 
 class ScrollKeyboardShortcut extends StatefulWidget {
   const ScrollKeyboardShortcut({
-    Key? key,
+    super.key,
     required this.scrollController,
     required this.child,
     this.stepOffset = kPagingScrollOffset,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final PagingScrollController scrollController;

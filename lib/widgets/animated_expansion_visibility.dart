@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 
 class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
   const AnimatedExpansionVisibility({
-    Key? key,
+    super.key,
     this.child,
     required this.isVisible,
     this.alignment,
     Duration? duration,
     Curve? curve,
   }) : super(
-          key: key,
           duration: duration ?? const Duration(milliseconds: 200),
           curve: curve ?? Curves.linear,
         );

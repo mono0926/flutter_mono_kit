@@ -6,14 +6,11 @@ import 'better_stream_builder.dart';
 
 class ValueObservableBuilder<T> extends SingleChildStatefulWidget {
   const ValueObservableBuilder({
-    Key? key,
+    super.key,
     required this.builder,
     required this.stream,
-    Widget? child,
-  }) : super(
-          key: key,
-          child: child,
-        );
+    super.child,
+  });
 
   final ValueStream<T> stream;
   final AsyncChildWidgetBuilder<T> builder;

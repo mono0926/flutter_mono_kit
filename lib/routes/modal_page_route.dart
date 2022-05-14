@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 class ModalPageRoute<T> extends MaterialPageRoute<T> {
   ModalPageRoute({
     required WidgetBuilder builder,
-    @required RouteSettings? settings,
+    @required super.settings,
   }) : super(
           builder: (context) => builder(context),
           fullscreenDialog: true,
-          settings: settings,
         );
 }

@@ -3,7 +3,7 @@ import 'package:mono_kit/mono_kit.dart';
 
 class LoadingSwitcher extends StatelessWidget {
   const LoadingSwitcher({
-    Key? key,
+    super.key,
     this.child,
     this.timedOutChild = const Center(
       child: CircularProgressIndicator(),
@@ -11,7 +11,7 @@ class LoadingSwitcher extends StatelessWidget {
     this.initialChild = const SizedBox(),
     this.timeout = const Duration(milliseconds: 200),
     this.switchDuration = const Duration(milliseconds: 100),
-  }) : super(key: key);
+  });
 
   final Widget timedOutChild;
   final Widget initialChild;

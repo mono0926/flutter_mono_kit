@@ -5,13 +5,10 @@ typedef _SizeChangedCallback = void Function(Size size);
 
 class SizeListener extends SingleChildRenderObjectWidget {
   const SizeListener({
-    Key? key,
-    Widget? child,
+    super.key,
+    super.child,
     required this.onSizeChanged,
-  }) : super(
-          key: key,
-          child: child,
-        );
+  });
   final _SizeChangedCallback onSizeChanged;
 
   @override

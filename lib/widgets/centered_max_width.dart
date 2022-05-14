@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class CenteredMaxWidth extends StatelessWidget {
   const CenteredMaxWidth({
-    Key? key,
+    super.key,
     required this.child,
     this.width = 768,
-  }) : super(key: key);
+  });
 
   final double width;
   final Widget child;

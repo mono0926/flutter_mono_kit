@@ -12,15 +12,15 @@ const TextStyle _kTextStyle = TextStyle(
 
 class WIP extends SingleChildStatelessWidget {
   const WIP({
-    Key? key,
-    required Widget child,
+    super.key,
+    required Widget super.child,
     this.location = BannerLocation.topEnd,
     this.color,
     this.textStyle,
     this.backgroundColor,
     this.visible = false,
     this.message,
-  }) : super(key: key, child: child);
+  });
 
   final bool visible;
   final BannerLocation location;

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class BetterPlaceholder extends StatelessWidget {
   const BetterPlaceholder({
-    Key? key,
+    super.key,
     this.color = const Color(0xFF455A64), // Blue Grey 700
     this.strokeWidth = 2.0,
     this.fallbackWidth = 400.0,
     this.fallbackHeight = 400.0,
-  }) : super(key: key);
+  });
 
   final Color color;
   final double strokeWidth;

@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 
 class GoRouterLocationButton extends StatelessWidget {
   const GoRouterLocationButton({
-    Key? key,
+    super.key,
     required this.child,
     this.visible = true,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final bool visible;

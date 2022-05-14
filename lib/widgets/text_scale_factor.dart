@@ -5,14 +5,11 @@ import 'package:nested/nested.dart';
 
 class TextScaleFactor extends SingleChildStatelessWidget {
   const TextScaleFactor({
-    Key? key,
-    Widget? child,
+    super.key,
+    super.child,
     this.min = 1,
     this.max,
-  }) : super(
-          key: key,
-          child: child,
-        );
+  });
 
   final double? min;
   final double? max;

@@ -3,13 +3,10 @@ import 'package:nested/nested.dart';
 
 class TilePadding extends SingleChildStatelessWidget {
   const TilePadding({
-    Key? key,
-    Widget? child,
+    super.key,
+    super.child,
     this.horizontal,
-  }) : super(
-          key: key,
-          child: child,
-        );
+  });
 
   final double? horizontal;
 

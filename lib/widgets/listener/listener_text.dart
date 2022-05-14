@@ -4,10 +4,10 @@ import 'package:flutter/widgets.dart';
 class ListenerText extends StatelessWidget {
   const ListenerText(
     this.data, {
-    Key? key,
+    super.key,
     this.style,
     this.nullValue = '',
-  }) : super(key: key);
+  });
 
   final ValueListenable<String> data;
   final TextStyle? style;

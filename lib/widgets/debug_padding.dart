@@ -4,13 +4,13 @@ import 'package:nested/nested.dart';
 
 class DebugPadding extends SingleChildStatelessWidget {
   const DebugPadding({
-    Key? key,
-    Widget? child,
+    super.key,
+    super.child,
     this.showPadding = true,
     this.showViewPadding = true,
     this.showViewInsets = true,
     this.showSize = true,
-  }) : super(key: key, child: child);
+  });
 
   final bool showPadding;
   final bool showViewPadding;
@@ -51,7 +51,7 @@ class DebugPadding extends SingleChildStatelessWidget {
 }
 
 class _Size extends StatelessWidget {
-  const _Size({Key? key}) : super(key: key);
+  const _Size();
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -73,12 +73,11 @@ class _Size extends StatelessWidget {
 
 class _Padding extends StatelessWidget {
   const _Padding({
-    Key? key,
     required this.label,
     required this.color,
     required this.padding,
     required this.alignment,
-  }) : super(key: key);
+  });
 
   final String label;
   final Color color;

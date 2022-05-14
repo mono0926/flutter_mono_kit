@@ -3,9 +3,9 @@ import 'package:nested/nested.dart';
 
 class UnfocusOnTap extends SingleChildStatelessWidget {
   const UnfocusOnTap({
-    Key? key,
-    required Widget child,
-  }) : super(key: key, child: child);
+    super.key,
+    required Widget super.child,
+  });
 
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {

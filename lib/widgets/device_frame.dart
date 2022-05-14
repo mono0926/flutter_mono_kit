@@ -3,11 +3,11 @@ import 'package:nested/nested.dart';
 
 class DeviceFrame extends SingleChildStatelessWidget {
   const DeviceFrame({
-    Key? key,
+    super.key,
     required this.builder,
-    Widget? child,
+    super.child,
     this.enabled = false,
-  }) : super(key: key, child: child);
+  });
 
   final TransitionBuilder builder;
   final bool enabled;

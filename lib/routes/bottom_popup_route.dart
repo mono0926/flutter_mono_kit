@@ -6,11 +6,11 @@ import 'package:nested/nested.dart';
 class BottomPopupRoute<T> extends PopupRoute<T> {
   BottomPopupRoute({
     required this.builder,
-    RouteSettings? settings,
+    super.settings,
     this.barrierLabel = 'Dismiss',
     this.barrierColor = const Color(0x80000000),
     this.padding,
-  }) : super(settings: settings);
+  });
 
   final WidgetBuilder builder;
 
@@ -101,9 +101,8 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
 
 class _Pan extends SingleChildStatefulWidget {
   const _Pan({
-    Key? key,
-    required Widget child,
-  }) : super(key: key, child: child);
+    required Widget super.child,
+  });
 
   @override
   _PanState createState() => _PanState();

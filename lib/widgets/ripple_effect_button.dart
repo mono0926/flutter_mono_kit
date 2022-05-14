@@ -3,14 +3,11 @@ import 'package:nested/nested.dart';
 
 class RippleEffectButton extends SingleChildStatelessWidget {
   const RippleEffectButton({
-    Key? key,
-    Widget? child,
+    super.key,
+    super.child,
     required this.onTap,
     required this.borderRadius,
-  }) : super(
-          key: key,
-          child: child,
-        );
+  });
 
   final VoidCallback onTap;
   final BorderRadius borderRadius;

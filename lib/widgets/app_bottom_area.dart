@@ -6,10 +6,10 @@ import 'package:nested/nested.dart';
 
 class AppBottomArea extends SingleChildStatefulWidget {
   const AppBottomArea({
-    Key? key,
-    required Widget child,
+    super.key,
+    required Widget super.child,
     this.bottom,
-  }) : super(key: key, child: child);
+  });
 
   final Widget? bottom;
 
