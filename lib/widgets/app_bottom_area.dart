@@ -14,7 +14,7 @@ class AppBottomArea extends SingleChildStatefulWidget {
   final Widget? bottom;
 
   @override
-  _AppBottomAreaState createState() => _AppBottomAreaState();
+  SingleChildState<AppBottomArea> createState() => _AppBottomAreaState();
 }
 
 class _AppBottomAreaState extends SingleChildState<AppBottomArea> {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart' hide Router;
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
 

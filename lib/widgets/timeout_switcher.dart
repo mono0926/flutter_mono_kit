@@ -17,7 +17,7 @@ class TimeoutSwitcher extends StatefulWidget {
   final Duration switchDuration;
 
   @override
-  _TimeoutSwitcherState createState() => _TimeoutSwitcherState();
+  State<TimeoutSwitcher> createState() => _TimeoutSwitcherState();
 }
 
 class _TimeoutSwitcherState extends State<TimeoutSwitcher> {

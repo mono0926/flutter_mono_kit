@@ -15,7 +15,7 @@ class VerticalCenterScrollView extends StatefulWidget {
   final EdgeInsets? padding;
 
   @override
-  _VerticalCenterScrollViewState createState() =>
+  State<VerticalCenterScrollView> createState() =>
       _VerticalCenterScrollViewState();
 }
 

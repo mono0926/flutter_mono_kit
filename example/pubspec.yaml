@@ -13,6 +13,7 @@ dependencies:
   mono_kit:
     path: ..
   nested:
+  quiver:
   recase:
   simple_logger:
 dev_dependencies:

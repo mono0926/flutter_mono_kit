@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/widgets/widgets.dart';
 
@@ -17,7 +17,7 @@ class BarrierPage extends ConsumerStatefulWidget {
   const BarrierPage({Key? key}) : super(key: key);
 
   @override
-  _BarrierPageState createState() => _BarrierPageState();
+  ConsumerState<BarrierPage> createState() => _BarrierPageState();
 }
 
 class _BarrierPageState extends ConsumerState<BarrierPage> {

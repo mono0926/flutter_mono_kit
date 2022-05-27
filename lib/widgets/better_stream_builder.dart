@@ -15,7 +15,7 @@ class BetterStreamBuilder<T> extends StatefulWidget {
   final Widget? child;
 
   @override
-  _BetterStreamBuilderState<T> createState() => _BetterStreamBuilderState<T>();
+  State<BetterStreamBuilder<T>> createState() => _BetterStreamBuilderState<T>();
 }
 
 class _BetterStreamBuilderState<T> extends State<BetterStreamBuilder<T>> {

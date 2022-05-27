@@ -4,7 +4,7 @@ import 'package:example/router/router.dart';
 import 'package:example/util/util.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class LifeCycleObserverRoute extends GoRouteData {
@@ -17,7 +17,8 @@ class LifeCycleObserverPage extends ConsumerStatefulWidget {
   const LifeCycleObserverPage({Key? key}) : super(key: key);
 
   @override
-  _LifeCycleObserverPageState createState() => _LifeCycleObserverPageState();
+  ConsumerState<LifeCycleObserverPage> createState() =>
+      _LifeCycleObserverPageState();
 }
 
 class _LifeCycleObserverPageState extends ConsumerState<LifeCycleObserverPage> {

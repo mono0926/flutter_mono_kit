@@ -15,7 +15,8 @@ class BetterAnimatedOpacity extends ImplicitlyAnimatedWidget {
   final double opacity;
 
   @override
-  _AnimatedOpacityState createState() => _AnimatedOpacityState();
+  ImplicitlyAnimatedWidgetState<BetterAnimatedOpacity> createState() =>
+      _AnimatedOpacityState();
 }
 
 class _AnimatedOpacityState

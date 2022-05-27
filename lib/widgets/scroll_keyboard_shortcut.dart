@@ -17,7 +17,7 @@ class ScrollKeyboardShortcut extends StatefulWidget {
   final double stepOffset;
 
   @override
-  _ScrollKeyboardShortcutState createState() => _ScrollKeyboardShortcutState();
+  State<ScrollKeyboardShortcut> createState() => _ScrollKeyboardShortcutState();
 }
 
 class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {

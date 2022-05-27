@@ -71,7 +71,7 @@
 
 ## 0.21.0-dev
 
-- Update hooks_riverpod to v1
+- Update flutter_riverpod to v1
 
 ## 0.20.0
 
@@ -131,7 +131,7 @@
 
 ## 0.17.0
 
-- Depends on hooks_riverpod instead of provider
+- Depends on flutter_riverpod instead of provider
 
 ## 0.16.3
 

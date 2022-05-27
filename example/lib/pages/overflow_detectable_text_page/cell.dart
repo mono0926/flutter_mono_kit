@@ -11,7 +11,7 @@ class Cell extends StatefulWidget {
   final Data data;
 
   @override
-  _CellState createState() => _CellState();
+  State<Cell> createState() => _CellState();
 }
 
 class _CellState extends State<Cell> with SingleTickerProviderStateMixin {

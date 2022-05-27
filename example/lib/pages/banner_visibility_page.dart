@@ -13,7 +13,7 @@ class BannerVisibilityPage extends StatefulWidget {
   const BannerVisibilityPage({Key? key}) : super(key: key);
 
   @override
-  _BannerVisibilityPageState createState() => _BannerVisibilityPageState();
+  State<BannerVisibilityPage> createState() => _BannerVisibilityPageState();
 }
 
 class _BannerVisibilityPageState extends State<BannerVisibilityPage> {

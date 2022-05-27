@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final lifecycleObserver = Provider<AsyncValue<AppLifecycleState>>((ref) {
   final observer = AppLifecycleStateObserver(

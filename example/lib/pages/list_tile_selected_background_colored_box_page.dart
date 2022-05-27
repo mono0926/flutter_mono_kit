@@ -14,7 +14,7 @@ class ListTileSelectedBackgroundColoredBoxPage extends StatefulWidget {
   const ListTileSelectedBackgroundColoredBoxPage({Key? key}) : super(key: key);
 
   @override
-  _ListTileSelectedBackgroundColoredBoxPageState createState() =>
+  State<ListTileSelectedBackgroundColoredBoxPage> createState() =>
       _ListTileSelectedBackgroundColoredBoxPageState();
 }
 

@@ -216,13 +216,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_hooks:
-    dependency: transitive
-    description:
-      name: flutter_hooks
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.18.4"
   flutter_lints:
     dependency: transitive
     description:
@@ -243,7 +236,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-dev.8"
+    version: "2.0.0-dev.9"
   flutter_svg:
     dependency: transitive
     description:
@@ -303,13 +296,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  hooks_riverpod:
-    dependency: transitive
-    description:
-      name: hooks_riverpod
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0-dev.8"
   http:
     dependency: transitive
     description:
@@ -556,7 +542,7 @@ packages:
     source: hosted
     version: "1.2.0"
   quiver:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: quiver
       url: "https://pub.dartlang.org"
@@ -575,7 +561,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-dev.8"
+    version: "2.0.0-dev.9"
   rxdart:
     dependency: transitive
     description:
