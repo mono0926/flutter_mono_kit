@@ -15,7 +15,7 @@ class FilledButton extends _FilledButton {
     super.autofocus = false,
     super.clipBehavior = Clip.none,
     required super.child,
-  });
+  }) : super(type: _ButtonType.filled);
 
   factory FilledButton.icon({
     Key? key,
@@ -78,9 +78,6 @@ class FilledButton extends _FilledButton {
       splashFactory: splashFactory,
     );
   }
-
-  @override
-  _ButtonType get type => _ButtonType.filled;
 }
 
 class _FilledButtonWithIcon extends FilledButton
@@ -122,7 +119,7 @@ class FilledTonalButton extends _FilledButton {
     super.autofocus = false,
     super.clipBehavior = Clip.none,
     required super.child,
-  });
+  }) : super(type: _ButtonType.filledTonal);
 
   factory FilledTonalButton.icon({
     Key? key,
@@ -185,9 +182,6 @@ class FilledTonalButton extends _FilledButton {
       splashFactory: splashFactory,
     );
   }
-
-  @override
-  _ButtonType get type => _ButtonType.filledTonal;
 }
 
 class _FilledTonalButtonWithIcon extends FilledTonalButton
@@ -229,9 +223,10 @@ abstract class _FilledButton extends ElevatedButton {
     super.autofocus,
     super.clipBehavior,
     required super.child,
+    required this.type,
   });
 
-  _ButtonType get type;
+  final _ButtonType type;
 
   @override
   ButtonStyle defaultStyleOf(BuildContext context) {
