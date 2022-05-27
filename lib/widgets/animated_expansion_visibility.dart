@@ -5,7 +5,7 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
     super.key,
     this.child,
     required this.isVisible,
-    this.alignment,
+    this.axisAlignment,
     Duration? duration,
     Curve? curve,
   }) : super(
@@ -15,10 +15,10 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
 
   final Widget? child;
   final bool isVisible;
-  final Alignment? alignment;
+  final double? axisAlignment;
 
   @override
-  _AnimatedExpansionVisibilityState createState() =>
+  AnimatedWidgetBaseState<AnimatedExpansionVisibility> createState() =>
       _AnimatedExpansionVisibilityState();
 }
 
@@ -28,16 +28,10 @@ class _AnimatedExpansionVisibilityState
 
   @override
   Widget build(BuildContext context) {
-    final heightFactor = _heightFactorTween!.evaluate(animation);
-    return Visibility(
-      visible: heightFactor != 0,
-      child: ClipRect(
-        child: Align(
-          alignment: widget.alignment ?? Alignment.bottomCenter,
-          heightFactor: heightFactor,
-          child: widget.child,
-        ),
-      ),
+    return SizeTransition(
+      sizeFactor: _heightFactorTween!.animate(animation),
+      axisAlignment: widget.axisAlignment ?? 1,
+      child: widget.child,
     );
   }
 
