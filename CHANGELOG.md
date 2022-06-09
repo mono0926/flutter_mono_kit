@@ -1,3 +1,7 @@
+## 0.27.2
+
+- Add `goRouteLocationButtonNavigationBuilder`
+
 ## 0.27.1
 
 - Add `.icon` constructor to Filled/Filled Tonal Buttons

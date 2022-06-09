@@ -1,6 +1,18 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+Widget goRouteLocationButtonNavigationBuilder(
+  BuildContext context,
+  GoRouterState state,
+  Widget child, {
+  bool visible = kDebugMode,
+}) =>
+    GoRouterLocationButton(
+      visible: visible,
+      child: child,
+    );
 
 class GoRouterLocationButton extends StatelessWidget {
   const GoRouterLocationButton({
