@@ -1,3 +1,7 @@
+## 0.27.3
+
+- Upgrade pub
+
 ## 0.27.2
 
 - Add `goRouteLocationButtonNavigationBuilder`
