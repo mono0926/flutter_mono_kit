@@ -257,7 +257,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_web_plugins:
-    dependency: transitive
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -449,7 +449,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.27.3"
+    version: "0.27.3+1"
   nested:
     dependency: "direct main"
     description:
