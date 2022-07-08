@@ -1,6 +1,5 @@
 import 'dart:math' show max;
 
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
 
 typedef OverflowDetector = void Function(double overflowHeight);
@@ -38,7 +37,7 @@ class OverflowDetectableText extends StatelessWidget {
           0.0, // ignore: prefer_int_literals
           painter.height - constraints.maxHeight,
         );
-        SchedulerBinding.instance
+        WidgetsBinding.instance
             .addPostFrameCallback((_) => detector(overflowHeight));
         return Text.rich(
           span,
