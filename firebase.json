@@ -2,7 +2,13 @@
   "hosting": [
     {
       "target": "mono-kit",
-      "public": "example/build/web"
+      "public": "example/build/web",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
