@@ -1,0 +1,8 @@
+{
+  "hosting": [
+    {
+      "target": "mono-kit",
+      "public": "example/build/web"
+    }
+  ]
+}
