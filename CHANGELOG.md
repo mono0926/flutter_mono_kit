@@ -1,3 +1,6 @@
+## 0.27.4
+
+- Remove `changedValuePair` in favor of [pairwise method - PairwiseExtension extension - rx library - Dart API](https://pub.dev/documentation/rxdart/latest/rx/PairwiseExtension/pairwise.html)
 ## 0.27.3
 
 - Upgrade pub
