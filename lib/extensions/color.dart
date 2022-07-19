@@ -3,7 +3,7 @@ import 'package:tinycolor2/tinycolor2.dart';
 
 extension ColorEx on Color {
   MaterialColor get materialColor {
-    final tiny = TinyColor(this);
+    final tiny = TinyColor.fromColor(this);
     return MaterialColor(
       value,
       Map.fromIterables(
