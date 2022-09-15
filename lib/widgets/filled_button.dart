@@ -32,9 +32,10 @@ class FilledButton extends _FilledButton {
   }) = _FilledButtonWithIcon;
 
   static ButtonStyle styleFrom({
-    Color? primary,
-    Color? onPrimary,
-    Color? onSurface,
+    Color? backgroundColor,
+    Color? foregroundColor,
+    Color? disabledForegroundColor,
+    Color? disabledBackgroundColor,
     Color? shadowColor,
     Color? surfaceTintColor,
     double? elevation,
@@ -55,9 +56,10 @@ class FilledButton extends _FilledButton {
     InteractiveInkFeatureFactory? splashFactory,
   }) {
     return ElevatedButton.styleFrom(
-      primary: primary,
-      onPrimary: onPrimary,
-      onSurface: onSurface,
+      foregroundColor: foregroundColor,
+      backgroundColor: backgroundColor,
+      disabledForegroundColor: disabledForegroundColor,
+      disabledBackgroundColor: disabledBackgroundColor,
       shadowColor: shadowColor,
       surfaceTintColor: surfaceTintColor,
       elevation: elevation,
@@ -136,9 +138,10 @@ class FilledTonalButton extends _FilledButton {
   }) = _FilledTonalButtonWithIcon;
 
   static ButtonStyle styleFrom({
-    Color? primary,
-    Color? onPrimary,
-    Color? onSurface,
+    Color? backgroundColor,
+    Color? foregroundColor,
+    Color? disabledForegroundColor,
+    Color? disabledBackgroundColor,
     Color? shadowColor,
     Color? surfaceTintColor,
     double? elevation,
@@ -159,9 +162,10 @@ class FilledTonalButton extends _FilledButton {
     InteractiveInkFeatureFactory? splashFactory,
   }) {
     return ElevatedButton.styleFrom(
-      primary: primary,
-      onPrimary: onPrimary,
-      onSurface: onSurface,
+      foregroundColor: foregroundColor,
+      backgroundColor: backgroundColor,
+      disabledForegroundColor: disabledForegroundColor,
+      disabledBackgroundColor: disabledBackgroundColor,
       shadowColor: shadowColor,
       surfaceTintColor: surfaceTintColor,
       elevation: elevation,
@@ -233,8 +237,8 @@ abstract class _FilledButton extends ElevatedButton {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final style = ElevatedButton.styleFrom(
-      onPrimary: _onPrimary(colorScheme),
-      primary: _primary(colorScheme),
+      foregroundColor: _foregroundColor(colorScheme),
+      backgroundColor: _backgroundColor(colorScheme),
     );
     return super.defaultStyleOf(context).copyWith(
           foregroundColor: style.foregroundColor,
@@ -245,7 +249,7 @@ abstract class _FilledButton extends ElevatedButton {
   }
 
   // https://github.com/darrenaustin/flutter/blob/d8435ca1e908b937c45ed54ba08bf97dc3312a1d/examples/api/lib/material/button_style/button_style.0.dart#L64-L86
-  Color _primary(ColorScheme colorScheme) {
+  Color _backgroundColor(ColorScheme colorScheme) {
     switch (type) {
       case _ButtonType.filled:
         return colorScheme.primary;
@@ -254,7 +258,7 @@ abstract class _FilledButton extends ElevatedButton {
     }
   }
 
-  Color _onPrimary(ColorScheme colorScheme) {
+  Color _foregroundColor(ColorScheme colorScheme) {
     switch (type) {
       case _ButtonType.filled:
         return colorScheme.onPrimary;

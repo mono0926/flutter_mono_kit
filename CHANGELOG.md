@@ -1,6 +1,11 @@
+## 0.28.0
+
+- Upgrade to Flutter 3.3/Dart 2.18
+
 ## 0.27.4
 
 - Remove `changedValuePair` in favor of [pairwise method - PairwiseExtension extension - rx library - Dart API](https://pub.dev/documentation/rxdart/latest/rx/PairwiseExtension/pairwise.html)
+
 ## 0.27.3
 
 - Upgrade pub
@@ -318,17 +323,17 @@
 ## 0.5.0
 
 - Delete ValueObservableBuilder's reuseChild and always call builder
-    - https://gist.github.com/mono0926/52c8441960cdd5b62aaf31d9eb336072#gistcomment-2994116
+  - https://gist.github.com/mono0926/52c8441960cdd5b62aaf31d9eb336072#gistcomment-2994116
 
 ## 0.4.0
 
 - Delete BetterStreamBuilder's reuseChild and always call builder
-    - https://gist.github.com/mono0926/52c8441960cdd5b62aaf31d9eb336072#gistcomment-2994116
+  - https://gist.github.com/mono0926/52c8441960cdd5b62aaf31d9eb336072#gistcomment-2994116
 
 ## 0.3.0
 
 - Delete RouteObserverProvider/RouteObserveMixin.
-    - Move to route_observer_mixin(https://pub.dev/packages/route_observer_mixin) instead.
+  - Move to route_observer_mixin(https://pub.dev/packages/route_observer_mixin) instead.
 
 ## 0.2.0
 

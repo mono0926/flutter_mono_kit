@@ -65,9 +65,7 @@ class OverflowDetectableTextPage extends StatelessWidget {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          shape: const StadiumBorder(),
-          onPrimary: accentColor,
-          primary: buttonColor,
+          foregroundColor: accentColor, shape: const StadiumBorder(), backgroundColor: buttonColor,
           // shadowColor: highlightColor,
           minimumSize: Size.zero,
           padding: const EdgeInsets.symmetric(

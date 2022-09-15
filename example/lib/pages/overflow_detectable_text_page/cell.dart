@@ -188,9 +188,8 @@ class __DescState extends State<_Desc> {
               padding: const EdgeInsets.only(left: 32),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap, backgroundColor: Colors.transparent,
                   padding: const EdgeInsets.all(4),
-                  primary: Colors.transparent,
                 ),
                 onPressed: () =>
                     widget.additionalHeightNeeded(_overflowNotifier.value),

@@ -9,7 +9,6 @@ class HUD {
         this.hudContext = hudContext;
         return const Center(child: CircularProgressIndicator());
       },
-      barrierDismissible: false,
       barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
       barrierColor: Colors.black26,
       transitionDuration: const Duration(milliseconds: 150),
