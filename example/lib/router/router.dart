@@ -26,10 +26,14 @@ part 'router.g.dart';
 
 final routerProvider = Provider(
   (ref) => GoRouter(
-    routes: $appRoutes,
+    routes: [
+      ShellRoute(
+        routes: $appRoutes,
+        builder: goRouteLocationButtonNavigationBuilder,
+      ),
+    ],
     debugLogDiagnostics: kDebugMode,
     // errorBuilder: (_, __) => const NotFoundPage(),
-    navigatorBuilder: goRouteLocationButtonNavigationBuilder,
   ),
 );
 

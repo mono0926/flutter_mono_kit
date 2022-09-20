@@ -1,3 +1,7 @@
+## 0.29.0
+
+- Upgrade to go_router v5
+
 ## 0.28.0
 
 - Upgrade to Flutter 3.3/Dart 2.18
