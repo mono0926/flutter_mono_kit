@@ -5,7 +5,7 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
     super.key,
     this.child,
     required this.isVisible,
-    this.axisAlignment,
+    this.axisAlignment = 1,
     Duration? duration,
     Curve? curve,
   }) : super(
@@ -15,7 +15,7 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
 
   final Widget? child;
   final bool isVisible;
-  final double? axisAlignment;
+  final double axisAlignment;
 
   @override
   AnimatedWidgetBaseState<AnimatedExpansionVisibility> createState() =>
@@ -30,7 +30,7 @@ class _AnimatedExpansionVisibilityState
   Widget build(BuildContext context) {
     return SizeTransition(
       sizeFactor: _heightFactorTween!.animate(animation),
-      axisAlignment: widget.axisAlignment ?? 1,
+      axisAlignment: widget.axisAlignment,
       child: widget.child,
     );
   }
