@@ -1,13 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final lifecycleObserver = Provider<AsyncValue<AppLifecycleState>>((ref) {
+final lifecycleObserver = StreamProvider<AppLifecycleState>((ref) async* {
   final observer = AppLifecycleStateObserver(
-    (state) => ref.state = AsyncData(state),
+    (state) {
+      ref.state = AsyncData(state);
+    },
   );
   final binding = WidgetsBinding.instance..addObserver(observer);
   ref.onDispose(() => binding.removeObserver(observer));
-  return const AsyncLoading();
 });
 
 class AppLifecycleStateObserver extends WidgetsBindingObserver {
