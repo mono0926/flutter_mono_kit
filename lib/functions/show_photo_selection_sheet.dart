@@ -9,6 +9,7 @@ Future<XFile?> showPhotoSelectionSheet({
   required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
   VoidCallback? onSettingAppOpenRequested,
+  bool requestFullMetadata = false,
 }) async {
   final source = await showModalActionSheet<ImageSource>(
     context: context,
@@ -33,7 +34,10 @@ Future<XFile?> showPhotoSelectionSheet({
 
   final picker = ImagePicker();
   try {
-    return await picker.pickImage(source: source);
+    return await picker.pickImage(
+      source: source,
+      requestFullMetadata: requestFullMetadata,
+    );
   } on PlatformException catch (e) {
     logger.warning(e);
     if (![

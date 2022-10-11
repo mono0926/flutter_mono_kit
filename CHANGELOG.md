@@ -1,3 +1,7 @@
+## 0.31.0
+
+- Add requestFullMetadata to showPhotoSelectionSheet
+
 ## 0.30.0
 
 - Upgrade to riverpod v2
