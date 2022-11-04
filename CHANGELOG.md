@@ -1,3 +1,7 @@
+## 0.31.1
+
+- Upgrade packages
+
 ## 0.31.0
 
 - Add requestFullMetadata to showPhotoSelectionSheet

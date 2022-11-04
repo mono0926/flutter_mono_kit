@@ -45,7 +45,7 @@ class GoRouterLocationButton extends StatelessWidget {
               ),
               onPressed: () async {
                 final next = (await showTextInputDialog(
-                  context: router.navigator!.context,
+                  context: router.routerDelegate.navigatorKey.currentContext!,
                   textFields: [
                     DialogTextField(initialText: location),
                   ],
