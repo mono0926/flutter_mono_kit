@@ -35,13 +35,17 @@ class SnackBarPage extends StatelessWidget {
                 color: colorScheme.error,
               ),
             ),
-            onTap: () => messenger.showError('(´・︵・｀)'),
+            onTap: () => messenger.showError(
+              '(´・︵・｀)',
+              theme: theme,
+            ),
           ),
           ListTile(
             title: const Text('UNDO'),
             onTap: () => messenger.showUndo(
-              '🐶',
+              'Dog 🐶',
               onUndo: () => logger.info('UNDO'),
+              theme: theme,
             ),
           )
         ],

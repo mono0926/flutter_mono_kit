@@ -1,7 +1,7 @@
 name: mono_kit
 description: A collection of convenient widgets and utils made by mono. Under
   construction now.
-version: 0.31.1
+version: 0.32.0
 repository: https://github.com/mono0926/flutter_mono_kit
 environment:
   sdk: '>=2.18.0 <3.0.0'

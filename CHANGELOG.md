@@ -1,3 +1,7 @@
+## 0.32.0
+
+- Fix SnackBar theme/color
+
 ## 0.31.1
 
 - Upgrade packages
