@@ -6,7 +6,8 @@ import 'package:mono_kit/mono_kit.dart';
 class VerticalCenterScrollViewRoute extends GoRouteData {
   const VerticalCenterScrollViewRoute();
   @override
-  Widget build(BuildContext context) => const VerticalCenterScrollViewPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const VerticalCenterScrollViewPage();
 }
 
 class VerticalCenterScrollViewPage extends StatelessWidget {

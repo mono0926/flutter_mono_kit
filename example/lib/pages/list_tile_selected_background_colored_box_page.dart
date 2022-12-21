@@ -6,7 +6,7 @@ import 'package:mono_kit/mono_kit.dart';
 class ListTileSelectedBackgroundColoredBoxRoute extends GoRouteData {
   const ListTileSelectedBackgroundColoredBoxRoute();
   @override
-  Widget build(BuildContext context) =>
+  Widget build(BuildContext context, GoRouterState state) =>
       const ListTileSelectedBackgroundColoredBoxPage();
 }
 

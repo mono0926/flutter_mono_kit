@@ -6,7 +6,8 @@ import 'package:mono_kit/mono_kit.dart';
 class MaxWidthPaddingBuilderRoute extends GoRouteData {
   const MaxWidthPaddingBuilderRoute();
   @override
-  Widget build(BuildContext context) => const MaxWidthPaddingBuilderPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const MaxWidthPaddingBuilderPage();
 }
 
 class MaxWidthPaddingBuilderPage extends StatelessWidget {

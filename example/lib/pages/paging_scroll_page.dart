@@ -10,7 +10,8 @@ Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
 class PagingScrollRoute extends GoRouteData {
   const PagingScrollRoute();
   @override
-  Widget build(BuildContext context) => const PagingScrollPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const PagingScrollPage();
 }
 
 class PagingScrollPage extends StatelessWidget {

@@ -6,7 +6,8 @@ import 'package:mono_kit/mono_kit.dart';
 class BannerVisibilityRoute extends GoRouteData {
   const BannerVisibilityRoute();
   @override
-  Widget build(BuildContext context) => const BannerVisibilityPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const BannerVisibilityPage();
 }
 
 class BannerVisibilityPage extends StatefulWidget {

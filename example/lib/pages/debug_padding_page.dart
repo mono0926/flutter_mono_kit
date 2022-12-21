@@ -6,7 +6,8 @@ import 'package:mono_kit/mono_kit.dart';
 class DebugPaddingRoute extends GoRouteData {
   const DebugPaddingRoute();
   @override
-  Widget build(BuildContext context) => const DebugPaddingPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const DebugPaddingPage();
 }
 
 class DebugPaddingPage extends StatelessWidget {

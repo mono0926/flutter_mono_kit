@@ -7,7 +7,8 @@ import 'package:quiver/iterables.dart';
 class UnfocusOnTapRoute extends GoRouteData {
   const UnfocusOnTapRoute();
   @override
-  Widget build(BuildContext context) => const UnfocusOnTapPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const UnfocusOnTapPage();
 }
 
 class UnfocusOnTapPage extends StatelessWidget {

@@ -8,7 +8,8 @@ final _swatch = const Color(0xFFF44336).materialColor;
 class ColorExRoute extends GoRouteData {
   const ColorExRoute();
   @override
-  Widget build(BuildContext context) => const ColorExPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const ColorExPage();
 }
 
 class ColorExPage extends StatelessWidget {

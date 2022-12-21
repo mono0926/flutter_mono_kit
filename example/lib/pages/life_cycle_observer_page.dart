@@ -8,7 +8,8 @@ import 'package:mono_kit/mono_kit.dart';
 class LifeCycleObserverRoute extends GoRouteData {
   const LifeCycleObserverRoute();
   @override
-  Widget build(BuildContext context) => const LifeCycleObserverPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LifeCycleObserverPage();
 }
 
 class LifeCycleObserverPage extends ConsumerWidget {

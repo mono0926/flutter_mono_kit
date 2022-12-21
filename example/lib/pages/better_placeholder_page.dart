@@ -6,7 +6,8 @@ import 'package:mono_kit/mono_kit.dart';
 class BetterPlaceholderRoute extends GoRouteData {
   const BetterPlaceholderRoute();
   @override
-  Widget build(BuildContext context) => const BetterPlaceholderPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const BetterPlaceholderPage();
 }
 
 class BetterPlaceholderPage extends StatelessWidget {

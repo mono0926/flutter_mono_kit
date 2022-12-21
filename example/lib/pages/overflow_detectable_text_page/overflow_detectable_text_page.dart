@@ -9,7 +9,8 @@ import 'data.dart';
 class OverflowDetectableTextRoute extends GoRouteData {
   const OverflowDetectableTextRoute();
   @override
-  Widget build(BuildContext context) => const OverflowDetectableTextPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const OverflowDetectableTextPage();
 }
 
 class OverflowDetectableTextPage extends StatelessWidget {
@@ -65,7 +66,8 @@ class OverflowDetectableTextPage extends StatelessWidget {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          foregroundColor: accentColor, shape: const StadiumBorder(), backgroundColor: buttonColor,
+          foregroundColor: accentColor, shape: const StadiumBorder(),
+          backgroundColor: buttonColor,
           // shadowColor: highlightColor,
           minimumSize: Size.zero,
           padding: const EdgeInsets.symmetric(

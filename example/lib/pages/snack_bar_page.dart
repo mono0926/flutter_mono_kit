@@ -7,7 +7,8 @@ import 'package:mono_kit/mono_kit.dart';
 class SnackBarRoute extends GoRouteData {
   const SnackBarRoute();
   @override
-  Widget build(BuildContext context) => const SnackBarPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const SnackBarPage();
 }
 
 class SnackBarPage extends StatelessWidget {

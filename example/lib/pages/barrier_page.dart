@@ -10,7 +10,8 @@ import 'package:mono_kit/widgets/widgets.dart';
 class BarrierRoute extends GoRouteData {
   const BarrierRoute();
   @override
-  Widget build(BuildContext context) => const BarrierPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const BarrierPage();
 }
 
 class BarrierPage extends ConsumerStatefulWidget {

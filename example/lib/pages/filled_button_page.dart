@@ -7,7 +7,8 @@ import 'package:mono_kit/mono_kit.dart';
 class FilledButtonRoute extends GoRouteData {
   const FilledButtonRoute();
   @override
-  Widget build(BuildContext context) => const FilledButtonPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FilledButtonPage();
 }
 
 class FilledButtonPage extends ConsumerWidget {

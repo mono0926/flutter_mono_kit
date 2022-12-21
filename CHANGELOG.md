@@ -1,3 +1,7 @@
+## 0.32.1
+
+- Upgrade go_router
+
 ## 0.32.0
 
 - Fix SnackBar theme/color

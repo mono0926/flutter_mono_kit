@@ -7,7 +7,8 @@ import 'package:mono_kit/mono_kit.dart';
 class LoadingSwitcherRoute extends GoRouteData {
   const LoadingSwitcherRoute();
   @override
-  Widget build(BuildContext context) => const LoadingSwitcherPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LoadingSwitcherPage();
 }
 
 final _controller = ChangeNotifierProvider((ref) => _Controller());

@@ -6,7 +6,8 @@ import 'package:mono_kit/mono_kit.dart';
 class AppBottomAreaRoute extends GoRouteData {
   const AppBottomAreaRoute();
   @override
-  Widget build(BuildContext context) => const AppBottomAreaPage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const AppBottomAreaPage();
 }
 
 class AppBottomAreaPage extends StatelessWidget {
