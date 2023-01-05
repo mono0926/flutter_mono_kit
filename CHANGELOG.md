@@ -322,7 +322,7 @@
 
 ## 0.9.0
 
-- Add LifeCycleObserver
+- Add LifecycleObserver
 
 ## 0.8.0
 

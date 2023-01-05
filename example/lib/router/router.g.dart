@@ -40,7 +40,7 @@ GoRoute get $homeRoute => GoRouteData.$route(
         ),
         GoRouteData.$route(
           path: 'life-cycle-observer',
-          factory: $LifeCycleObserverRouteExtension._fromState,
+          factory: $LifecycleObserverRouteExtension._fromState,
         ),
         GoRouteData.$route(
           path: 'paging-scroll',
@@ -90,6 +90,8 @@ extension $HomeRouteExtension on HomeRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $SnackBarRouteExtension on SnackBarRoute {
@@ -100,6 +102,8 @@ extension $SnackBarRouteExtension on SnackBarRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $AppBottomAreaRouteExtension on AppBottomAreaRoute {
@@ -111,6 +115,8 @@ extension $AppBottomAreaRouteExtension on AppBottomAreaRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $DebugPaddingRouteExtension on DebugPaddingRoute {
@@ -122,6 +128,8 @@ extension $DebugPaddingRouteExtension on DebugPaddingRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $OverflowDetectableTextRouteExtension on OverflowDetectableTextRoute {
@@ -133,6 +141,8 @@ extension $OverflowDetectableTextRouteExtension on OverflowDetectableTextRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $BarrierRouteExtension on BarrierRoute {
@@ -143,6 +153,8 @@ extension $BarrierRouteExtension on BarrierRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $UnfocusOnTapRouteExtension on UnfocusOnTapRoute {
@@ -154,17 +166,21 @@ extension $UnfocusOnTapRouteExtension on UnfocusOnTapRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
-extension $LifeCycleObserverRouteExtension on LifeCycleObserverRoute {
-  static LifeCycleObserverRoute _fromState(GoRouterState state) =>
-      const LifeCycleObserverRoute();
+extension $LifecycleObserverRouteExtension on LifecycleObserverRoute {
+  static LifecycleObserverRoute _fromState(GoRouterState state) =>
+      const LifecycleObserverRoute();
 
   String get location => GoRouteData.$location(
         '/life-cycle-observer',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $PagingScrollRouteExtension on PagingScrollRoute {
@@ -176,6 +192,8 @@ extension $PagingScrollRouteExtension on PagingScrollRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $BannerVisibilityRouteExtension on BannerVisibilityRoute {
@@ -187,6 +205,8 @@ extension $BannerVisibilityRouteExtension on BannerVisibilityRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $ColorExRouteExtension on ColorExRoute {
@@ -197,6 +217,8 @@ extension $ColorExRouteExtension on ColorExRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $MaxWidthPaddingBuilderRouteExtension on MaxWidthPaddingBuilderRoute {
@@ -208,6 +230,8 @@ extension $MaxWidthPaddingBuilderRouteExtension on MaxWidthPaddingBuilderRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $BetterPlaceholderRouteExtension on BetterPlaceholderRoute {
@@ -219,6 +243,8 @@ extension $BetterPlaceholderRouteExtension on BetterPlaceholderRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $LoadingSwitcherRouteExtension on LoadingSwitcherRoute {
@@ -230,6 +256,8 @@ extension $LoadingSwitcherRouteExtension on LoadingSwitcherRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $ListTileSelectedBackgroundColoredBoxRouteExtension
@@ -243,6 +271,8 @@ extension $ListTileSelectedBackgroundColoredBoxRouteExtension
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $VerticalCenterScrollViewRouteExtension
@@ -255,6 +285,8 @@ extension $VerticalCenterScrollViewRouteExtension
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }
 
 extension $FilledButtonRouteExtension on FilledButtonRoute {
@@ -266,4 +298,6 @@ extension $FilledButtonRouteExtension on FilledButtonRoute {
       );
 
   void go(BuildContext context) => context.go(location, extra: this);
+
+  void push(BuildContext context) => context.push(location, extra: this);
 }

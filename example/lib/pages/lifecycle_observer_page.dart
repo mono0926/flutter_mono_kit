@@ -5,15 +5,15 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class LifeCycleObserverRoute extends GoRouteData {
-  const LifeCycleObserverRoute();
+class LifecycleObserverRoute extends GoRouteData {
+  const LifecycleObserverRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const LifeCycleObserverPage();
+      const LifecycleObserverPage();
 }
 
-class LifeCycleObserverPage extends ConsumerWidget {
-  const LifeCycleObserverPage({Key? key}) : super(key: key);
+class LifecycleObserverPage extends ConsumerWidget {
+  const LifecycleObserverPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

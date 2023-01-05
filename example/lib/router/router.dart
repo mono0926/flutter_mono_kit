@@ -6,7 +6,7 @@ import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/debug_padding_page.dart';
 import 'package:example/pages/filled_button_page.dart';
 import 'package:example/pages/home_page.dart';
-import 'package:example/pages/life_cycle_observer_page.dart';
+import 'package:example/pages/lifecycle_observer_page.dart';
 import 'package:example/pages/list_tile_selected_background_colored_box_page.dart';
 import 'package:example/pages/loading_switcher_page.dart';
 import 'package:example/pages/max_width_padding_builder_page.dart';
@@ -46,7 +46,7 @@ final routerProvider = Provider(
     TypedGoRoute<OverflowDetectableTextRoute>(path: 'overflow-detectable-text'),
     TypedGoRoute<BarrierRoute>(path: 'barrier'),
     TypedGoRoute<UnfocusOnTapRoute>(path: 'unfocus-on-tap'),
-    TypedGoRoute<LifeCycleObserverRoute>(path: 'life-cycle-observer'),
+    TypedGoRoute<LifecycleObserverRoute>(path: 'life-cycle-observer'),
     TypedGoRoute<PagingScrollRoute>(path: 'paging-scroll'),
     TypedGoRoute<BannerVisibilityRoute>(path: 'banner-visibility'),
     TypedGoRoute<ColorExRoute>(path: 'color-ex'),
@@ -80,7 +80,7 @@ List<String> get allRouteLocations => [
       const OverflowDetectableTextRoute().location,
       const BarrierRoute().location,
       const UnfocusOnTapRoute().location,
-      const LifeCycleObserverRoute().location,
+      const LifecycleObserverRoute().location,
       const PagingScrollRoute().location,
       const BannerVisibilityRoute().location,
       const ColorExRoute().location,
