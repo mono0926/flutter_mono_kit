@@ -1,3 +1,7 @@
+## 0.32.2
+
+- Fix `streamWithCurrent' stuck under some rare conditions
+
 ## 0.32.1
 
 - Upgrade go_router

@@ -7,5 +7,5 @@ extension StateNotifierEx<T> on StateNotifier<T> {
   // 罠になりがちなので避けた(同期的に現在の値を取りたい場合は普通にstateアクセスで済む)。
   Stream<T> get streamWithCurrent =>
       // ignore: invalid_use_of_protected_member
-      Rx.concat([Stream.value(state), stream]);
+      Rx.concatEager([Stream.value(state), stream]);
 }
