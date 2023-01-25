@@ -11,7 +11,7 @@ void showErrorDialog({
       title: Text(
         l10n.errorTitle,
         style: TextStyle(
-          color: Theme.of(context).errorColor,
+          color: Theme.of(context).colorScheme.error,
         ),
       ),
       content: Text(

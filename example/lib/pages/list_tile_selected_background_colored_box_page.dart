@@ -38,7 +38,7 @@ class _ListTileSelectedBackgroundColoredBoxPageState
         title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
       ),
       body: Center(
-        child: FilledTonalButton(
+        child: FilledButton.tonal(
           onPressed: () => Navigator.of(context).pop(),
           child: const Text('BACK'),
         ),
@@ -52,7 +52,7 @@ class _ListTileSelectedBackgroundColoredBoxPageState
               ),
               child: Text(
                 'Header',
-                style: theme.primaryTextTheme.headline4,
+                style: theme.primaryTextTheme.headlineMedium,
               ),
             ),
             ..._listTileTexts.map(

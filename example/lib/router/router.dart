@@ -4,7 +4,6 @@ import 'package:example/pages/barrier_page.dart';
 import 'package:example/pages/better_placeholder_page.dart';
 import 'package:example/pages/color_ex_page.dart';
 import 'package:example/pages/debug_padding_page.dart';
-import 'package:example/pages/filled_button_page.dart';
 import 'package:example/pages/home_page.dart';
 import 'package:example/pages/lifecycle_observer_page.dart';
 import 'package:example/pages/list_tile_selected_background_colored_box_page.dart';
@@ -61,7 +60,6 @@ final routerProvider = Provider(
     TypedGoRoute<VerticalCenterScrollViewRoute>(
       path: 'vertical-center-scroll-view',
     ),
-    TypedGoRoute<FilledButtonRoute>(path: 'filled-button'),
   ],
 )
 class HomeRoute extends GoRouteData {
@@ -73,7 +71,6 @@ class HomeRoute extends GoRouteData {
 String pascalCaseFromRouteName(String name) => name.pascalCase;
 
 List<String> get allRouteLocations => [
-      const FilledButtonRoute().location,
       const SnackBarRoute().location,
       const AppBottomAreaRoute().location,
       const DebugPaddingRoute().location,

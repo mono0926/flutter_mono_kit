@@ -64,7 +64,7 @@ class _Size extends StatelessWidget {
         color: colorScheme.background,
         child: Text(
           'size\n${mediaQuery.size}',
-          style: theme.textTheme.bodyText2,
+          style: theme.textTheme.bodyMedium,
         ),
       ),
     );
@@ -105,7 +105,7 @@ class _Padding extends StatelessWidget {
             color: colorScheme.background,
             child: Text(
               '$label\n${padding.toString().replaceAll('EdgeInsets', '')}',
-              style: theme.textTheme.bodyText2,
+              style: theme.textTheme.bodyMedium,
             ),
           ),
         ),

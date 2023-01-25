@@ -75,10 +75,6 @@ GoRoute get $homeRoute => GoRouteData.$route(
           path: 'vertical-center-scroll-view',
           factory: $VerticalCenterScrollViewRouteExtension._fromState,
         ),
-        GoRouteData.$route(
-          path: 'filled-button',
-          factory: $FilledButtonRouteExtension._fromState,
-        ),
       ],
     );
 
@@ -282,19 +278,6 @@ extension $VerticalCenterScrollViewRouteExtension
 
   String get location => GoRouteData.$location(
         '/vertical-center-scroll-view',
-      );
-
-  void go(BuildContext context) => context.go(location, extra: this);
-
-  void push(BuildContext context) => context.push(location, extra: this);
-}
-
-extension $FilledButtonRouteExtension on FilledButtonRoute {
-  static FilledButtonRoute _fromState(GoRouterState state) =>
-      const FilledButtonRoute();
-
-  String get location => GoRouteData.$location(
-        '/filled-button',
       );
 
   void go(BuildContext context) => context.go(location, extra: this);

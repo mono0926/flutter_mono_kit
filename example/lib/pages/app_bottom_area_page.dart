@@ -28,7 +28,7 @@ class AppBottomAreaPage extends StatelessWidget {
             child: Text(
               'AppBottomArea',
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyText2!.copyWith(
+              style: theme.textTheme.bodyMedium!.copyWith(
                 color: Colors.white,
               ),
             ),
@@ -67,7 +67,7 @@ class AppBottomAreaPage extends StatelessWidget {
             child: Text(
               'bottomNavigationBar',
               textAlign: TextAlign.center,
-              style: theme.primaryTextTheme.bodyText2,
+              style: theme.primaryTextTheme.bodyMedium,
             ),
           ),
           bottomSheet: Container(

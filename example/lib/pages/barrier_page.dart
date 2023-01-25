@@ -44,7 +44,7 @@ class _BarrierPageState extends ConsumerState<BarrierPage> {
       body: Center(
         child: Text(
           '$_count',
-          style: Theme.of(context).textTheme.headline4,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
     );

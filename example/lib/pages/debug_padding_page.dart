@@ -50,7 +50,7 @@ class DebugPaddingPage extends StatelessWidget {
           child: Text(
             'bottomNavigationBar',
             textAlign: TextAlign.center,
-            style: theme.primaryTextTheme.bodyText2,
+            style: theme.primaryTextTheme.bodyMedium,
           ),
         ),
         bottomSheet: Container(

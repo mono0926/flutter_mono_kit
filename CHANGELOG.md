@@ -1,3 +1,7 @@
+## 0.33.0
+
+- Remove Filled/Filled Tonal Buttons in favor of Flutter 3.7
+
 ## 0.32.2
 
 - Fix `streamWithCurrent' stuck under some rare conditions
