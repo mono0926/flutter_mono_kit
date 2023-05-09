@@ -1,3 +1,7 @@
+## 0.34.0
+
+- Upgrade packages(flutter_svg, go_router)
+
 ## 0.33.0
 
 - Remove Filled/Filled Tonal Buttons in favor of Flutter 3.7
