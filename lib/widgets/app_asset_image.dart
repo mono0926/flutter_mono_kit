@@ -75,10 +75,12 @@ class _SvgImage extends AppAssetImage {
 
   @override
   Widget build(BuildContext context) {
+    final color = this.color;
     return SvgPicture.asset(
       'assets/images/$name.svg',
       fit: fit ?? BoxFit.contain,
-      color: color,
+      colorFilter:
+          color == null ? null : ColorFilter.mode(color, BlendMode.srcIn),
     );
   }
 }

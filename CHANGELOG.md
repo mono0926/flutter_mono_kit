@@ -1,3 +1,7 @@
+## 0.35.0
+
+- Upgrade to Flutter 3.10/Dart 3.0
+
 ## 0.34.0
 
 - Upgrade packages(flutter_svg, go_router)
