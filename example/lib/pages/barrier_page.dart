@@ -28,7 +28,8 @@ class _BarrierPageState extends ConsumerState<BarrierPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
+        title:
+            Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -22,7 +22,8 @@ class PagingScrollPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
+        title:
+            Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
       ),
       body: const _Body(),
     );

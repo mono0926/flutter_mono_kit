@@ -1,3 +1,7 @@
+## 0.35.1
+
+- Upgrade dependencies
+
 ## 0.35.0
 
 - Upgrade to Flutter 3.10/Dart 3.0

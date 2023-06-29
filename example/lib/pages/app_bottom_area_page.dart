@@ -41,7 +41,8 @@ class AppBottomAreaPage extends StatelessWidget {
 //      showViewInsets: false,
         child: Scaffold(
           appBar: AppBar(
-            title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
+            title: Text(
+                pascalCaseFromRouteName(GoRouterState.of(context).location)),
           ),
           body: UnfocusOnTap(
             child: ListView(

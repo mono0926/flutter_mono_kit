@@ -17,7 +17,8 @@ class VerticalCenterScrollViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pascalCaseFromRouteName(GoRouter.of(context).location)),
+        title:
+            Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
       ),
       body: const VerticalCenterScrollView(
         padding: EdgeInsets.symmetric(vertical: 16),
