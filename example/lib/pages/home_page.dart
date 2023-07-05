@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
             title: const Text('showPhotoSelectionSheet()'),
             trailing: const Icon(Icons.photo_library),
             onTap: () {
-              showMultiPhotoSelectionSheet(
+              showPhotoSelectionSheet(
                 context: context,
                 onSettingAppOpenRequested: () {
                   logger.info('onSettingAppOpenRequested');

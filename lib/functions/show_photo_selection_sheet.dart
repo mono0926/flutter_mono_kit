@@ -5,11 +5,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
-Future<List<XFile>> showMultiPhotoSelectionSheet({
+Future<List<XFile>> showPhotoSelectionSheet({
   required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
   VoidCallback? onSettingAppOpenRequested,
   bool requestFullMetadata = false,
+  bool allowMultiple = false,
 }) async {
   final source = await showModalActionSheet<ImageSource>(
     context: context,
@@ -34,17 +35,16 @@ Future<List<XFile>> showMultiPhotoSelectionSheet({
 
   final picker = ImagePicker();
   try {
-    switch (source) {
-      case ImageSource.camera:
-        final file = await picker.pickImage(
-          source: source,
-          requestFullMetadata: requestFullMetadata,
-        );
-        return file == null ? [] : [file];
-      case ImageSource.gallery:
-        return await picker.pickMultiImage(
-          requestFullMetadata: requestFullMetadata,
-        );
+    if (source == ImageSource.gallery && allowMultiple) {
+      return await picker.pickMultiImage(
+        requestFullMetadata: requestFullMetadata,
+      );
+    } else {
+      final file = await picker.pickImage(
+        source: source,
+        requestFullMetadata: requestFullMetadata,
+      );
+      return file == null ? [] : [file];
     }
   } on PlatformException catch (e) {
     logger.warning(e);
@@ -81,22 +81,6 @@ Future<List<XFile>> showMultiPhotoSelectionSheet({
     }
   }
   return [];
-}
-
-@Deprecated('Use showMultiPhotoSelectionSheet')
-Future<XFile?> showPhotoSelectionSheet({
-  required BuildContext context,
-  PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
-  VoidCallback? onSettingAppOpenRequested,
-  bool requestFullMetadata = false,
-}) async {
-  final files = await showMultiPhotoSelectionSheet(
-    context: context,
-    l10n: l10n,
-    onSettingAppOpenRequested: onSettingAppOpenRequested,
-    requestFullMetadata: requestFullMetadata,
-  );
-  return files.firstOrNull;
 }
 
 @immutable

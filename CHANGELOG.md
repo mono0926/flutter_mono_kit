@@ -1,3 +1,7 @@
+## 0.36.1
+
+- Rename showMultiPhotoSelectionSheet to showPhotoSelectionSheet
+
 ## 0.36.0
 
 - Add `showMultiPhotoSelectionSheet`
