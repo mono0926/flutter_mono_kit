@@ -1,3 +1,8 @@
+## 0.36.0
+
+- Add `showMultiPhotoSelectionSheet`
+  - Deprecate `showPhotoSelectionSheet`
+
 ## 0.35.1
 
 - Upgrade dependencies

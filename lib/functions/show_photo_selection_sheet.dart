@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
-Future<XFile?> showPhotoSelectionSheet({
+Future<List<XFile>> showMultiPhotoSelectionSheet({
   required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
   VoidCallback? onSettingAppOpenRequested,
@@ -29,15 +29,23 @@ Future<XFile?> showPhotoSelectionSheet({
   );
 
   if (source == null) {
-    return null;
+    return [];
   }
 
   final picker = ImagePicker();
   try {
-    return await picker.pickImage(
-      source: source,
-      requestFullMetadata: requestFullMetadata,
-    );
+    switch (source) {
+      case ImageSource.camera:
+        final file = await picker.pickImage(
+          source: source,
+          requestFullMetadata: requestFullMetadata,
+        );
+        return file == null ? [] : [file];
+      case ImageSource.gallery:
+        return await picker.pickMultiImage(
+          requestFullMetadata: requestFullMetadata,
+        );
+    }
   } on PlatformException catch (e) {
     logger.warning(e);
     if (![
@@ -48,11 +56,11 @@ Future<XFile?> showPhotoSelectionSheet({
     ].contains(e.code)) {
       // ignore: use_build_context_synchronously
       showErrorDialog(context: context, error: e);
-      return null;
+      return [];
     }
 
     if (onSettingAppOpenRequested == null) {
-      return null;
+      return [];
     }
 
     const okKey = 'ok';
@@ -72,7 +80,23 @@ Future<XFile?> showPhotoSelectionSheet({
       onSettingAppOpenRequested();
     }
   }
-  return null;
+  return [];
+}
+
+@Deprecated('Use showMultiPhotoSelectionSheet')
+Future<XFile?> showPhotoSelectionSheet({
+  required BuildContext context,
+  PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
+  VoidCallback? onSettingAppOpenRequested,
+  bool requestFullMetadata = false,
+}) async {
+  final files = await showMultiPhotoSelectionSheet(
+    context: context,
+    l10n: l10n,
+    onSettingAppOpenRequested: onSettingAppOpenRequested,
+    requestFullMetadata: requestFullMetadata,
+  );
+  return files.firstOrNull;
 }
 
 @immutable
