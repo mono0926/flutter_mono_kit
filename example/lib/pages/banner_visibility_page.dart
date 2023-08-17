@@ -24,8 +24,7 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            pascalCaseFromRouteName(GoRouterState.of(context).uri.toString())),
+        title: Text(pascalCaseFromRouteUri(GoRouterState.of(context).uri)),
       ),
       body: Column(
         children: [

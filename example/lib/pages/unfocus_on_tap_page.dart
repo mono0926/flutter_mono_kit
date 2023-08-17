@@ -18,8 +18,7 @@ class UnfocusOnTapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(pascalCaseFromRouteName(
-            GoRouterState.of(context).uri.toString().toString())),
+        title: Text(pascalCaseFromRouteUri(GoRouterState.of(context).uri)),
       ),
       body: CenteredMaxWidth(
         width: 560,

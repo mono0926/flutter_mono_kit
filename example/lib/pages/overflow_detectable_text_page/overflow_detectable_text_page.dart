@@ -22,8 +22,7 @@ class OverflowDetectableTextPage extends StatelessWidget {
       data: _buildTheme(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(pascalCaseFromRouteName(
-              GoRouterState.of(context).uri.toString().toString())),
+          title: Text(pascalCaseFromRouteUri(GoRouterState.of(context).uri)),
         ),
         body: ListView.separated(
           padding: EdgeInsets.only(

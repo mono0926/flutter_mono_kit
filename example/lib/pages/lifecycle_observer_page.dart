@@ -22,8 +22,7 @@ class LifecycleObserverPage extends ConsumerWidget {
     });
     return Scaffold(
       appBar: AppBar(
-        title: Text(pascalCaseFromRouteName(
-            GoRouterState.of(context).uri.toString().toString())),
+        title: Text(pascalCaseFromRouteUri(GoRouterState.of(context).uri)),
       ),
       body: const Center(
         child: Text(

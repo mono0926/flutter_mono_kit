@@ -69,6 +69,8 @@ class HomeRoute extends GoRouteData {
 }
 
 String pascalCaseFromRouteName(String name) => name.pascalCase;
+String pascalCaseFromRouteUri(Uri uri) =>
+    pascalCaseFromRouteName(uri.toString());
 
 List<String> get allRouteLocations => [
       const SnackBarRoute().location,
