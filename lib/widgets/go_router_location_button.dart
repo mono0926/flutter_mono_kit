@@ -31,7 +31,7 @@ class GoRouterLocationButton extends StatelessWidget {
     }
     final router = GoRouter.of(context);
     final routerState = GoRouterState.of(context);
-    final location = routerState.location;
+    final location = routerState.uri.toString();
     return Stack(
       children: [
         child,

@@ -50,7 +50,7 @@ class Barrier extends ConsumerWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

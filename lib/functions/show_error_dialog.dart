@@ -23,7 +23,7 @@ void showErrorDialog({
             Navigator.of(context).pop();
           },
           child: Text(MaterialLocalizations.of(context).okButtonLabel),
-        )
+        ),
       ],
     ),
   );

@@ -84,7 +84,7 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

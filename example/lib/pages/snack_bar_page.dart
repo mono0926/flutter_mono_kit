@@ -21,8 +21,8 @@ class SnackBarPage extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
+        title: Text(pascalCaseFromRouteName(
+            GoRouterState.of(context).uri.toString().toString())),
       ),
       body: ListView(
         children: [

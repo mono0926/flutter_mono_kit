@@ -1,3 +1,7 @@
+## 2.2.0
+
+- Upgrade dependencies
+
 ## 2.1.1
 
 - Update to rxdart 0.27.0

@@ -32,7 +32,8 @@ class SubscriptionHolder {
     final v = f(observable.valueOrNull);
     final notifier = ValueNotifier<S?>(v is Future<S> ? null : v as S);
     _subscriptions.add(
-        observable.distinct().listen((x) async => notifier.value = await f(x)));
+      observable.distinct().listen((x) async => notifier.value = await f(x)),
+    );
     return notifier;
   }
 

@@ -25,7 +25,7 @@ Future<List<XFile>> showPhotoSelectionSheet({
         icon: Icons.camera_alt,
         label: l10n.takePicture,
         key: ImageSource.camera,
-      )
+      ),
     ],
   );
 

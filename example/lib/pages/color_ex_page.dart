@@ -24,8 +24,8 @@ class ColorExPage extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title:
-              Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
+          title: Text(pascalCaseFromRouteName(
+              GoRouterState.of(context).uri.toString().toString())),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},

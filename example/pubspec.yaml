@@ -3,9 +3,9 @@ description: A example of mono_kit.
 version: 1.0.0+1
 publish_to: none
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: ^3.1.0
 dependencies:
-  adaptive_dialog: ^1.9.0-0
+  adaptive_dialog:
   cupertino_icons:
   flutter:
     sdk: flutter

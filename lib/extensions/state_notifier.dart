@@ -6,6 +6,6 @@ extension StateNotifierEx<T> on StateNotifier<T> {
   // shareValueSeededの購読数がゼロになるとそれ以降の購読に反応しなくなる挙動が
   // 罠になりがちなので避けた(同期的に現在の値を取りたい場合は普通にstateアクセスで済む)。
   Stream<T> get streamWithCurrent =>
-      // ignore: invalid_use_of_protected_member
+      // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
       Rx.concatEager([Stream.value(state), stream]);
 }

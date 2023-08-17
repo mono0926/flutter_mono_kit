@@ -24,8 +24,8 @@ class DebugPaddingPage extends StatelessWidget {
 //      showSize: false,
       child: Scaffold(
         appBar: AppBar(
-          title:
-              Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
+          title: Text(pascalCaseFromRouteName(
+              GoRouterState.of(context).uri.toString().toString())),
         ),
         body: UnfocusOnTap(
           child: ListView(

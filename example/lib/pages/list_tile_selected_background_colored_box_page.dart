@@ -35,8 +35,8 @@ class _ListTileSelectedBackgroundColoredBoxPageState
     final colorScheme = theme.colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text(pascalCaseFromRouteName(GoRouterState.of(context).location)),
+        title: Text(pascalCaseFromRouteName(
+            GoRouterState.of(context).uri.toString().toString())),
       ),
       body: Center(
         child: FilledButton.tonal(

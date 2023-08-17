@@ -1,3 +1,7 @@
+## 0.37.0
+
+- Upgrade dependencies
+
 ## 0.36.1
 
 - Rename showMultiPhotoSelectionSheet to showPhotoSelectionSheet
