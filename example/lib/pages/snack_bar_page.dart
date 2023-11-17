@@ -12,7 +12,7 @@ class SnackBarRoute extends GoRouteData {
 }
 
 class SnackBarPage extends StatelessWidget {
-  const SnackBarPage({Key? key}) : super(key: key);
+  const SnackBarPage({super.key});
 
   @override
   Widget build(BuildContext context) {

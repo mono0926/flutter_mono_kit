@@ -11,7 +11,7 @@ class AppBottomAreaRoute extends GoRouteData {
 }
 
 class AppBottomAreaPage extends StatelessWidget {
-  const AppBottomAreaPage({Key? key}) : super(key: key);
+  const AppBottomAreaPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ class BetterPlaceholderRoute extends GoRouteData {
 }
 
 class BetterPlaceholderPage extends StatelessWidget {
-  const BetterPlaceholderPage({Key? key}) : super(key: key);
+  const BetterPlaceholderPage({super.key});
 
   @override
   Widget build(BuildContext context) {

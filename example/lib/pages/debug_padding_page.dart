@@ -11,7 +11,7 @@ class DebugPaddingRoute extends GoRouteData {
 }
 
 class DebugPaddingPage extends StatelessWidget {
-  const DebugPaddingPage({Key? key}) : super(key: key);
+  const DebugPaddingPage({super.key});
 
   @override
   Widget build(BuildContext context) {

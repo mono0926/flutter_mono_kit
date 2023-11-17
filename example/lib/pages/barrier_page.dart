@@ -15,7 +15,7 @@ class BarrierRoute extends GoRouteData {
 }
 
 class BarrierPage extends ConsumerStatefulWidget {
-  const BarrierPage({Key? key}) : super(key: key);
+  const BarrierPage({super.key});
 
   @override
   ConsumerState<BarrierPage> createState() => _BarrierPageState();

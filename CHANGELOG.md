@@ -1,3 +1,7 @@
+## 0.38.0
+
+- Upgrade to Flutter 3.16/Dart 3.2
+
 ## 0.37.0
 
 - Upgrade dependencies

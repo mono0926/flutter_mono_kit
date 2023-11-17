@@ -11,7 +11,7 @@ class MaxWidthPaddingBuilderRoute extends GoRouteData {
 }
 
 class MaxWidthPaddingBuilderPage extends StatelessWidget {
-  const MaxWidthPaddingBuilderPage({Key? key}) : super(key: key);
+  const MaxWidthPaddingBuilderPage({super.key});
 
   @override
   Widget build(BuildContext context) {

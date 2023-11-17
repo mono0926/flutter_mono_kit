@@ -12,7 +12,7 @@ class UnfocusOnTapRoute extends GoRouteData {
 }
 
 class UnfocusOnTapPage extends StatelessWidget {
-  const UnfocusOnTapPage({Key? key}) : super(key: key);
+  const UnfocusOnTapPage({super.key});
 
   @override
   Widget build(BuildContext context) {

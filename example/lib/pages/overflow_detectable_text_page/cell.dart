@@ -6,7 +6,7 @@ import 'data.dart';
 const double _defaultMaxHeight = 110;
 
 class Cell extends StatefulWidget {
-  const Cell(this.data, {Key? key}) : super(key: key);
+  const Cell(this.data, {super.key});
 
   final Data data;
 
@@ -135,10 +135,9 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
 
 class _Desc extends StatefulWidget {
   const _Desc({
-    Key? key,
     required this.data,
     required this.additionalHeightNeeded,
-  }) : super(key: key);
+  });
 
   final Data data;
   final void Function(double height) additionalHeightNeeded;

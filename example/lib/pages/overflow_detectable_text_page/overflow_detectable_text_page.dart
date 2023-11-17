@@ -14,7 +14,7 @@ class OverflowDetectableTextRoute extends GoRouteData {
 }
 
 class OverflowDetectableTextPage extends StatelessWidget {
-  const OverflowDetectableTextPage({Key? key}) : super(key: key);
+  const OverflowDetectableTextPage({super.key});
 
   @override
   Widget build(BuildContext context) {

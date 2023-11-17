@@ -6,7 +6,7 @@ import 'package:nested/nested.dart';
 import 'router/router.dart';
 
 class App extends ConsumerWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   static const title = 'mono_kit Demo';
 
@@ -17,6 +17,7 @@ class App extends ConsumerWidget {
       title: title,
       builder: (context, child) => Nested(
         children: const [
+          // ignore: deprecated_member_use
           TextScaleFactor(),
         ],
         child: Barrier(

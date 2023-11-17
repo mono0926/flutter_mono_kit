@@ -13,7 +13,7 @@ class ColorExRoute extends GoRouteData {
 }
 
 class ColorExPage extends StatelessWidget {
-  const ColorExPage({Key? key}) : super(key: key);
+  const ColorExPage({super.key});
 
   @override
   Widget build(BuildContext context) {

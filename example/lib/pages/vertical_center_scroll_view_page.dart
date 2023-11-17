@@ -11,7 +11,7 @@ class VerticalCenterScrollViewRoute extends GoRouteData {
 }
 
 class VerticalCenterScrollViewPage extends StatelessWidget {
-  const VerticalCenterScrollViewPage({Key? key}) : super(key: key);
+  const VerticalCenterScrollViewPage({super.key});
 
   @override
   Widget build(BuildContext context) {

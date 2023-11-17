@@ -14,7 +14,7 @@ class LoadingSwitcherRoute extends GoRouteData {
 final _controller = ChangeNotifierProvider((ref) => _Controller());
 
 class LoadingSwitcherPage extends ConsumerWidget {
-  const LoadingSwitcherPage({Key? key}) : super(key: key);
+  const LoadingSwitcherPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -56,9 +56,8 @@ class LoadingSwitcherPage extends ConsumerWidget {
 
 class _Slider extends ConsumerWidget {
   const _Slider({
-    Key? key,
     required this.type,
-  }) : super(key: key);
+  });
 
   final SliderType type;
   @override

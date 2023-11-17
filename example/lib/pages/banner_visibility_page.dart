@@ -11,7 +11,7 @@ class BannerVisibilityRoute extends GoRouteData {
 }
 
 class BannerVisibilityPage extends StatefulWidget {
-  const BannerVisibilityPage({Key? key}) : super(key: key);
+  const BannerVisibilityPage({super.key});
 
   @override
   State<BannerVisibilityPage> createState() => _BannerVisibilityPageState();

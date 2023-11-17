@@ -15,7 +15,7 @@ class PagingScrollRoute extends GoRouteData {
 }
 
 class PagingScrollPage extends StatelessWidget {
-  const PagingScrollPage({Key? key}) : super(key: key);
+  const PagingScrollPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class PagingScrollPage extends StatelessWidget {
 }
 
 class _Body extends StatefulWidget {
-  const _Body({Key? key}) : super(key: key);
+  const _Body();
   @override
   __BodyState createState() => __BodyState();
 }

@@ -12,7 +12,6 @@ extension ThemeDataEx on ThemeData {
   /// Create ThemeData which follows latest Material Design Spec.
   ThemeData followLatestSpec() {
     return copyWith(
-      useMaterial3: true,
       snackBarTheme: snackBarTheme.copyWith(
         behavior: SnackBarBehavior.floating,
       ),

@@ -13,7 +13,7 @@ class LifecycleObserverRoute extends GoRouteData {
 }
 
 class LifecycleObserverPage extends ConsumerWidget {
-  const LifecycleObserverPage({Key? key}) : super(key: key);
+  const LifecycleObserverPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

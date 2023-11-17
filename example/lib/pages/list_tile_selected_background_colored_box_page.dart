@@ -11,7 +11,7 @@ class ListTileSelectedBackgroundColoredBoxRoute extends GoRouteData {
 }
 
 class ListTileSelectedBackgroundColoredBoxPage extends StatefulWidget {
-  const ListTileSelectedBackgroundColoredBoxPage({Key? key}) : super(key: key);
+  const ListTileSelectedBackgroundColoredBoxPage({super.key});
 
   @override
   State<ListTileSelectedBackgroundColoredBoxPage> createState() =>
