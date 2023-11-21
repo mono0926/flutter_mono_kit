@@ -1,3 +1,8 @@
+## 0.38.1
+
+- Add `DelayedPopScope`
+  - WilPopScope alternative
+
 ## 0.38.0
 
 - Upgrade to Flutter 3.16/Dart 3.2

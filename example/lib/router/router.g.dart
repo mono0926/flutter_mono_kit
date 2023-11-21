@@ -6,14 +6,18 @@ part of 'router.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<GoRoute> get $appRoutes => [
+List<RouteBase> get $appRoutes => [
       $homeRoute,
     ];
 
-GoRoute get $homeRoute => GoRouteData.$route(
+RouteBase get $homeRoute => GoRouteData.$route(
       path: '/',
       factory: $HomeRouteExtension._fromState,
       routes: [
+        GoRouteData.$route(
+          path: 'delayed-pop-scope',
+          factory: $DelayedPopScopeRouteExtension._fromState,
+        ),
         GoRouteData.$route(
           path: 'snack-bar',
           factory: $SnackBarRouteExtension._fromState,
@@ -85,9 +89,32 @@ extension $HomeRouteExtension on HomeRoute {
         '/',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $DelayedPopScopeRouteExtension on DelayedPopScopeRoute {
+  static DelayedPopScopeRoute _fromState(GoRouterState state) =>
+      const DelayedPopScopeRoute();
+
+  String get location => GoRouteData.$location(
+        '/delayed-pop-scope',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $SnackBarRouteExtension on SnackBarRoute {
@@ -97,9 +124,14 @@ extension $SnackBarRouteExtension on SnackBarRoute {
         '/snack-bar',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $AppBottomAreaRouteExtension on AppBottomAreaRoute {
@@ -110,9 +142,14 @@ extension $AppBottomAreaRouteExtension on AppBottomAreaRoute {
         '/app-bottom-area',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $DebugPaddingRouteExtension on DebugPaddingRoute {
@@ -123,9 +160,14 @@ extension $DebugPaddingRouteExtension on DebugPaddingRoute {
         '/debug-padding',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $OverflowDetectableTextRouteExtension on OverflowDetectableTextRoute {
@@ -136,9 +178,14 @@ extension $OverflowDetectableTextRouteExtension on OverflowDetectableTextRoute {
         '/overflow-detectable-text',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $BarrierRouteExtension on BarrierRoute {
@@ -148,9 +195,14 @@ extension $BarrierRouteExtension on BarrierRoute {
         '/barrier',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $UnfocusOnTapRouteExtension on UnfocusOnTapRoute {
@@ -161,9 +213,14 @@ extension $UnfocusOnTapRouteExtension on UnfocusOnTapRoute {
         '/unfocus-on-tap',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $LifecycleObserverRouteExtension on LifecycleObserverRoute {
@@ -174,9 +231,14 @@ extension $LifecycleObserverRouteExtension on LifecycleObserverRoute {
         '/life-cycle-observer',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $PagingScrollRouteExtension on PagingScrollRoute {
@@ -187,9 +249,14 @@ extension $PagingScrollRouteExtension on PagingScrollRoute {
         '/paging-scroll',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $BannerVisibilityRouteExtension on BannerVisibilityRoute {
@@ -200,9 +267,14 @@ extension $BannerVisibilityRouteExtension on BannerVisibilityRoute {
         '/banner-visibility',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $ColorExRouteExtension on ColorExRoute {
@@ -212,9 +284,14 @@ extension $ColorExRouteExtension on ColorExRoute {
         '/color-ex',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $MaxWidthPaddingBuilderRouteExtension on MaxWidthPaddingBuilderRoute {
@@ -225,9 +302,14 @@ extension $MaxWidthPaddingBuilderRouteExtension on MaxWidthPaddingBuilderRoute {
         '/max-width-padding-builder',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $BetterPlaceholderRouteExtension on BetterPlaceholderRoute {
@@ -238,9 +320,14 @@ extension $BetterPlaceholderRouteExtension on BetterPlaceholderRoute {
         '/better-placeholder',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $LoadingSwitcherRouteExtension on LoadingSwitcherRoute {
@@ -251,9 +338,14 @@ extension $LoadingSwitcherRouteExtension on LoadingSwitcherRoute {
         '/loading-switcher',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $ListTileSelectedBackgroundColoredBoxRouteExtension
@@ -266,9 +358,14 @@ extension $ListTileSelectedBackgroundColoredBoxRouteExtension
         '/list-tile-selected-background-colored-box',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
 
 extension $VerticalCenterScrollViewRouteExtension
@@ -280,7 +377,12 @@ extension $VerticalCenterScrollViewRouteExtension
         '/vertical-center-scroll-view',
       );
 
-  void go(BuildContext context) => context.go(location, extra: this);
+  void go(BuildContext context) => context.go(location);
 
-  void push(BuildContext context) => context.push(location, extra: this);
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
 }
