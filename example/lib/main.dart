@@ -6,7 +6,7 @@ import 'app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  setUrlStrategy(const PathUrlStrategy());
+  usePathUrlStrategy();
   runApp(
     const ProviderScope(
       child: App(),
