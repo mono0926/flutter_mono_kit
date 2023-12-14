@@ -582,7 +582,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.38.1"
+    version: "0.38.2"
   nested:
     dependency: "direct main"
     description:

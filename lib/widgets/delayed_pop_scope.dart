@@ -7,15 +7,17 @@ class DelayedPopScope extends StatelessWidget {
     super.key,
     required this.onShouldPop,
     required this.child,
+    this.canPop = false,
   });
 
   final AsyncValueGetter<bool> onShouldPop;
+  final bool canPop;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: false,
+      canPop: canPop,
       onPopInvoked: (didPop) async {
         if (didPop) {
           return;

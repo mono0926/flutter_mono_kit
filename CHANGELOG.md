@@ -1,3 +1,8 @@
+## 0.38.2
+
+- Added `canPop` to `DelayedPopScope`
+  • Set to `true` when you want to allow it immediately without the delay judgement of `onShouldPop` in situations where it can be judged that it can be popped immediately
+
 ## 0.38.1
 
 - Add `DelayedPopScope`
