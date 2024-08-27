@@ -619,7 +619,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.39.0"
+    version: "0.39.0+1"
   nested:
     dependency: "direct main"
     description:

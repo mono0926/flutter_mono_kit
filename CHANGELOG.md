@@ -1,3 +1,7 @@
+## 0.39.0+1
+
+- Fix pub.dev score
+
 ## 0.39.0
 
 - Fix warnings
