@@ -1,7 +1,7 @@
 import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class LoadingSwitcherRoute extends GoRouteData {
@@ -63,8 +63,10 @@ class _Slider extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(
-      _controller.select((_Controller model) =>
-          model.getDuration(sliderType: type).inMilliseconds.toDouble()),
+      _controller.select(
+        (_Controller model) =>
+            model.getDuration(sliderType: type).inMilliseconds.toDouble(),
+      ),
     );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -73,7 +75,6 @@ class _Slider extends ConsumerWidget {
           Text(type.label),
           Expanded(
             child: Slider(
-              min: 0,
               max: 1000,
               value: value,
               label: '$value',

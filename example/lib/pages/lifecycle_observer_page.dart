@@ -1,8 +1,8 @@
 import 'package:example/router/router.dart';
 import 'package:example/util/util.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class LifecycleObserverRoute extends GoRouteData {

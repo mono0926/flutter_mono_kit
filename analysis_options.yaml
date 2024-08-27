@@ -5,3 +5,6 @@ analyzer:
     - lib/generated_*.dart
     - lib/**/*.g.dart
     - lib/**/*.freezed.dart
+linter:
+  rules:
+    use_build_context_synchronously: false

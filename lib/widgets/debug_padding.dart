@@ -61,7 +61,7 @@ class _Size extends StatelessWidget {
       right: 0,
       bottom: mediaQuery.viewInsets.bottom,
       child: ColoredBox(
-        color: colorScheme.background,
+        color: colorScheme.surface,
         child: Text(
           'size\n${mediaQuery.size}',
           style: theme.textTheme.bodyMedium,
@@ -102,7 +102,7 @@ class _Padding extends StatelessWidget {
         child: Align(
           alignment: alignment,
           child: ColoredBox(
-            color: colorScheme.background,
+            color: colorScheme.surface,
             child: Text(
               '$label\n${padding.toString().replaceAll('EdgeInsets', '')}',
               style: theme.textTheme.bodyMedium,

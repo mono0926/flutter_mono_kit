@@ -11,7 +11,8 @@ class NotFoundPage extends StatelessWidget {
       ),
       body: Center(
         child: Image.network(
-            'https://i0.wp.com/hokanko.mond.jp/wordpress341/wp-content/uploads/images/istock_hannah.jpg'),
+          'https://i0.wp.com/hokanko.mond.jp/wordpress341/wp-content/uploads/images/istock_hannah.jpg',
+        ),
       ),
     );
   }

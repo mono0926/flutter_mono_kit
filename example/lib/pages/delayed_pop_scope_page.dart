@@ -17,14 +17,14 @@ class DelayedPopScopePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DelayedPopScope(
-      onShouldPop: () async {
-        final result = await showOkCancelAlertDialog(
+      onShouldPop: (result) async {
+        final confirmationResult = await showOkCancelAlertDialog(
           context: context,
           message: '前のページに戻りますか？',
           okLabel: '戻る',
           cancelLabel: '戻らないでとどまる',
         );
-        return result == OkCancelResult.ok;
+        return confirmationResult == OkCancelResult.ok;
       },
       child: Scaffold(
         appBar: AppBar(
@@ -35,14 +35,16 @@ class DelayedPopScopePage extends StatelessWidget {
           child: ListView(
             children: [
               const Text(
+                // ignore: lines_longer_than_80_chars
                 'AppBarの戻るボタン、あるいは下のボタンで`maybePop`実行すると、DelayedPopScopeが呼ばれて確認ダイアログが表示されます。',
               ),
               const SizedBox(height: 16),
               FilledButton(
-                  onPressed: () {
-                    Navigator.of(context).maybePop();
-                  },
-                  child: const Text('maybePop()'))
+                onPressed: () {
+                  Navigator.of(context).maybePop();
+                },
+                child: const Text('maybePop()'),
+              ),
             ],
           ),
         ),

@@ -45,7 +45,8 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
           builder: (context, child) {
             return ConstrainedBox(
               constraints: BoxConstraints(
-                  maxHeight: _maxHeight?.value ?? _defaultMaxHeight),
+                maxHeight: _maxHeight?.value ?? _defaultMaxHeight,
+              ),
               child: child,
             );
           },
@@ -74,10 +75,12 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
                     if (additionalHeight == 0) {
                       return;
                     }
-                    _maxHeight = _animation.drive<double>(Tween<double>(
-                      begin: _defaultMaxHeight,
-                      end: _defaultMaxHeight + additionalHeight,
-                    ));
+                    _maxHeight = _animation.drive<double>(
+                      Tween<double>(
+                        begin: _defaultMaxHeight,
+                        end: _defaultMaxHeight + additionalHeight,
+                      ),
+                    );
 
                     _animation.forward();
                   },
@@ -176,18 +179,17 @@ class __DescState extends State<_Desc> {
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
                   colors: [
                     backgroundColor.withOpacity(0.01),
-                    ...List.generate(2, (_) => backgroundColor)
+                    ...List.generate(2, (_) => backgroundColor),
                   ],
                 ),
               ),
               padding: const EdgeInsets.only(left: 32),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap, backgroundColor: Colors.transparent,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  backgroundColor: Colors.transparent,
                   padding: const EdgeInsets.all(4),
                 ),
                 onPressed: () =>
@@ -201,7 +203,7 @@ class __DescState extends State<_Desc> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

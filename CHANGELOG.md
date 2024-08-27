@@ -1,3 +1,8 @@
+## 0.39.0
+
+- Fix warnings
+- `DelayedPopScope(onShouldPop:)` callback passes result argument
+
 ## 0.38.2
 
 - Added `canPop` to `DelayedPopScope`

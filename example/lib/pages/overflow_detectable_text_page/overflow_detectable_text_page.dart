@@ -75,8 +75,8 @@ class OverflowDetectableTextPage extends StatelessWidget {
             vertical: 7,
           ),
         ).copyWith(
-          elevation: MaterialStateProperty.all(0),
-          overlayColor: MaterialStateProperty.all(
+          elevation: WidgetStateProperty.all(0),
+          overlayColor: WidgetStateProperty.all(
             Color.lerp(
               buttonColor,
               Colors.black,

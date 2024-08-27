@@ -17,7 +17,7 @@ class Data {
       : this._(
             desc: 'Flutter（フラッター）は、Googleによって開発されたフリーかつ'
                     'オープンソースのモバイルアプリケーションフレームワークである。' *
-                2);
+                2,);
 
   factory Data.index(int index) {
     switch (index % 3) {

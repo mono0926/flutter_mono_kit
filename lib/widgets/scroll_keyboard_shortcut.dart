@@ -22,7 +22,7 @@ class ScrollKeyboardShortcut extends StatefulWidget {
 
 class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   final _focusNode = FocusNode();
-  final _onKeySubject = PublishSubject<RawKeyEvent>();
+  final _onKeySubject = PublishSubject<KeyEvent>();
   final _subscriptionHolder = SubscriptionHolder();
   PagingScrollController get _scrollController => widget.scrollController;
   double get _stepOffset => widget.stepOffset;
@@ -57,16 +57,16 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   Widget build(BuildContext context) {
     return Shortcuts(
       shortcuts: _disabledNavigationKeys,
-      child: RawKeyboardListener(
+      child: KeyboardListener(
         focusNode: _focusNode,
-        onKey: _onKeySubject.add,
+        onKeyEvent: _onKeySubject.add,
         child: widget.child,
       ),
     );
   }
 
-  void _onKey(RawKeyEvent event) {
-    if (event is! RawKeyDownEvent) {
+  void _onKey(KeyEvent event) {
+    if (event is! KeyDownEvent) {
       return;
     }
     final logicalKey = event.logicalKey;
@@ -84,7 +84,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
     } else if (logicalKey == LogicalKeyboardKey.end) {
       _scrollController.scrollToBottom();
     } else if (logicalKey == LogicalKeyboardKey.space) {
-      event.isShiftPressed
+      HardwareKeyboard.instance.isShiftPressed
           ? _scrollController.scrollToPreviousPage()
           : _scrollController.scrollToNextPage();
     }

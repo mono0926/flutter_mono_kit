@@ -48,7 +48,7 @@ class SnackBarPage extends StatelessWidget {
               onUndo: () => logger.info('UNDO'),
               theme: theme,
             ),
-          )
+          ),
         ],
       ),
     );
