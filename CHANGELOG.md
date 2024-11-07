@@ -1,3 +1,8 @@
+## 0.40.0
+
+- Regenerate android plugin/example
+  - Upgrade gradle version etc.
+
 ## 0.39.0+1
 
 - Fix pub.dev score
