@@ -93,10 +93,10 @@ class _Padding extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
-            color: color.withOpacity(0.8),
+            color: color.withValues(alpha: 0.8),
             width: 4,
           ),
-          color: color.withOpacity(0.2),
+          color: color.withValues(alpha: 0.2),
         ),
         margin: padding,
         child: Align(

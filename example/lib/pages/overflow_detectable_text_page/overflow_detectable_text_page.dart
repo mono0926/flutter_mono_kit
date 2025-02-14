@@ -42,7 +42,7 @@ class OverflowDetectableTextPage extends StatelessWidget {
     final base = ThemeData.light();
     const accentColor = Color(0xFF007AFF);
     const buttonColor = Color(0xFFF0F0F7);
-    final highlightColor = accentColor.withOpacity(0.04);
+    final highlightColor = accentColor.withValues(alpha: 0.04);
     return base.copyWith(
       cupertinoOverrideTheme: const CupertinoThemeData(
         primaryColor: accentColor,

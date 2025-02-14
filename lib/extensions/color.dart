@@ -5,6 +5,7 @@ extension ColorEx on Color {
   MaterialColor get materialColor {
     final tiny = TinyColor.fromColor(this);
     return MaterialColor(
+      // ignore: deprecated_member_use
       value,
       Map.fromIterables(
         [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],

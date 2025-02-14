@@ -41,7 +41,7 @@ class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
               content: const Text('This is a banner. Dismiss me'),
               actions: <Widget>[
                 TextButton(
-                  onPressed: () async => _isVisible.value = false,
+                  onPressed: () => _isVisible.value = false,
                   child: const Text('DISMISS'),
                 ),
               ],

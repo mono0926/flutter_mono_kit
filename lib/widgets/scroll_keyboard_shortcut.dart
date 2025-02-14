@@ -90,7 +90,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
     }
   }
 
-  final Map<LogicalKeySet, Intent> _disabledNavigationKeys =
+  final _disabledNavigationKeys =
       <LogicalKeySet, Intent>{
     LogicalKeySet(LogicalKeyboardKey.arrowUp): Intent.doNothing,
     LogicalKeySet(LogicalKeyboardKey.arrowDown): Intent.doNothing,

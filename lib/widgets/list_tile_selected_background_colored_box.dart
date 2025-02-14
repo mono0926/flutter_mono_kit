@@ -21,17 +21,17 @@ class ListTileSelectedBackgroundColoredBox extends StatelessWidget {
     return Padding(
       padding: padding ?? const EdgeInsets.only(right: 8),
       child: ClipRRect(
-        borderRadius: borderRadius ??
-            const BorderRadius.horizontal(
-              right: Radius.circular(1000),
-            ),
+        borderRadius:
+            borderRadius ??
+            const BorderRadius.horizontal(right: Radius.circular(1000)),
         // Needed for ripple effect clipping
         child: Material(
           type: MaterialType.transparency,
           child: ColoredBox(
-            color: listTile.selected
-                ? color ?? colorScheme.primary.withOpacity(0.1)
-                : Colors.transparent,
+            color:
+                listTile.selected
+                    ? color ?? colorScheme.primary.withValues(alpha: 0.1)
+                    : Colors.transparent,
             child: listTile,
           ),
         ),

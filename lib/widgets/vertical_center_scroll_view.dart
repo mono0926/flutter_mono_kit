@@ -21,7 +21,7 @@ class VerticalCenterScrollView extends StatefulWidget {
 
 class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
   late final ScrollController _controller;
-  bool _isPopping = false;
+  var _isPopping = false;
 
   @override
   void initState() {

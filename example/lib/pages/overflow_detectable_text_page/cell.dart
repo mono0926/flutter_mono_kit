@@ -180,7 +180,7 @@ class __DescState extends State<_Desc> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    backgroundColor.withOpacity(0.01),
+                    backgroundColor.withValues(alpha: 0.01),
                     ...List.generate(2, (_) => backgroundColor),
                   ],
                 ),

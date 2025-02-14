@@ -10,6 +10,7 @@ class BetterStreamBuilder<T> extends StatefulWidget {
   });
 
   final Stream<T> stream;
+  // ignore: unsafe_variance
   final AsyncChildWidgetBuilder<T> builder;
   final T? initialData;
   final Widget? child;

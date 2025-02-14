@@ -3,7 +3,7 @@ description: A example of mono_kit.
 version: 1.0.0+1
 publish_to: none
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.7.0
 dependencies:
   adaptive_dialog:
   cupertino_icons:

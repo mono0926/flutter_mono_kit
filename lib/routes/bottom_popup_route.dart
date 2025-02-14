@@ -15,7 +15,7 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
   final WidgetBuilder builder;
 
   @override
-  final bool barrierDismissible = true;
+  final barrierDismissible = true;
 
   @override
   final String barrierLabel;
@@ -24,7 +24,7 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
   final Color barrierColor;
 
   @override
-  final Duration transitionDuration = const Duration(milliseconds: 400);
+  final transitionDuration = const Duration(milliseconds: 400);
 
   final EdgeInsetsGeometry? padding;
 

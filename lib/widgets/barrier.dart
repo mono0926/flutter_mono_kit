@@ -41,7 +41,7 @@ class Barrier extends ConsumerWidget {
               ),
               timedOutChild: ColoredBox(
                 color: backgroundColor ??
-                    theme.scaffoldBackgroundColor.withOpacity(0.6),
+                    theme.scaffoldBackgroundColor.withValues(alpha: 0.6),
                 child: Center(
                   child: CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation(valueColor),

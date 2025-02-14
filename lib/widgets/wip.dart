@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
 
 const double _kHeight = 12;
-const Color _kColor = Color(0xFFF57F17);
-const TextStyle _kTextStyle = TextStyle(
+const _kColor = Color(0xFFF57F17);
+const _kTextStyle = TextStyle(
   color: Color(0xFFFFFFFF),
   fontSize: _kHeight * 0.85,
   fontWeight: FontWeight.w900,
@@ -42,7 +42,7 @@ class WIP extends SingleChildStatelessWidget {
         color: color,
         textStyle: textStyle ?? _kTextStyle,
         child: ColoredBox(
-          color: backgroundColor ?? color.withOpacity(0.1),
+          color: backgroundColor ?? color.withValues(alpha: 0.1),
           child: child,
         ),
       ),
