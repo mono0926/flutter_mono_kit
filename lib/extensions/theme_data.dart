@@ -18,10 +18,13 @@ extension ThemeDataEx on ThemeData {
       splashFactory: InkSparkle.splashFactory,
       pageTransitionsTheme: const PageTransitionsTheme(
         builders: {
+          TargetPlatform.android: FadeForwardsPageTransitionsBuilder(),
           TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
           TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
         },
       ),
+      progressIndicatorTheme: progressIndicatorTheme.copyWith(year2023: false),
+      sliderTheme: sliderTheme.copyWith(year2023: false),
     );
   }
 }
