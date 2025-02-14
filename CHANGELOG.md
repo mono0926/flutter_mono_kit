@@ -1,3 +1,8 @@
+## 0.41.0
+
+- Upgrade to Flutter 3.29/Dart 3.7
+- Update `followLatestSpec` method
+
 ## 0.40.0
 
 - Regenerate android plugin/example
