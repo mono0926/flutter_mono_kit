@@ -9,8 +9,11 @@ extension ColorEx on Color {
       value,
       Map.fromIterables(
         [50, 100, 200, 300, 400, 500, 600, 700, 800, 900],
-        List.generate(10, (i) => (i * 100 - 500) ~/ 15)
-            .map((v) => tiny.darken(v).color),
+        List.generate(
+          10,
+          (i) => (i * 100 - 500) ~/ 15,
+          // TODO(mono): broken
+        ).map((v) => (v.isNegative ? tiny.brighten(-v) : tiny.darken(v)).color),
       ),
     );
   }
