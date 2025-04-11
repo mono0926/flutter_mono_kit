@@ -1,3 +1,4 @@
+import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:example/app.dart';
 import 'package:example/router/router.dart';
 import 'package:example/util/util.dart';
@@ -7,9 +8,7 @@ import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +18,7 @@ class HomePage extends StatelessWidget {
         children: [
           const WIP(
             visible: true,
-            child: ListTile(
-              title: Text('Experimental Feature'),
-            ),
+            child: ListTile(title: Text('Experimental Feature')),
           ),
           ...allRouteLocations.map((location) {
             return ListTile(
@@ -33,8 +30,9 @@ class HomePage extends StatelessWidget {
           ListTile(
             title: const Text('iGhost(Dev) installed?'),
             subtitle: FutureBuilder(
-              future: AppInstallationChecker()
-                  .isInstalled('com.aquatica.ghost.dev'),
+              future: AppInstallationChecker().isInstalled(
+                'com.aquatica.ghost.dev',
+              ),
               builder: (context, snap) {
                 if (!snap.hasData) {
                   return const SizedBox();
@@ -52,6 +50,18 @@ class HomePage extends StatelessWidget {
                 onSettingAppOpenRequested: () {
                   logger.info('onSettingAppOpenRequested');
                 },
+                additionalActions: (
+                  [
+                    const SheetAction(
+                      label: 'Custom Action',
+                      icon: Icons.warning,
+                      key: 'custom_key',
+                    ),
+                  ],
+                  (key) {
+                    logger.info('Additional action selected: $key');
+                  },
+                ),
               );
             },
           ),
@@ -60,3 +70,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+enum Hoge { a }

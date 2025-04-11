@@ -5,14 +5,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
-Future<List<XFile>> showPhotoSelectionSheet({
+Future<List<XFile>> showPhotoSelectionSheet<T extends Object>({
   required BuildContext context,
   PhotoSelectionL10n l10n = const PhotoSelectionL10n(),
   VoidCallback? onSettingAppOpenRequested,
   bool requestFullMetadata = false,
   bool allowMultiple = false,
+  (List<SheetAction<T>>, ValueSetter<T>)? additionalActions,
 }) async {
-  final source = await showModalActionSheet<ImageSource>(
+  final source = await showModalActionSheet<Object>(
     context: context,
     title: l10n.title,
     actions: [
@@ -26,6 +27,7 @@ Future<List<XFile>> showPhotoSelectionSheet({
         label: l10n.takePicture,
         key: ImageSource.camera,
       ),
+      if (additionalActions != null) ...additionalActions.$1,
     ],
   );
 
@@ -39,12 +41,16 @@ Future<List<XFile>> showPhotoSelectionSheet({
       return await picker.pickMultiImage(
         requestFullMetadata: requestFullMetadata,
       );
-    } else {
+    } else if (source is ImageSource) {
       final file = await picker.pickImage(
         source: source,
         requestFullMetadata: requestFullMetadata,
       );
       return file == null ? [] : [file];
+    } else if (source is T) {
+      additionalActions!.$2(source);
+    } else {
+      logger.warning('Invalid source type: $source');
     }
   } on PlatformException catch (e) {
     logger.warning(e);
@@ -69,12 +75,7 @@ Future<List<XFile>> showPhotoSelectionSheet({
       context: context,
       title: l10n.accessRestrictedTitle,
       message: l10n.accessRestrictedMessage,
-      actions: [
-        SheetAction(
-          label: l10n.accessRestrictedOk,
-          key: okKey,
-        ),
-      ],
+      actions: [SheetAction(label: l10n.accessRestrictedOk, key: okKey)],
     );
     if (result == okKey) {
       onSettingAppOpenRequested();

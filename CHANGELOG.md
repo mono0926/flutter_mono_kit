@@ -1,3 +1,7 @@
+## 0.42.0
+
+- Add `additionalActions` to `showPhotoSelectionSheet` function
+
 ## 0.41.0
 
 - Upgrade to Flutter 3.29/Dart 3.7
