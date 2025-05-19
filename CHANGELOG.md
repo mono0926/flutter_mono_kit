@@ -1,3 +1,7 @@
+## 0.43.0
+
+- Upgrade go_router to ^15.0.0
+
 ## 0.42.0
 
 - Add `additionalActions` to `showPhotoSelectionSheet` function
