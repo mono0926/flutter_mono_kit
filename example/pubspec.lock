@@ -606,7 +606,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.42.0"
+    version: "0.43.0"
   nested:
     dependency: "direct main"
     description:
