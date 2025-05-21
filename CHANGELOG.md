@@ -1,3 +1,8 @@
+## 0.44.0
+
+- Upgrade to Flutter 3.32/Dart 3.8
+- Upgrade freezed_annotation to ^3.0.0
+
 ## 0.43.0
 
 - Upgrade go_router to ^15.0.0
