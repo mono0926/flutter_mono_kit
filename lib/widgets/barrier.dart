@@ -82,6 +82,6 @@ class PopBarrier extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return PopScope(canPop: !ref.read(barrierProvider), child: child);
+    return PopScope(canPop: !ref.watch(barrierProvider), child: child);
   }
 }
