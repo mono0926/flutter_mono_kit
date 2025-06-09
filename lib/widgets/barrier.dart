@@ -36,11 +36,10 @@ class Barrier extends ConsumerWidget {
             child: TimeoutSwitcher(
               timeout: timeout,
               switchDuration: switchDuration,
-              initialChild: const SizedBox.expand(
-                child: AbsorbPointer(),
-              ),
+              initialChild: const SizedBox.expand(child: AbsorbPointer()),
               timedOutChild: ColoredBox(
-                color: backgroundColor ??
+                color:
+                    backgroundColor ??
                     theme.scaffoldBackgroundColor.withValues(alpha: 0.6),
                 child: Center(
                   child: CircularProgressIndicator(
@@ -77,18 +76,12 @@ class BarrierController extends StateNotifier<bool> {
 }
 
 class PopBarrier extends ConsumerWidget {
-  const PopBarrier({
-    super.key,
-    required this.child,
-  });
+  const PopBarrier({super.key, required this.child});
 
   final Widget child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return PopScope(
-      canPop: !ref.read(barrierProvider),
-      child: child,
-    );
+    return PopScope(canPop: !ref.read(barrierProvider), child: child);
   }
 }
