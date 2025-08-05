@@ -10,7 +10,6 @@ class BetterStreamBuilder<T> extends StatefulWidget {
   });
 
   final Stream<T> stream;
-  // ignore: unsafe_variance
   final AsyncChildWidgetBuilder<T> builder;
   final T? initialData;
   final Widget? child;
@@ -32,8 +31,9 @@ class _BetterStreamBuilderState<T> extends State<BetterStreamBuilder<T>> {
   }
 }
 
-typedef AsyncChildWidgetBuilder<T> = Widget Function(
-  BuildContext context,
-  AsyncSnapshot<T> snap,
-  Widget? child,
-);
+typedef AsyncChildWidgetBuilder<T> =
+    Widget Function(
+      BuildContext context,
+      AsyncSnapshot<T> snap,
+      Widget? child,
+    );

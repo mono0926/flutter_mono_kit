@@ -1,3 +1,7 @@
+## 0.45.0
+
+- Upgrade go_router to ^16.0.0
+
 ## 0.44.0
 
 - Upgrade to Flutter 3.32/Dart 3.8

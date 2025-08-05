@@ -60,7 +60,6 @@ Future<List<XFile>> showPhotoSelectionSheet<T extends Object>({
       ImagePickerErrorCodes.photoAccessRestricted,
       ImagePickerErrorCodes.photoAccessDenied,
     ].contains(e.code)) {
-      // ignore: use_build_context_synchronously
       showErrorDialog(context: context, error: e);
       return [];
     }
@@ -70,7 +69,6 @@ Future<List<XFile>> showPhotoSelectionSheet<T extends Object>({
     }
 
     const okKey = 'ok';
-    // ignore: use_build_context_synchronously
     final result = await showModalActionSheet<String>(
       context: context,
       title: l10n.accessRestrictedTitle,
