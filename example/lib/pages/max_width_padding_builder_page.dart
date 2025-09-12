@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class MaxWidthPaddingBuilderRoute extends GoRouteData {
+class MaxWidthPaddingBuilderRoute extends GoRouteData
+    with $MaxWidthPaddingBuilderRoute {
   const MaxWidthPaddingBuilderRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -21,13 +22,14 @@ class MaxWidthPaddingBuilderPage extends StatelessWidget {
       ),
       body: MaxWidthPaddingBuilder(
         width: 300,
-        builder: (context, padding) => ListView(
-          padding: padding,
-          children: List.filled(
-            3,
-            const Placeholder(),
-          ),
-        ),
+        builder:
+            (context, padding) => ListView(
+              padding: padding,
+              children: List.filled(
+                3,
+                const Placeholder(),
+              ),
+            ),
       ),
     );
   }

@@ -24,7 +24,7 @@ import 'package:recase/recase.dart';
 
 part 'router.g.dart';
 
-final routerProvider = Provider(
+final Provider<GoRouter> routerProvider = Provider(
   (ref) => GoRouter(
     routes: [
       ShellRoute(
@@ -47,7 +47,7 @@ final routerProvider = Provider(
     TypedGoRoute<OverflowDetectableTextRoute>(path: 'overflow-detectable-text'),
     TypedGoRoute<BarrierRoute>(path: 'barrier'),
     TypedGoRoute<UnfocusOnTapRoute>(path: 'unfocus-on-tap'),
-    TypedGoRoute<LifecycleObserverRoute>(path: 'life-cycle-observer'),
+    TypedGoRoute<LifecycleObserverRoute>(path: 'lifecycle-observer'),
     TypedGoRoute<PagingScrollRoute>(path: 'paging-scroll'),
     TypedGoRoute<BannerVisibilityRoute>(path: 'banner-visibility'),
     TypedGoRoute<ColorExRoute>(path: 'color-ex'),
@@ -64,7 +64,7 @@ final routerProvider = Provider(
     ),
   ],
 )
-class HomeRoute extends GoRouteData {
+class HomeRoute extends GoRouteData with $HomeRoute {
   const HomeRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomePage();
@@ -75,20 +75,20 @@ String pascalCaseFromRouteUri(Uri uri) =>
     pascalCaseFromRouteName(uri.toString());
 
 List<String> get allRouteLocations => [
-      const DelayedPopScopeRoute().location,
-      const SnackBarRoute().location,
-      const AppBottomAreaRoute().location,
-      const DebugPaddingRoute().location,
-      const OverflowDetectableTextRoute().location,
-      const BarrierRoute().location,
-      const UnfocusOnTapRoute().location,
-      const LifecycleObserverRoute().location,
-      const PagingScrollRoute().location,
-      const BannerVisibilityRoute().location,
-      const ColorExRoute().location,
-      const MaxWidthPaddingBuilderRoute().location,
-      const BetterPlaceholderRoute().location,
-      const LoadingSwitcherRoute().location,
-      const ListTileSelectedBackgroundColoredBoxRoute().location,
-      const VerticalCenterScrollViewRoute().location,
-    ];
+  const DelayedPopScopeRoute().location,
+  const SnackBarRoute().location,
+  const AppBottomAreaRoute().location,
+  const DebugPaddingRoute().location,
+  const OverflowDetectableTextRoute().location,
+  const BarrierRoute().location,
+  const UnfocusOnTapRoute().location,
+  const LifecycleObserverRoute().location,
+  const PagingScrollRoute().location,
+  const BannerVisibilityRoute().location,
+  const ColorExRoute().location,
+  const MaxWidthPaddingBuilderRoute().location,
+  const BetterPlaceholderRoute().location,
+  const LoadingSwitcherRoute().location,
+  const ListTileSelectedBackgroundColoredBoxRoute().location,
+  const VerticalCenterScrollViewRoute().location,
+];

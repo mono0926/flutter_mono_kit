@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class ListTileSelectedBackgroundColoredBoxRoute extends GoRouteData {
+class ListTileSelectedBackgroundColoredBoxRoute extends GoRouteData
+    with $ListTileSelectedBackgroundColoredBoxRoute {
   const ListTileSelectedBackgroundColoredBoxRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -27,7 +28,7 @@ class _ListTileSelectedBackgroundColoredBoxPageState
     'Cat',
   ];
 
-  var _selectedText = _listTileTexts.first;
+  String _selectedText = _listTileTexts.first;
 
   @override
   Widget build(BuildContext context) {

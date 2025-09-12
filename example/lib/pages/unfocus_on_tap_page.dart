@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:quiver/iterables.dart';
 
-class UnfocusOnTapRoute extends GoRouteData {
+class UnfocusOnTapRoute extends GoRouteData with $UnfocusOnTapRoute {
   const UnfocusOnTapRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -24,21 +24,22 @@ class UnfocusOnTapPage extends StatelessWidget {
         width: 560,
         child: UnfocusOnTap(
           child: Column(
-            children: range(0, 3)
-                .map(
-                  (_) => const Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 16,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+            children:
+                range(0, 3)
+                    .map(
+                      (_) => const Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 8,
+                          horizontal: 16,
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                )
-                .toList(),
+                    )
+                    .toList(),
           ),
         ),
       ),

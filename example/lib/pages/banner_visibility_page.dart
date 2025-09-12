@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class BannerVisibilityRoute extends GoRouteData {
+class BannerVisibilityRoute extends GoRouteData with $BannerVisibilityRoute {
   const BannerVisibilityRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -18,7 +18,7 @@ class BannerVisibilityPage extends StatefulWidget {
 }
 
 class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
-  final _isVisible = ValueNotifier(true);
+  final ValueNotifier<bool> _isVisible = ValueNotifier(true);
 
   @override
   Widget build(BuildContext context) {

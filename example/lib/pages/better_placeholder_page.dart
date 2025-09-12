@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class BetterPlaceholderRoute extends GoRouteData {
+class BetterPlaceholderRoute extends GoRouteData with $BetterPlaceholderRoute {
   const BetterPlaceholderRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>

@@ -6,383 +6,421 @@ part of 'router.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<RouteBase> get $appRoutes => [
-      $homeRoute,
-    ];
+List<RouteBase> get $appRoutes => [$homeRoute];
 
 RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/',
-      factory: $HomeRouteExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: 'delayed-pop-scope',
-          factory: $DelayedPopScopeRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'snack-bar',
-          factory: $SnackBarRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'app-bottom-area',
-          factory: $AppBottomAreaRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'debug-padding',
-          factory: $DebugPaddingRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'overflow-detectable-text',
-          factory: $OverflowDetectableTextRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'barrier',
-          factory: $BarrierRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'unfocus-on-tap',
-          factory: $UnfocusOnTapRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'life-cycle-observer',
-          factory: $LifecycleObserverRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'paging-scroll',
-          factory: $PagingScrollRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'banner-visibility',
-          factory: $BannerVisibilityRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'color-ex',
-          factory: $ColorExRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'max-width-padding-builder',
-          factory: $MaxWidthPaddingBuilderRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'better-placeholder',
-          factory: $BetterPlaceholderRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'loading-switcher',
-          factory: $LoadingSwitcherRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'list-tile-selected-background-colored-box',
-          factory:
-              $ListTileSelectedBackgroundColoredBoxRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: 'vertical-center-scroll-view',
-          factory: $VerticalCenterScrollViewRouteExtension._fromState,
-        ),
-      ],
-    );
+  path: '/',
+  factory: $HomeRoute._fromState,
+  routes: [
+    GoRouteData.$route(
+      path: 'delayed-pop-scope',
+      factory: $DelayedPopScopeRoute._fromState,
+    ),
+    GoRouteData.$route(path: 'snack-bar', factory: $SnackBarRoute._fromState),
+    GoRouteData.$route(
+      path: 'app-bottom-area',
+      factory: $AppBottomAreaRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'debug-padding',
+      factory: $DebugPaddingRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'overflow-detectable-text',
+      factory: $OverflowDetectableTextRoute._fromState,
+    ),
+    GoRouteData.$route(path: 'barrier', factory: $BarrierRoute._fromState),
+    GoRouteData.$route(
+      path: 'unfocus-on-tap',
+      factory: $UnfocusOnTapRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'lifecycle-observer',
+      factory: $LifecycleObserverRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'paging-scroll',
+      factory: $PagingScrollRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'banner-visibility',
+      factory: $BannerVisibilityRoute._fromState,
+    ),
+    GoRouteData.$route(path: 'color-ex', factory: $ColorExRoute._fromState),
+    GoRouteData.$route(
+      path: 'max-width-padding-builder',
+      factory: $MaxWidthPaddingBuilderRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'better-placeholder',
+      factory: $BetterPlaceholderRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'loading-switcher',
+      factory: $LoadingSwitcherRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'list-tile-selected-background-colored-box',
+      factory: $ListTileSelectedBackgroundColoredBoxRoute._fromState,
+    ),
+    GoRouteData.$route(
+      path: 'vertical-center-scroll-view',
+      factory: $VerticalCenterScrollViewRoute._fromState,
+    ),
+  ],
+);
 
-extension $HomeRouteExtension on HomeRoute {
+mixin $HomeRoute on GoRouteData {
   static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
 
-  String get location => GoRouteData.$location(
-        '/',
-      );
+  @override
+  String get location => GoRouteData.$location('/');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $DelayedPopScopeRouteExtension on DelayedPopScopeRoute {
+mixin $DelayedPopScopeRoute on GoRouteData {
   static DelayedPopScopeRoute _fromState(GoRouterState state) =>
       const DelayedPopScopeRoute();
 
-  String get location => GoRouteData.$location(
-        '/delayed-pop-scope',
-      );
+  @override
+  String get location => GoRouteData.$location('/delayed-pop-scope');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SnackBarRouteExtension on SnackBarRoute {
+mixin $SnackBarRoute on GoRouteData {
   static SnackBarRoute _fromState(GoRouterState state) => const SnackBarRoute();
 
-  String get location => GoRouteData.$location(
-        '/snack-bar',
-      );
+  @override
+  String get location => GoRouteData.$location('/snack-bar');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $AppBottomAreaRouteExtension on AppBottomAreaRoute {
+mixin $AppBottomAreaRoute on GoRouteData {
   static AppBottomAreaRoute _fromState(GoRouterState state) =>
       const AppBottomAreaRoute();
 
-  String get location => GoRouteData.$location(
-        '/app-bottom-area',
-      );
+  @override
+  String get location => GoRouteData.$location('/app-bottom-area');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $DebugPaddingRouteExtension on DebugPaddingRoute {
+mixin $DebugPaddingRoute on GoRouteData {
   static DebugPaddingRoute _fromState(GoRouterState state) =>
       const DebugPaddingRoute();
 
-  String get location => GoRouteData.$location(
-        '/debug-padding',
-      );
+  @override
+  String get location => GoRouteData.$location('/debug-padding');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OverflowDetectableTextRouteExtension on OverflowDetectableTextRoute {
+mixin $OverflowDetectableTextRoute on GoRouteData {
   static OverflowDetectableTextRoute _fromState(GoRouterState state) =>
       const OverflowDetectableTextRoute();
 
-  String get location => GoRouteData.$location(
-        '/overflow-detectable-text',
-      );
+  @override
+  String get location => GoRouteData.$location('/overflow-detectable-text');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $BarrierRouteExtension on BarrierRoute {
+mixin $BarrierRoute on GoRouteData {
   static BarrierRoute _fromState(GoRouterState state) => const BarrierRoute();
 
-  String get location => GoRouteData.$location(
-        '/barrier',
-      );
+  @override
+  String get location => GoRouteData.$location('/barrier');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $UnfocusOnTapRouteExtension on UnfocusOnTapRoute {
+mixin $UnfocusOnTapRoute on GoRouteData {
   static UnfocusOnTapRoute _fromState(GoRouterState state) =>
       const UnfocusOnTapRoute();
 
-  String get location => GoRouteData.$location(
-        '/unfocus-on-tap',
-      );
+  @override
+  String get location => GoRouteData.$location('/unfocus-on-tap');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $LifecycleObserverRouteExtension on LifecycleObserverRoute {
+mixin $LifecycleObserverRoute on GoRouteData {
   static LifecycleObserverRoute _fromState(GoRouterState state) =>
       const LifecycleObserverRoute();
 
-  String get location => GoRouteData.$location(
-        '/life-cycle-observer',
-      );
+  @override
+  String get location => GoRouteData.$location('/lifecycle-observer');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $PagingScrollRouteExtension on PagingScrollRoute {
+mixin $PagingScrollRoute on GoRouteData {
   static PagingScrollRoute _fromState(GoRouterState state) =>
       const PagingScrollRoute();
 
-  String get location => GoRouteData.$location(
-        '/paging-scroll',
-      );
+  @override
+  String get location => GoRouteData.$location('/paging-scroll');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $BannerVisibilityRouteExtension on BannerVisibilityRoute {
+mixin $BannerVisibilityRoute on GoRouteData {
   static BannerVisibilityRoute _fromState(GoRouterState state) =>
       const BannerVisibilityRoute();
 
-  String get location => GoRouteData.$location(
-        '/banner-visibility',
-      );
+  @override
+  String get location => GoRouteData.$location('/banner-visibility');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $ColorExRouteExtension on ColorExRoute {
+mixin $ColorExRoute on GoRouteData {
   static ColorExRoute _fromState(GoRouterState state) => const ColorExRoute();
 
-  String get location => GoRouteData.$location(
-        '/color-ex',
-      );
+  @override
+  String get location => GoRouteData.$location('/color-ex');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $MaxWidthPaddingBuilderRouteExtension on MaxWidthPaddingBuilderRoute {
+mixin $MaxWidthPaddingBuilderRoute on GoRouteData {
   static MaxWidthPaddingBuilderRoute _fromState(GoRouterState state) =>
       const MaxWidthPaddingBuilderRoute();
 
-  String get location => GoRouteData.$location(
-        '/max-width-padding-builder',
-      );
+  @override
+  String get location => GoRouteData.$location('/max-width-padding-builder');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $BetterPlaceholderRouteExtension on BetterPlaceholderRoute {
+mixin $BetterPlaceholderRoute on GoRouteData {
   static BetterPlaceholderRoute _fromState(GoRouterState state) =>
       const BetterPlaceholderRoute();
 
-  String get location => GoRouteData.$location(
-        '/better-placeholder',
-      );
+  @override
+  String get location => GoRouteData.$location('/better-placeholder');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $LoadingSwitcherRouteExtension on LoadingSwitcherRoute {
+mixin $LoadingSwitcherRoute on GoRouteData {
   static LoadingSwitcherRoute _fromState(GoRouterState state) =>
       const LoadingSwitcherRoute();
 
-  String get location => GoRouteData.$location(
-        '/loading-switcher',
-      );
+  @override
+  String get location => GoRouteData.$location('/loading-switcher');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $ListTileSelectedBackgroundColoredBoxRouteExtension
-    on ListTileSelectedBackgroundColoredBoxRoute {
+mixin $ListTileSelectedBackgroundColoredBoxRoute on GoRouteData {
   static ListTileSelectedBackgroundColoredBoxRoute _fromState(
-          GoRouterState state) =>
-      const ListTileSelectedBackgroundColoredBoxRoute();
+    GoRouterState state,
+  ) => const ListTileSelectedBackgroundColoredBoxRoute();
 
-  String get location => GoRouteData.$location(
-        '/list-tile-selected-background-colored-box',
-      );
+  @override
+  String get location =>
+      GoRouteData.$location('/list-tile-selected-background-colored-box');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $VerticalCenterScrollViewRouteExtension
-    on VerticalCenterScrollViewRoute {
+mixin $VerticalCenterScrollViewRoute on GoRouteData {
   static VerticalCenterScrollViewRoute _fromState(GoRouterState state) =>
       const VerticalCenterScrollViewRoute();
 
-  String get location => GoRouteData.$location(
-        '/vertical-center-scroll-view',
-      );
+  @override
+  String get location => GoRouteData.$location('/vertical-center-scroll-view');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }

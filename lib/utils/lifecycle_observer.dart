@@ -1,23 +1,25 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final lifecycleObserver = StreamProvider<AppLifecycleState>((ref) async* {
-  final observer = AppLifecycleStateObserver(
-    (state) {
-      ref.state = AsyncData(state);
-    },
-  );
-  final binding = WidgetsBinding.instance..addObserver(observer);
-  ref.onDispose(() => binding.removeObserver(observer));
-});
+final lifecycleObserver =
+    AsyncNotifierProvider<AppLifecycleStateObserver, AppLifecycleState>(
+      AppLifecycleStateObserver.new,
+    );
 
-class AppLifecycleStateObserver extends WidgetsBindingObserver {
-  AppLifecycleStateObserver(this._didChange);
-
-  final ValueChanged<AppLifecycleState> _didChange;
+class AppLifecycleStateObserver extends AsyncNotifier<AppLifecycleState>
+    with WidgetsBindingObserver {
+  @override
+  FutureOr<AppLifecycleState> build() {
+    final binding = WidgetsBinding.instance..addObserver(this);
+    ref.onDispose(() => binding.removeObserver(this));
+    return future;
+  }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    _didChange(state);
+    this.state = AsyncValue.data(state);
+    super.didChangeAppLifecycleState(state);
   }
 }

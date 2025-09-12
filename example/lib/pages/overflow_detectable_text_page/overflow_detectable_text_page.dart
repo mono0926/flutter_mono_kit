@@ -6,7 +6,8 @@ import 'package:go_router/go_router.dart';
 import 'cell.dart';
 import 'data.dart';
 
-class OverflowDetectableTextRoute extends GoRouteData {
+class OverflowDetectableTextRoute extends GoRouteData
+    with $OverflowDetectableTextRoute {
   const OverflowDetectableTextRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -50,7 +51,7 @@ class OverflowDetectableTextPage extends StatelessWidget {
       primaryColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
       highlightColor: highlightColor,
-//      splashColor: splashColor,
+      //      splashColor: splashColor,
       primaryTextTheme: base.primaryTextTheme.apply(
         bodyColor: Colors.black87,
       ),
@@ -66,7 +67,8 @@ class OverflowDetectableTextPage extends StatelessWidget {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          foregroundColor: accentColor, shape: const StadiumBorder(),
+          foregroundColor: accentColor,
+          shape: const StadiumBorder(),
           backgroundColor: buttonColor,
           // shadowColor: highlightColor,
           minimumSize: Size.zero,

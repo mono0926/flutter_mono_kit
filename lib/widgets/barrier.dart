@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-final barrierProvider = StateNotifierProvider<BarrierController, bool>(
-  (ref) => BarrierController(),
+final barrierProvider = NotifierProvider<BarrierController, bool>(
+  BarrierController.new,
 );
 
 class Barrier extends ConsumerWidget {
@@ -55,9 +55,7 @@ class Barrier extends ConsumerWidget {
   }
 }
 
-class BarrierController extends StateNotifier<bool> {
-  BarrierController() : super(false);
-
+class BarrierController extends Notifier<bool> {
   void startProgress() => state = true;
 
   void stopProgress() => state = false;
@@ -73,6 +71,9 @@ class BarrierController extends StateNotifier<bool> {
       stopProgress();
     }
   }
+
+  @override
+  bool build() => false;
 }
 
 class PopBarrier extends ConsumerWidget {

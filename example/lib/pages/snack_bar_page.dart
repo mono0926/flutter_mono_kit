@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class SnackBarRoute extends GoRouteData {
+class SnackBarRoute extends GoRouteData with $SnackBarRoute {
   const SnackBarRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -36,18 +36,20 @@ class SnackBarPage extends StatelessWidget {
                 color: colorScheme.error,
               ),
             ),
-            onTap: () => messenger.showError(
-              '(´・︵・｀)',
-              theme: theme,
-            ),
+            onTap:
+                () => messenger.showError(
+                  '(´・︵・｀)',
+                  theme: theme,
+                ),
           ),
           ListTile(
             title: const Text('UNDO'),
-            onTap: () => messenger.showUndo(
-              'Dog 🐶',
-              onUndo: () => logger.info('UNDO'),
-              theme: theme,
-            ),
+            onTap:
+                () => messenger.showUndo(
+                  'Dog 🐶',
+                  onUndo: () => logger.info('UNDO'),
+                  theme: theme,
+                ),
           ),
         ],
       ),

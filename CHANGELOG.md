@@ -1,3 +1,7 @@
+## 0.46.0
+
+- Upgrade riverpod to ^3.0.0
+
 ## 0.45.0
 
 - Upgrade go_router to ^16.0.0

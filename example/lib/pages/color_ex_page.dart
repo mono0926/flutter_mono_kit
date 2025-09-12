@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-final _swatch = const Color(0xFFF44336).materialColor;
+final MaterialColor _swatch = const Color(0xFFF44336).materialColor;
 
-class ColorExRoute extends GoRouteData {
+class ColorExRoute extends GoRouteData with $ColorExRoute {
   const ColorExRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -43,15 +43,16 @@ class ColorExPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(44),
           child: Column(
-            children: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
-                .map(
-                  (k) => Expanded(
-                    child: Container(
-                      color: _swatch[k],
-                    ),
-                  ),
-                )
-                .toList(),
+            children:
+                [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+                    .map(
+                      (k) => Expanded(
+                        child: Container(
+                          color: _swatch[k],
+                        ),
+                      ),
+                    )
+                    .toList(),
           ),
         ),
       ),

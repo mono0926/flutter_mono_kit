@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class DebugPaddingRoute extends GoRouteData {
+class DebugPaddingRoute extends GoRouteData with $DebugPaddingRoute {
   const DebugPaddingRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
@@ -18,10 +18,10 @@ class DebugPaddingPage extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     return DebugPadding(
-//      showPadding: false,
-//      showViewPadding: false,
-//      showViewInsets: false,
-//      showSize: false,
+      //      showPadding: false,
+      //      showViewPadding: false,
+      //      showViewInsets: false,
+      //      showSize: false,
       child: Scaffold(
         appBar: AppBar(
           title: Text(pascalCaseFromRouteUri(GoRouterState.of(context).uri)),

@@ -1,23 +1,27 @@
+import 'dart:async';
+
 import 'package:example/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class LoadingSwitcherRoute extends GoRouteData {
+class LoadingSwitcherRoute extends GoRouteData with $LoadingSwitcherRoute {
   const LoadingSwitcherRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const LoadingSwitcherPage();
 }
 
-final _controller = ChangeNotifierProvider((ref) => _Controller());
+final AsyncNotifierProvider<_Controller, Image> _controller =
+    AsyncNotifierProvider(_Controller.new);
 
 class LoadingSwitcherPage extends ConsumerWidget {
   const LoadingSwitcherPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final valueAsync = ref.watch(_controller);
     return Scaffold(
       appBar: AppBar(
         title: Text(pascalCaseFromRouteUri(GoRouterState.of(context).uri)),
@@ -29,14 +33,10 @@ class LoadingSwitcherPage extends ConsumerWidget {
             child: LoadingSwitcher(
               timeout: ref.watch(
                 _controller.select(
-                  (_Controller model) => model.getDuration(
-                    sliderType: SliderType.timeout,
-                  ),
+                  (model) => ref.watch(_durationProvider)[SliderType.timeout]!,
                 ),
               ),
-              child: ref.watch(
-                _controller.select((_Controller model) => model.image),
-              ),
+              child: valueAsync.isLoading ? null : valueAsync.value,
             ),
           ),
           const SizedBox(height: 48),
@@ -46,7 +46,7 @@ class LoadingSwitcherPage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.watch(_controller).reload();
+          ref.invalidate(_controller);
         },
         child: const Icon(Icons.refresh),
       ),
@@ -63,9 +63,8 @@ class _Slider extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(
-      _controller.select(
-        (_Controller model) =>
-            model.getDuration(sliderType: type).inMilliseconds.toDouble(),
+      _durationProvider.select(
+        (duration) => duration[type]!.inMilliseconds.toDouble(),
       ),
     );
     return Padding(
@@ -80,7 +79,9 @@ class _Slider extends ConsumerWidget {
               label: '$value',
               divisions: 100,
               onChanged: (value) {
-                ref.read(_controller).updateDuration(
+                ref
+                    .read(_durationProvider.notifier)
+                    .updateDuration(
                       sliderType: type,
                       duration: Duration(
                         milliseconds: value.toInt(),
@@ -95,36 +96,41 @@ class _Slider extends ConsumerWidget {
   }
 }
 
-class _Controller with ChangeNotifier {
-  _Controller() {
-    reload();
-  }
-  Image? _image;
-  Image? get image => _image;
+final _durationProvider =
+    NotifierProvider<_DurationNotifier, Map<SliderType, Duration>>(
+      _DurationNotifier.new,
+    );
 
-  final _durations = {
+class _DurationNotifier extends Notifier<Map<SliderType, Duration>> {
+  @override
+  Map<SliderType, Duration> build() => <SliderType, Duration>{
     SliderType.loading: const Duration(milliseconds: 500),
     SliderType.timeout: const Duration(milliseconds: 500),
   };
-
-  Future<void> reload() async {
-    _image = null;
-    notifyListeners();
-    await Future<void>.delayed(getDuration(sliderType: SliderType.loading));
-    _image = Image.asset('assets/images/love.png');
-    notifyListeners();
-  }
 
   void updateDuration({
     required SliderType sliderType,
     required Duration duration,
   }) {
-    _durations[sliderType] = duration;
-    notifyListeners();
+    state = {
+      ...state,
+      sliderType: duration,
+    };
   }
+}
+
+class _Controller extends AsyncNotifier<Image> {
+  Image? _image;
+  Image? get image => _image;
 
   Duration getDuration({required SliderType sliderType}) =>
-      _durations[sliderType]!;
+      ref.read(_durationProvider)[sliderType]!;
+
+  @override
+  FutureOr<Image> build() async {
+    await Future<void>.delayed(getDuration(sliderType: SliderType.loading));
+    return Image.asset('assets/images/love.png');
+  }
 }
 
 enum SliderType {

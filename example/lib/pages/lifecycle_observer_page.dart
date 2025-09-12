@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class LifecycleObserverRoute extends GoRouteData {
+class LifecycleObserverRoute extends GoRouteData with $LifecycleObserverRoute {
   const LifecycleObserverRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>

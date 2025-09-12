@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class VerticalCenterScrollViewRoute extends GoRouteData {
+class VerticalCenterScrollViewRoute extends GoRouteData
+    with $VerticalCenterScrollViewRoute {
   const VerticalCenterScrollViewRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
