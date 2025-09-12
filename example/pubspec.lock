@@ -622,7 +622,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.45.0"
+    version: "0.46.0"
   nested:
     dependency: "direct main"
     description:
