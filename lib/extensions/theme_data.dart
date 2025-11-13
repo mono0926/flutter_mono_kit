@@ -16,13 +16,6 @@ extension ThemeDataEx on ThemeData {
         behavior: SnackBarBehavior.floating,
       ),
       splashFactory: InkSparkle.splashFactory,
-      pageTransitionsTheme: const PageTransitionsTheme(
-        builders: {
-          TargetPlatform.android: FadeForwardsPageTransitionsBuilder(),
-          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-          TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
-        },
-      ),
       progressIndicatorTheme: progressIndicatorTheme.copyWith(year2023: false),
       sliderTheme: sliderTheme.copyWith(year2023: false),
     );
@@ -30,20 +23,21 @@ extension ThemeDataEx on ThemeData {
 }
 
 ThemeData lightTheme() => ThemeData.from(
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.green,
-      ),
-      useMaterial3: true,
-    ).followLatestSpec();
-ThemeData darkTheme() => ThemeData.from(
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: Colors.green,
+  ),
+  useMaterial3: true,
+).followLatestSpec();
+ThemeData darkTheme() =>
+    ThemeData.from(
       colorScheme: ColorScheme.fromSeed(
         seedColor: Colors.green,
         brightness: Brightness.dark,
       ),
       useMaterial3: true,
     ).followLatestSpec().copyWith(
-          cupertinoOverrideTheme: const CupertinoThemeData(
-            // Needed for correct CupertinoTextField color (bug?)
-            textTheme: CupertinoTextThemeData(),
-          ),
-        );
+      cupertinoOverrideTheme: const CupertinoThemeData(
+        // Needed for correct CupertinoTextField color (bug?)
+        textTheme: CupertinoTextThemeData(),
+      ),
+    );

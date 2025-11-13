@@ -1,3 +1,7 @@
+## 0.47.0
+
+- Upgrade to Flutter 3.38/Dart 3.10
+
 ## 0.46.0
 
 - Upgrade riverpod to ^3.0.0
