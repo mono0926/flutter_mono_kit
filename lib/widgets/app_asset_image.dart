@@ -23,7 +23,7 @@ abstract class AppAssetImage extends StatelessWidget {
   const AppAssetImage._({
     super.key,
     required this.name,
-    @required this.fit,
+    required this.fit,
     required this.scale,
     required this.type,
     required this.color,
@@ -47,15 +47,15 @@ class _PngImage extends AppAssetImage {
     double super.scale = 3,
     super.color,
   }) : super._(
-          type: AppAssetImageType.png,
-        );
+         type: AppAssetImageType.png,
+       );
 
   Image get _widget => Image.asset(
-        'assets/images/$name.png',
-        scale: scale,
-        fit: fit,
-        color: color,
-      );
+    'assets/images/$name.png',
+    scale: scale,
+    fit: fit,
+    color: color,
+  );
 
   ImageProvider get _image => _widget.image;
 
@@ -69,9 +69,9 @@ class _SvgImage extends AppAssetImage {
     BoxFit super.fit = BoxFit.contain,
     super.color,
   }) : super._(
-          scale: null,
-          type: AppAssetImageType.svg,
-        );
+         scale: null,
+         type: AppAssetImageType.svg,
+       );
 
   @override
   Widget build(BuildContext context) {
@@ -79,8 +79,9 @@ class _SvgImage extends AppAssetImage {
     return SvgPicture.asset(
       'assets/images/$name.svg',
       fit: fit ?? BoxFit.contain,
-      colorFilter:
-          color == null ? null : ColorFilter.mode(color, BlendMode.srcIn),
+      colorFilter: color == null
+          ? null
+          : ColorFilter.mode(color, BlendMode.srcIn),
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void showErrorDialog({
   required BuildContext context,
-  @required dynamic error,
+  required dynamic error,
   ErrorDialogL10n l10n = const ErrorDialogL10n(),
 }) {
   showDialog<dynamic>(
