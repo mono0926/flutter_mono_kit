@@ -1,3 +1,8 @@
+## 0.48.1 - 2026-07-29
+
+### Bug Fixes
+- Improve SPM compatibility and use Swift-only plugin implementation (#11)
+
 ## 0.48.0 - 2026-07-29
 
 ### Features
