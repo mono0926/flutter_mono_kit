@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:nested/nested.dart';
 
 class TextScaleFactor extends SingleChildStatelessWidget {
+  // ignore: remove_deprecations_in_breaking_versions
   @Deprecated('Use `MediaQuery.withClampedTextScaling()` directly instead.')
   const TextScaleFactor({
     super.key,
