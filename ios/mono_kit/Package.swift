@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "mono_kit",
     platforms: [
-        .iOS("13.0")
+        .iOS(.v13)
     ],
     products: [
         .library(name: "mono-kit", targets: ["mono_kit"])

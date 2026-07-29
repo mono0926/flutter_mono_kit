@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftMonoKitPlugin: NSObject, FlutterPlugin {
+public class MonoKitPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "mono_kit", binaryMessenger: registrar.messenger())
-    let instance = SwiftMonoKitPlugin()
+    let instance = MonoKitPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
