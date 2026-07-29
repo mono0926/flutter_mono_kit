@@ -30,7 +30,7 @@ class _AnimatedExpansionVisibilityState
   Widget build(BuildContext context) {
     return SizeTransition(
       sizeFactor: _heightFactorTween!.animate(animation),
-      axisAlignment: widget.axisAlignment,
+      alignment: Alignment(0, widget.axisAlignment),
       child: widget.child,
     );
   }

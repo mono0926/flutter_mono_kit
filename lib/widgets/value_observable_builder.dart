@@ -30,14 +30,15 @@ class _ValueObservableBuilderState<T>
       builder: (context, snapshot) {
         // ValueObservableの場合、初期値があったらwaitingでは無いとみなす方が自然。
         // また、この加工をすることで初回の無駄な2回のリビルドが解消される。
-        if (snapshot.connectionState == ConnectionState.waiting &&
-            snapshot.hasData) {
-          snapshot = AsyncSnapshot<T>.withData(
-            ConnectionState.active,
-            snapshot.data as T,
-          );
-        }
-        return widget.builder(context, snapshot, child);
+        final effectiveSnapshot =
+            (snapshot.connectionState == ConnectionState.waiting &&
+                    snapshot.hasData)
+                ? AsyncSnapshot<T>.withData(
+                    ConnectionState.active,
+                    snapshot.data as T,
+                  )
+                : snapshot;
+        return widget.builder(context, effectiveSnapshot, child);
       },
     );
   }
