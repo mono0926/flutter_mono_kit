@@ -1,3 +1,14 @@
+## 0.48.0 - 2026-07-29
+
+### Features
+- Support Swift Package Manager (SPM) for iOS package (#10)
+- Add `additionalActions` to `showPhotoSelectionSheet` function
+- Add `canPop` to `DelayedPopScope`
+- Add `DelayedPopScope` widget
+
+### Maintenance
+- Upgrade to Flutter 3.38 / Dart 3.10 and dependencies
+
 ## 0.47.0
 
 - Upgrade to Flutter 3.38/Dart 3.10
