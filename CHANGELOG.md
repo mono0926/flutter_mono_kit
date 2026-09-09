@@ -1,3 +1,11 @@
+## 0.48.2
+
+### Features
+- Add AI Agent Skill (`mono_kit-widgets`)
+
+### Bug Fixes
+- Fix static analysis issues to improve pub.dev score
+
 ## 0.48.1 - 2026-07-29
 
 ### Bug Fixes

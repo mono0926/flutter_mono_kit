@@ -1,3 +1,8 @@
+## 2.2.1
+
+- Add AI Agent Skill (`subscription_holder-lifecycle`)
+- Add standalone example and resolve static analysis issues
+
 ## 2.2.0
 
 - Upgrade dependencies

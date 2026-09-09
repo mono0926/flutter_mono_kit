@@ -4,9 +4,22 @@ on:
   push:
     tags:
       - '[0-9]+.[0-9]+.[0-9]+*'
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+      - 'subscription_holder-[0-9]+.[0-9]+.[0-9]+*'
+      - 'subscription_holder-v[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
-  publish:
+  publish_mono_kit:
+    if: "!startsWith(github.ref_name, 'subscription_holder')"
     permissions:
       id-token: write
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+
+  publish_subscription_holder:
+    if: "startsWith(github.ref_name, 'subscription_holder')"
+    permissions:
+      id-token: write
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+      working-directory: packages/subscription_holder
+
