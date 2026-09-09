@@ -14,10 +14,10 @@ class AppInstallationChecker {
       return null;
     }
     if (Platform.isIOS) {
-      return canLaunchUrl(Uri.parse('$packageName://'));
+      return await canLaunchUrl(Uri.parse('$packageName://'));
     }
     if (Platform.isAndroid) {
-      return _platform.invokeMethod(
+      return await _platform.invokeMethod<bool>(
         'installation_checker/is_installed',
         {
           'package_name': packageName,
