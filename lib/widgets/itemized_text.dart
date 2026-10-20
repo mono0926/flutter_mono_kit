@@ -15,14 +15,13 @@ class ItemizedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: texts
-          .map(
-            (text) => _ItemizedTextRow(
-              text,
-              bullet: bullet,
-            ),
-          )
-          .toList(),
+      children: [
+        for (final text in texts)
+          _ItemizedTextRow(
+            text,
+            bullet: bullet,
+          ),
+      ],
     );
   }
 }

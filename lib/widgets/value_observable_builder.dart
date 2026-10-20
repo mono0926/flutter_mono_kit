@@ -32,12 +32,12 @@ class _ValueObservableBuilderState<T>
         // また、この加工をすることで初回の無駄な2回のリビルドが解消される。
         final effectiveSnapshot =
             (snapshot.connectionState == ConnectionState.waiting &&
-                    snapshot.hasData)
-                ? AsyncSnapshot<T>.withData(
-                    ConnectionState.active,
-                    snapshot.data as T,
-                  )
-                : snapshot;
+                snapshot.hasData)
+            ? AsyncSnapshot<T>.withData(
+                ConnectionState.active,
+                snapshot.data as T,
+              )
+            : snapshot;
         return widget.builder(context, effectiveSnapshot, child);
       },
     );

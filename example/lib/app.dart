@@ -15,15 +15,16 @@ class App extends ConsumerWidget {
     final router = ref.watch(routerProvider);
     return MaterialApp.router(
       title: title,
-      builder: (context, child) => Nested(
-        children: const [
-          // ignore: deprecated_member_use
-          TextScaleFactor(),
-        ],
-        child: Barrier(
-          child: child!,
-        ),
-      ),
+      builder:
+          (context, child) => Nested(
+            children: const [
+              // ignore: deprecated_member_use
+              TextScaleFactor(),
+            ],
+            child: Barrier(
+              child: child!,
+            ),
+          ),
       theme: lightTheme(),
       darkTheme: darkTheme(),
       routeInformationParser: router.routeInformationParser,

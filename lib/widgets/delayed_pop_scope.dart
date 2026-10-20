@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nested/nested.dart';
 
-typedef DelayedPopInvokedWithResultCallback<T> = Future<bool> Function(
-  T? result,
-);
+typedef DelayedPopInvokedWithResultCallback<T> =
+    Future<bool> Function(
+      T? result,
+    );
 
-class DelayedPopScope<T> extends StatelessWidget {
+class DelayedPopScope<T> extends SingleChildStatelessWidget {
   const DelayedPopScope({
     super.key,
     required this.onShouldPop,
-    required this.child,
+    super.child,
     this.canPop = false,
+    this.onPopInvokedWithResult,
   });
 
   final DelayedPopInvokedWithResultCallback<T> onShouldPop;
   final bool canPop;
-  final Widget child;
+  final PopInvokedWithResultCallback<T>? onPopInvokedWithResult;
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildWithChild(BuildContext context, Widget? child) {
     return PopScope<T>(
       canPop: canPop,
       onPopInvokedWithResult: (didPop, result) async {
+        onPopInvokedWithResult?.call(didPop, result);
         if (didPop) {
           return;
         }
@@ -29,13 +33,13 @@ class DelayedPopScope<T> extends StatelessWidget {
         final shouldPop = await onShouldPop(result);
         if (shouldPop) {
           if (navigator.canPop()) {
-            navigator.pop();
+            navigator.pop(result);
           } else {
             await SystemNavigator.pop();
           }
         }
       },
-      child: child,
+      child: child!,
     );
   }
 }

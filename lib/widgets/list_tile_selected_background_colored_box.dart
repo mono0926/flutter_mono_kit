@@ -28,10 +28,9 @@ class ListTileSelectedBackgroundColoredBox extends StatelessWidget {
         child: Material(
           type: MaterialType.transparency,
           child: ColoredBox(
-            color:
-                listTile.selected
-                    ? color ?? colorScheme.primary.withValues(alpha: 0.1)
-                    : Colors.transparent,
+            color: listTile.selected
+                ? color ?? colorScheme.primary.withValues(alpha: 0.1)
+                : Colors.transparent,
             child: listTile,
           ),
         ),

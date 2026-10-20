@@ -163,7 +163,7 @@ class __DescState extends State<_Desc> {
           widget.data.desc,
           style: theme.textTheme.bodyMedium!,
           detector: (overflow) => _overflowNotifier.value = overflow,
-//                maxLines: 2,
+          //                maxLines: 2,
         ),
         Positioned(
           right: -2,
@@ -192,8 +192,9 @@ class __DescState extends State<_Desc> {
                   backgroundColor: Colors.transparent,
                   padding: const EdgeInsets.all(4),
                 ),
-                onPressed: () =>
-                    widget.additionalHeightNeeded(_overflowNotifier.value),
+                onPressed:
+                    () =>
+                        widget.additionalHeightNeeded(_overflowNotifier.value),
                 child: Text(
                   'more',
                   style: theme.textTheme.bodyMedium!.copyWith(

@@ -7,8 +7,8 @@ class BetterFadeTransition extends AnimatedWidget {
     required Animation<double> opacity,
     this.alwaysIncludeSemantics = false,
   }) : super(
-          listenable: opacity,
-        );
+         listenable: opacity,
+       );
 
   final Widget child;
   final bool alwaysIncludeSemantics;

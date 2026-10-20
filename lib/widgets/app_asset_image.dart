@@ -6,7 +6,7 @@ enum AppAssetImageType {
   svg,
 }
 
-abstract class AppAssetImage extends StatelessWidget {
+sealed class AppAssetImage extends StatelessWidget {
   const factory AppAssetImage.png({
     Key? key,
     required String name,
@@ -15,6 +15,7 @@ abstract class AppAssetImage extends StatelessWidget {
     Color? color,
   }) = _PngImage;
   const factory AppAssetImage.svg({
+    Key? key,
     required String name,
     BoxFit fit,
     Color? color,
@@ -35,8 +36,10 @@ abstract class AppAssetImage extends StatelessWidget {
   final AppAssetImageType? type;
   final Color? color;
 
-  ImageProvider? get image =>
-      this is _PngImage ? (this as _PngImage)._image : null;
+  ImageProvider? get image => switch (this) {
+    final _PngImage png => png._image,
+    _SvgImage() => null,
+  };
 }
 
 class _PngImage extends AppAssetImage {
@@ -65,6 +68,7 @@ class _PngImage extends AppAssetImage {
 
 class _SvgImage extends AppAssetImage {
   const _SvgImage({
+    super.key,
     required super.name,
     BoxFit super.fit = BoxFit.contain,
     super.color,

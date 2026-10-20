@@ -36,7 +36,7 @@ class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
               );
               return MediaQuery(
                 data: mediaQuery.copyWith(
-                  size: Size(constraints.maxWidth, constraints.maxHeight),
+                  size: constraints.biggest,
                   padding: mediaQuery.padding.copyWith(
                     bottom: paddingBottom,
                   ),

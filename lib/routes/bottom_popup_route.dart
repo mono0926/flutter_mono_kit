@@ -34,10 +34,8 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
     Animation<double> animation,
     Animation<double> secondaryAnimation,
   ) {
-    final mediaQuery = MediaQuery.of(context);
-    final height = mediaQuery.size.height;
-    final padding = mediaQuery.padding;
-    final paddingV = padding.top + padding.bottom;
+    final height = MediaQuery.sizeOf(context).height;
+    final paddingV = MediaQuery.paddingOf(context).vertical;
     final maxHeight = height - paddingV - 24;
     return Semantics(
       scopesRoute: true,
@@ -56,7 +54,7 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
                     ),
                     color: Theme.of(context).scaffoldBackgroundColor,
                   ),
-                  padding: this.padding ?? const EdgeInsets.all(16),
+                  padding: padding ?? const EdgeInsets.all(16),
                   child: Material(
                     color: Colors.transparent,
                     child: ConstrainedBox(
@@ -114,7 +112,7 @@ class _PanState extends SingleChildState<_Pan> {
 
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
-    final height = MediaQuery.of(context).size.height;
+    final height = MediaQuery.sizeOf(context).height;
     final panThreshold = height * 0.2;
     return AnimatedPositioned(
       duration: Duration(

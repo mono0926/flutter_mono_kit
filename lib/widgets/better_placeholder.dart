@@ -28,8 +28,7 @@ class BetterPlaceholder extends StatelessWidget {
   double _fallbackIfInfinity({
     required double value,
     required double fallback,
-  }) =>
-      value == double.infinity ? fallback : value;
+  }) => value == double.infinity ? fallback : value;
 
   @override
   Widget build(BuildContext context) {

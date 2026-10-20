@@ -8,8 +8,8 @@ class LinkTextSpan extends TextSpan {
     required Uri url,
     String? text,
   }) : super(
-          style: style,
-          text: '${text ?? url}',
-          recognizer: TapGestureRecognizer()..onTap = () => launchUrl(url),
-        );
+         style: style,
+         text: '${text ?? url}',
+         recognizer: TapGestureRecognizer()..onTap = () => launchUrl(url),
+       );
 }

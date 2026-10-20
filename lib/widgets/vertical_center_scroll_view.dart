@@ -31,12 +31,17 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
         if (!widget.autoPop || _isPopping) {
           return;
         }
-        final query = MediaQuery.of(context);
-        if (-_controller.offset > query.size.height * 0.18) {
+        if (-_controller.offset > MediaQuery.sizeOf(context).height * 0.18) {
           _isPopping = true;
           Navigator.of(context).pop();
         }
       });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -45,8 +50,7 @@ class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
       children: [
         LayoutBuilder(
           builder: (context, constraints) {
-            final verticalPadding =
-                (widget.padding?.top ?? 0) + (widget.padding?.bottom ?? 0);
+            final verticalPadding = widget.padding?.vertical ?? 0;
             return SingleChildScrollView(
               padding: widget.padding,
               controller: _controller,

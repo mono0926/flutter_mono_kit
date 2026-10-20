@@ -23,10 +23,7 @@ class DeviceFrame extends SingleChildStatelessWidget {
         builder: (context, constraints) {
           return MediaQuery(
             data: MediaQuery.of(context).copyWith(
-              size: Size(
-                constraints.maxWidth,
-                constraints.maxHeight,
-              ),
+              size: constraints.biggest,
             ),
             child: child!,
           );

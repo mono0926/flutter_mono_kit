@@ -4,20 +4,22 @@ class Data {
   });
 
   Data.small()
-      : this._(
-          desc: 'Flutter最高！',
-        );
+    : this._(
+        desc: 'Flutter最高！',
+      );
   Data.medium()
-      : this._(
-          desc: 'むかしむかし、あるところにFlutterという素晴らしいフレームワークがありました。',
-        );
+    : this._(
+        desc: 'むかしむかし、あるところにFlutterという素晴らしいフレームワークがありました。',
+      );
 
   // Copied from https://ja.wikipedia.org/wiki/Flutter
   Data.large()
-      : this._(
-            desc: 'Flutter（フラッター）は、Googleによって開発されたフリーかつ'
-                    'オープンソースのモバイルアプリケーションフレームワークである。' *
-                2,);
+    : this._(
+        desc:
+            'Flutter（フラッター）は、Googleによって開発されたフリーかつ'
+                'オープンソースのモバイルアプリケーションフレームワークである。' *
+            2,
+      );
 
   factory Data.index(int index) {
     switch (index % 3) {

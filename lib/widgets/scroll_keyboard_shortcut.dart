@@ -38,6 +38,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
 
   @override
   void dispose() {
+    _subscriptionHolder.dispose();
     _focusNode.dispose();
     _onKeySubject.close();
 
@@ -48,7 +49,7 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    if (ModalRoute.of(context)!.isCurrent) {
+    if (ModalRoute.of(context)?.isCurrent ?? false) {
       FocusScope.of(context).requestFocus(_focusNode);
     }
   }
@@ -71,30 +72,30 @@ class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
     }
     final logicalKey = event.logicalKey;
     logger.fine('keyId: $logicalKey');
-    if (logicalKey == LogicalKeyboardKey.arrowUp) {
-      _scrollController.scrollUp(offset: _stepOffset);
-    } else if (logicalKey == LogicalKeyboardKey.arrowDown) {
-      _scrollController.scrollDown(offset: _stepOffset);
-    } else if (logicalKey == LogicalKeyboardKey.pageUp) {
-      _scrollController.scrollToPreviousPage();
-    } else if (logicalKey == LogicalKeyboardKey.pageDown) {
-      _scrollController.scrollToNextPage();
-    } else if (logicalKey == LogicalKeyboardKey.home) {
-      _scrollController.scrollToTop();
-    } else if (logicalKey == LogicalKeyboardKey.end) {
-      _scrollController.scrollToBottom();
-    } else if (logicalKey == LogicalKeyboardKey.space) {
-      HardwareKeyboard.instance.isShiftPressed
-          ? _scrollController.scrollToPreviousPage()
-          : _scrollController.scrollToNextPage();
+    switch (logicalKey) {
+      case LogicalKeyboardKey.arrowUp:
+        _scrollController.scrollUp(offset: _stepOffset);
+      case LogicalKeyboardKey.arrowDown:
+        _scrollController.scrollDown(offset: _stepOffset);
+      case LogicalKeyboardKey.pageUp:
+        _scrollController.scrollToPreviousPage();
+      case LogicalKeyboardKey.pageDown:
+        _scrollController.scrollToNextPage();
+      case LogicalKeyboardKey.home:
+        _scrollController.scrollToTop();
+      case LogicalKeyboardKey.end:
+        _scrollController.scrollToBottom();
+      case LogicalKeyboardKey.space:
+        HardwareKeyboard.instance.isShiftPressed
+            ? _scrollController.scrollToPreviousPage()
+            : _scrollController.scrollToNextPage();
     }
   }
 
-  final _disabledNavigationKeys =
-      <LogicalKeySet, Intent>{
-    LogicalKeySet(LogicalKeyboardKey.arrowUp): Intent.doNothing,
-    LogicalKeySet(LogicalKeyboardKey.arrowDown): Intent.doNothing,
-    LogicalKeySet(LogicalKeyboardKey.arrowLeft): Intent.doNothing,
-    LogicalKeySet(LogicalKeyboardKey.arrowRight): Intent.doNothing,
+  static const _disabledNavigationKeys = <ShortcutActivator, Intent>{
+    SingleActivator(LogicalKeyboardKey.arrowUp): Intent.doNothing,
+    SingleActivator(LogicalKeyboardKey.arrowDown): Intent.doNothing,
+    SingleActivator(LogicalKeyboardKey.arrowLeft): Intent.doNothing,
+    SingleActivator(LogicalKeyboardKey.arrowRight): Intent.doNothing,
   };
 }

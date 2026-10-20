@@ -5,6 +5,12 @@ analyzer:
     - lib/generated_*.dart
     - lib/**/*.g.dart
     - lib/**/*.freezed.dart
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
 linter:
   rules:
     use_build_context_synchronously: false

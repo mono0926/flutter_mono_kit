@@ -9,9 +9,9 @@ class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
     Duration? duration,
     Curve? curve,
   }) : super(
-          duration: duration ?? const Duration(milliseconds: 200),
-          curve: curve ?? Curves.linear,
-        );
+         duration: duration ?? const Duration(milliseconds: 200),
+         curve: curve ?? Curves.linear,
+       );
 
   final Widget? child;
   final bool isVisible;
@@ -37,10 +37,13 @@ class _AnimatedExpansionVisibilityState
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _heightFactorTween = visitor(
-      _heightFactorTween,
-      widget.isVisible ? 1.0 : 0.0,
-      (dynamic heightFactor) => Tween<double>(begin: heightFactor as double),
-    )! as Tween<double>;
+    _heightFactorTween =
+        visitor(
+              _heightFactorTween,
+              widget.isVisible ? 1.0 : 0.0,
+              (dynamic heightFactor) =>
+                  Tween<double>(begin: heightFactor as double),
+            )!
+            as Tween<double>;
   }
 }

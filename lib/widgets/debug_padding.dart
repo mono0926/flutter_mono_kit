@@ -54,16 +54,17 @@ class _Size extends StatelessWidget {
   const _Size();
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
+    final size = MediaQuery.sizeOf(context);
+    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     return Positioned(
       right: 0,
-      bottom: mediaQuery.viewInsets.bottom,
+      bottom: bottomInset,
       child: ColoredBox(
         color: colorScheme.surface,
         child: Text(
-          'size\n${mediaQuery.size}',
+          'size\n$size',
           style: theme.textTheme.bodyMedium,
         ),
       ),

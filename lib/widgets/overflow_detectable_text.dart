@@ -37,8 +37,9 @@ class OverflowDetectableText extends StatelessWidget {
           0.0, // ignore: prefer_int_literals
           painter.height - constraints.maxHeight,
         );
-        WidgetsBinding.instance
-            .addPostFrameCallback((_) => detector(overflowHeight));
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) => detector(overflowHeight),
+        );
         return Text.rich(
           span,
           overflow: overflow,

@@ -26,11 +26,13 @@ class _AnimatedOpacityState
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _opacity = visitor(
-      _opacity,
-      widget.opacity,
-      (dynamic value) => Tween<double>(begin: value as double),
-    )! as Tween<double>;
+    _opacity =
+        visitor(
+              _opacity,
+              widget.opacity,
+              (dynamic value) => Tween<double>(begin: value as double),
+            )!
+            as Tween<double>;
   }
 
   @override

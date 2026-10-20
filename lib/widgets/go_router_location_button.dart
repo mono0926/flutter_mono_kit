@@ -8,11 +8,10 @@ Widget goRouteLocationButtonNavigationBuilder(
   GoRouterState state,
   Widget child, {
   bool visible = kDebugMode,
-}) =>
-    GoRouterLocationButton(
-      visible: visible,
-      child: child,
-    );
+}) => GoRouterLocationButton(
+  visible: visible,
+  child: child,
+);
 
 class GoRouterLocationButton extends StatelessWidget {
   const GoRouterLocationButton({
@@ -50,8 +49,7 @@ class GoRouterLocationButton extends StatelessWidget {
                   textFields: [
                     DialogTextField(initialText: location),
                   ],
-                ))
-                    ?.first;
+                ))?.first;
                 if (next != null) {
                   router.go(next);
                 }

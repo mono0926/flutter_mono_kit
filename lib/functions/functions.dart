@@ -23,7 +23,7 @@ void configureErrorWidgetBuilder({
     final message = kReleaseMode && isProduction
         ? ''
         : '${_stringifyException(details.exception)}\n'
-            'See also: https://flutter.dev/docs/testing/errors';
+              'See also: https://flutter.dev/docs/testing/errors';
     final dynamic exception = details.exception;
     if (isProduction && productionBuilder != null) {
       return productionBuilder(details);
@@ -38,9 +38,9 @@ void configureErrorWidgetBuilder({
 String _stringifyException(Object exception) {
   try {
     return exception.toString();
-// ignore: avoid_catches_without_on_clauses
+    // ignore: avoid_catches_without_on_clauses
   } catch (e) {
-// intentionally left empty.
+    // intentionally left empty.
   }
   return 'Error';
 }

@@ -23,7 +23,8 @@ class LoadingSwitcher extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
       duration: switchDuration,
-      child: child ??
+      child:
+          child ??
           TimeoutSwitcher(
             timedOutChild: timedOutChild,
             initialChild: initialChild,
