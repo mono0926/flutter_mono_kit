@@ -1,3 +1,15 @@
+## 0.49.0 - 2026-10-20
+
+### Features
+- Add `RefEx.readAsync`, `DateTimeEx.beginningOfDay`, and `NonNullStringEx.toCapitalized` extensions
+- Add `AutomaticKeepAliveClient`, `EagerInitialization`, `MenuAnchorIconButton`, `PageSwitcher`, and `NoAnimationPageTransitionsBuilder`
+- Make `theme` parameter optional in `SnackBarPresenterEx` (`showUndo`, `showMessageWithAction`, `showError`), defaulting to `Theme.of(context)`
+- Extend `DelayedPopScope` with `SingleChildStatelessWidget`, `onPopInvokedWithResult`, and result forwarding on pop
+
+### Bug Fixes
+- Dispose `ScrollController` in `VerticalCenterScrollView` and `SubscriptionHolder` in `ScrollKeyboardShortcut`
+- Modernize internals with Dart 3 pattern matching, `EnumByName.asNameMap`, `Color.toARGB32`, `MediaQuery.sizeOf`/`paddingOf`, and `SingleActivator`
+
 ## 0.48.2
 
 ### Features
