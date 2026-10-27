@@ -1,40 +1,32 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:material_ui/material_ui.dart';
 
-enum AppAssetImageType {
+enum AppAssetImageType() {
   png,
   svg,
 }
 
-sealed class AppAssetImage extends StatelessWidget {
-  const factory AppAssetImage.png({
+sealed class const AppAssetImage._({
+  super.key,
+  required final String name,
+  required final BoxFit? fit,
+  required final double? scale,
+  required final AppAssetImageType? type,
+  required final Color? color,
+}) extends StatelessWidget {
+  const factory png({
     Key? key,
     required String name,
     BoxFit? fit,
     double scale,
     Color? color,
   }) = _PngImage;
-  const factory AppAssetImage.svg({
+  const factory svg({
     Key? key,
     required String name,
     BoxFit fit,
     Color? color,
   }) = _SvgImage;
-
-  const AppAssetImage._({
-    super.key,
-    required this.name,
-    required this.fit,
-    required this.scale,
-    required this.type,
-    required this.color,
-  });
-
-  final String name;
-  final BoxFit? fit;
-  final double? scale;
-  final AppAssetImageType? type;
-  final Color? color;
 
   ImageProvider? get image => switch (this) {
     final _PngImage png => png._image,
@@ -42,16 +34,17 @@ sealed class AppAssetImage extends StatelessWidget {
   };
 }
 
-class _PngImage extends AppAssetImage {
-  const _PngImage({
-    super.key,
-    required super.name,
-    super.fit,
-    double super.scale = 3,
-    super.color,
-  }) : super._(
-         type: AppAssetImageType.png,
-       );
+class const _PngImage({
+  super.key,
+  required super.name,
+  super.fit,
+  double super.scale = 3,
+  super.color,
+}) extends AppAssetImage {
+  this
+    : super._(
+        type: AppAssetImageType.png,
+      );
 
   Image get _widget => Image.asset(
     'assets/images/$name.png',
@@ -66,16 +59,17 @@ class _PngImage extends AppAssetImage {
   Widget build(BuildContext context) => _widget;
 }
 
-class _SvgImage extends AppAssetImage {
-  const _SvgImage({
-    super.key,
-    required super.name,
-    BoxFit super.fit = BoxFit.contain,
-    super.color,
-  }) : super._(
-         scale: null,
-         type: AppAssetImageType.svg,
-       );
+class const _SvgImage({
+  super.key,
+  required super.name,
+  BoxFit super.fit = BoxFit.contain,
+  super.color,
+}) extends AppAssetImage {
+  this
+    : super._(
+        scale: null,
+        type: AppAssetImageType.svg,
+      );
 
   @override
   Widget build(BuildContext context) {

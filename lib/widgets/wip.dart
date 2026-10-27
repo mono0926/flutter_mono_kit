@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nested/nested.dart';
 
 const double _kHeight = 12;
@@ -10,25 +10,16 @@ const _kTextStyle = TextStyle(
   height: 1,
 );
 
-class WIP extends SingleChildStatelessWidget {
-  const WIP({
-    super.key,
-    required Widget super.child,
-    this.location = BannerLocation.topEnd,
-    this.color,
-    this.textStyle,
-    this.backgroundColor,
-    this.visible = false,
-    this.message,
-  });
-
-  final bool visible;
-  final BannerLocation location;
-  final Color? color;
-  final Color? backgroundColor;
-  final TextStyle? textStyle;
-  final String? message;
-
+class const WIP({
+  super.key,
+  required Widget super.child,
+  final BannerLocation location = BannerLocation.topEnd,
+  final Color? color,
+  final TextStyle? textStyle,
+  final Color? backgroundColor,
+  final bool visible = false,
+  final String? message,
+}) extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     if (!visible) {

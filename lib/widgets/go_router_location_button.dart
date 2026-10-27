@@ -1,7 +1,7 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 
 Widget goRouteLocationButtonNavigationBuilder(
   BuildContext context,
@@ -13,16 +13,11 @@ Widget goRouteLocationButtonNavigationBuilder(
   child: child,
 );
 
-class GoRouterLocationButton extends StatelessWidget {
-  const GoRouterLocationButton({
-    super.key,
-    required this.child,
-    this.visible = true,
-  });
-
-  final Widget child;
-  final bool visible;
-
+class const GoRouterLocationButton({
+  super.key,
+  required final Widget child,
+  final bool visible = true,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!visible) {

@@ -1,28 +1,25 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class AnimatedExpansionVisibility extends ImplicitlyAnimatedWidget {
-  const AnimatedExpansionVisibility({
-    super.key,
-    this.child,
-    required this.isVisible,
-    this.axisAlignment = 1,
-    Duration? duration,
-    Curve? curve,
-  }) : super(
-         duration: duration ?? const Duration(milliseconds: 200),
-         curve: curve ?? Curves.linear,
-       );
-
-  final Widget? child;
-  final bool isVisible;
-  final double axisAlignment;
+class const AnimatedExpansionVisibility({
+  super.key,
+  final Widget? child,
+  required final bool isVisible,
+  final double axisAlignment = 1,
+  Duration? duration,
+  Curve? curve,
+}) extends ImplicitlyAnimatedWidget {
+  this
+    : super(
+        duration: duration ?? const Duration(milliseconds: 200),
+        curve: curve ?? Curves.linear,
+      );
 
   @override
   AnimatedWidgetBaseState<AnimatedExpansionVisibility> createState() =>
       _AnimatedExpansionVisibilityState();
 }
 
-class _AnimatedExpansionVisibilityState
+class _AnimatedExpansionVisibilityState()
     extends AnimatedWidgetBaseState<AnimatedExpansionVisibility> {
   Tween<double>? _heightFactorTween;
 

@@ -1,7 +1,7 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:mono_kit/utils/utils.dart';
 
@@ -83,8 +83,7 @@ Future<List<XFile>> showPhotoSelectionSheet<T extends Object>({
 }
 
 @immutable
-class PhotoSelectionL10n {
-  const PhotoSelectionL10n();
+class const PhotoSelectionL10n() {
   String get title => '画像の選択';
   String get chooseFromLibrary => 'ライブラリから選択';
   String get takePicture => '写真を撮る';
@@ -93,7 +92,7 @@ class PhotoSelectionL10n {
   String get accessRestrictedOk => '設定アプリで許可';
 }
 
-class ImagePickerErrorCodes {
+class ImagePickerErrorCodes() {
   static const cameraAccessRestricted = 'camera_access_restricted';
   static const cameraAccessDenied = 'camera_access_denied';
   static const photoAccessRestricted = 'photo_access_restricted';

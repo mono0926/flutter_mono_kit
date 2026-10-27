@@ -1,19 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class ListTileSelectedBackgroundColoredBox extends StatelessWidget {
-  const ListTileSelectedBackgroundColoredBox({
-    super.key,
-    required this.listTile,
-    this.color,
-    this.padding,
-    this.borderRadius,
-  });
-
-  final ListTile listTile;
-  final Color? color;
-  final EdgeInsetsGeometry? padding;
-  final BorderRadius? borderRadius;
-
+class const ListTileSelectedBackgroundColoredBox({
+  super.key,
+  required final ListTile listTile,
+  final Color? color,
+  final EdgeInsetsGeometry? padding,
+  final BorderRadius? borderRadius,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

@@ -16,9 +16,9 @@ import 'package:example/pages/snack_bar_page.dart';
 import 'package:example/pages/unfocus_on_tap_page.dart';
 import 'package:example/pages/vertical_center_scroll_view_page.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:recase/recase.dart';
 
@@ -64,8 +64,7 @@ final Provider<GoRouter> routerProvider = Provider(
     ),
   ],
 )
-class HomeRoute extends GoRouteData with $HomeRoute {
-  const HomeRoute();
+class const HomeRoute() extends GoRouteData with $HomeRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomePage();
 }

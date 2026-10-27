@@ -1,24 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class LoadingSwitcher extends StatelessWidget {
-  const LoadingSwitcher({
-    super.key,
-    this.child,
-    this.timedOutChild = const Center(
-      child: CircularProgressIndicator(),
-    ),
-    this.initialChild = const SizedBox(),
-    this.timeout = const Duration(milliseconds: 200),
-    this.switchDuration = const Duration(milliseconds: 100),
-  });
-
-  final Widget timedOutChild;
-  final Widget initialChild;
-  final Widget? child;
-  final Duration timeout;
-  final Duration switchDuration;
-
+class const LoadingSwitcher({
+  super.key,
+  final Widget? child,
+  final Widget timedOutChild = const Center(
+    child: CircularProgressIndicator(),
+  ),
+  final Widget initialChild = const SizedBox(),
+  final Duration timeout = const Duration(milliseconds: 200),
+  final Duration switchDuration = const Duration(milliseconds: 100),
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(

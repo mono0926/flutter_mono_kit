@@ -1,17 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nested/nested.dart';
 
-class RippleEffectButton extends SingleChildStatelessWidget {
-  const RippleEffectButton({
-    super.key,
-    super.child,
-    required this.onTap,
-    required this.borderRadius,
-  });
-
-  final VoidCallback onTap;
-  final BorderRadius borderRadius;
-
+class const RippleEffectButton({
+  super.key,
+  super.child,
+  required final VoidCallback onTap,
+  required final BorderRadius borderRadius,
+}) extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     return Stack(

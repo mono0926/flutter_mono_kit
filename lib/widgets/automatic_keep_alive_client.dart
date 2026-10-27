@@ -1,19 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class AutomaticKeepAliveClient extends StatefulWidget {
-  const AutomaticKeepAliveClient({
-    super.key,
-    required this.child,
-  });
-
-  final Widget child;
-
+class const AutomaticKeepAliveClient({
+  super.key,
+  required final Widget child,
+}) extends StatefulWidget {
   @override
   State<AutomaticKeepAliveClient> createState() =>
       _AutomaticKeepAliveClientState();
 }
 
-class _AutomaticKeepAliveClientState extends State<AutomaticKeepAliveClient>
+class _AutomaticKeepAliveClientState()
+    extends State<AutomaticKeepAliveClient>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {

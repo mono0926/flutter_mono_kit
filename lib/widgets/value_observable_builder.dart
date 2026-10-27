@@ -4,23 +4,18 @@ import 'package:rxdart/rxdart.dart';
 
 import 'better_stream_builder.dart';
 
-class ValueObservableBuilder<T> extends SingleChildStatefulWidget {
-  const ValueObservableBuilder({
-    super.key,
-    required this.builder,
-    required this.stream,
-    super.child,
-  });
-
-  final ValueStream<T> stream;
-  final AsyncChildWidgetBuilder<T> builder;
-
+class const ValueObservableBuilder<T>({
+  super.key,
+  required final AsyncChildWidgetBuilder<T> builder,
+  required final ValueStream<T> stream,
+  super.child,
+}) extends SingleChildStatefulWidget {
   @override
   SingleChildState<ValueObservableBuilder<T>> createState() =>
       _ValueObservableBuilderState<T>();
 }
 
-class _ValueObservableBuilderState<T>
+class _ValueObservableBuilderState<T>()
     extends SingleChildState<ValueObservableBuilder<T>> {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {

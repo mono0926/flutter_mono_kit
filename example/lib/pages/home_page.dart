@@ -2,14 +2,12 @@ import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:example/app.dart';
 import 'package:example/router/router.dart';
 import 'package:example/util/util.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/plugins/plugins.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+class const HomePage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,4 +69,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-enum Hoge { a }
+enum Hoge() {
+  a,
+}

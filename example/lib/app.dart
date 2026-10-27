@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart' hide Router;
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
 
 import 'router/router.dart';
 
-class App extends ConsumerWidget {
-  const App({super.key});
-
+class const App({super.key}) extends ConsumerWidget {
   static const title = 'mono_kit Demo';
 
   @override
@@ -15,16 +13,15 @@ class App extends ConsumerWidget {
     final router = ref.watch(routerProvider);
     return MaterialApp.router(
       title: title,
-      builder:
-          (context, child) => Nested(
-            children: const [
-              // ignore: deprecated_member_use
-              TextScaleFactor(),
-            ],
-            child: Barrier(
-              child: child!,
-            ),
-          ),
+      builder: (context, child) => Nested(
+        children: const [
+          // ignore: deprecated_member_use
+          TextScaleFactor(),
+        ],
+        child: Barrier(
+          child: child!,
+        ),
+      ),
       theme: lightTheme(),
       darkTheme: darkTheme(),
       routeInformationParser: router.routeInformationParser,

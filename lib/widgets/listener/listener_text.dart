@@ -1,18 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
-class ListenerText extends StatelessWidget {
-  const ListenerText(
-    this.data, {
-    super.key,
-    this.style,
-    this.nullValue = '',
-  });
-
-  final ValueListenable<String> data;
-  final TextStyle? style;
-  final String nullValue;
-
+class const ListenerText(
+  final ValueListenable<String> data, {
+  super.key,
+  final TextStyle? style,
+  final String nullValue = '',
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<String?>(

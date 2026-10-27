@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nested/nested.dart';
 
-class UnfocusOnTap extends SingleChildStatelessWidget {
-  const UnfocusOnTap({
-    super.key,
-    required Widget super.child,
-  });
-
+class const UnfocusOnTap({
+  super.key,
+  required Widget super.child,
+}) extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     return GestureDetector(

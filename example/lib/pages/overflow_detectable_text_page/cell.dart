@@ -1,20 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 import 'data.dart';
 
 const double _defaultMaxHeight = 110;
 
-class Cell extends StatefulWidget {
-  const Cell(this.data, {super.key});
-
-  final Data data;
-
+class const Cell(final Data data, {super.key}) extends StatefulWidget {
   @override
   State<Cell> createState() => _CellState();
 }
 
-class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
+class _CellState() extends State<Cell> with SingleTickerProviderStateMixin {
   late final AnimationController _animation;
   Animation<double>? _maxHeight;
 
@@ -136,20 +132,15 @@ class _CellState extends State<Cell> with SingleTickerProviderStateMixin {
   }
 }
 
-class _Desc extends StatefulWidget {
-  const _Desc({
-    required this.data,
-    required this.additionalHeightNeeded,
-  });
-
-  final Data data;
-  final void Function(double height) additionalHeightNeeded;
-
+class const _Desc({
+  required final Data data,
+  required final void Function(double height) additionalHeightNeeded,
+}) extends StatefulWidget {
   @override
   __DescState createState() => __DescState();
 }
 
-class __DescState extends State<_Desc> {
+class __DescState() extends State<_Desc> {
   final _overflowNotifier = ValueNotifier<double>(0);
   @override
   Widget build(BuildContext context) {
@@ -192,9 +183,8 @@ class __DescState extends State<_Desc> {
                   backgroundColor: Colors.transparent,
                   padding: const EdgeInsets.all(4),
                 ),
-                onPressed:
-                    () =>
-                        widget.additionalHeightNeeded(_overflowNotifier.value),
+                onPressed: () =>
+                    widget.additionalHeightNeeded(_overflowNotifier.value),
                 child: Text(
                   'more',
                   style: theme.textTheme.bodyMedium!.copyWith(

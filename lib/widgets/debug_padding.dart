@@ -1,22 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:nested/nested.dart';
 
-class DebugPadding extends SingleChildStatelessWidget {
-  const DebugPadding({
-    super.key,
-    super.child,
-    this.showPadding = true,
-    this.showViewPadding = true,
-    this.showViewInsets = true,
-    this.showSize = true,
-  });
-
-  final bool showPadding;
-  final bool showViewPadding;
-  final bool showViewInsets;
-  final bool showSize;
-
+class const DebugPadding({
+  super.key,
+  super.child,
+  final bool showPadding = true,
+  final bool showViewPadding = true,
+  final bool showViewInsets = true,
+  final bool showSize = true,
+}) extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     final mediaQuery = MediaQuery.of(context);
@@ -50,8 +43,7 @@ class DebugPadding extends SingleChildStatelessWidget {
   }
 }
 
-class _Size extends StatelessWidget {
-  const _Size();
+class const _Size() extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -72,19 +64,12 @@ class _Size extends StatelessWidget {
   }
 }
 
-class _Padding extends StatelessWidget {
-  const _Padding({
-    required this.label,
-    required this.color,
-    required this.padding,
-    required this.alignment,
-  });
-
-  final String label;
-  final Color color;
-  final EdgeInsets padding;
-  final Alignment alignment;
-
+class const _Padding({
+  required final String label,
+  required final Color color,
+  required final EdgeInsets padding,
+  required final Alignment alignment,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     logger.fine('${label.padRight(12)}: $padding');

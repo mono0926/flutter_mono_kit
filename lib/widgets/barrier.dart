@@ -1,27 +1,19 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 final barrierProvider = NotifierProvider<BarrierController, bool>(
   BarrierController.new,
 );
 
-class Barrier extends ConsumerWidget {
-  const Barrier({
-    super.key,
-    required this.child,
-    this.valueColor,
-    this.backgroundColor,
-    this.timeout = const Duration(milliseconds: 200),
-    this.switchDuration = const Duration(milliseconds: 100),
-  });
-
-  final Widget child;
-  final Color? valueColor;
-  final Color? backgroundColor;
-  final Duration timeout;
-  final Duration switchDuration;
-
+class const Barrier({
+  super.key,
+  required final Widget child,
+  final Color? valueColor,
+  final Color? backgroundColor,
+  final Duration timeout = const Duration(milliseconds: 200),
+  final Duration switchDuration = const Duration(milliseconds: 100),
+}) extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
@@ -55,7 +47,7 @@ class Barrier extends ConsumerWidget {
   }
 }
 
-class BarrierController extends Notifier<bool> {
+class BarrierController() extends Notifier<bool> {
   void startProgress() => state = true;
 
   void stopProgress() => state = false;
@@ -76,11 +68,8 @@ class BarrierController extends Notifier<bool> {
   bool build() => false;
 }
 
-class PopBarrier extends ConsumerWidget {
-  const PopBarrier({super.key, required this.child});
-
-  final Widget child;
-
+class const PopBarrier({super.key, required final Widget child})
+    extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return PopScope(canPop: !ref.watch(barrierProvider), child: child);

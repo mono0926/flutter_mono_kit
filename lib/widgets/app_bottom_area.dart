@@ -1,23 +1,19 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:nested/nested.dart';
 
-class AppBottomArea extends SingleChildStatefulWidget {
-  const AppBottomArea({
-    super.key,
-    required Widget super.child,
-    this.bottom,
-  });
-
-  final Widget? bottom;
-
+class const AppBottomArea({
+  super.key,
+  required Widget super.child,
+  final Widget? bottom,
+}) extends SingleChildStatefulWidget {
   @override
   SingleChildState<AppBottomArea> createState() => _AppBottomAreaState();
 }
 
-class _AppBottomAreaState extends SingleChildState<AppBottomArea> {
+class _AppBottomAreaState() extends SingleChildState<AppBottomArea> {
   var _bottomHeight = 0.0;
 
   @override

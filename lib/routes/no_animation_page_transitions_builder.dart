@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// A [PageTransitionsBuilder] that disables page transition animations.
-class NoAnimationPageTransitionsBuilder extends PageTransitionsBuilder {
-  const NoAnimationPageTransitionsBuilder();
-
+class const NoAnimationPageTransitionsBuilder() extends PageTransitionsBuilder {
   @override
   Duration get transitionDuration => Duration.zero;
 

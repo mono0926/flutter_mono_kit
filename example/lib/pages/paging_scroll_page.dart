@@ -1,22 +1,19 @@
 import 'dart:math';
 
 import 'package:example/router/router.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 Color _generateColor() => Color(Random().nextInt(0xFFFFFF) | 0xFF888888);
 
-class PagingScrollRoute extends GoRouteData with $PagingScrollRoute {
-  const PagingScrollRoute();
+class const PagingScrollRoute() extends GoRouteData with $PagingScrollRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const PagingScrollPage();
 }
 
-class PagingScrollPage extends StatelessWidget {
-  const PagingScrollPage({super.key});
-
+class const PagingScrollPage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +26,12 @@ class PagingScrollPage extends StatelessWidget {
   }
 }
 
-class _Body extends StatefulWidget {
-  const _Body();
+class const _Body() extends StatefulWidget {
   @override
   __BodyState createState() => __BodyState();
 }
 
-class __BodyState extends State<_Body> {
+class __BodyState() extends State<_Body> {
   final _scrollController = PagingScrollController();
   @override
   Widget build(BuildContext context) {

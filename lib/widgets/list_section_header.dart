@@ -1,15 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class ListSectionHeader extends StatelessWidget {
-  const ListSectionHeader({
-    super.key,
-    required this.label,
-    this.hasTopBorder = true,
-  });
-
-  final String label;
-  final bool hasTopBorder;
-
+class const ListSectionHeader({
+  super.key,
+  required final String label,
+  final bool hasTopBorder = true,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

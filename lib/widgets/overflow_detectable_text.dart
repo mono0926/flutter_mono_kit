@@ -4,20 +4,13 @@ import 'package:flutter/widgets.dart';
 
 typedef OverflowDetector = void Function(double overflowHeight);
 
-class OverflowDetectableText extends StatelessWidget {
-  const OverflowDetectableText(
-    this.data, {
-    super.key,
-    required this.style,
-    required this.detector,
-    this.overflow = TextOverflow.clip,
-  });
-
-  final String data;
-  final TextStyle style;
-  final TextOverflow overflow;
-  final OverflowDetector detector;
-
+class const OverflowDetectableText(
+  final String data, {
+  super.key,
+  required final TextStyle style,
+  required final OverflowDetector detector,
+  final TextOverflow overflow = TextOverflow.clip,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

@@ -1,19 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class BetterPlaceholder extends StatelessWidget {
-  const BetterPlaceholder({
-    super.key,
-    this.color = const Color(0xFF455A64), // Blue Grey 700
-    this.strokeWidth = 2.0,
-    this.fallbackWidth = 400.0,
-    this.fallbackHeight = 400.0,
-  });
-
-  final Color color;
-  final double strokeWidth;
-  final double fallbackWidth;
-  final double fallbackHeight;
-
+class const BetterPlaceholder({
+  super.key,
+  final Color color = const Color(0xFF455A64), // Blue Grey 700
+  final double strokeWidth = 2.0,
+  final double fallbackWidth = 400.0,
+  final double fallbackHeight = 400.0,
+}) extends StatelessWidget {
   String _sizeDesc(BoxConstraints constraints) {
     final fallbackSize = 'Fallback Size: $fallbackWidth x $fallbackHeight';
     return '$fallbackSize\nReal Size: ${_fallbackIfInfinity(

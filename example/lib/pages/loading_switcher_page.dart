@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:example/router/router.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class LoadingSwitcherRoute extends GoRouteData with $LoadingSwitcherRoute {
-  const LoadingSwitcherRoute();
+class const LoadingSwitcherRoute()
+    extends GoRouteData
+    with $LoadingSwitcherRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const LoadingSwitcherPage();
@@ -16,9 +17,7 @@ class LoadingSwitcherRoute extends GoRouteData with $LoadingSwitcherRoute {
 final AsyncNotifierProvider<_Controller, Image> _controller =
     AsyncNotifierProvider(_Controller.new);
 
-class LoadingSwitcherPage extends ConsumerWidget {
-  const LoadingSwitcherPage({super.key});
-
+class const LoadingSwitcherPage({super.key}) extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final valueAsync = ref.watch(_controller);
@@ -54,12 +53,9 @@ class LoadingSwitcherPage extends ConsumerWidget {
   }
 }
 
-class _Slider extends ConsumerWidget {
-  const _Slider({
-    required this.type,
-  });
-
-  final SliderType type;
+class const _Slider({
+  required final SliderType type,
+}) extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(
@@ -101,7 +97,7 @@ final _durationProvider =
       _DurationNotifier.new,
     );
 
-class _DurationNotifier extends Notifier<Map<SliderType, Duration>> {
+class _DurationNotifier() extends Notifier<Map<SliderType, Duration>> {
   @override
   Map<SliderType, Duration> build() => <SliderType, Duration>{
     SliderType.loading: const Duration(milliseconds: 500),
@@ -119,7 +115,7 @@ class _DurationNotifier extends Notifier<Map<SliderType, Duration>> {
   }
 }
 
-class _Controller extends AsyncNotifier<Image> {
+class _Controller() extends AsyncNotifier<Image> {
   Image? _image;
   Image? get image => _image;
 
@@ -133,7 +129,7 @@ class _Controller extends AsyncNotifier<Image> {
   }
 }
 
-enum SliderType {
+enum SliderType() {
   loading,
   timeout,
 }

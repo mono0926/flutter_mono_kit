@@ -1,19 +1,17 @@
-class Data {
-  Data._({
-    required this.desc,
-  });
-
-  Data.small()
+class Data._({
+  required final String desc,
+}) {
+  new small()
     : this._(
         desc: 'Flutter最高！',
       );
-  Data.medium()
+  new medium()
     : this._(
         desc: 'むかしむかし、あるところにFlutterという素晴らしいフレームワークがありました。',
       );
 
   // Copied from https://ja.wikipedia.org/wiki/Flutter
-  Data.large()
+  new large()
     : this._(
         desc:
             'Flutter（フラッター）は、Googleによって開発されたフリーかつ'
@@ -21,7 +19,7 @@ class Data {
             2,
       );
 
-  factory Data.index(int index) {
+  factory index(int index) {
     switch (index % 3) {
       case 0:
         return Data.small();
@@ -33,6 +31,4 @@ class Data {
     assert(false);
     return Data._(desc: '');
   }
-
-  final String desc;
 }

@@ -1,32 +1,20 @@
 import 'dart:math' show min;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nested/nested.dart';
 
-class BottomPopupRoute<T> extends PopupRoute<T> {
-  BottomPopupRoute({
-    required this.builder,
-    super.settings,
-    this.barrierLabel = 'Dismiss',
-    this.barrierColor = const Color(0x80000000),
-    this.padding,
-  });
-
-  final WidgetBuilder builder;
-
+class BottomPopupRoute<T>({
+  required final WidgetBuilder builder,
+  super.settings,
+  @override final String barrierLabel = 'Dismiss',
+  @override final Color barrierColor = const Color(0x80000000),
+  final EdgeInsetsGeometry? padding,
+}) extends PopupRoute<T> {
   @override
   final barrierDismissible = true;
 
   @override
-  final String barrierLabel;
-
-  @override
-  final Color barrierColor;
-
-  @override
   final transitionDuration = const Duration(milliseconds: 400);
-
-  final EdgeInsetsGeometry? padding;
 
   @override
   Widget buildPage(
@@ -97,16 +85,14 @@ class BottomPopupRoute<T> extends PopupRoute<T> {
   }
 }
 
-class _Pan extends SingleChildStatefulWidget {
-  const _Pan({
-    required Widget super.child,
-  });
-
+class const _Pan({
+  required Widget super.child,
+}) extends SingleChildStatefulWidget {
   @override
   _PanState createState() => _PanState();
 }
 
-class _PanState extends SingleChildState<_Pan> {
+class _PanState() extends SingleChildState<_Pan> {
   double _offsetY = 0;
   double _lastOffsetY = 0;
 

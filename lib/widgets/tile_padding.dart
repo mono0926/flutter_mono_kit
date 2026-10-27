@@ -1,15 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nested/nested.dart';
 
-class TilePadding extends SingleChildStatelessWidget {
-  const TilePadding({
-    super.key,
-    super.child,
-    this.horizontal,
-  });
-
-  final double? horizontal;
-
+class const TilePadding({
+  super.key,
+  super.child,
+  final double? horizontal,
+}) extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     return SafeArea(

@@ -1,15 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class CenteredMaxWidth extends StatelessWidget {
-  const CenteredMaxWidth({
-    super.key,
-    required this.child,
-    this.width = 768,
-  });
-
-  final double width;
-  final Widget child;
-
+class const CenteredMaxWidth({
+  super.key,
+  required final Widget child,
+  final double width = 768,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(

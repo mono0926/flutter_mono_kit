@@ -1,22 +1,20 @@
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:example/router/router.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'cell.dart';
 import 'data.dart';
 
-class OverflowDetectableTextRoute extends GoRouteData
+class const OverflowDetectableTextRoute()
+    extends GoRouteData
     with $OverflowDetectableTextRoute {
-  const OverflowDetectableTextRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const OverflowDetectableTextPage();
 }
 
-class OverflowDetectableTextPage extends StatelessWidget {
-  const OverflowDetectableTextPage({super.key});
-
+class const OverflowDetectableTextPage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -66,26 +64,27 @@ class OverflowDetectableTextPage extends StatelessWidget {
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          foregroundColor: accentColor,
-          shape: const StadiumBorder(),
-          backgroundColor: buttonColor,
-          // shadowColor: highlightColor,
-          minimumSize: Size.zero,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 18,
-            vertical: 7,
-          ),
-        ).copyWith(
-          elevation: WidgetStateProperty.all(0),
-          overlayColor: WidgetStateProperty.all(
-            Color.lerp(
-              buttonColor,
-              Colors.black,
-              0.3,
+        style:
+            ElevatedButton.styleFrom(
+              foregroundColor: accentColor,
+              shape: const StadiumBorder(),
+              backgroundColor: buttonColor,
+              // shadowColor: highlightColor,
+              minimumSize: Size.zero,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 18,
+                vertical: 7,
+              ),
+            ).copyWith(
+              elevation: WidgetStateProperty.all(0),
+              overlayColor: WidgetStateProperty.all(
+                Color.lerp(
+                  buttonColor,
+                  Colors.black,
+                  0.3,
+                ),
+              ),
             ),
-          ),
-        ),
       ),
       primaryIconTheme: base.primaryIconTheme.copyWith(
         color: accentColor,

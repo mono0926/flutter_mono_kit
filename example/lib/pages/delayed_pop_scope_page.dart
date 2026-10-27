@@ -1,19 +1,18 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:example/router/router.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class DelayedPopScopeRoute extends GoRouteData with $DelayedPopScopeRoute {
-  const DelayedPopScopeRoute();
+class const DelayedPopScopeRoute()
+    extends GoRouteData
+    with $DelayedPopScopeRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const DelayedPopScopePage();
 }
 
-class DelayedPopScopePage extends StatelessWidget {
-  const DelayedPopScopePage({super.key});
-
+class const DelayedPopScopePage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DelayedPopScope(

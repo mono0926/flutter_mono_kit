@@ -1,23 +1,17 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-typedef PaddingWidgetBuilder =
-    Widget Function(
-      BuildContext context,
-      EdgeInsets padding,
-    );
+typedef PaddingWidgetBuilder = Widget Function(
+  BuildContext context,
+  EdgeInsets padding,
+);
 
-class MaxWidthPaddingBuilder extends StatelessWidget {
-  const MaxWidthPaddingBuilder({
-    super.key,
-    this.width = 768,
-    required this.builder,
-  });
-
-  final double width;
-  final PaddingWidgetBuilder builder;
-
+class const MaxWidthPaddingBuilder({
+  super.key,
+  final double width = 768,
+  required final PaddingWidgetBuilder builder,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

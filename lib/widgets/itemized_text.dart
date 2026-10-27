@@ -1,17 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 export 'link_text_span.dart';
 
-class ItemizedText extends StatelessWidget {
-  const ItemizedText(
-    this.texts, {
-    super.key,
-    this.bullet = '・',
-  });
-
-  final List<Text> texts;
-  final String bullet;
-
+class const ItemizedText(
+  final List<Text> texts, {
+  super.key,
+  final String bullet = '・',
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,15 +21,10 @@ class ItemizedText extends StatelessWidget {
   }
 }
 
-class _ItemizedTextRow extends StatelessWidget {
-  const _ItemizedTextRow(
-    this.text, {
-    required this.bullet,
-  });
-
-  final Text text;
-  final String bullet;
-
+class const _ItemizedTextRow(
+  final Text text, {
+  required final String bullet,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(

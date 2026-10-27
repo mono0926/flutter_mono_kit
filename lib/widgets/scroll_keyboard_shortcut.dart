@@ -1,26 +1,20 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 import 'package:mono_kit/utils/logger.dart';
 import 'package:rxdart/rxdart.dart';
 
-class ScrollKeyboardShortcut extends StatefulWidget {
-  const ScrollKeyboardShortcut({
-    super.key,
-    required this.scrollController,
-    required this.child,
-    this.stepOffset = kPagingScrollOffset,
-  });
-
-  final Widget child;
-  final PagingScrollController scrollController;
-  final double stepOffset;
-
+class const ScrollKeyboardShortcut({
+  super.key,
+  required final PagingScrollController scrollController,
+  required final Widget child,
+  final double stepOffset = kPagingScrollOffset,
+}) extends StatefulWidget {
   @override
   State<ScrollKeyboardShortcut> createState() => _ScrollKeyboardShortcutState();
 }
 
-class _ScrollKeyboardShortcutState extends State<ScrollKeyboardShortcut> {
+class _ScrollKeyboardShortcutState() extends State<ScrollKeyboardShortcut> {
   final _focusNode = FocusNode();
   final _onKeySubject = PublishSubject<KeyEvent>();
   final _subscriptionHolder = SubscriptionHolder();

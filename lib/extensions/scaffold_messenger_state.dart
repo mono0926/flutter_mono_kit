@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 extension SnackBarPresenterEx on ScaffoldMessengerState {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showMessage(
@@ -79,8 +79,7 @@ extension SnackBarPresenterEx on ScaffoldMessengerState {
 }
 
 @immutable
-class SnackBarL10n {
-  const SnackBarL10n();
+class const SnackBarL10n() {
   String get undo => 'UNDO';
   String localizeError(dynamic error) => '$error';
 }

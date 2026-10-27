@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'plugins.dart';
 
-class IosInfoPlistReader {
+class IosInfoPlistReader() {
   static const _platform = MethodChannel(kMethodChannelName);
 
   Future<String?> readString(String key) {

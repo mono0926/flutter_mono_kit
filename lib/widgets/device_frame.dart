@@ -1,17 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nested/nested.dart';
 
-class DeviceFrame extends SingleChildStatelessWidget {
-  const DeviceFrame({
-    super.key,
-    required this.builder,
-    super.child,
-    this.enabled = false,
-  });
-
-  final TransitionBuilder builder;
-  final bool enabled;
-
+class const DeviceFrame({
+  super.key,
+  required final TransitionBuilder builder,
+  super.child,
+  final bool enabled = false,
+}) extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) {
     if (!enabled) {

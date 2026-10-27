@@ -1,15 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class PageSwitcher extends StatelessWidget {
-  const PageSwitcher({
-    super.key,
-    required this.pages,
-    this.index = 0,
-  });
-
-  final List<Widget> pages;
-  final int index;
-
+class const PageSwitcher({
+  super.key,
+  required final List<Widget> pages,
+  final int index = 0,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(

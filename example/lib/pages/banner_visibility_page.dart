@@ -1,23 +1,22 @@
 import 'package:example/router/router.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class BannerVisibilityRoute extends GoRouteData with $BannerVisibilityRoute {
-  const BannerVisibilityRoute();
+class const BannerVisibilityRoute()
+    extends GoRouteData
+    with $BannerVisibilityRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const BannerVisibilityPage();
 }
 
-class BannerVisibilityPage extends StatefulWidget {
-  const BannerVisibilityPage({super.key});
-
+class const BannerVisibilityPage({super.key}) extends StatefulWidget {
   @override
   State<BannerVisibilityPage> createState() => _BannerVisibilityPageState();
 }
 
-class _BannerVisibilityPageState extends State<BannerVisibilityPage> {
+class _BannerVisibilityPageState() extends State<BannerVisibilityPage> {
   final ValueNotifier<bool> _isVisible = ValueNotifier(true);
 
   @override

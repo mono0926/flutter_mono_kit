@@ -1,17 +1,15 @@
 import 'package:flutter/widgets.dart';
 
-class BetterFadeTransition extends AnimatedWidget {
-  const BetterFadeTransition({
-    super.key,
-    required this.child,
-    required Animation<double> opacity,
-    this.alwaysIncludeSemantics = false,
-  }) : super(
-         listenable: opacity,
-       );
-
-  final Widget child;
-  final bool alwaysIncludeSemantics;
+class const BetterFadeTransition({
+  super.key,
+  required final Widget child,
+  required Animation<double> opacity,
+  final bool alwaysIncludeSemantics = false,
+}) extends AnimatedWidget {
+  this
+    : super(
+        listenable: opacity,
+      );
 
   @override
   Widget build(BuildContext context) {

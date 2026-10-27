@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'plugins.dart';
 
-class AppInstallationChecker {
+class AppInstallationChecker() {
   static const _platform = MethodChannel(kMethodChannelName);
 
   Future<bool?> isInstalled(String packageName) async {

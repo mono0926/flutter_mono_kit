@@ -1,18 +1,15 @@
 import 'package:example/router/router.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class AppBottomAreaRoute extends GoRouteData with $AppBottomAreaRoute {
-  const AppBottomAreaRoute();
+class const AppBottomAreaRoute() extends GoRouteData with $AppBottomAreaRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const AppBottomAreaPage();
 }
 
-class AppBottomAreaPage extends StatelessWidget {
-  const AppBottomAreaPage({super.key});
-
+class const AppBottomAreaPage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

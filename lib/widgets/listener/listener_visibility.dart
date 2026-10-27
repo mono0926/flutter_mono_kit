@@ -1,16 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
-class ListenerVisibility extends StatelessWidget {
-  const ListenerVisibility({
-    super.key,
-    required this.visible,
-    required this.child,
-  });
-
-  final ValueListenable<bool> visible;
-  final Widget child;
-
+class const ListenerVisibility({
+  super.key,
+  required final ValueListenable<bool> visible,
+  required final Widget child,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(

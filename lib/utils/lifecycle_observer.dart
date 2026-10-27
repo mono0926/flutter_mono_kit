@@ -8,7 +8,8 @@ final lifecycleObserver =
       AppLifecycleStateObserver.new,
     );
 
-class AppLifecycleStateObserver extends AsyncNotifier<AppLifecycleState>
+class AppLifecycleStateObserver()
+    extends AsyncNotifier<AppLifecycleState>
     with WidgetsBindingObserver {
   @override
   FutureOr<AppLifecycleState> build() {

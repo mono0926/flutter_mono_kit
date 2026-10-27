@@ -1,14 +1,15 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/utils/logger.dart';
 
 const kPagingScrollDuration = Duration(milliseconds: 200);
 const _curve = Curves.easeInOut;
 const kPagingScrollOffset = 44.0;
 
-class PagingScrollController extends ScrollController
-    with PagingScrollControllerMixin {}
+class PagingScrollController()
+    extends ScrollController
+    with PagingScrollControllerMixin;
 
 mixin PagingScrollControllerMixin on ScrollController {
   BuildContext get _context => position.context.notificationContext!;

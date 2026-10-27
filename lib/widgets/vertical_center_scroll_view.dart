@@ -1,25 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class VerticalCenterScrollView extends StatefulWidget {
-  const VerticalCenterScrollView({
-    super.key,
-    required this.child,
-    this.padding,
-    this.autoPop = false,
-    this.hasCloseButton = false,
-  });
-
-  final Widget child;
-  final bool autoPop;
-  final bool hasCloseButton;
-  final EdgeInsets? padding;
-
+class const VerticalCenterScrollView({
+  super.key,
+  required final Widget child,
+  final EdgeInsets? padding,
+  final bool autoPop = false,
+  final bool hasCloseButton = false,
+}) extends StatefulWidget {
   @override
   State<VerticalCenterScrollView> createState() =>
       _VerticalCenterScrollViewState();
 }
 
-class _VerticalCenterScrollViewState extends State<VerticalCenterScrollView> {
+class _VerticalCenterScrollViewState() extends State<VerticalCenterScrollView> {
   late final ScrollController _controller;
   var _isPopping = false;
 

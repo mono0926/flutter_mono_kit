@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 Widget menuAnchorIconButtonBuilder(
   BuildContext context,
@@ -6,14 +6,10 @@ Widget menuAnchorIconButtonBuilder(
   Widget? child,
 ) => MenuAnchorIconButton(controller: controller);
 
-class MenuAnchorIconButton extends StatelessWidget {
-  const MenuAnchorIconButton({
-    super.key,
-    required this.controller,
-  });
-
-  final MenuController controller;
-
+class const MenuAnchorIconButton({
+  super.key,
+  required final MenuController controller,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(

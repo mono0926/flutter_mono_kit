@@ -1,18 +1,17 @@
 import 'package:example/router/router.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
-class BetterPlaceholderRoute extends GoRouteData with $BetterPlaceholderRoute {
-  const BetterPlaceholderRoute();
+class const BetterPlaceholderRoute()
+    extends GoRouteData
+    with $BetterPlaceholderRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const BetterPlaceholderPage();
 }
 
-class BetterPlaceholderPage extends StatelessWidget {
-  const BetterPlaceholderPage({super.key});
-
+class const BetterPlaceholderPage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

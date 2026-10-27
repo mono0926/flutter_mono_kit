@@ -25,7 +25,7 @@ description: >-
 ### 1. Dismissing Keyboard with `UnfocusOnTap`
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class FormScreen extends StatelessWidget {
@@ -53,7 +53,7 @@ class FormScreen extends StatelessWidget {
 ### 2. App Lifecycle Observation
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:mono_kit/mono_kit.dart';
 
 class TrackedScreen extends StatefulWidget {

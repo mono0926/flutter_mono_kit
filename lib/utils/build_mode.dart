@@ -1,6 +1,10 @@
 import 'package:flutter/foundation.dart';
 
-enum BuildMode { profile, debug, release }
+enum BuildMode() {
+  profile,
+  debug,
+  release,
+}
 
 BuildMode buildMode = () {
   if (kReleaseMode) {

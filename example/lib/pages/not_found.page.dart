@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class NotFoundPage extends StatelessWidget {
-  const NotFoundPage({super.key});
-
+class const NotFoundPage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

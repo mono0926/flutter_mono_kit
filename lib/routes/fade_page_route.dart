@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'modal_page_route.dart';
 
-class FadePageRoute<T> extends ModalPageRoute<T> {
-  FadePageRoute({
-    required super.builder,
-    super.settings,
-  });
-
+class FadePageRoute<T>({
+  required super.builder,
+  super.settings,
+}) extends ModalPageRoute<T> {
   @override
   Widget buildTransitions(
     BuildContext context,

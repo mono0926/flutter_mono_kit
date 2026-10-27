@@ -1,26 +1,19 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
-class TimeoutSwitcher extends StatefulWidget {
-  const TimeoutSwitcher({
-    super.key,
-    required this.timedOutChild,
-    this.initialChild = const SizedBox(),
-    this.timeout = const Duration(milliseconds: 200),
-    this.switchDuration = const Duration(milliseconds: 100),
-  });
-
-  final Widget timedOutChild;
-  final Widget initialChild;
-  final Duration timeout;
-  final Duration switchDuration;
-
+class const TimeoutSwitcher({
+  super.key,
+  required final Widget timedOutChild,
+  final Widget initialChild = const SizedBox(),
+  final Duration timeout = const Duration(milliseconds: 200),
+  final Duration switchDuration = const Duration(milliseconds: 100),
+}) extends StatefulWidget {
   @override
   State<TimeoutSwitcher> createState() => _TimeoutSwitcherState();
 }
 
-class _TimeoutSwitcherState extends State<TimeoutSwitcher> {
+class _TimeoutSwitcherState() extends State<TimeoutSwitcher> {
   var _timedOut = false;
   late final Timer _timer;
 

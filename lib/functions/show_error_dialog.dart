@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void showErrorDialog({
   required BuildContext context,
@@ -30,8 +30,7 @@ void showErrorDialog({
 }
 
 @immutable
-class ErrorDialogL10n {
-  const ErrorDialogL10n();
+class const ErrorDialogL10n() {
   String get errorTitle => 'エラーが発生しました';
   String localizeError(dynamic error) => '$error';
 }
