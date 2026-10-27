@@ -1,3 +1,10 @@
+## 0.50.0 - 2026-10-27
+
+### Breaking Changes
+- Migrate from `package:flutter/material.dart` and `package:flutter/cupertino.dart` to standalone `package:material_ui/material_ui.dart` (`^1.0.0`) and `package:cupertino_ui/cupertino_ui.dart` (`^1.0.0`)
+- Require Dart `^3.13.0` and Flutter `>=3.47.0`
+- Bump `adaptive_dialog` to `^3.0.0` and `go_router` to `^18.0.0`
+
 ## 0.49.0 - 2026-10-20
 
 ### Features
