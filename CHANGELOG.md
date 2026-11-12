@@ -1,3 +1,9 @@
+## 0.51.0 - 2026-11-12
+
+### Breaking Changes
+- Require Dart `^3.14.0` and Flutter `>=3.50.0`
+- Bump `adaptive_dialog` to `^3.1.0`, `simple_logger` to `^1.11.0`, and `subscription_holder` to `^2.3.0`
+
 ## 0.50.0 - 2026-10-27
 
 ### Breaking Changes
