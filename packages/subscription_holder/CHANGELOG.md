@@ -1,3 +1,8 @@
+## 2.3.0
+
+- Require Dart `^3.14.0` and Flutter `>=3.50.0`
+- Remove misplaced `@immutable` annotation from `SubscriptionHolder` and adopt primary constructor syntax
+
 ## 2.2.1
 
 - Add AI Agent Skill (`subscription_holder-lifecycle`)
