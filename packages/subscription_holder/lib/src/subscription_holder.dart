@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:rxdart/rxdart.dart';
 
-@immutable
-class SubscriptionHolder {
+class SubscriptionHolder() {
   final _subscriptions = <StreamSubscription<dynamic>>[];
 
   void add(StreamSubscription<dynamic> subscription) {

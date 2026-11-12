@@ -3,7 +3,8 @@ description: Subscription Holder holds StreamSubscriptions and dispose all conve
 version: 2.2.1
 homepage: https://github.com/mono0926/flutter_mono_kit
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.14.0
+  flutter: '>=3.50.0'
 dependencies:
   flutter:
     sdk: flutter
@@ -12,5 +13,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic_mono:
+  pedantic_mono: ^1.39.0
 flutter:
