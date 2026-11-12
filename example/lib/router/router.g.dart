@@ -10,61 +10,87 @@ List<RouteBase> get $appRoutes => [$homeRoute];
 
 RouteBase get $homeRoute => GoRouteData.$route(
   path: '/',
+  hasOverriddenOnExit: false,
   factory: $HomeRoute._fromState,
   routes: [
     GoRouteData.$route(
       path: 'delayed-pop-scope',
+      hasOverriddenOnExit: false,
       factory: $DelayedPopScopeRoute._fromState,
     ),
-    GoRouteData.$route(path: 'snack-bar', factory: $SnackBarRoute._fromState),
+    GoRouteData.$route(
+      path: 'snack-bar',
+      hasOverriddenOnExit: false,
+      factory: $SnackBarRoute._fromState,
+    ),
     GoRouteData.$route(
       path: 'app-bottom-area',
+      hasOverriddenOnExit: false,
       factory: $AppBottomAreaRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'debug-padding',
+      hasOverriddenOnExit: false,
       factory: $DebugPaddingRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'overflow-detectable-text',
+      hasOverriddenOnExit: false,
       factory: $OverflowDetectableTextRoute._fromState,
     ),
-    GoRouteData.$route(path: 'barrier', factory: $BarrierRoute._fromState),
+    GoRouteData.$route(
+      path: 'barrier',
+      hasOverriddenOnExit: false,
+      factory: $BarrierRoute._fromState,
+    ),
     GoRouteData.$route(
       path: 'unfocus-on-tap',
+      hasOverriddenOnExit: false,
       factory: $UnfocusOnTapRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'lifecycle-observer',
+      hasOverriddenOnExit: false,
       factory: $LifecycleObserverRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'paging-scroll',
+      hasOverriddenOnExit: false,
       factory: $PagingScrollRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'banner-visibility',
+      hasOverriddenOnExit: false,
       factory: $BannerVisibilityRoute._fromState,
     ),
-    GoRouteData.$route(path: 'color-ex', factory: $ColorExRoute._fromState),
+    GoRouteData.$route(
+      path: 'color-ex',
+      hasOverriddenOnExit: false,
+      factory: $ColorExRoute._fromState,
+    ),
     GoRouteData.$route(
       path: 'max-width-padding-builder',
+      hasOverriddenOnExit: false,
       factory: $MaxWidthPaddingBuilderRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'better-placeholder',
+      hasOverriddenOnExit: false,
       factory: $BetterPlaceholderRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'loading-switcher',
+      hasOverriddenOnExit: false,
       factory: $LoadingSwitcherRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'list-tile-selected-background-colored-box',
+      hasOverriddenOnExit: false,
       factory: $ListTileSelectedBackgroundColoredBoxRoute._fromState,
     ),
     GoRouteData.$route(
       path: 'vertical-center-scroll-view',
+      hasOverriddenOnExit: false,
       factory: $VerticalCenterScrollViewRoute._fromState,
     ),
   ],

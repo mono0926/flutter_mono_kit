@@ -4,10 +4,10 @@ description: A collection of convenient widgets and utils made by mono. Under
 version: 0.50.0
 repository: https://github.com/mono0926/flutter_mono_kit
 environment:
-  sdk: ^3.13.0
-  flutter: '>=3.47.0'
+  sdk: ^3.14.0
+  flutter: '>=3.50.0'
 dependencies:
-  adaptive_dialog: ^3.0.0
+  adaptive_dialog: ^3.1.0
   collection: ^1.15.0
   cupertino_ui: ^1.0.0
   flutter:
@@ -21,10 +21,10 @@ dependencies:
   nested: ^1.0.0
   quiver: ^3.0.0
   rxdart: '>=0.27.0 <1.0.0'
-  simple_logger: ^1.6.0
+  simple_logger: ^1.11.0
   state_notifier: ^1.0.0
   stream_transform: ^2.0.0
-  subscription_holder: ^2.1.0
+  subscription_holder: ^2.3.0
   tinycolor2: ^3.0.0
   url_launcher: ^6.1.0
 dev_dependencies:
@@ -32,7 +32,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed:
-  pedantic_mono: ^1.38.1
+  pedantic_mono: ^1.39.0
 flutter:
   plugin:
     platforms:

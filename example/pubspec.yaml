@@ -3,10 +3,10 @@ description: A example of mono_kit.
 version: 1.0.0+1
 publish_to: none
 environment:
-  sdk: ^3.13.0
-  flutter: '>=3.47.0'
+  sdk: ^3.14.0
+  flutter: ^3.50.0
 dependencies:
-  adaptive_dialog: ^3.0.0
+  adaptive_dialog: ^3.1.0
   cupertino_icons:
   cupertino_ui: ^1.0.0
   flutter:
@@ -27,7 +27,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   go_router_builder:
-  pedantic_mono: ^1.38.1
+  pedantic_mono: ^1.39.0
 flutter:
   uses-material-design: true
   assets:
